@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="110cdbe2-02a5-49dd-99d2-a977db5688bb" name="Default" comment="" />
+    <list default="true" id="110cdbe2-02a5-49dd-99d2-a977db5688bb" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.y2g3-project-master/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.y2g3-project-master/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Cube.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Cube.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PointerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PointerController.cs" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,7 +28,7 @@
       <file leaf-file-name="PlayerProfile.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/PlayerProfile.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
+            <state relative-caret-position="180">
               <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
             </state>
           </provider>
@@ -49,14 +54,15 @@
       <file leaf-file-name="PointerController.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/PointerController.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="38" lean-forward="true" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
+            <state relative-caret-position="540">
+              <caret line="36" selection-start-line="36" selection-end-line="36" />
               <folding>
-                <marker date="1542749441367" expanded="true" signature="66:579" ph="{...}" />
-                <marker date="1542749441367" expanded="true" signature="193:577" ph="{...}" />
-                <marker date="1542749441367" expanded="true" signature="387:532" ph="{...}" />
-                <marker date="1542749441367" expanded="true" signature="491:528" ph="{...}" />
-                <marker date="1542749441367" expanded="true" signature="539:574" ph="{...}" />
+                <marker date="1542818314379" expanded="true" signature="66:1009" ph="{...}" />
+                <marker date="1542818314379" expanded="true" signature="323:444" ph="{...}" />
+                <marker date="1542818314379" expanded="true" signature="498:1007" ph="{...}" />
+                <marker date="1542818314379" expanded="true" signature="622:894" ph="{...}" />
+                <marker date="1542818314379" expanded="true" signature="798:890" ph="{...}" />
+                <marker date="1542818314379" expanded="true" signature="901:1004" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -70,7 +76,7 @@
       <file leaf-file-name="OVRVoiceMod.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Oculus/VoiceMod/Scripts/OVRVoiceMod.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="738">
+            <state relative-caret-position="3870">
               <caret line="258" selection-start-line="258" selection-end-line="258" />
             </state>
           </provider>
@@ -86,13 +92,16 @@
       <replace>_elapsedTime</replace>
     </replaceStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Oculus/VoiceMod/Scripts/OVRVoiceMod.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SamplePlayerController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Oculus/Avatar/Content/Materials/AvatarMaterialStateShader.cginc" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UpdateTimer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PointerController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerProfile.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UpdateTimer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Oculus/Avatar/Content/Materials/AvatarMaterialStateShader.cginc" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PointerController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerProfile.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Oculus/VoiceMod/Scripts/OVRVoiceMod.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SamplePlayerController.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -123,11 +132,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="SolutionExplorer">
-        <option name="show-file-system" value="false" />
-        <option name="show-all-items" value="false" />
-      </pane>
       <pane id="UnityExplorer">
         <subPane>
           <expand>
@@ -145,6 +149,11 @@
         </subPane>
         <option name="show-hidden-items" value="false" />
       </pane>
+      <pane id="SolutionExplorer">
+        <option name="show-file-system" value="false" />
+        <option name="show-all-items" value="false" />
+      </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -181,11 +190,20 @@
       <updated>1542717042735</updated>
       <workItem from="1542717044177" duration="12000" />
       <workItem from="1542736638071" duration="5436000" />
+      <workItem from="1542751522232" duration="2371000" />
     </task>
+    <task id="LOCAL-00001" summary="Added player pointer and ui on hovering elements">
+      <created>1542751580255</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1542751580255</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5448000" />
+    <option name="totallyTimeSpent" value="7819000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -205,19 +223,19 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Unit Tests" order="7" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25266525" />
+      <window_info anchor="bottom" id="NuGet" order="7" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2553305" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Unity" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="NuGet" order="7" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Unity" order="8" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -232,7 +250,65 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added player pointer and ui on hovering elements" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added player pointer and ui on hovering elements" />
+  </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/SamplePlayerController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/PlayerProfile.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/UpdateTimer.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <marker date="1542740260933" expanded="true" signature="6:40" ph="..." />
+            <marker date="1542740260933" expanded="true" signature="82:612" ph="{...}" />
+            <marker date="1542740260933" expanded="true" signature="227:300" ph="{...}" />
+            <marker date="1542740260933" expanded="true" signature="318:610" ph="{...}" />
+            <marker date="1542740260933" expanded="true" signature="345:480" ph="{...}" />
+            <marker date="1542740260933" expanded="true" signature="516:607" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Oculus/Avatar/Content/Materials/AvatarMaterialStateShader.cginc">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Oculus/VoiceMod/Scripts/OVRVoiceMod.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3870">
+          <caret line="258" selection-start-line="258" selection-end-line="258" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/PointerController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="38" lean-forward="true" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
+          <folding>
+            <marker date="1542818314379" expanded="true" signature="66:1009" ph="{...}" />
+            <marker date="1542818314379" expanded="true" signature="323:444" ph="{...}" />
+            <marker date="1542818314379" expanded="true" signature="498:1007" ph="{...}" />
+            <marker date="1542818314379" expanded="true" signature="622:894" ph="{...}" />
+            <marker date="1542818314379" expanded="true" signature="798:890" ph="{...}" />
+            <marker date="1542818314379" expanded="true" signature="901:1004" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/SamplePlayerController.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -252,14 +328,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Oculus/VoiceMod/Scripts/OVRVoiceMod.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="738">
+        <state relative-caret-position="3870">
           <caret line="258" selection-start-line="258" selection-end-line="258" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/PlayerProfile.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
+        <state relative-caret-position="180">
           <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
         </state>
       </provider>
@@ -281,14 +357,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/PointerController.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="38" lean-forward="true" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
+        <state relative-caret-position="540">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
           <folding>
-            <marker date="1542749441367" expanded="true" signature="66:579" ph="{...}" />
-            <marker date="1542749441367" expanded="true" signature="193:577" ph="{...}" />
-            <marker date="1542749441367" expanded="true" signature="387:532" ph="{...}" />
-            <marker date="1542749441367" expanded="true" signature="491:528" ph="{...}" />
-            <marker date="1542749441367" expanded="true" signature="539:574" ph="{...}" />
+            <marker date="1542818314379" expanded="true" signature="66:1009" ph="{...}" />
+            <marker date="1542818314379" expanded="true" signature="323:444" ph="{...}" />
+            <marker date="1542818314379" expanded="true" signature="498:1007" ph="{...}" />
+            <marker date="1542818314379" expanded="true" signature="622:894" ph="{...}" />
+            <marker date="1542818314379" expanded="true" signature="798:890" ph="{...}" />
+            <marker date="1542818314379" expanded="true" signature="901:1004" ph="{...}" />
           </folding>
         </state>
       </provider>
