@@ -8,7 +8,7 @@ public class UpdateTimer : MonoBehaviour
 	private float _startTime = 0;
 	private float _elapsedTime = 0;
 	
-	void Start ()
+	/*void Start ()
 	{
 		TimerMenu.SetActive(_toggleTimerMenu);
 		_startTime = Time.time;
@@ -28,4 +28,5 @@ public class UpdateTimer : MonoBehaviour
 			TimerMenu.SetActive(_toggleTimerMenu);
 		}
 	}
+	*/
 }
