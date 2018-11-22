@@ -49,6 +49,9 @@ public class CenterEyePointer : MonoBehaviour
 		}
 	}
 
+	// This function makes sure we update the teleporter's visibility
+	// without having to rewrite the same code twice when the player vision
+	// enters and exits the teleporter
 	private void UpdateTeleporterAlpha(RaycastHit hit, float newAlphaValue)
 	{
 		var childRenderers = _currentTeleporter.GetComponentsInChildren<MeshRenderer>();

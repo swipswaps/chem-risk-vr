@@ -12,6 +12,7 @@ TagManager:
   - dontmove
   - listlast
   - Crate
+  - Return Item
   layers:
   - Default
   - TransparentFX
@@ -34,7 +35,7 @@ TagManager:
   - Item
   - Button
   - Teleporter
-  - 
+  - Return Item
   - 
   - 
   - 
