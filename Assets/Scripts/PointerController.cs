@@ -51,6 +51,7 @@ public class PointerController : MonoBehaviour
                 _lookedAtObject.layer = 21;
                 _lookedAtObject.tag = "Return Item";
                 
+                if (_lookedAtObject.name == "Water") { ObjectivesController.PickedUpWaterBottle = true; }
                 // This gives a small delay before the player can return
                 // the object back to its place, because for some reason oculus
                 // had a glitch and returned it immediately and it was very buggy.
@@ -65,7 +66,7 @@ public class PointerController : MonoBehaviour
             _image = _lookedAtObject.GetComponent<Image>();
             _image.color = Color.red;
 
-            if (OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger))
+            if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger))
             {
                 _image.color = Color.green;
             }
@@ -76,15 +77,17 @@ public class PointerController : MonoBehaviour
         {
             _lookedAtObject = hit.collider.gameObject;
             _meshRenderer = _lookedAtObject.GetComponent<MeshRenderer>();
-            if (OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger) || Input.GetKeyDown(KeyCode.K))
+            if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) || Input.GetKeyDown(KeyCode.K))
             {
                 _lookedAtObject.tag = "Untagged";
                 _lookedAtObject.layer = 18;
                 _meshRenderer.material = DefaultItemMaterial;
 
                 _isHoldingItem = false;
-                _canReturnObject = false;
+
+                if (_lookedAtObject.name == "Water") { ObjectivesController.PlacedBackWaterBottle = true; }
                 Destroy(_currentlyHoldingObject);
+                _canReturnObject = false;
             }
         }
         else

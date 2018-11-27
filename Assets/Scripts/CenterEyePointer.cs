@@ -47,12 +47,14 @@ public class CenterEyePointer : MonoBehaviour
                 _isAlphaIncreased = true;
             }
 			
-            // This teleports the player to the teleporter's.
+            // This teleports the player to the teleporter's position.
             // The second input is specifically for testing for the PC instead of
             // wearing the oculus itself.
             if ((OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger)) ||
                 _isAlphaIncreased && Input.GetKeyDown(KeyCode.T))
             {
+                ObjectivesController.UsedTeleporter = true;
+                
                 var newPlayerPosition = Player.transform.position;
                 var newPlayerRotation = Player.transform.rotation;
                 var newEyeRotation = PlayerDirection.transform.rotation;

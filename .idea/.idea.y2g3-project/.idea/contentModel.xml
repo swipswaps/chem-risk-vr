@@ -487,6 +487,7 @@
         <e p="Scripts" t="Include">
           <e p="CenterEyePointer.cs" t="Include" />
           <e p="CrosshairManager.cs" t="Include" />
+          <e p="ObjectivesController.cs" t="Include" />
           <e p="PointerController.cs" t="Include" />
           <e p="SamplePlayerController.cs" t="Include" />
           <e p="UpdateTimer.cs" t="Include" />

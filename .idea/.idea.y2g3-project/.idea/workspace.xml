@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="83d7650d-0c48-4245-a8f0-a9ff168eb770" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.y2g3-project/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.y2g3-project/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.y2g3-project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.y2g3-project/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Teleporter.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Teleporter.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/CenterEyePointer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CenterEyePointer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PointerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PointerController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,53 +31,156 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="PointerController.cs" pinned="false" current-in-tab="false">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="PointerController.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/PointerController.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="66" selection-start-line="66" selection-end-line="66" />
+            <state relative-caret-position="589">
+              <caret line="68" column="60" lean-forward="true" selection-start-line="68" selection-start-column="60" selection-end-line="68" selection-end-column="60" />
+              <folding>
+                <marker date="1543354218787" expanded="false" signature="6:40" ph="..." />
+                <marker date="1543354218787" expanded="true" signature="88:5729" ph="{...}" />
+                <marker date="1543354218787" expanded="true" signature="728:5640" ph="{...}" />
+                <marker date="1543354218787" expanded="true" signature="829:912" ph="/* We are looking with the controllerfor an object ... */" />
+                <marker date="1543354218787" expanded="true" signature="976:2928" ph="{...}" />
+                <marker date="1543354218787" expanded="true" signature="1143:1251" ph="/* Once it is found we change it to look as if it is hovered ... */" />
+                <marker date="1543354218787" expanded="true" signature="1401:1684" ph="/* If the player is not holding an interactable item and presses ... */" />
+                <marker date="1543354218787" expanded="true" signature="1813:2771" ph="{...}" />
+                <marker date="1543354218787" expanded="true" signature="2446:2665" ph="/* This gives a small delay before the player can return ... */" />
+                <marker date="1543354218787" expanded="true" signature="2784:2918" ph="/* If the player happens to hover over UI elements such as ... */" />
+                <marker date="1543354218787" expanded="true" signature="2991:3552" ph="{...}" />
+                <marker date="1543354218787" expanded="true" signature="3226:3298" ph="{...}" />
+                <marker date="1543354218787" expanded="true" signature="3311:3542" ph="/* If the player is holding an item and needs to return it, he must ... */" />
+                <marker date="1543354218787" expanded="true" signature="3636:4313" ph="{...}" />
+                <marker date="1543354218787" expanded="true" signature="3877:4303" ph="{...}" />
+                <marker date="1543354218787" expanded="true" signature="4326:4606" ph="{...}" />
+                <marker date="1543354218787" expanded="true" signature="4368:4440" ph="{...}" />
+                <marker date="1543354218787" expanded="true" signature="4506:4596" ph="{...}" />
+                <marker date="1543354218787" expanded="true" signature="4616:4784" ph="/* If an item is to be returned, then it will be tracked and ... */" />
+                <marker date="1543354218787" expanded="true" signature="4894:5006" ph="{...}" />
+                <marker date="1543354218787" expanded="true" signature="5024:5142" ph="/* This makes sure the item the player is holding is being placed ... */" />
+                <marker date="1543354218787" expanded="true" signature="5205:5634" ph="{...}" />
+                <marker date="1543354218787" expanded="true" signature="5682:5727" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UpdateTimer.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/UpdateTimer.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="21" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CenterEyePointer.cs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CenterEyePointer.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/CenterEyePointer.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
-              <caret line="78" column="68" selection-start-line="78" selection-start-column="68" selection-end-line="78" selection-end-column="68" />
+            <state relative-caret-position="259">
+              <caret line="48" column="12" lean-forward="true" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
               <folding>
-                <marker date="1542919667975" expanded="true" signature="65:4409" ph="{...}" />
-                <marker date="1542919667975" expanded="true" signature="329:988" ph="{...}" />
-                <marker date="1542919667975" expanded="true" signature="459:982" ph="{...}" />
-                <marker date="1542919667975" expanded="true" signature="570:726" ph="/* We dont want the pointers for the angle of the teleporters to ... */" />
-                <marker date="1542919667975" expanded="true" signature="779:972" ph="{...}" />
-                <marker date="1542919667975" expanded="true" signature="842:958" ph="{...}" />
-                <marker date="1542919667975" expanded="true" signature="1048:3789" ph="{...}" />
-                <marker date="1542919667975" expanded="true" signature="1290:3593" ph="{...}" />
-                <marker date="1542919667975" expanded="true" signature="1313:1530" ph="/* We dont put it in the function because the else statement ... */" />
-                <marker date="1542919667975" expanded="true" signature="1632:1752" ph="{...}" />
-                <marker date="1542919667975" expanded="true" signature="1769:1942" ph="/* This teleports the player to the teleporter's. ... */" />
-                <marker date="1542919667975" expanded="true" signature="2083:3583" ph="{...}" />
-                <marker date="1542919667975" expanded="true" signature="2426:2580" ph="/* This makes sure we target that child in the teleporter object ... */" />
-                <marker date="1542919667975" expanded="true" signature="2637:2971" ph="{...}" />
-                <marker date="1542919667975" expanded="true" signature="2708:2953" ph="{...}" />
-                <marker date="1542919667975" expanded="true" signature="2989:3140" ph="/* This makes sure he doesnt teleport in the ground itself ... */" />
-                <marker date="1542919667975" expanded="true" signature="3397:3518" ph="/* I'm rotating the pose too because it stays the same ... */" />
-                <marker date="1542919667975" expanded="true" signature="3606:3783" ph="{...}" />
-                <marker date="1542919667975" expanded="true" signature="3651:3773" ph="{...}" />
-                <marker date="1542919667975" expanded="true" signature="3795:3975" ph="/* This function makes sure we update the teleporter's visibility ... */" />
-                <marker date="1542919667975" expanded="true" signature="4051:4407" ph="{...}" />
-                <marker date="1542919667975" expanded="true" signature="4200:4401" ph="{...}" />
+                <marker date="1543349991169" expanded="true" signature="65:4495" ph="{...}" />
+                <marker date="1543349991169" expanded="true" signature="329:988" ph="{...}" />
+                <marker date="1543349991169" expanded="true" signature="459:982" ph="{...}" />
+                <marker date="1543349991169" expanded="true" signature="570:726" ph="/* We dont want the pointers for the angle of the teleporters to ... */" />
+                <marker date="1543349991169" expanded="true" signature="779:972" ph="{...}" />
+                <marker date="1543349991169" expanded="true" signature="842:958" ph="{...}" />
+                <marker date="1543349991169" expanded="true" signature="1048:3875" ph="{...}" />
+                <marker date="1543349991169" expanded="true" signature="1290:3679" ph="{...}" />
+                <marker date="1543349991169" expanded="true" signature="1313:1530" ph="/* We dont put it in the function because the else statement ... */" />
+                <marker date="1543349991169" expanded="true" signature="1632:1752" ph="{...}" />
+                <marker date="1543349991169" expanded="true" signature="1769:1951" ph="/* This teleports the player to the teleporter's position. ... */" />
+                <marker date="1543349991169" expanded="true" signature="2092:3669" ph="{...}" />
+                <marker date="1543349991169" expanded="true" signature="2512:2666" ph="/* This makes sure we target that child in the teleporter object ... */" />
+                <marker date="1543349991169" expanded="true" signature="2723:3057" ph="{...}" />
+                <marker date="1543349991169" expanded="true" signature="2794:3039" ph="{...}" />
+                <marker date="1543349991169" expanded="true" signature="3075:3226" ph="/* This makes sure he doesnt teleport in the ground itself ... */" />
+                <marker date="1543349991169" expanded="true" signature="3483:3604" ph="/* I'm rotating the pose too because it stays the same ... */" />
+                <marker date="1543349991169" expanded="true" signature="3692:3869" ph="{...}" />
+                <marker date="1543349991169" expanded="true" signature="3737:3859" ph="{...}" />
+                <marker date="1543349991169" expanded="true" signature="3881:4061" ph="/* This function makes sure we update the teleporter's visibility ... */" />
+                <marker date="1543349991169" expanded="true" signature="4137:4493" ph="{...}" />
+                <marker date="1543349991169" expanded="true" signature="4286:4487" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ObjectivesController.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/ObjectivesController.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="455">
+              <caret line="70" column="65" selection-start-line="70" selection-start-column="65" selection-end-line="70" selection-end-column="65" />
+              <folding>
+                <marker date="1543353464430" expanded="true" signature="6:119" ph="..." />
+                <marker date="1543353464430" expanded="true" signature="170:5328" ph="{...}" />
+                <marker date="1543353464430" expanded="true" signature="435:489" ph="/* Objective variables: Use Water Bottle ... */" />
+                <marker date="1543353464430" expanded="true" signature="602:654" ph="/* Objective variables: Use Teleporter ... */" />
+                <marker date="1543353464430" expanded="true" signature="756:1821" ph="{...}" />
+                <marker date="1543353464430" expanded="true" signature="887:1045" ph="{...}" />
+                <marker date="1543353464430" expanded="true" signature="1120:1181" ph="{...}" />
+                <marker date="1543353464430" expanded="true" signature="1239:1433" ph="{...}" />
+                <marker date="1543353464430" expanded="true" signature="1447:1637" ph="/* After we initialize the _objectives, we pick the ... */" />
+                <marker date="1543353464430" expanded="true" signature="1843:3007" ph="{...}" />
+                <marker date="1543353464430" expanded="true" signature="1853:2055" ph="/* If the player has completed the requirements to finish ... */" />
+                <marker date="1543353464430" expanded="true" signature="2145:2441" ph="{...}" />
+                <marker date="1543353464430" expanded="true" signature="2247:2361" ph="/* We update the current objective index so that ... */" />
+                <marker date="1543353464430" expanded="true" signature="2506:2605" ph="{...}" />
+                <marker date="1543353464430" expanded="true" signature="2672:2771" ph="{...}" />
+                <marker date="1543353464430" expanded="true" signature="2832:3001" ph="{...}" />
+                <marker date="1543353464430" expanded="true" signature="3043:5326" ph="{...}" />
+                <marker date="1543353464430" expanded="true" signature="3058:3228" ph="/* Reset the field values in the tablet's tasks so that ... */" />
+                <marker date="1543353464430" expanded="true" signature="3280:3489" ph="{...}" />
+                <marker date="1543353464430" expanded="true" signature="3501:3606" ph="/* Initialize the first objective without incrementing ... */" />
+                <marker date="1543353464430" expanded="true" signature="3647:4284" ph="{...}" />
+                <marker date="1543353464430" expanded="true" signature="3713:4274" ph="{...}" />
+                <marker date="1543353464430" expanded="true" signature="3777:4260" ph="{...}" />
+                <marker date="1543353464430" expanded="true" signature="3819:3983" ph="/* Debug.Log(_currentObjective); ... */" />
+                <marker date="1543353464430" expanded="true" signature="4331:5320" ph="{...}" />
+                <marker date="1543353464430" expanded="true" signature="4354:4452" ph="/* If the objective we are looking for next i ... */" />
+                <marker date="1543353464430" expanded="true" signature="4504:5310" ph="{...}" />
+                <marker date="1543353464430" expanded="true" signature="4535:4670" ph="/* Debug.Log(objective.Key + &quot; - &quot; + _currentObjective); ... */" />
+                <marker date="1543353464430" expanded="true" signature="4735:5296" ph="{...}" />
+                <marker date="1543353464430" expanded="true" signature="4774:4921" ph="/* add the available tasks from that new current objective ... */" />
+                <marker date="1543353464430" expanded="true" signature="4985:5278" ph="{...}" />
+                <marker date="1543353464430" expanded="true" signature="5043:5256" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OvrAvatarSDKManager.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Oculus/Avatar/Scripts/OvrAvatarSDKManager.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="301">
+              <caret line="71" selection-start-line="71" selection-end-line="71" />
+              <folding>
+                <marker date="1542233896000" expanded="false" signature="6:151" ph="..." />
+                <marker date="1542233896000" expanded="true" signature="395:9475" ph="{...}" />
+                <marker date="1542233896000" expanded="true" signature="812:1305" ph="{...}" />
+                <marker date="1542233896000" expanded="true" signature="830:1299" ph="{...}" />
+                <marker date="1542233896000" expanded="true" signature="875:1259" ph="{...}" />
+                <marker date="1542233896000" expanded="true" signature="1008:1245" ph="{...}" />
+                <marker date="1542233896000" expanded="true" signature="1336:2376" ph="{...}" />
+                <marker date="1542233896000" expanded="true" signature="1786:1988" ph="{...}" />
+                <marker date="1542233896000" expanded="true" signature="2398:2445" ph="{...}" />
+                <marker date="1542233896000" expanded="true" signature="2499:6903" ph="{...}" />
+                <marker date="1542233896000" expanded="true" signature="2590:2630" ph="{...}" />
+                <marker date="1542233896000" expanded="true" signature="2743:6852" ph="{...}" />
+                <marker date="1542233896000" expanded="true" signature="3274:4324" ph="{...}" />
+                <marker date="1542233896000" expanded="true" signature="4457:5210" ph="{...}" />
+                <marker date="1542233896000" expanded="true" signature="4541:4657" ph="{...}" />
+                <marker date="1542233896000" expanded="true" signature="4815:4989" ph="{...}" />
+                <marker date="1542233896000" expanded="true" signature="5018:5188" ph="{...}" />
+                <marker date="1542233896000" expanded="true" signature="5235:5756" ph="{...}" />
+                <marker date="1542233896000" expanded="true" signature="5358:5734" ph="{...}" />
+                <marker date="1542233896000" expanded="true" signature="5515:5628" ph="{...}" />
+                <marker date="1542233896000" expanded="true" signature="6158:6446" ph="{...}" />
+                <marker date="1542233896000" expanded="true" signature="6242:6349" ph="{...}" />
+                <marker date="1542233896000" expanded="true" signature="6471:6675" ph="{...}" />
+                <marker date="1542233896000" expanded="true" signature="7124:8170" ph="{...}" />
+                <marker date="1542233896000" expanded="true" signature="7328:8128" ph="{...}" />
+                <marker date="1542233896000" expanded="true" signature="8311:8742" ph="{...}" />
+                <marker date="1542233896000" expanded="true" signature="8440:8582" ph="{...}" />
+                <marker date="1542233896000" expanded="true" signature="8861:9218" ph="{...}" />
+                <marker date="1542233896000" expanded="true" signature="9005:9091" ph="{...}" />
+                <marker date="1542233896000" expanded="true" signature="9104:9212" ph="{...}" />
+                <marker date="1542233896000" expanded="true" signature="9271:9473" ph="{...}" />
+                <marker date="1542233896000" expanded="true" signature="9363:9409" ph="{...}" />
+                <marker date="1542233896000" expanded="true" signature="9422:9467" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -87,7 +191,13 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>Instantiate</find>
+      <find>Objectives</find>
+      <find>Debug</find>
+      <find>OvrInput</find>
     </findStrings>
+    <replaceStrings>
+      <replace>_objectives</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -98,14 +208,16 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CenterEyePointer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PointerController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SamplePlayerController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ObjectivesController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerProfile.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UpdateTimer.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/PointerController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CenterEyePointer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ObjectivesController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PointerController.cs" />
       </list>
     </option>
   </component>
@@ -119,17 +231,20 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1634" />
-    <option name="y" value="282" />
-    <option name="width" value="1934" />
-    <option name="height" value="1057" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1096" />
   </component>
   <component name="ProjectView">
     <navigator currentView="UnityExplorer" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="SolutionExplorer">
+        <option name="show-file-system" value="false" />
+        <option name="show-all-items" value="false" />
+      </pane>
       <pane id="UnityExplorer">
         <subPane>
           <expand>
@@ -142,20 +257,12 @@
               <item name="y2g3-project" type="483dac07:UnityExplorerNode$Root" />
               <item name="" type="1045f7f1:UnityExplorerNode" />
             </path>
-            <path>
-              <item name="" type="ad4990d8:FileSystemViewPaneBase$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="y2g3-project" type="483dac07:UnityExplorerNode$Root" />
-              <item name="" type="1045f7f1:UnityExplorerNode" />
-            </path>
           </expand>
           <select />
         </subPane>
         <option name="show-hidden-items" value="false" />
       </pane>
-      <pane id="SolutionExplorer">
-        <option name="show-file-system" value="false" />
-        <option name="show-all-items" value="false" />
-      </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -191,12 +298,13 @@
       <option name="presentableId" value="Default" />
       <updated>1542818326739</updated>
       <workItem from="1542818328423" duration="11000" />
-      <workItem from="1542818484091" duration="40798000" />
+      <workItem from="1542818484091" duration="41591000" />
+      <workItem from="1543343095245" duration="9688000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40809000" />
+    <option name="totallyTimeSpent" value="51290000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -208,25 +316,25 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1928" y="22" width="1936" height="1066" extended-state="6" />
+    <frame x="-8" y="22" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="7" />
-      <window_info active="true" anchor="right" id="Errors In Solution" order="3" visible="true" weight="0.20575693" />
+      <window_info anchor="right" id="Errors In Solution" order="3" visible="true" weight="0.20575693" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Unit Tests" order="10" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="13" />
       <window_info anchor="bottom" id="Run" order="3" />
+      <window_info anchor="bottom" id="Version Control" order="13" />
       <window_info anchor="bottom" id="Terminal" order="12" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49568966" visible="true" weight="0.25266525" />
-      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Unity" order="0" />
-      <window_info anchor="right" id="Database" order="4" weight="0.32995737" />
-      <window_info id="Structure" order="1" sideWeight="0.50431037" side_tool="true" visible="true" weight="0.25266525" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
       <window_info anchor="bottom" id="NuGet" order="14" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49353448" visible="true" weight="0.2553305" />
+      <window_info anchor="bottom" id="Unity" order="0" />
+      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
+      <window_info anchor="right" id="Database" order="4" weight="0.32995737" />
+      <window_info id="Structure" order="1" sideWeight="0.5064655" side_tool="true" visible="true" weight="0.2553305" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -243,7 +351,88 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/PointerController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="975">
+          <caret line="66" selection-start-line="66" selection-end-line="66" />
+          <folding>
+            <marker date="1543354218787" expanded="false" signature="6:40" ph="..." />
+            <marker date="1543354218787" expanded="true" signature="88:5729" ph="{...}" />
+            <marker date="1543354218787" expanded="true" signature="728:5640" ph="{...}" />
+            <marker date="1543354218787" expanded="true" signature="829:912" ph="/* We are looking with the controllerfor an object ... */" />
+            <marker date="1543354218787" expanded="true" signature="976:2928" ph="{...}" />
+            <marker date="1543354218787" expanded="true" signature="1143:1251" ph="/* Once it is found we change it to look as if it is hovered ... */" />
+            <marker date="1543354218787" expanded="true" signature="1401:1684" ph="/* If the player is not holding an interactable item and presses ... */" />
+            <marker date="1543354218787" expanded="true" signature="1813:2771" ph="{...}" />
+            <marker date="1543354218787" expanded="true" signature="2446:2665" ph="/* This gives a small delay before the player can return ... */" />
+            <marker date="1543354218787" expanded="true" signature="2784:2918" ph="/* If the player happens to hover over UI elements such as ... */" />
+            <marker date="1543354218787" expanded="true" signature="2991:3552" ph="{...}" />
+            <marker date="1543354218787" expanded="true" signature="3226:3298" ph="{...}" />
+            <marker date="1543354218787" expanded="true" signature="3311:3542" ph="/* If the player is holding an item and needs to return it, he must ... */" />
+            <marker date="1543354218787" expanded="true" signature="3636:4313" ph="{...}" />
+            <marker date="1543354218787" expanded="true" signature="3877:4303" ph="{...}" />
+            <marker date="1543354218787" expanded="true" signature="4326:4606" ph="{...}" />
+            <marker date="1543354218787" expanded="true" signature="4368:4440" ph="{...}" />
+            <marker date="1543354218787" expanded="true" signature="4506:4596" ph="{...}" />
+            <marker date="1543354218787" expanded="true" signature="4616:4784" ph="/* If an item is to be returned, then it will be tracked and ... */" />
+            <marker date="1543354218787" expanded="true" signature="4894:5006" ph="{...}" />
+            <marker date="1543354218787" expanded="true" signature="5024:5142" ph="/* This makes sure the item the player is holding is being placed ... */" />
+            <marker date="1543354218787" expanded="true" signature="5205:5634" ph="{...}" />
+            <marker date="1543354218787" expanded="true" signature="5682:5727" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/CenterEyePointer.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1170">
+          <caret line="78" column="68" selection-start-line="78" selection-start-column="68" selection-end-line="78" selection-end-column="68" />
+          <folding>
+            <marker date="1543349991169" expanded="true" signature="65:4495" ph="{...}" />
+            <marker date="1543349991169" expanded="true" signature="329:988" ph="{...}" />
+            <marker date="1543349991169" expanded="true" signature="459:982" ph="{...}" />
+            <marker date="1543349991169" expanded="true" signature="570:726" ph="/* We dont want the pointers for the angle of the teleporters to ... */" />
+            <marker date="1543349991169" expanded="true" signature="779:972" ph="{...}" />
+            <marker date="1543349991169" expanded="true" signature="842:958" ph="{...}" />
+            <marker date="1543349991169" expanded="true" signature="1048:3875" ph="{...}" />
+            <marker date="1543349991169" expanded="true" signature="1290:3679" ph="{...}" />
+            <marker date="1543349991169" expanded="true" signature="1313:1530" ph="/* We dont put it in the function because the else statement ... */" />
+            <marker date="1543349991169" expanded="true" signature="1632:1752" ph="{...}" />
+            <marker date="1543349991169" expanded="true" signature="1769:1951" ph="/* This teleports the player to the teleporter's position. ... */" />
+            <marker date="1543349991169" expanded="true" signature="2092:3669" ph="{...}" />
+            <marker date="1543349991169" expanded="true" signature="2512:2666" ph="/* This makes sure we target that child in the teleporter object ... */" />
+            <marker date="1543349991169" expanded="true" signature="2723:3057" ph="{...}" />
+            <marker date="1543349991169" expanded="true" signature="2794:3039" ph="{...}" />
+            <marker date="1543349991169" expanded="true" signature="3075:3226" ph="/* This makes sure he doesnt teleport in the ground itself ... */" />
+            <marker date="1543349991169" expanded="true" signature="3483:3604" ph="/* I'm rotating the pose too because it stays the same ... */" />
+            <marker date="1543349991169" expanded="true" signature="3692:3869" ph="{...}" />
+            <marker date="1543349991169" expanded="true" signature="3737:3859" ph="{...}" />
+            <marker date="1543349991169" expanded="true" signature="3881:4061" ph="/* This function makes sure we update the teleporter's visibility ... */" />
+            <marker date="1543349991169" expanded="true" signature="4137:4493" ph="{...}" />
+            <marker date="1543349991169" expanded="true" signature="4286:4487" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/PlayerProfile.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/SamplePlayerController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-675" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/UpdateTimer.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="21" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Oculus/Avatar/Scripts/OvrAvatarSDKManager.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="301">
@@ -286,103 +475,106 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/PlayerProfile.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/ObjectivesController.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/SamplePlayerController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-675">
+        <state relative-caret-position="455">
+          <caret line="70" column="65" selection-start-line="70" selection-start-column="65" selection-end-line="70" selection-end-column="65" />
           <folding>
-            <marker date="1542715049036" expanded="true" signature="0:948" ph="/* Copyright   :   Copyright 2017 Oculus VR, LLC. All Rights reserved. ... */" />
-            <marker date="1542715049036" expanded="false" signature="955:1001" ph="..." />
-            <marker date="1542715049036" expanded="true" signature="1003:1086" ph="/// Controls the player's movement in virtual reality. ... " />
-            <marker date="1542715049036" expanded="true" signature="1192:12848" ph="{...}" />
-            <marker date="1542715049036" expanded="true" signature="1846:2850" ph="{...}" />
-            <marker date="1542715049036" expanded="true" signature="2052:2147" ph="/* We use OVRCameraRig to set rotations to cameras, ... */" />
-            <marker date="1542715049036" expanded="true" signature="2260:2485" ph="{...}" />
-            <marker date="1542715049036" expanded="true" signature="2399:2475" ph="{...}" />
-            <marker date="1542715049036" expanded="true" signature="2879:5227" ph="{...}" />
-            <marker date="1542715049036" expanded="true" signature="2913:3444" ph="{...}" />
-            <marker date="1542715049036" expanded="true" signature="2961:3205" ph="{...}" />
-            <marker date="1542715049036" expanded="true" signature="3037:3190" ph="{...}" />
-            <marker date="1542715049036" expanded="true" signature="3483:3693" ph="{...}" />
-            <marker date="1542715049036" expanded="true" signature="4604:4801" ph="{...}" />
-            <marker date="1542715049036" expanded="true" signature="5247:5259" ph="{...}" />
-            <marker date="1542715049036" expanded="true" signature="5281:5293" ph="{...}" />
-            <marker date="1542715049036" expanded="true" signature="5337:5461" ph="{...}" />
-            <marker date="1542715049036" expanded="true" signature="5503:12117" ph="{...}" />
-            <marker date="1542715049036" expanded="true" signature="7016:7174" ph="{...}" />
-            <marker date="1542715049036" expanded="true" signature="7321:7699" ph="{...}" />
-            <marker date="1542715049036" expanded="true" signature="7398:7689" ph="{...}" />
-            <marker date="1542715049036" expanded="true" signature="7532:7675" ph="{...}" />
-            <marker date="1542715049036" expanded="true" signature="8224:8554" ph="{...}" />
-            <marker date="1542715049036" expanded="true" signature="8296:8544" ph="{...}" />
-            <marker date="1542715049036" expanded="true" signature="8567:8660" ph="{...}" />
-            <marker date="1542715049036" expanded="true" signature="8735:9193" ph="{...}" />
-            <marker date="1542715049036" expanded="true" signature="9083:9183" ph="{...}" />
-            <marker date="1542715049036" expanded="true" signature="9227:9607" ph="{...}" />
-            <marker date="1542715049036" expanded="true" signature="9353:9517" ph="{...}" />
-            <marker date="1542715049036" expanded="true" signature="9534:9597" ph="{...}" />
-            <marker date="1542715049036" expanded="true" signature="10107:10200" ph="{...}" />
-            <marker date="1542715049036" expanded="true" signature="10347:10676" ph="{...}" />
-            <marker date="1542715049036" expanded="true" signature="10420:10666" ph="{...}" />
-            <marker date="1542715049036" expanded="true" signature="10554:10652" ph="{...}" />
-            <marker date="1542715049036" expanded="true" signature="11288:11486" ph="{...}" />
-            <marker date="1542715049036" expanded="true" signature="12163:12234" ph="{...}" />
-            <marker date="1542715049036" expanded="true" signature="12285:12361" ph="{...}" />
-            <marker date="1542715049036" expanded="true" signature="12367:12477" ph="/// Resets the player look rotation when the device orientation is reset. ... " />
-            <marker date="1542715049036" expanded="true" signature="12516:12731" ph="{...}" />
-            <marker date="1542715049036" expanded="true" signature="12546:12725" ph="{...}" />
-            <marker date="1542715049036" expanded="true" signature="12749:12846" ph="{...}" />
+            <marker date="1543353464430" expanded="true" signature="6:119" ph="..." />
+            <marker date="1543353464430" expanded="true" signature="170:5328" ph="{...}" />
+            <marker date="1543353464430" expanded="true" signature="435:489" ph="/* Objective variables: Use Water Bottle ... */" />
+            <marker date="1543353464430" expanded="true" signature="602:654" ph="/* Objective variables: Use Teleporter ... */" />
+            <marker date="1543353464430" expanded="true" signature="756:1821" ph="{...}" />
+            <marker date="1543353464430" expanded="true" signature="887:1045" ph="{...}" />
+            <marker date="1543353464430" expanded="true" signature="1120:1181" ph="{...}" />
+            <marker date="1543353464430" expanded="true" signature="1239:1433" ph="{...}" />
+            <marker date="1543353464430" expanded="true" signature="1447:1637" ph="/* After we initialize the _objectives, we pick the ... */" />
+            <marker date="1543353464430" expanded="true" signature="1843:3007" ph="{...}" />
+            <marker date="1543353464430" expanded="true" signature="1853:2055" ph="/* If the player has completed the requirements to finish ... */" />
+            <marker date="1543353464430" expanded="true" signature="2145:2441" ph="{...}" />
+            <marker date="1543353464430" expanded="true" signature="2247:2361" ph="/* We update the current objective index so that ... */" />
+            <marker date="1543353464430" expanded="true" signature="2506:2605" ph="{...}" />
+            <marker date="1543353464430" expanded="true" signature="2672:2771" ph="{...}" />
+            <marker date="1543353464430" expanded="true" signature="2832:3001" ph="{...}" />
+            <marker date="1543353464430" expanded="true" signature="3043:5326" ph="{...}" />
+            <marker date="1543353464430" expanded="true" signature="3058:3228" ph="/* Reset the field values in the tablet's tasks so that ... */" />
+            <marker date="1543353464430" expanded="true" signature="3280:3489" ph="{...}" />
+            <marker date="1543353464430" expanded="true" signature="3501:3606" ph="/* Initialize the first objective without incrementing ... */" />
+            <marker date="1543353464430" expanded="true" signature="3647:4284" ph="{...}" />
+            <marker date="1543353464430" expanded="true" signature="3713:4274" ph="{...}" />
+            <marker date="1543353464430" expanded="true" signature="3777:4260" ph="{...}" />
+            <marker date="1543353464430" expanded="true" signature="3819:3983" ph="/* Debug.Log(_currentObjective); ... */" />
+            <marker date="1543353464430" expanded="true" signature="4331:5320" ph="{...}" />
+            <marker date="1543353464430" expanded="true" signature="4354:4452" ph="/* If the objective we are looking for next i ... */" />
+            <marker date="1543353464430" expanded="true" signature="4504:5310" ph="{...}" />
+            <marker date="1543353464430" expanded="true" signature="4535:4670" ph="/* Debug.Log(objective.Key + &quot; - &quot; + _currentObjective); ... */" />
+            <marker date="1543353464430" expanded="true" signature="4735:5296" ph="{...}" />
+            <marker date="1543353464430" expanded="true" signature="4774:4921" ph="/* add the available tasks from that new current objective ... */" />
+            <marker date="1543353464430" expanded="true" signature="4985:5278" ph="{...}" />
+            <marker date="1543353464430" expanded="true" signature="5043:5256" ph="{...}" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/UpdateTimer.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="21" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/PointerController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="66" selection-start-line="66" selection-end-line="66" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/CenterEyePointer.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="78" column="68" selection-start-line="78" selection-start-column="68" selection-end-line="78" selection-end-column="68" />
+        <state relative-caret-position="259">
+          <caret line="48" column="12" lean-forward="true" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
           <folding>
-            <marker date="1542919667975" expanded="true" signature="65:4409" ph="{...}" />
-            <marker date="1542919667975" expanded="true" signature="329:988" ph="{...}" />
-            <marker date="1542919667975" expanded="true" signature="459:982" ph="{...}" />
-            <marker date="1542919667975" expanded="true" signature="570:726" ph="/* We dont want the pointers for the angle of the teleporters to ... */" />
-            <marker date="1542919667975" expanded="true" signature="779:972" ph="{...}" />
-            <marker date="1542919667975" expanded="true" signature="842:958" ph="{...}" />
-            <marker date="1542919667975" expanded="true" signature="1048:3789" ph="{...}" />
-            <marker date="1542919667975" expanded="true" signature="1290:3593" ph="{...}" />
-            <marker date="1542919667975" expanded="true" signature="1313:1530" ph="/* We dont put it in the function because the else statement ... */" />
-            <marker date="1542919667975" expanded="true" signature="1632:1752" ph="{...}" />
-            <marker date="1542919667975" expanded="true" signature="1769:1942" ph="/* This teleports the player to the teleporter's. ... */" />
-            <marker date="1542919667975" expanded="true" signature="2083:3583" ph="{...}" />
-            <marker date="1542919667975" expanded="true" signature="2426:2580" ph="/* This makes sure we target that child in the teleporter object ... */" />
-            <marker date="1542919667975" expanded="true" signature="2637:2971" ph="{...}" />
-            <marker date="1542919667975" expanded="true" signature="2708:2953" ph="{...}" />
-            <marker date="1542919667975" expanded="true" signature="2989:3140" ph="/* This makes sure he doesnt teleport in the ground itself ... */" />
-            <marker date="1542919667975" expanded="true" signature="3397:3518" ph="/* I'm rotating the pose too because it stays the same ... */" />
-            <marker date="1542919667975" expanded="true" signature="3606:3783" ph="{...}" />
-            <marker date="1542919667975" expanded="true" signature="3651:3773" ph="{...}" />
-            <marker date="1542919667975" expanded="true" signature="3795:3975" ph="/* This function makes sure we update the teleporter's visibility ... */" />
-            <marker date="1542919667975" expanded="true" signature="4051:4407" ph="{...}" />
-            <marker date="1542919667975" expanded="true" signature="4200:4401" ph="{...}" />
+            <marker date="1543349991169" expanded="true" signature="65:4495" ph="{...}" />
+            <marker date="1543349991169" expanded="true" signature="329:988" ph="{...}" />
+            <marker date="1543349991169" expanded="true" signature="459:982" ph="{...}" />
+            <marker date="1543349991169" expanded="true" signature="570:726" ph="/* We dont want the pointers for the angle of the teleporters to ... */" />
+            <marker date="1543349991169" expanded="true" signature="779:972" ph="{...}" />
+            <marker date="1543349991169" expanded="true" signature="842:958" ph="{...}" />
+            <marker date="1543349991169" expanded="true" signature="1048:3875" ph="{...}" />
+            <marker date="1543349991169" expanded="true" signature="1290:3679" ph="{...}" />
+            <marker date="1543349991169" expanded="true" signature="1313:1530" ph="/* We dont put it in the function because the else statement ... */" />
+            <marker date="1543349991169" expanded="true" signature="1632:1752" ph="{...}" />
+            <marker date="1543349991169" expanded="true" signature="1769:1951" ph="/* This teleports the player to the teleporter's position. ... */" />
+            <marker date="1543349991169" expanded="true" signature="2092:3669" ph="{...}" />
+            <marker date="1543349991169" expanded="true" signature="2512:2666" ph="/* This makes sure we target that child in the teleporter object ... */" />
+            <marker date="1543349991169" expanded="true" signature="2723:3057" ph="{...}" />
+            <marker date="1543349991169" expanded="true" signature="2794:3039" ph="{...}" />
+            <marker date="1543349991169" expanded="true" signature="3075:3226" ph="/* This makes sure he doesnt teleport in the ground itself ... */" />
+            <marker date="1543349991169" expanded="true" signature="3483:3604" ph="/* I'm rotating the pose too because it stays the same ... */" />
+            <marker date="1543349991169" expanded="true" signature="3692:3869" ph="{...}" />
+            <marker date="1543349991169" expanded="true" signature="3737:3859" ph="{...}" />
+            <marker date="1543349991169" expanded="true" signature="3881:4061" ph="/* This function makes sure we update the teleporter's visibility ... */" />
+            <marker date="1543349991169" expanded="true" signature="4137:4493" ph="{...}" />
+            <marker date="1543349991169" expanded="true" signature="4286:4487" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/PointerController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="589">
+          <caret line="68" column="60" lean-forward="true" selection-start-line="68" selection-start-column="60" selection-end-line="68" selection-end-column="60" />
+          <folding>
+            <marker date="1543354218787" expanded="false" signature="6:40" ph="..." />
+            <marker date="1543354218787" expanded="true" signature="88:5729" ph="{...}" />
+            <marker date="1543354218787" expanded="true" signature="728:5640" ph="{...}" />
+            <marker date="1543354218787" expanded="true" signature="829:912" ph="/* We are looking with the controllerfor an object ... */" />
+            <marker date="1543354218787" expanded="true" signature="976:2928" ph="{...}" />
+            <marker date="1543354218787" expanded="true" signature="1143:1251" ph="/* Once it is found we change it to look as if it is hovered ... */" />
+            <marker date="1543354218787" expanded="true" signature="1401:1684" ph="/* If the player is not holding an interactable item and presses ... */" />
+            <marker date="1543354218787" expanded="true" signature="1813:2771" ph="{...}" />
+            <marker date="1543354218787" expanded="true" signature="2446:2665" ph="/* This gives a small delay before the player can return ... */" />
+            <marker date="1543354218787" expanded="true" signature="2784:2918" ph="/* If the player happens to hover over UI elements such as ... */" />
+            <marker date="1543354218787" expanded="true" signature="2991:3552" ph="{...}" />
+            <marker date="1543354218787" expanded="true" signature="3226:3298" ph="{...}" />
+            <marker date="1543354218787" expanded="true" signature="3311:3542" ph="/* If the player is holding an item and needs to return it, he must ... */" />
+            <marker date="1543354218787" expanded="true" signature="3636:4313" ph="{...}" />
+            <marker date="1543354218787" expanded="true" signature="3877:4303" ph="{...}" />
+            <marker date="1543354218787" expanded="true" signature="4326:4606" ph="{...}" />
+            <marker date="1543354218787" expanded="true" signature="4368:4440" ph="{...}" />
+            <marker date="1543354218787" expanded="true" signature="4506:4596" ph="{...}" />
+            <marker date="1543354218787" expanded="true" signature="4616:4784" ph="/* If an item is to be returned, then it will be tracked and ... */" />
+            <marker date="1543354218787" expanded="true" signature="4894:5006" ph="{...}" />
+            <marker date="1543354218787" expanded="true" signature="5024:5142" ph="/* This makes sure the item the player is holding is being placed ... */" />
+            <marker date="1543354218787" expanded="true" signature="5205:5634" ph="{...}" />
+            <marker date="1543354218787" expanded="true" signature="5682:5727" ph="{...}" />
           </folding>
         </state>
       </provider>

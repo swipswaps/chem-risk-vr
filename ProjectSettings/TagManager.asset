@@ -15,6 +15,7 @@ TagManager:
   - Return Item
   - Direction
   - Teleporter
+  - Objective Title
   layers:
   - Default
   - TransparentFX
