@@ -38,10 +38,10 @@ public class ObjectivesController : MonoBehaviour
             });
         _objectives.Add("Force him",
             new[] {
-                "Blindfold and lock him up!",
-                "Love him with gentle care",
-                "Let me escape on purpose",
-                "Get completely dominated!"
+                "Blindfold and lock him up <3",
+                "Love him with <3 gentle <3 care,",
+                "Let him escape on purpose,",
+                "Get completely dominated <3"
             });
 		
         // After we initialize the _objectives, we pick the
