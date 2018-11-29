@@ -14,6 +14,7 @@ public class PointerController : MonoBehaviour
     public LayerMask CatchItemLayer;
     public LayerMask CatchButtonLayer;
     public LayerMask ReturnObjectLayer;
+    public GameObject Point;
 
     private Transform _tempPosition = null;
     private bool _canReturnObject = false;
@@ -24,7 +25,25 @@ public class PointerController : MonoBehaviour
     void Update () {
         Ray ray = new Ray(transform.position, transform.forward);
         RaycastHit hit;
+        
+        Ray pointRay = new Ray(transform.position, transform.forward);
+        RaycastHit pointHit;
 
+        if (Physics.Raycast(pointRay, out pointHit, 100))
+        {
+            Point.SetActive(true);
+            // We want to visualize the point of impact where the
+            // player is pointing it, so he knows where he is clicking.
+            var pointPosition = Point.transform.position;
+            pointPosition = pointHit.point;
+            Point.transform.position = pointPosition;
+        }
+        else
+        {
+            // When nothing is being pointed at, disable the point of the pointer.
+            Point.SetActive(false);
+        }
+        
         // We are looking with the controllerfor an object
         // that is of layer item
         if (Physics.Raycast(ray, out hit, 100, CatchItemLayer))

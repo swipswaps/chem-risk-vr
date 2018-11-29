@@ -809,13 +809,13 @@ PlayerSettings:
     Game_Performance: 0
     Hub: 0
     Purchasing: 0
-    UNet: 0
+    UNet: 1
     Unity_Ads: 0
   facebookSdkVersion: 7.9.1
   apiCompatibilityLevel: 2
-  cloudProjectId: 
-  projectName: New Unity Project 4
-  organizationId: 
+  cloudProjectId: f732d74d-54f4-4e12-8c6d-47f696686427
+  projectName: y2g3-vr-projects
+  organizationId: vasil-ivanov
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
