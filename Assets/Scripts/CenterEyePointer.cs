@@ -53,7 +53,7 @@ public class CenterEyePointer : MonoBehaviour
             if ((OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger)) ||
                 _isAlphaIncreased && Input.GetKeyDown(KeyCode.T))
             {
-                ObjectivesController.UsedTeleporter = true;
+                ObjectivesSelector.UsedTeleporter = true;
                 
                 var newPlayerPosition = Player.transform.position;
                 var newPlayerRotation = Player.transform.rotation;

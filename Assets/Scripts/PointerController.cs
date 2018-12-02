@@ -11,9 +11,7 @@ public class PointerController : MonoBehaviour
     public Material DefaultItemMaterial;
     public Material HoverableObjectMaterial;
     private MeshRenderer _meshRenderer;
-    private Image _image;
     public LayerMask CatchItemLayer;
-    public LayerMask CatchButtonLayer;
     public LayerMask ReturnObjectLayer;
     public GameObject Point;
 
@@ -44,30 +42,6 @@ public class PointerController : MonoBehaviour
             // When nothing is being pointed at, disable the point of the pointer.
             Point.SetActive(false);
         }
-        
-        // If the player happens to hover over UI elements such as
-        // buttons, then they will be updated here on different events.
-        if (Physics.Raycast(ray, out hit, 100, CatchButtonLayer))
-        {
-            var lookedAtButton = hit.collider.gameObject;
-            _image = lookedAtButton.GetComponent<Image>();
-            _image.color = Color.red;
-
-            if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger))
-            {
-                _image.color = Color.green;
-            }
-            // If the player is holding an item and needs to return it, he must
-            // be hovering over the original indicator for that item and press the
-            // controller button to return the item and remove it from his hand.
-        }
-        else
-        {
-            if (_image != null)
-            {
-                _image.color = Color.white;
-            }
-        }
 
         if (_isHoldingItem)
         {
@@ -84,7 +58,7 @@ public class PointerController : MonoBehaviour
                     _lookedAtObject.layer = 18;
                     _meshRenderer.material = DefaultItemMaterial;
 
-                    if (_lookedAtObject.name == "Water") { ObjectivesController.PlacedBackWaterBottle = true; }
+                    if (_lookedAtObject.name == "Water") { ObjectivesSelector.PlacedBackWaterBottle = true; }
                     Destroy(_currentlyHoldingObject);
                     
                     // This gives a small delay before the player can return
@@ -115,7 +89,7 @@ public class PointerController : MonoBehaviour
                 if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) ||
                     Input.GetKeyDown(KeyCode.K))
                 {
-                    if (_lookedAtObject.name == "Water") { ObjectivesController.PickedUpWaterBottle = true; }
+                    if (_lookedAtObject.name == "Water") { ObjectivesSelector.PickedUpWaterBottle = true; }
                     
                     _currentlyHoldingObject = Instantiate(_lookedAtObject, _parentOfTemporaryObject.transform);
                     _currentlyHoldingObject.GetComponent<MeshRenderer>().material = DefaultItemMaterial;
