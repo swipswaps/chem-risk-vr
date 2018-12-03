@@ -6,6 +6,7 @@ public class PointerController : MonoBehaviour
     //public GameObject Timer;
     private GameObject _lookedAtObject = null;
     private GameObject _currentlyHoldingObject = null;
+    public static GameObject CurrentlyHoldingObjectForBeakers;
     private Transform _parentOfTemporaryObject = null;
     public Material DefaultReturnItemMaterial;
     public Material DefaultItemMaterial;
@@ -18,7 +19,7 @@ public class PointerController : MonoBehaviour
     private Transform _tempPosition = null;
     private static bool _canReturnObject = false;
 
-    private static bool _isHoldingItem = false;
+    public static bool IsHoldingItem = false;
 
     // Update is called once per frame
     void Update () {
@@ -43,7 +44,7 @@ public class PointerController : MonoBehaviour
             Point.SetActive(false);
         }
 
-        if (_isHoldingItem)
+        if (IsHoldingItem)
         {
             // If the player is holding an item and needs to return it, he must
             // be hovering over the original indicator for that item and press the
@@ -89,11 +90,13 @@ public class PointerController : MonoBehaviour
                 if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) ||
                     Input.GetKeyDown(KeyCode.K))
                 {
-                    if (_lookedAtObject.name == "Water") { ObjectivesSelector.PickedUpWaterBottle = true; }
+                    if (_lookedAtObject.name == "Water" ||
+                        _lookedAtObject.name == "Red Substance") { ObjectivesSelector.PickedUpWaterBottle = true; }
                     
                     _currentlyHoldingObject = Instantiate(_lookedAtObject, _parentOfTemporaryObject.transform);
                     _currentlyHoldingObject.GetComponent<MeshRenderer>().material = DefaultItemMaterial;
-                    _currentlyHoldingObject.GetComponent<CapsuleCollider>().enabled = false;
+                    _currentlyHoldingObject.layer = 22;
+                    CurrentlyHoldingObjectForBeakers = _currentlyHoldingObject;
                 
                     _meshRenderer.material = DefaultReturnItemMaterial;
                     _lookedAtObject.layer = 21;
@@ -104,7 +107,7 @@ public class PointerController : MonoBehaviour
             }
             else
             {
-                if (_meshRenderer != null && _isHoldingItem == false)
+                if (_meshRenderer != null && IsHoldingItem == false)
                 {
                     _meshRenderer.material = DefaultItemMaterial;
                 }
@@ -122,7 +125,7 @@ public class PointerController : MonoBehaviour
         
         // This makes sure the item the player is holding is being placed
         // at the spot where the controller hand is.
-        if (_isHoldingItem && _currentlyHoldingObject != null)
+        if (IsHoldingItem && _currentlyHoldingObject != null)
         {
             var newItemPosition = _currentlyHoldingObject.transform.position;
             newItemPosition = transform.position;
@@ -136,6 +139,6 @@ public class PointerController : MonoBehaviour
 
     private void EnableReturningObject()
     {
-        _isHoldingItem = !_isHoldingItem;
+        IsHoldingItem = !IsHoldingItem;
     }
 }

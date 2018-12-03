@@ -485,6 +485,7 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="BeakerController.cs" t="Include" />
           <e p="CenterEyePointer.cs" t="Include" />
           <e p="CrosshairManager.cs" t="Include" />
           <e p="ObjectivesController.cs" t="Include" />

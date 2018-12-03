@@ -40,12 +40,12 @@ public class ObjectivesSelector : MonoBehaviour
 			{
 				"Index click on a teleporter"
 			});
-		_objectives.Add("Force Him",
+		_objectives.Add("Buy Salmon Sandwich",
 			new[] {
-				"Blindfold and lock him up <3",
-				"Love him with <3 gentle <3 care,",
-				"Let him escape on purpose,",
-				"Get completely dominated <3"
+				"Take the sandwich",
+				"Eat the sandwich",
+				"YYYYYYYYYYYYYYYYYYY",
+				"EEEEEEEEEESSSSSSSSSS"
 			});
 		
 		// After we initialize the _objectives, we pick the
@@ -132,7 +132,7 @@ public class ObjectivesSelector : MonoBehaviour
 					} else if (lookedAtButton.name == "Use Teleporter")
 					{
 						SelectObjectiveUseTeleporter();
-					} else if (lookedAtButton.name == "Force Him")
+					} else if (lookedAtButton.name == "Buy Salmon Sandwich")
 					{
 						SelectObjectiveForceHim();
 					}
@@ -168,7 +168,7 @@ public class ObjectivesSelector : MonoBehaviour
 
 	public void SelectObjectiveForceHim()
 	{
-		CurrentObjective = "Force Him";
+		CurrentObjective = "Buy Salmon Sandwich";
 		GoNextObjective();
 	}
 	
