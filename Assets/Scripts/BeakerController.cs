@@ -8,22 +8,21 @@ public class BeakerController : MonoBehaviour
 
 	public GameObject WaterSubstance;
 	public GameObject RedSubstance;
+
+	private bool _isObjectOverBeaker = false;
 	
 	void Update () {
 		if (PointerController.IsHoldingItem)
 		{
-			Ray rayBeaker = new Ray(transform.position, Vector3.up);
-			RaycastHit hitBeaker;
-			
 			GameObject heldObject = PointerController.CurrentlyHoldingObjectForBeakers;
-
-			Debug.DrawRay(transform.position, Vector3.up);
-			Debug.DrawRay(heldObject.transform.position, Vector3.up);
-
 			Color heldObjectColor;
 				
 			// If the beater is below the object being held...
-			if (Physics.Raycast(rayBeaker, out hitBeaker, 10, HeldLayerMask) &&
+			if (_isObjectOverBeaker)
+			{
+				Debug.Log("RISE");
+			}
+			if (_isObjectOverBeaker &&
 			    // Making sure the player has the item facing down when pouring.
 			    (heldObject.transform.eulerAngles.x > 240 && heldObject.transform.eulerAngles.x < 300 ||
 			    heldObject.transform.eulerAngles.x > 80 && heldObject.transform.eulerAngles.x < 90))
@@ -63,6 +62,24 @@ public class BeakerController : MonoBehaviour
 			}
 			
 			heldObject.GetComponent<MeshRenderer>().material.color = heldObjectColor;
+		}
+	}
+
+	private void OnTriggerStay(Collider other)
+	{
+		if (other.gameObject.layer == 22)
+		{
+			_isObjectOverBeaker = true;
+			Debug.Log("ENTER");
+		}
+	}
+
+	private void OnTriggerExit(Collider other)
+	{
+		if (other.gameObject.layer == 22)
+		{
+			_isObjectOverBeaker = false;
+			Debug.Log("LEAVE");
 		}
 	}
 }

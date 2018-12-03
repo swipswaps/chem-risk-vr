@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="83d7650d-0c48-4245-a8f0-a9ff168eb770" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.y2g3-project/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.y2g3-project/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.y2g3-project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.y2g3-project/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ObjectivesSelector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ObjectivesSelector.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PointerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PointerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BeakerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BeakerController.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -38,30 +35,30 @@
             <state relative-caret-position="873">
               <caret line="135" column="73" selection-start-line="135" selection-start-column="73" selection-end-line="135" selection-end-column="73" />
               <folding>
-                <marker date="1543866134645" expanded="false" signature="6:40" ph="..." />
-                <marker date="1543866134645" expanded="true" signature="88:6128" ph="{...}" />
-                <marker date="1543866134645" expanded="true" signature="822:6032" ph="{...}" />
-                <marker date="1543866134645" expanded="true" signature="1081:1430" ph="{...}" />
-                <marker date="1543866134645" expanded="true" signature="1139:1264" ph="/* We want to visualize the point of impact where the ... */" />
-                <marker date="1543866134645" expanded="true" signature="1443:1582" ph="{...}" />
-                <marker date="1543866134645" expanded="true" signature="1610:2830" ph="{...}" />
-                <marker date="1543866134645" expanded="true" signature="1633:1864" ph="/* If the player is holding an item and needs to return it, he must ... */" />
-                <marker date="1543866134645" expanded="true" signature="1935:2820" ph="{...}" />
-                <marker date="1543866134645" expanded="true" signature="2109:2806" ph="{...}" />
-                <marker date="1543866134645" expanded="true" signature="2502:2729" ph="/* This gives a small delay before the player can return ... */" />
-                <marker date="1543866134645" expanded="true" signature="2843:4991" ph="{...}" />
-                <marker date="1543866134645" expanded="true" signature="2866:2953" ph="/* We are looking with the controllerfor an object ... */" />
-                <marker date="1543866134645" expanded="true" signature="3021:4765" ph="{...}" />
-                <marker date="1543866134645" expanded="true" signature="3201:3313" ph="/* Once it is found we change it to look as if it is hovered ... */" />
-                <marker date="1543866134645" expanded="true" signature="3491:3786" ph="/* If the player is not holding an interactable item and presses ... */" />
-                <marker date="1543866134645" expanded="true" signature="3912:4751" ph="{...}" />
-                <marker date="1543866134645" expanded="true" signature="4782:4981" ph="{...}" />
-                <marker date="1543866134645" expanded="true" signature="4865:4967" ph="{...}" />
-                <marker date="1543866134645" expanded="true" signature="5009:5177" ph="/* If an item is to be returned, then it will be tracked and ... */" />
-                <marker date="1543866134645" expanded="true" signature="5287:5399" ph="{...}" />
-                <marker date="1543866134645" expanded="true" signature="5417:5535" ph="/* This makes sure the item the player is holding is being placed ... */" />
-                <marker date="1543866134645" expanded="true" signature="5597:6026" ph="{...}" />
-                <marker date="1543866134645" expanded="true" signature="6074:6126" ph="{...}" />
+                <marker date="1543875954331" expanded="false" signature="6:40" ph="..." />
+                <marker date="1543875954331" expanded="true" signature="88:6128" ph="{...}" />
+                <marker date="1543875954331" expanded="true" signature="822:6032" ph="{...}" />
+                <marker date="1543875954331" expanded="true" signature="1081:1430" ph="{...}" />
+                <marker date="1543875954331" expanded="true" signature="1139:1264" ph="/* We want to visualize the point of impact where the ... */" />
+                <marker date="1543875954331" expanded="true" signature="1443:1582" ph="{...}" />
+                <marker date="1543875954331" expanded="true" signature="1610:2830" ph="{...}" />
+                <marker date="1543875954331" expanded="true" signature="1633:1864" ph="/* If the player is holding an item and needs to return it, he must ... */" />
+                <marker date="1543875954331" expanded="true" signature="1935:2820" ph="{...}" />
+                <marker date="1543875954331" expanded="true" signature="2109:2806" ph="{...}" />
+                <marker date="1543875954331" expanded="true" signature="2502:2729" ph="/* This gives a small delay before the player can return ... */" />
+                <marker date="1543875954331" expanded="true" signature="2843:4991" ph="{...}" />
+                <marker date="1543875954331" expanded="true" signature="2866:2953" ph="/* We are looking with the controllerfor an object ... */" />
+                <marker date="1543875954331" expanded="true" signature="3021:4765" ph="{...}" />
+                <marker date="1543875954331" expanded="true" signature="3201:3313" ph="/* Once it is found we change it to look as if it is hovered ... */" />
+                <marker date="1543875954331" expanded="true" signature="3491:3786" ph="/* If the player is not holding an interactable item and presses ... */" />
+                <marker date="1543875954331" expanded="true" signature="3912:4751" ph="{...}" />
+                <marker date="1543875954331" expanded="true" signature="4782:4981" ph="{...}" />
+                <marker date="1543875954331" expanded="true" signature="4865:4967" ph="{...}" />
+                <marker date="1543875954331" expanded="true" signature="5009:5177" ph="/* If an item is to be returned, then it will be tracked and ... */" />
+                <marker date="1543875954331" expanded="true" signature="5287:5399" ph="{...}" />
+                <marker date="1543875954331" expanded="true" signature="5417:5535" ph="/* This makes sure the item the player is holding is being placed ... */" />
+                <marker date="1543875954331" expanded="true" signature="5597:6026" ph="{...}" />
+                <marker date="1543875954331" expanded="true" signature="6074:6126" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -88,8 +85,54 @@
       <file leaf-file-name="ObjectivesSelector.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/ObjectivesSelector.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
+            <state relative-caret-position="63">
               <caret line="113" column="48" selection-start-line="113" selection-start-column="48" selection-end-line="113" selection-end-column="48" />
+              <folding>
+                <marker date="1543826334428" expanded="false" signature="6:119" ph="..." />
+                <marker date="1543826334428" expanded="true" signature="168:7227" ph="{...}" />
+                <marker date="1543826334428" expanded="true" signature="533:584" ph="/* Objective variables: Use Water Bottle ... */" />
+                <marker date="1543826334428" expanded="true" signature="688:737" ph="/* Objective variables: Use Teleporter ... */" />
+                <marker date="1543826334428" expanded="true" signature="804:1636" ph="{...}" />
+                <marker date="1543826334428" expanded="true" signature="911:1036" ph="{...}" />
+                <marker date="1543826334428" expanded="true" signature="1087:1127" ph="{...}" />
+                <marker date="1543826334428" expanded="true" signature="1180:1289" ph="{...}" />
+                <marker date="1543826334428" expanded="true" signature="1297:1475" ph="/* After we initialize the _objectives, we pick the ... */" />
+                <marker date="1543826334428" expanded="true" signature="1654:4771" ph="{...}" />
+                <marker date="1543826334428" expanded="true" signature="1658:1816" ph="/* We want the player to select a new mission on if the ... */" />
+                <marker date="1543826334428" expanded="true" signature="1848:1966" ph="{...}" />
+                <marker date="1543826334428" expanded="true" signature="1896:1962" ph="{...}" />
+                <marker date="1543826334428" expanded="true" signature="2001:2118" ph="{...}" />
+                <marker date="1543826334428" expanded="true" signature="2049:2114" ph="{...}" />
+                <marker date="1543826334428" expanded="true" signature="2124:2314" ph="/* If the player has completed the requirements to finish ... */" />
+                <marker date="1543826334428" expanded="true" signature="2408:2867" ph="{...}" />
+                <marker date="1543826334428" expanded="true" signature="2486:2811" ph="/* We update the current objective index so that ... */" />
+                <marker date="1543826334428" expanded="true" signature="2936:3014" ph="{...}" />
+                <marker date="1543826334428" expanded="true" signature="3085:3163" ph="{...}" />
+                <marker date="1543826334428" expanded="true" signature="3226:3388" ph="{...}" />
+                <marker date="1543826334428" expanded="true" signature="3332:3384" ph="/* _currentObjectiveNumber++; ... */" />
+                <marker date="1543826334428" expanded="true" signature="3491:3615" ph="/* If the player happens to hover over UI elements such as ... */" />
+                <marker date="1543826334428" expanded="true" signature="3675:4688" ph="{...}" />
+                <marker date="1543826334428" expanded="true" signature="3840:4467" ph="{...}" />
+                <marker date="1543826334428" expanded="true" signature="4029:4462" ph="{...}" />
+                <marker date="1543826334428" expanded="true" signature="4181:4252" ph="{...}" />
+                <marker date="1543826334428" expanded="true" signature="4302:4354" ph="{...}" />
+                <marker date="1543826334428" expanded="true" signature="4409:4456" ph="{...}" />
+                <marker date="1543826334428" expanded="true" signature="4471:4684" ph="/* If the player is holding an item and needs to return it, he must ... */" />
+                <marker date="1543826334428" expanded="true" signature="4695:4768" ph="{...}" />
+                <marker date="1543826334428" expanded="true" signature="4722:4764" ph="{...}" />
+                <marker date="1543826334428" expanded="true" signature="4817:4949" ph="{...}" />
+                <marker date="1543826334428" expanded="true" signature="4994:5086" ph="{...}" />
+                <marker date="1543826334428" expanded="true" signature="5126:5197" ph="{...}" />
+                <marker date="1543826334428" expanded="true" signature="5233:7225" ph="{...}" />
+                <marker date="1543826334428" expanded="true" signature="5291:5458" ph="{...}" />
+                <marker date="1543826334428" expanded="true" signature="5638:5916" ph="/* This will be useful if we want to give the player one objective ... */" />
+                <marker date="1543826334428" expanded="true" signature="5922:6670" ph="/* Initialize the first objective without incrementing ... */" />
+                <marker date="1543826334428" expanded="true" signature="6723:7219" ph="{...}" />
+                <marker date="1543826334428" expanded="true" signature="6784:7209" ph="{...}" />
+                <marker date="1543826334428" expanded="true" signature="6863:7195" ph="{...}" />
+                <marker date="1543826334428" expanded="true" signature="6945:7177" ph="{...}" />
+                <marker date="1543826334428" expanded="true" signature="7003:7155" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -97,22 +140,27 @@
       <file leaf-file-name="BeakerController.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/BeakerController.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="51" column="65" selection-start-line="51" selection-start-column="65" selection-end-line="51" selection-end-column="65" />
+            <state relative-caret-position="783">
+              <caret line="81" column="28" selection-start-line="81" selection-start-column="28" selection-end-line="81" selection-end-column="28" />
               <folding>
-                <marker date="1543865544426" expanded="false" signature="6:78" ph="..." />
-                <marker date="1543865544426" expanded="true" signature="125:2426" ph="{...}" />
-                <marker date="1543865544426" expanded="true" signature="248:2424" ph="{...}" />
-                <marker date="1543865544426" expanded="true" signature="288:2421" ph="{...}" />
-                <marker date="1543865544426" expanded="true" signature="989:2213" ph="{...}" />
-                <marker date="1543865544426" expanded="true" signature="999:1110" ph="/* This helps signal the player that he can now spill the ... */" />
-                <marker date="1543865544426" expanded="true" signature="1320:2208" ph="{...}" />
-                <marker date="1543865544426" expanded="true" signature="1332:1435" ph="/* We instantiate the substance that the player is holding and we place it ... */" />
-                <marker date="1543865544426" expanded="true" signature="1516:1794" ph="{...}" />
-                <marker date="1543865544426" expanded="true" signature="1617:1747" ph="/* We also have to rename the current game object from empty because ... */" />
-                <marker date="1543865544426" expanded="true" signature="1884:2202" ph="{...}" />
-                <marker date="1543865544426" expanded="true" signature="1898:2002" ph="/* We destroy the existing water and replace it with the ... */" />
-                <marker date="1543865544426" expanded="true" signature="2221:2336" ph="{...}" />
+                <marker date="1543875546325" expanded="false" signature="6:78" ph="..." />
+                <marker date="1543875546325" expanded="true" signature="125:2587" ph="{...}" />
+                <marker date="1543875546325" expanded="true" signature="292:2286" ph="{...}" />
+                <marker date="1543875546325" expanded="true" signature="332:2283" ph="{...}" />
+                <marker date="1543875546325" expanded="true" signature="528:561" ph="{...}" />
+                <marker date="1543875546325" expanded="true" signature="851:2075" ph="{...}" />
+                <marker date="1543875546325" expanded="true" signature="861:972" ph="/* This helps signal the player that he can now spill the ... */" />
+                <marker date="1543875546325" expanded="true" signature="1182:2070" ph="{...}" />
+                <marker date="1543875546325" expanded="true" signature="1194:1297" ph="/* We instantiate the substance that the player is holding and we place it ... */" />
+                <marker date="1543875546325" expanded="true" signature="1378:1656" ph="{...}" />
+                <marker date="1543875546325" expanded="true" signature="1479:1609" ph="/* We also have to rename the current game object from empty because ... */" />
+                <marker date="1543875546325" expanded="true" signature="1746:2064" ph="{...}" />
+                <marker date="1543875546325" expanded="true" signature="1760:1864" ph="/* We destroy the existing water and replace it with the ... */" />
+                <marker date="1543875546325" expanded="true" signature="2083:2198" ph="{...}" />
+                <marker date="1543875546325" expanded="true" signature="2331:2435" ph="{...}" />
+                <marker date="1543875546325" expanded="true" signature="2370:2432" ph="{...}" />
+                <marker date="1543875546325" expanded="true" signature="2480:2585" ph="{...}" />
+                <marker date="1543875546325" expanded="true" signature="2519:2582" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -188,7 +236,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="22" />
     <option name="width" value="1936" />
@@ -264,12 +312,12 @@
       <workItem from="1542818484091" duration="41591000" />
       <workItem from="1543343095245" duration="9701000" />
       <workItem from="1543492638201" duration="2352000" />
-      <workItem from="1543745912018" duration="18851000" />
+      <workItem from="1543745912018" duration="21576000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82402000" />
+    <option name="totallyTimeSpent" value="85127000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -293,7 +341,7 @@
       <window_info anchor="bottom" id="Run" order="3" />
       <window_info anchor="bottom" id="Terminal" order="12" />
       <window_info anchor="bottom" id="NuGet" order="14" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4698276" visible="true" weight="0.20682302" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4698276" visible="true" weight="0.20682302" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Unity" order="0" />
       <window_info anchor="right" id="Database" order="4" weight="0.32995737" />
@@ -327,30 +375,30 @@
         <state relative-caret-position="1815">
           <caret line="122" column="16" selection-start-line="122" selection-start-column="16" selection-end-line="122" selection-end-column="16" />
           <folding>
-            <marker date="1543866134645" expanded="false" signature="6:40" ph="..." />
-            <marker date="1543866134645" expanded="true" signature="88:6128" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="822:6032" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="1081:1430" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="1139:1264" ph="/* We want to visualize the point of impact where the ... */" />
-            <marker date="1543866134645" expanded="true" signature="1443:1582" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="1610:2830" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="1633:1864" ph="/* If the player is holding an item and needs to return it, he must ... */" />
-            <marker date="1543866134645" expanded="true" signature="1935:2820" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="2109:2806" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="2502:2729" ph="/* This gives a small delay before the player can return ... */" />
-            <marker date="1543866134645" expanded="true" signature="2843:4991" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="2866:2953" ph="/* We are looking with the controllerfor an object ... */" />
-            <marker date="1543866134645" expanded="true" signature="3021:4765" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="3201:3313" ph="/* Once it is found we change it to look as if it is hovered ... */" />
-            <marker date="1543866134645" expanded="true" signature="3491:3786" ph="/* If the player is not holding an interactable item and presses ... */" />
-            <marker date="1543866134645" expanded="true" signature="3912:4751" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="4782:4981" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="4865:4967" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="5009:5177" ph="/* If an item is to be returned, then it will be tracked and ... */" />
-            <marker date="1543866134645" expanded="true" signature="5287:5399" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="5417:5535" ph="/* This makes sure the item the player is holding is being placed ... */" />
-            <marker date="1543866134645" expanded="true" signature="5597:6026" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="6074:6126" ph="{...}" />
+            <marker date="1543875954331" expanded="false" signature="6:40" ph="..." />
+            <marker date="1543875954331" expanded="true" signature="88:6128" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="822:6032" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="1081:1430" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="1139:1264" ph="/* We want to visualize the point of impact where the ... */" />
+            <marker date="1543875954331" expanded="true" signature="1443:1582" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="1610:2830" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="1633:1864" ph="/* If the player is holding an item and needs to return it, he must ... */" />
+            <marker date="1543875954331" expanded="true" signature="1935:2820" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="2109:2806" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="2502:2729" ph="/* This gives a small delay before the player can return ... */" />
+            <marker date="1543875954331" expanded="true" signature="2843:4991" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="2866:2953" ph="/* We are looking with the controllerfor an object ... */" />
+            <marker date="1543875954331" expanded="true" signature="3021:4765" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="3201:3313" ph="/* Once it is found we change it to look as if it is hovered ... */" />
+            <marker date="1543875954331" expanded="true" signature="3491:3786" ph="/* If the player is not holding an interactable item and presses ... */" />
+            <marker date="1543875954331" expanded="true" signature="3912:4751" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="4782:4981" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="4865:4967" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="5009:5177" ph="/* If an item is to be returned, then it will be tracked and ... */" />
+            <marker date="1543875954331" expanded="true" signature="5287:5399" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="5417:5535" ph="/* This makes sure the item the player is holding is being placed ... */" />
+            <marker date="1543875954331" expanded="true" signature="5597:6026" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="6074:6126" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -424,30 +472,30 @@
         <state relative-caret-position="1005">
           <caret line="68" column="60" lean-forward="true" selection-start-line="68" selection-start-column="60" selection-end-line="68" selection-end-column="60" />
           <folding>
-            <marker date="1543866134645" expanded="false" signature="6:40" ph="..." />
-            <marker date="1543866134645" expanded="true" signature="88:6128" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="822:6032" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="1081:1430" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="1139:1264" ph="/* We want to visualize the point of impact where the ... */" />
-            <marker date="1543866134645" expanded="true" signature="1443:1582" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="1610:2830" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="1633:1864" ph="/* If the player is holding an item and needs to return it, he must ... */" />
-            <marker date="1543866134645" expanded="true" signature="1935:2820" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="2109:2806" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="2502:2729" ph="/* This gives a small delay before the player can return ... */" />
-            <marker date="1543866134645" expanded="true" signature="2843:4991" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="2866:2953" ph="/* We are looking with the controllerfor an object ... */" />
-            <marker date="1543866134645" expanded="true" signature="3021:4765" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="3201:3313" ph="/* Once it is found we change it to look as if it is hovered ... */" />
-            <marker date="1543866134645" expanded="true" signature="3491:3786" ph="/* If the player is not holding an interactable item and presses ... */" />
-            <marker date="1543866134645" expanded="true" signature="3912:4751" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="4782:4981" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="4865:4967" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="5009:5177" ph="/* If an item is to be returned, then it will be tracked and ... */" />
-            <marker date="1543866134645" expanded="true" signature="5287:5399" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="5417:5535" ph="/* This makes sure the item the player is holding is being placed ... */" />
-            <marker date="1543866134645" expanded="true" signature="5597:6026" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="6074:6126" ph="{...}" />
+            <marker date="1543875954331" expanded="false" signature="6:40" ph="..." />
+            <marker date="1543875954331" expanded="true" signature="88:6128" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="822:6032" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="1081:1430" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="1139:1264" ph="/* We want to visualize the point of impact where the ... */" />
+            <marker date="1543875954331" expanded="true" signature="1443:1582" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="1610:2830" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="1633:1864" ph="/* If the player is holding an item and needs to return it, he must ... */" />
+            <marker date="1543875954331" expanded="true" signature="1935:2820" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="2109:2806" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="2502:2729" ph="/* This gives a small delay before the player can return ... */" />
+            <marker date="1543875954331" expanded="true" signature="2843:4991" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="2866:2953" ph="/* We are looking with the controllerfor an object ... */" />
+            <marker date="1543875954331" expanded="true" signature="3021:4765" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="3201:3313" ph="/* Once it is found we change it to look as if it is hovered ... */" />
+            <marker date="1543875954331" expanded="true" signature="3491:3786" ph="/* If the player is not holding an interactable item and presses ... */" />
+            <marker date="1543875954331" expanded="true" signature="3912:4751" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="4782:4981" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="4865:4967" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="5009:5177" ph="/* If an item is to be returned, then it will be tracked and ... */" />
+            <marker date="1543875954331" expanded="true" signature="5287:5399" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="5417:5535" ph="/* This makes sure the item the player is holding is being placed ... */" />
+            <marker date="1543875954331" expanded="true" signature="5597:6026" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="6074:6126" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -513,30 +561,30 @@
         <state relative-caret-position="975">
           <caret line="66" selection-start-line="66" selection-end-line="66" />
           <folding>
-            <marker date="1543866134645" expanded="false" signature="6:40" ph="..." />
-            <marker date="1543866134645" expanded="true" signature="88:6128" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="822:6032" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="1081:1430" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="1139:1264" ph="/* We want to visualize the point of impact where the ... */" />
-            <marker date="1543866134645" expanded="true" signature="1443:1582" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="1610:2830" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="1633:1864" ph="/* If the player is holding an item and needs to return it, he must ... */" />
-            <marker date="1543866134645" expanded="true" signature="1935:2820" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="2109:2806" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="2502:2729" ph="/* This gives a small delay before the player can return ... */" />
-            <marker date="1543866134645" expanded="true" signature="2843:4991" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="2866:2953" ph="/* We are looking with the controllerfor an object ... */" />
-            <marker date="1543866134645" expanded="true" signature="3021:4765" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="3201:3313" ph="/* Once it is found we change it to look as if it is hovered ... */" />
-            <marker date="1543866134645" expanded="true" signature="3491:3786" ph="/* If the player is not holding an interactable item and presses ... */" />
-            <marker date="1543866134645" expanded="true" signature="3912:4751" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="4782:4981" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="4865:4967" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="5009:5177" ph="/* If an item is to be returned, then it will be tracked and ... */" />
-            <marker date="1543866134645" expanded="true" signature="5287:5399" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="5417:5535" ph="/* This makes sure the item the player is holding is being placed ... */" />
-            <marker date="1543866134645" expanded="true" signature="5597:6026" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="6074:6126" ph="{...}" />
+            <marker date="1543875954331" expanded="false" signature="6:40" ph="..." />
+            <marker date="1543875954331" expanded="true" signature="88:6128" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="822:6032" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="1081:1430" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="1139:1264" ph="/* We want to visualize the point of impact where the ... */" />
+            <marker date="1543875954331" expanded="true" signature="1443:1582" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="1610:2830" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="1633:1864" ph="/* If the player is holding an item and needs to return it, he must ... */" />
+            <marker date="1543875954331" expanded="true" signature="1935:2820" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="2109:2806" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="2502:2729" ph="/* This gives a small delay before the player can return ... */" />
+            <marker date="1543875954331" expanded="true" signature="2843:4991" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="2866:2953" ph="/* We are looking with the controllerfor an object ... */" />
+            <marker date="1543875954331" expanded="true" signature="3021:4765" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="3201:3313" ph="/* Once it is found we change it to look as if it is hovered ... */" />
+            <marker date="1543875954331" expanded="true" signature="3491:3786" ph="/* If the player is not holding an interactable item and presses ... */" />
+            <marker date="1543875954331" expanded="true" signature="3912:4751" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="4782:4981" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="4865:4967" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="5009:5177" ph="/* If an item is to be returned, then it will be tracked and ... */" />
+            <marker date="1543875954331" expanded="true" signature="5287:5399" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="5417:5535" ph="/* This makes sure the item the player is holding is being placed ... */" />
+            <marker date="1543875954331" expanded="true" signature="5597:6026" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="6074:6126" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -622,30 +670,30 @@
         <state relative-caret-position="274">
           <caret line="58" column="46" selection-start-line="58" selection-start-column="46" selection-end-line="58" selection-end-column="46" />
           <folding>
-            <marker date="1543866134645" expanded="false" signature="6:40" ph="..." />
-            <marker date="1543866134645" expanded="true" signature="88:6128" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="822:6032" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="1081:1430" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="1139:1264" ph="/* We want to visualize the point of impact where the ... */" />
-            <marker date="1543866134645" expanded="true" signature="1443:1582" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="1610:2830" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="1633:1864" ph="/* If the player is holding an item and needs to return it, he must ... */" />
-            <marker date="1543866134645" expanded="true" signature="1935:2820" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="2109:2806" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="2502:2729" ph="/* This gives a small delay before the player can return ... */" />
-            <marker date="1543866134645" expanded="true" signature="2843:4991" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="2866:2953" ph="/* We are looking with the controllerfor an object ... */" />
-            <marker date="1543866134645" expanded="true" signature="3021:4765" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="3201:3313" ph="/* Once it is found we change it to look as if it is hovered ... */" />
-            <marker date="1543866134645" expanded="true" signature="3491:3786" ph="/* If the player is not holding an interactable item and presses ... */" />
-            <marker date="1543866134645" expanded="true" signature="3912:4751" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="4782:4981" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="4865:4967" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="5009:5177" ph="/* If an item is to be returned, then it will be tracked and ... */" />
-            <marker date="1543866134645" expanded="true" signature="5287:5399" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="5417:5535" ph="/* This makes sure the item the player is holding is being placed ... */" />
-            <marker date="1543866134645" expanded="true" signature="5597:6026" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="6074:6126" ph="{...}" />
+            <marker date="1543875954331" expanded="false" signature="6:40" ph="..." />
+            <marker date="1543875954331" expanded="true" signature="88:6128" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="822:6032" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="1081:1430" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="1139:1264" ph="/* We want to visualize the point of impact where the ... */" />
+            <marker date="1543875954331" expanded="true" signature="1443:1582" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="1610:2830" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="1633:1864" ph="/* If the player is holding an item and needs to return it, he must ... */" />
+            <marker date="1543875954331" expanded="true" signature="1935:2820" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="2109:2806" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="2502:2729" ph="/* This gives a small delay before the player can return ... */" />
+            <marker date="1543875954331" expanded="true" signature="2843:4991" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="2866:2953" ph="/* We are looking with the controllerfor an object ... */" />
+            <marker date="1543875954331" expanded="true" signature="3021:4765" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="3201:3313" ph="/* Once it is found we change it to look as if it is hovered ... */" />
+            <marker date="1543875954331" expanded="true" signature="3491:3786" ph="/* If the player is not holding an interactable item and presses ... */" />
+            <marker date="1543875954331" expanded="true" signature="3912:4751" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="4782:4981" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="4865:4967" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="5009:5177" ph="/* If an item is to be returned, then it will be tracked and ... */" />
+            <marker date="1543875954331" expanded="true" signature="5287:5399" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="5417:5535" ph="/* This makes sure the item the player is holding is being placed ... */" />
+            <marker date="1543875954331" expanded="true" signature="5597:6026" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="6074:6126" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -655,30 +703,30 @@
         <state relative-caret-position="1005">
           <caret line="68" column="60" lean-forward="true" selection-start-line="68" selection-start-column="60" selection-end-line="68" selection-end-column="60" />
           <folding>
-            <marker date="1543866134645" expanded="false" signature="6:40" ph="..." />
-            <marker date="1543866134645" expanded="true" signature="88:6128" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="822:6032" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="1081:1430" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="1139:1264" ph="/* We want to visualize the point of impact where the ... */" />
-            <marker date="1543866134645" expanded="true" signature="1443:1582" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="1610:2830" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="1633:1864" ph="/* If the player is holding an item and needs to return it, he must ... */" />
-            <marker date="1543866134645" expanded="true" signature="1935:2820" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="2109:2806" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="2502:2729" ph="/* This gives a small delay before the player can return ... */" />
-            <marker date="1543866134645" expanded="true" signature="2843:4991" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="2866:2953" ph="/* We are looking with the controllerfor an object ... */" />
-            <marker date="1543866134645" expanded="true" signature="3021:4765" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="3201:3313" ph="/* Once it is found we change it to look as if it is hovered ... */" />
-            <marker date="1543866134645" expanded="true" signature="3491:3786" ph="/* If the player is not holding an interactable item and presses ... */" />
-            <marker date="1543866134645" expanded="true" signature="3912:4751" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="4782:4981" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="4865:4967" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="5009:5177" ph="/* If an item is to be returned, then it will be tracked and ... */" />
-            <marker date="1543866134645" expanded="true" signature="5287:5399" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="5417:5535" ph="/* This makes sure the item the player is holding is being placed ... */" />
-            <marker date="1543866134645" expanded="true" signature="5597:6026" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="6074:6126" ph="{...}" />
+            <marker date="1543875954331" expanded="false" signature="6:40" ph="..." />
+            <marker date="1543875954331" expanded="true" signature="88:6128" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="822:6032" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="1081:1430" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="1139:1264" ph="/* We want to visualize the point of impact where the ... */" />
+            <marker date="1543875954331" expanded="true" signature="1443:1582" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="1610:2830" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="1633:1864" ph="/* If the player is holding an item and needs to return it, he must ... */" />
+            <marker date="1543875954331" expanded="true" signature="1935:2820" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="2109:2806" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="2502:2729" ph="/* This gives a small delay before the player can return ... */" />
+            <marker date="1543875954331" expanded="true" signature="2843:4991" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="2866:2953" ph="/* We are looking with the controllerfor an object ... */" />
+            <marker date="1543875954331" expanded="true" signature="3021:4765" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="3201:3313" ph="/* Once it is found we change it to look as if it is hovered ... */" />
+            <marker date="1543875954331" expanded="true" signature="3491:3786" ph="/* If the player is not holding an interactable item and presses ... */" />
+            <marker date="1543875954331" expanded="true" signature="3912:4751" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="4782:4981" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="4865:4967" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="5009:5177" ph="/* If an item is to be returned, then it will be tracked and ... */" />
+            <marker date="1543875954331" expanded="true" signature="5287:5399" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="5417:5535" ph="/* This makes sure the item the player is holding is being placed ... */" />
+            <marker date="1543875954331" expanded="true" signature="5597:6026" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="6074:6126" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -744,30 +792,30 @@
         <state relative-caret-position="975">
           <caret line="66" selection-start-line="66" selection-end-line="66" />
           <folding>
-            <marker date="1543866134645" expanded="false" signature="6:40" ph="..." />
-            <marker date="1543866134645" expanded="true" signature="88:6128" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="822:6032" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="1081:1430" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="1139:1264" ph="/* We want to visualize the point of impact where the ... */" />
-            <marker date="1543866134645" expanded="true" signature="1443:1582" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="1610:2830" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="1633:1864" ph="/* If the player is holding an item and needs to return it, he must ... */" />
-            <marker date="1543866134645" expanded="true" signature="1935:2820" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="2109:2806" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="2502:2729" ph="/* This gives a small delay before the player can return ... */" />
-            <marker date="1543866134645" expanded="true" signature="2843:4991" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="2866:2953" ph="/* We are looking with the controllerfor an object ... */" />
-            <marker date="1543866134645" expanded="true" signature="3021:4765" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="3201:3313" ph="/* Once it is found we change it to look as if it is hovered ... */" />
-            <marker date="1543866134645" expanded="true" signature="3491:3786" ph="/* If the player is not holding an interactable item and presses ... */" />
-            <marker date="1543866134645" expanded="true" signature="3912:4751" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="4782:4981" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="4865:4967" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="5009:5177" ph="/* If an item is to be returned, then it will be tracked and ... */" />
-            <marker date="1543866134645" expanded="true" signature="5287:5399" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="5417:5535" ph="/* This makes sure the item the player is holding is being placed ... */" />
-            <marker date="1543866134645" expanded="true" signature="5597:6026" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="6074:6126" ph="{...}" />
+            <marker date="1543875954331" expanded="false" signature="6:40" ph="..." />
+            <marker date="1543875954331" expanded="true" signature="88:6128" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="822:6032" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="1081:1430" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="1139:1264" ph="/* We want to visualize the point of impact where the ... */" />
+            <marker date="1543875954331" expanded="true" signature="1443:1582" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="1610:2830" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="1633:1864" ph="/* If the player is holding an item and needs to return it, he must ... */" />
+            <marker date="1543875954331" expanded="true" signature="1935:2820" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="2109:2806" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="2502:2729" ph="/* This gives a small delay before the player can return ... */" />
+            <marker date="1543875954331" expanded="true" signature="2843:4991" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="2866:2953" ph="/* We are looking with the controllerfor an object ... */" />
+            <marker date="1543875954331" expanded="true" signature="3021:4765" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="3201:3313" ph="/* Once it is found we change it to look as if it is hovered ... */" />
+            <marker date="1543875954331" expanded="true" signature="3491:3786" ph="/* If the player is not holding an interactable item and presses ... */" />
+            <marker date="1543875954331" expanded="true" signature="3912:4751" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="4782:4981" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="4865:4967" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="5009:5177" ph="/* If an item is to be returned, then it will be tracked and ... */" />
+            <marker date="1543875954331" expanded="true" signature="5287:5399" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="5417:5535" ph="/* This makes sure the item the player is holding is being placed ... */" />
+            <marker date="1543875954331" expanded="true" signature="5597:6026" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="6074:6126" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -895,29 +943,80 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/ObjectivesSelector.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
+        <state relative-caret-position="63">
           <caret line="113" column="48" selection-start-line="113" selection-start-column="48" selection-end-line="113" selection-end-column="48" />
+          <folding>
+            <marker date="1543826334428" expanded="false" signature="6:119" ph="..." />
+            <marker date="1543826334428" expanded="true" signature="168:7227" ph="{...}" />
+            <marker date="1543826334428" expanded="true" signature="533:584" ph="/* Objective variables: Use Water Bottle ... */" />
+            <marker date="1543826334428" expanded="true" signature="688:737" ph="/* Objective variables: Use Teleporter ... */" />
+            <marker date="1543826334428" expanded="true" signature="804:1636" ph="{...}" />
+            <marker date="1543826334428" expanded="true" signature="911:1036" ph="{...}" />
+            <marker date="1543826334428" expanded="true" signature="1087:1127" ph="{...}" />
+            <marker date="1543826334428" expanded="true" signature="1180:1289" ph="{...}" />
+            <marker date="1543826334428" expanded="true" signature="1297:1475" ph="/* After we initialize the _objectives, we pick the ... */" />
+            <marker date="1543826334428" expanded="true" signature="1654:4771" ph="{...}" />
+            <marker date="1543826334428" expanded="true" signature="1658:1816" ph="/* We want the player to select a new mission on if the ... */" />
+            <marker date="1543826334428" expanded="true" signature="1848:1966" ph="{...}" />
+            <marker date="1543826334428" expanded="true" signature="1896:1962" ph="{...}" />
+            <marker date="1543826334428" expanded="true" signature="2001:2118" ph="{...}" />
+            <marker date="1543826334428" expanded="true" signature="2049:2114" ph="{...}" />
+            <marker date="1543826334428" expanded="true" signature="2124:2314" ph="/* If the player has completed the requirements to finish ... */" />
+            <marker date="1543826334428" expanded="true" signature="2408:2867" ph="{...}" />
+            <marker date="1543826334428" expanded="true" signature="2486:2811" ph="/* We update the current objective index so that ... */" />
+            <marker date="1543826334428" expanded="true" signature="2936:3014" ph="{...}" />
+            <marker date="1543826334428" expanded="true" signature="3085:3163" ph="{...}" />
+            <marker date="1543826334428" expanded="true" signature="3226:3388" ph="{...}" />
+            <marker date="1543826334428" expanded="true" signature="3332:3384" ph="/* _currentObjectiveNumber++; ... */" />
+            <marker date="1543826334428" expanded="true" signature="3491:3615" ph="/* If the player happens to hover over UI elements such as ... */" />
+            <marker date="1543826334428" expanded="true" signature="3675:4688" ph="{...}" />
+            <marker date="1543826334428" expanded="true" signature="3840:4467" ph="{...}" />
+            <marker date="1543826334428" expanded="true" signature="4029:4462" ph="{...}" />
+            <marker date="1543826334428" expanded="true" signature="4181:4252" ph="{...}" />
+            <marker date="1543826334428" expanded="true" signature="4302:4354" ph="{...}" />
+            <marker date="1543826334428" expanded="true" signature="4409:4456" ph="{...}" />
+            <marker date="1543826334428" expanded="true" signature="4471:4684" ph="/* If the player is holding an item and needs to return it, he must ... */" />
+            <marker date="1543826334428" expanded="true" signature="4695:4768" ph="{...}" />
+            <marker date="1543826334428" expanded="true" signature="4722:4764" ph="{...}" />
+            <marker date="1543826334428" expanded="true" signature="4817:4949" ph="{...}" />
+            <marker date="1543826334428" expanded="true" signature="4994:5086" ph="{...}" />
+            <marker date="1543826334428" expanded="true" signature="5126:5197" ph="{...}" />
+            <marker date="1543826334428" expanded="true" signature="5233:7225" ph="{...}" />
+            <marker date="1543826334428" expanded="true" signature="5291:5458" ph="{...}" />
+            <marker date="1543826334428" expanded="true" signature="5638:5916" ph="/* This will be useful if we want to give the player one objective ... */" />
+            <marker date="1543826334428" expanded="true" signature="5922:6670" ph="/* Initialize the first objective without incrementing ... */" />
+            <marker date="1543826334428" expanded="true" signature="6723:7219" ph="{...}" />
+            <marker date="1543826334428" expanded="true" signature="6784:7209" ph="{...}" />
+            <marker date="1543826334428" expanded="true" signature="6863:7195" ph="{...}" />
+            <marker date="1543826334428" expanded="true" signature="6945:7177" ph="{...}" />
+            <marker date="1543826334428" expanded="true" signature="7003:7155" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/BeakerController.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="51" column="65" selection-start-line="51" selection-start-column="65" selection-end-line="51" selection-end-column="65" />
+        <state relative-caret-position="783">
+          <caret line="81" column="28" selection-start-line="81" selection-start-column="28" selection-end-line="81" selection-end-column="28" />
           <folding>
-            <marker date="1543865544426" expanded="false" signature="6:78" ph="..." />
-            <marker date="1543865544426" expanded="true" signature="125:2426" ph="{...}" />
-            <marker date="1543865544426" expanded="true" signature="248:2424" ph="{...}" />
-            <marker date="1543865544426" expanded="true" signature="288:2421" ph="{...}" />
-            <marker date="1543865544426" expanded="true" signature="989:2213" ph="{...}" />
-            <marker date="1543865544426" expanded="true" signature="999:1110" ph="/* This helps signal the player that he can now spill the ... */" />
-            <marker date="1543865544426" expanded="true" signature="1320:2208" ph="{...}" />
-            <marker date="1543865544426" expanded="true" signature="1332:1435" ph="/* We instantiate the substance that the player is holding and we place it ... */" />
-            <marker date="1543865544426" expanded="true" signature="1516:1794" ph="{...}" />
-            <marker date="1543865544426" expanded="true" signature="1617:1747" ph="/* We also have to rename the current game object from empty because ... */" />
-            <marker date="1543865544426" expanded="true" signature="1884:2202" ph="{...}" />
-            <marker date="1543865544426" expanded="true" signature="1898:2002" ph="/* We destroy the existing water and replace it with the ... */" />
-            <marker date="1543865544426" expanded="true" signature="2221:2336" ph="{...}" />
+            <marker date="1543875546325" expanded="false" signature="6:78" ph="..." />
+            <marker date="1543875546325" expanded="true" signature="125:2587" ph="{...}" />
+            <marker date="1543875546325" expanded="true" signature="292:2286" ph="{...}" />
+            <marker date="1543875546325" expanded="true" signature="332:2283" ph="{...}" />
+            <marker date="1543875546325" expanded="true" signature="528:561" ph="{...}" />
+            <marker date="1543875546325" expanded="true" signature="851:2075" ph="{...}" />
+            <marker date="1543875546325" expanded="true" signature="861:972" ph="/* This helps signal the player that he can now spill the ... */" />
+            <marker date="1543875546325" expanded="true" signature="1182:2070" ph="{...}" />
+            <marker date="1543875546325" expanded="true" signature="1194:1297" ph="/* We instantiate the substance that the player is holding and we place it ... */" />
+            <marker date="1543875546325" expanded="true" signature="1378:1656" ph="{...}" />
+            <marker date="1543875546325" expanded="true" signature="1479:1609" ph="/* We also have to rename the current game object from empty because ... */" />
+            <marker date="1543875546325" expanded="true" signature="1746:2064" ph="{...}" />
+            <marker date="1543875546325" expanded="true" signature="1760:1864" ph="/* We destroy the existing water and replace it with the ... */" />
+            <marker date="1543875546325" expanded="true" signature="2083:2198" ph="{...}" />
+            <marker date="1543875546325" expanded="true" signature="2331:2435" ph="{...}" />
+            <marker date="1543875546325" expanded="true" signature="2370:2432" ph="{...}" />
+            <marker date="1543875546325" expanded="true" signature="2480:2585" ph="{...}" />
+            <marker date="1543875546325" expanded="true" signature="2519:2582" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -927,30 +1026,30 @@
         <state relative-caret-position="873">
           <caret line="135" column="73" selection-start-line="135" selection-start-column="73" selection-end-line="135" selection-end-column="73" />
           <folding>
-            <marker date="1543866134645" expanded="false" signature="6:40" ph="..." />
-            <marker date="1543866134645" expanded="true" signature="88:6128" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="822:6032" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="1081:1430" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="1139:1264" ph="/* We want to visualize the point of impact where the ... */" />
-            <marker date="1543866134645" expanded="true" signature="1443:1582" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="1610:2830" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="1633:1864" ph="/* If the player is holding an item and needs to return it, he must ... */" />
-            <marker date="1543866134645" expanded="true" signature="1935:2820" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="2109:2806" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="2502:2729" ph="/* This gives a small delay before the player can return ... */" />
-            <marker date="1543866134645" expanded="true" signature="2843:4991" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="2866:2953" ph="/* We are looking with the controllerfor an object ... */" />
-            <marker date="1543866134645" expanded="true" signature="3021:4765" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="3201:3313" ph="/* Once it is found we change it to look as if it is hovered ... */" />
-            <marker date="1543866134645" expanded="true" signature="3491:3786" ph="/* If the player is not holding an interactable item and presses ... */" />
-            <marker date="1543866134645" expanded="true" signature="3912:4751" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="4782:4981" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="4865:4967" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="5009:5177" ph="/* If an item is to be returned, then it will be tracked and ... */" />
-            <marker date="1543866134645" expanded="true" signature="5287:5399" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="5417:5535" ph="/* This makes sure the item the player is holding is being placed ... */" />
-            <marker date="1543866134645" expanded="true" signature="5597:6026" ph="{...}" />
-            <marker date="1543866134645" expanded="true" signature="6074:6126" ph="{...}" />
+            <marker date="1543875954331" expanded="false" signature="6:40" ph="..." />
+            <marker date="1543875954331" expanded="true" signature="88:6128" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="822:6032" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="1081:1430" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="1139:1264" ph="/* We want to visualize the point of impact where the ... */" />
+            <marker date="1543875954331" expanded="true" signature="1443:1582" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="1610:2830" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="1633:1864" ph="/* If the player is holding an item and needs to return it, he must ... */" />
+            <marker date="1543875954331" expanded="true" signature="1935:2820" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="2109:2806" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="2502:2729" ph="/* This gives a small delay before the player can return ... */" />
+            <marker date="1543875954331" expanded="true" signature="2843:4991" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="2866:2953" ph="/* We are looking with the controllerfor an object ... */" />
+            <marker date="1543875954331" expanded="true" signature="3021:4765" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="3201:3313" ph="/* Once it is found we change it to look as if it is hovered ... */" />
+            <marker date="1543875954331" expanded="true" signature="3491:3786" ph="/* If the player is not holding an interactable item and presses ... */" />
+            <marker date="1543875954331" expanded="true" signature="3912:4751" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="4782:4981" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="4865:4967" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="5009:5177" ph="/* If an item is to be returned, then it will be tracked and ... */" />
+            <marker date="1543875954331" expanded="true" signature="5287:5399" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="5417:5535" ph="/* This makes sure the item the player is holding is being placed ... */" />
+            <marker date="1543875954331" expanded="true" signature="5597:6026" ph="{...}" />
+            <marker date="1543875954331" expanded="true" signature="6074:6126" ph="{...}" />
           </folding>
         </state>
       </provider>
