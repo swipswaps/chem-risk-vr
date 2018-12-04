@@ -91,7 +91,9 @@ public class PointerController : MonoBehaviour
                     Input.GetKeyDown(KeyCode.K))
                 {
                     if (_lookedAtObject.name == "Water" ||
-                        _lookedAtObject.name == "Red Substance") { ObjectivesSelector.PickedUpWaterBottle = true; }
+                        _lookedAtObject.name == "Red Substance" ||
+                        _lookedAtObject.name == "Yellow Substance" ||
+                        _lookedAtObject.name == "Blue Substance") { ObjectivesSelector.PickedUpWaterBottle = true; }
                     
                     _currentlyHoldingObject = Instantiate(_lookedAtObject, _parentOfTemporaryObject.transform);
                     _currentlyHoldingObject.GetComponent<MeshRenderer>().material = DefaultItemMaterial;

@@ -7,9 +7,18 @@ public class BeakerController : MonoBehaviour
 	public LayerMask HeldLayerMask;
 
 	public GameObject WaterSubstance;
+	
+	// Primary Colors
+	public GameObject BlueSubstance;
 	public GameObject RedSubstance;
+	public GameObject YellowSubstance;
+	
+	// Secondary Colors
+	public GameObject OrangeSubstance;
+	public GameObject PurpleSubstance;
+	public GameObject GreenSubstance;
 
-	private bool _isObjectOverBeaker = false;
+	private static bool _isObjectOverBeaker = false;
 	
 	void Update () {
 		if (PointerController.IsHoldingItem)
@@ -17,15 +26,10 @@ public class BeakerController : MonoBehaviour
 			GameObject heldObject = PointerController.CurrentlyHoldingObjectForBeakers;
 			Color heldObjectColor;
 				
-			// If the beater is below the object being held...
-			if (_isObjectOverBeaker)
-			{
-				Debug.Log("RISE");
-			}
 			if (_isObjectOverBeaker &&
 			    // Making sure the player has the item facing down when pouring.
 			    (heldObject.transform.eulerAngles.x > 240 && heldObject.transform.eulerAngles.x < 300 ||
-			    heldObject.transform.eulerAngles.x > 80 && heldObject.transform.eulerAngles.x < 90))
+			     heldObject.transform.eulerAngles.x > 80 && heldObject.transform.eulerAngles.x < 90))
 			{
 				// This helps signal the player that he can now spill the
 				// substance he is holding into the empty beaker.
@@ -49,9 +53,31 @@ public class BeakerController : MonoBehaviour
 					{
 						// We destroy the existing water and replace it with the
 						// substance the player is holding (red).
-						Destroy(gameObject.transform.GetChild(0).gameObject);
-						Instantiate(RedSubstance, transform.position, Quaternion.identity, transform);
-						gameObject.name = "Red Substance Beaker";
+						CreateSubstanceInBeaker(RedSubstance, "Red");
+					} else if (gameObject.name == "Water Beaker" && heldObject.name == "Yellow Substance(Clone)")
+					{
+						CreateSubstanceInBeaker(YellowSubstance, "Yellow");
+					} else if (gameObject.name == "Water Beaker" && heldObject.name == "Blue Substance(Clone)")
+					{
+						CreateSubstanceInBeaker(BlueSubstance, "Blue");
+					} else if ((gameObject.name == "Yellow Substance Beaker" &&
+					            heldObject.name == "Red Substance(Clone)") ||
+					           (gameObject.name == "Red Substance Beaker" &&
+					            heldObject.name == "Yellow Substance(Clone)"))
+					{
+						CreateSubstanceInBeaker(OrangeSubstance, "Orange");
+					} else if ((gameObject.name == "Red Substance Beaker" &&
+					            heldObject.name == "Blue Substance(Clone)") ||
+					           (gameObject.name == "Blue Substance Beaker" &&
+					            heldObject.name == "Red Substance(Clone)"))
+					{
+						CreateSubstanceInBeaker(PurpleSubstance, "Purple");
+					} else if ((gameObject.name == "Blue Substance Beaker" &&
+					            heldObject.name == "Yellow Substance(Clone)") ||
+					           (gameObject.name == "Yellow Substance Beaker" &&
+					            heldObject.name == "Blue Substance(Clone)"))
+					{
+						CreateSubstanceInBeaker(GreenSubstance, "Green");
 					}
 				}
 			}
@@ -81,5 +107,12 @@ public class BeakerController : MonoBehaviour
 			_isObjectOverBeaker = false;
 			Debug.Log("LEAVE");
 		}
+	}
+
+	private void CreateSubstanceInBeaker(GameObject substance, string nameWithCapital)
+	{
+		Destroy(gameObject.transform.GetChild(0).gameObject);
+		Instantiate(substance, transform.position, Quaternion.identity, transform);
+		gameObject.name = nameWithCapital + " Substance Beaker";
 	}
 }
