@@ -66,7 +66,7 @@ public class ObjectivesSelector : MonoBehaviour
 			{
 				button.GetComponent<Button>().interactable = false;
 			}
-		} else if (CurrentObjective == null)
+		} else if (CurrentObjective == null && HandinController._isObjectiveHandedIn)
 		{
 			foreach (var button in ObjectiveButtons)
 			{
@@ -77,7 +77,8 @@ public class ObjectivesSelector : MonoBehaviour
 		// If the player has completed the requirements to finish
 		// his current objective and that objective's number is not different from any other
 		// only then can we go to the next mission.
-		if (PickedUpWaterBottle && PlacedBackWaterBottle && CurrentObjective == "Use Water Bottle")
+		if (PickedUpWaterBottle && PlacedBackWaterBottle &&
+		    CurrentObjective == "Use Water Bottle" && HandinController._isObjectiveHandedIn)
 		{
 			TaskFields[1].GetComponentInChildren<Image>().color = Color.green;
 			// We update the current objective index so that
@@ -98,7 +99,8 @@ public class ObjectivesSelector : MonoBehaviour
 			TaskFields[1].GetComponentInChildren<Image>().color = Color.green;
 		}
 
-		if (UsedTeleporter && CurrentObjective == "Use Teleporter")
+		if (UsedTeleporter && CurrentObjective == "Use Teleporter"
+		                   && HandinController._isObjectiveHandedIn)
 		{
 			TaskFields[0].GetComponentInChildren<Image>().color = Color.green;
 			CurrentObjective = null;
@@ -156,6 +158,8 @@ public class ObjectivesSelector : MonoBehaviour
 		CurrentObjective = "Use Water Bottle";
 		PickedUpWaterBottle = false;
 		PlacedBackWaterBottle = false;
+		// Resetting the hand-in boolean once a new objective starts.
+		HandinController._isObjectiveHandedIn = false;
 		GoNextObjective();
 	}
 
@@ -163,12 +167,14 @@ public class ObjectivesSelector : MonoBehaviour
 	{
 		CurrentObjective = "Use Teleporter";
 		UsedTeleporter = false;
+		HandinController._isObjectiveHandedIn = false;
 		GoNextObjective();
 	}
 
 	public void SelectObjectiveForceHim()
 	{
 		CurrentObjective = "Buy Salmon Sandwich";
+		HandinController._isObjectiveHandedIn = false;
 		GoNextObjective();
 	}
 	
