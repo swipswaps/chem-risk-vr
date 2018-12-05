@@ -9,9 +9,17 @@ public class CenterEyePointer : MonoBehaviour
     private GameObject _currentTeleporter;
     private bool _isAlphaIncreased = false;
 
+    private Vector3 _newPlayerPosition;
+    private Quaternion _newPlayerRotation;
+    private Quaternion _newEyeRotation;
+    private Transform _directionInTeleporter;
+
+    public GameObject FadeTransitioner;
+
     private void Start()
     {
         var teleporters = GameObject.FindGameObjectsWithTag("Teleporter");
+        FadeTransitioner.SetActive(false);
 
         foreach (var teleporter in teleporters)
         {
@@ -33,6 +41,10 @@ public class CenterEyePointer : MonoBehaviour
     void Update () {
         Ray ray = new Ray(transform.position, transform.forward);
         RaycastHit hit;
+                
+        _newPlayerPosition = Player.transform.position;
+        _newPlayerRotation = Player.transform.rotation;
+        _newEyeRotation = PlayerDirection.transform.rotation;
 		
         // Checking if the player is hovering over an item with the controller
         if (Physics.Raycast(ray, out hit, 100, TeleporterLayerMask))
@@ -54,10 +66,6 @@ public class CenterEyePointer : MonoBehaviour
                 _isAlphaIncreased && Input.GetKeyDown(KeyCode.T))
             {
                 ObjectivesSelector.UsedTeleporter = true;
-                
-                var newPlayerPosition = Player.transform.position;
-                var newPlayerRotation = Player.transform.rotation;
-                var newEyeRotation = PlayerDirection.transform.rotation;
 				
                 var objectsInTelerpoter = _currentTeleporter.GetComponentsInChildren<Transform>();
 
@@ -67,21 +75,12 @@ public class CenterEyePointer : MonoBehaviour
                 {
                     if (obj.CompareTag("Direction"))
                     {
-                        newPlayerPosition = obj.transform.position;
-                        newPlayerRotation = obj.transform.rotation;
-                        newEyeRotation = obj.transform.rotation;
+                        _directionInTeleporter = obj;
+                        FadeTransitioner.SetActive(true);
+                        FadeTransitioner.GetComponent<Animator>().SetBool("toggleTransitioner", true);
+                        Invoke("UpdatePlayerPosition", 0.3f);
                     }
                 }
-
-                // This makes sure he doesnt teleport in the ground itself
-                // and turn him using the child object of the teleporter's angle of rotation
-                newPlayerPosition.y += 1.3f;
-                Player.transform.position = newPlayerPosition;
-                Player.transform.rotation = newPlayerRotation;
-                PlayerDirection.transform.rotation = newEyeRotation;
-                // I'm rotating the pose too because it stays the same
-                // once the player teleports to a new destination.
-                OVRManager.display.RecenterPose();
             }
         }
         else
@@ -106,5 +105,30 @@ public class CenterEyePointer : MonoBehaviour
             childRendererColor.a += newAlphaValue;
             childRenderer.material.color = childRendererColor;
         }
+    }
+
+    private void UpdatePlayerPosition()
+    {
+        Invoke("FadeOutTeleporter", 0.3f);
+        FadeTransitioner.GetComponent<Animator>().SetBool("toggleTransitioner", false);
+        _newPlayerPosition = _directionInTeleporter.transform.position;
+        _newPlayerRotation = _directionInTeleporter.transform.rotation;
+        _newEyeRotation = _directionInTeleporter.transform.rotation;
+
+        // This makes sure he doesnt teleport in the ground itself
+        // and turn him using the child object of the teleporter's angle of rotation
+        _newPlayerPosition.y += 1.3f;
+        Player.transform.position = _newPlayerPosition;
+        Player.transform.rotation = _newPlayerRotation;
+        PlayerDirection.transform.rotation = _newEyeRotation;
+        // I'm rotating the pose too because it stays the same
+        // once the player teleports to a new destination.
+        OVRManager.display.RecenterPose();
+        //FadeTransitioner.SetActive(false);
+    }
+
+    private void FadeOutTeleporter()
+    {
+        FadeTransitioner.SetActive(false);   
     }
 }
