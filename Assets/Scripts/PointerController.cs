@@ -15,9 +15,13 @@ public class PointerController : MonoBehaviour
     public LayerMask CatchItemLayer;
     public LayerMask ReturnObjectLayer;
     public GameObject Point;
+    public GameObject PlayerBody;
 
     private Transform _tempPosition = null;
     private static bool _canReturnObject = false;
+    
+    private bool _isWearingCoat = false;
+    private GameObject _coat;
 
     public static bool IsHoldingItem = false;
 
@@ -94,17 +98,26 @@ public class PointerController : MonoBehaviour
                         _lookedAtObject.name == "Red Substance" ||
                         _lookedAtObject.name == "Yellow Substance" ||
                         _lookedAtObject.name == "Blue Substance") { ObjectivesSelector.PickedUpWaterBottle = true; }
-                    
-                    _currentlyHoldingObject = Instantiate(_lookedAtObject, _parentOfTemporaryObject.transform);
-                    _currentlyHoldingObject.GetComponent<MeshRenderer>().material = DefaultItemMaterial;
-                    _currentlyHoldingObject.layer = 22;
-                    CurrentlyHoldingObjectForBeakers = _currentlyHoldingObject;
-                
-                    _meshRenderer.material = DefaultReturnItemMaterial;
-                    _lookedAtObject.layer = 21;
-                    _lookedAtObject.tag = "Return Item";
 
-                    Invoke("EnableReturningObject", 0.1f);
+                    if (_lookedAtObject.name == "Lab Coat")
+                    {
+                        _coat = _lookedAtObject;
+                        _coat.GetComponent<MeshRenderer>().material = DefaultItemMaterial;
+                        _isWearingCoat = true;
+                    }
+                    else
+                    {
+                        _currentlyHoldingObject = Instantiate(_lookedAtObject, _parentOfTemporaryObject.transform);
+                        _currentlyHoldingObject.GetComponent<MeshRenderer>().material = DefaultItemMaterial;
+                        _currentlyHoldingObject.layer = 22;
+                        CurrentlyHoldingObjectForBeakers = _currentlyHoldingObject;
+                
+                        _meshRenderer.material = DefaultReturnItemMaterial;
+                        _lookedAtObject.layer = 21;
+                        _lookedAtObject.tag = "Return Item";
+
+                        Invoke("EnableReturningObject", 0.1f);   
+                    }
                 }
             }
             else
@@ -136,6 +149,17 @@ public class PointerController : MonoBehaviour
             var newItemRotation = _currentlyHoldingObject.transform.rotation;
             newItemRotation = transform.rotation;
             _currentlyHoldingObject.transform.rotation = newItemRotation;
+        }
+
+        if (_isWearingCoat)
+        {
+            var newCoatPosition = _coat.transform.position;
+            newCoatPosition = PlayerBody.transform.position;
+            _coat.transform.position = newCoatPosition;
+				
+            var newCoatRotation = _coat.transform.rotation;
+            newCoatRotation = PlayerBody.transform.rotation;
+            _coat.transform.rotation = newCoatRotation;
         }
     }
 
