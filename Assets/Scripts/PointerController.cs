@@ -55,7 +55,6 @@ public class PointerController : MonoBehaviour
             // controller button to return the item and remove it from his hand.
             if (Physics.Raycast(ray, out hit, 100, ReturnObjectLayer))
             {
-                Debug.Log("mhm");
                 if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) ||
                     Input.GetKeyDown(KeyCode.K))
                 {

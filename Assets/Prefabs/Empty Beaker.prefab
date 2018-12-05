@@ -9,21 +9,21 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1306181963659548}
+  m_RootGameObject: {fileID: 1824134107025594}
   m_IsPrefabAsset: 1
---- !u!1 &1306181963659548
+--- !u!1 &1824134107025594
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4091103992152226}
-  - component: {fileID: 33710756963636242}
-  - component: {fileID: 23611476030593126}
-  - component: {fileID: 136824276073533284}
-  - component: {fileID: 54931608195026146}
-  - component: {fileID: 114520885287223436}
+  - component: {fileID: 4641485528785088}
+  - component: {fileID: 33867581356335884}
+  - component: {fileID: 23529638237313754}
+  - component: {fileID: 136253932385637026}
+  - component: {fileID: 54806148141796482}
+  - component: {fileID: 114853413065019854}
   m_Layer: 0
   m_Name: Empty Beaker
   m_TagString: Untagged
@@ -31,25 +31,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4091103992152226
+--- !u!4 &4641485528785088
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1306181963659548}
+  m_GameObject: {fileID: 1824134107025594}
   m_LocalRotation: {x: -0, y: -0, z: -0.016902758, w: 0.9998572}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -5.324, y: -0.793, z: -2.075}
   m_LocalScale: {x: 0.19999996, y: 0.09999998, z: 0.19999999}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -1.937}
---- !u!23 &23611476030593126
+--- !u!23 &23529638237313754
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1306181963659548}
+  m_GameObject: {fileID: 1824134107025594}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -79,19 +79,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33710756963636242
+--- !u!33 &33867581356335884
 MeshFilter:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1306181963659548}
+  m_GameObject: {fileID: 1824134107025594}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &54931608195026146
+--- !u!54 &54806148141796482
 Rigidbody:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1306181963659548}
+  m_GameObject: {fileID: 1824134107025594}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -101,12 +101,12 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &114520885287223436
+--- !u!114 &114853413065019854
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1306181963659548}
+  m_GameObject: {fileID: 1824134107025594}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 060abbc8e2195074db1707bd1ffbd384, type: 3}
@@ -117,14 +117,24 @@ MonoBehaviour:
     m_Bits: 4194304
   WaterSubstance: {fileID: 1061463918204852, guid: 7322f5297a183da48bf7b7898b1bb8dc,
     type: 2}
+  BlueSubstance: {fileID: 1061463918204852, guid: caeb87c79cc09ea439d2c953dcb9bcdf,
+    type: 2}
   RedSubstance: {fileID: 1442387684432510, guid: 17384248135b123459531e42c6e1a004,
     type: 2}
---- !u!136 &136824276073533284
+  YellowSubstance: {fileID: 1061463918204852, guid: f1db726bffc8c4741b88775a8b1e0dfa,
+    type: 2}
+  OrangeSubstance: {fileID: 1061463918204852, guid: 490349e844c339d4b8a00abfc4f30541,
+    type: 2}
+  PurpleSubstance: {fileID: 1061463918204852, guid: f049fdc7fff15d3448f968c239e84678,
+    type: 2}
+  GreenSubstance: {fileID: 1061463918204852, guid: 6007600f4a43a1443b1d45a25856999b,
+    type: 2}
+--- !u!136 &136253932385637026
 CapsuleCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1306181963659548}
+  m_GameObject: {fileID: 1824134107025594}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
