@@ -26,10 +26,10 @@ public class BeakerController : MonoBehaviour
 			GameObject heldObject = PointerController.CurrentlyHoldingObjectForBeakers;
 			Color heldObjectColor;
 				
-			if (_isObjectOverBeaker)
+			if (_isObjectOverBeaker &&
 			    // Making sure the player has the item facing down when pouring.
-			    //(heldObject.transform.eulerAngles.x > 240 && heldObject.transform.eulerAngles.x < 300 ||
-			     //heldObject.transform.eulerAngles.x > 80 && heldObject.transform.eulerAngles.x < 90))
+			    (heldObject.transform.eulerAngles.x > 240 && heldObject.transform.eulerAngles.x < 300 ||
+			     heldObject.transform.eulerAngles.x > 80 && heldObject.transform.eulerAngles.x < 90))
 			{
 				// This helps signal the player that he can now spill the
 				// substance he is holding into the empty beaker.

@@ -10,6 +10,7 @@ public class PointerController : MonoBehaviour
     private Transform _parentOfTemporaryObject = null;
     public Material DefaultReturnItemMaterial;
     public Material DefaultItemMaterial;
+    public Material DefaultBeakerMaterial;
     public Material HoverableObjectMaterial;
     private MeshRenderer _meshRenderer;
     public LayerMask CatchItemLayer;
@@ -60,7 +61,27 @@ public class PointerController : MonoBehaviour
                 {
                     _lookedAtObject.tag = "Untagged";
                     _lookedAtObject.layer = 18;
-                    _meshRenderer.material = DefaultItemMaterial;
+                    if (_lookedAtObject.name != "Yellow Substance Beaker" &&
+                        _lookedAtObject.name != "Red Substance Beaker" &&
+                        _lookedAtObject.name != "Blue Substance Beaker" &&
+                        _lookedAtObject.name != "Orange Substance Beaker" &&
+                        _lookedAtObject.name != "Purple Substance Beaker" &&
+                        _lookedAtObject.name != "Green Substance Beaker" &&
+                        _lookedAtObject.name != "Water Beaker" &&
+                        _lookedAtObject.name != "Empty Beaker")
+                    {
+                        _meshRenderer.material = DefaultItemMaterial;
+                    }
+                    else
+                    {
+                        if (_currentlyHoldingObject.name == "Empty Beaker")
+                        {
+                            Destroy(_lookedAtObject.transform.GetChild(0).gameObject);
+                            _lookedAtObject.name = "Empty Beaker";
+                        }
+                        _meshRenderer.material = DefaultBeakerMaterial;
+                        _currentlyHoldingObject.tag = "Untagged";
+                    }
 
                     if (_lookedAtObject.name == "Water") { ObjectivesSelector.PlacedBackWaterBottle = true; }
                     Destroy(_currentlyHoldingObject);
@@ -93,10 +114,7 @@ public class PointerController : MonoBehaviour
                 if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) ||
                     Input.GetKeyDown(KeyCode.K))
                 {
-                    if (_lookedAtObject.name == "Water" ||
-                        _lookedAtObject.name == "Red Substance" ||
-                        _lookedAtObject.name == "Yellow Substance" ||
-                        _lookedAtObject.name == "Blue Substance") { ObjectivesSelector.PickedUpWaterBottle = true; }
+                    if (_lookedAtObject.name == "Water") { ObjectivesSelector.PickedUpWaterBottle = true; }
 
                     if (_lookedAtObject.name == "Lab Coat")
                     {
@@ -107,11 +125,27 @@ public class PointerController : MonoBehaviour
                     else
                     {
                         _currentlyHoldingObject = Instantiate(_lookedAtObject, _parentOfTemporaryObject.transform);
-                        _currentlyHoldingObject.GetComponent<MeshRenderer>().material = DefaultItemMaterial;
+                        if (_lookedAtObject.name != "Yellow Substance Beaker" &&
+                            _lookedAtObject.name != "Red Substance Beaker" &&
+                            _lookedAtObject.name != "Blue Substance Beaker" &&
+                            _lookedAtObject.name != "Water Beaker" &&
+                            _lookedAtObject.name != "Orange Substance Beaker" &&
+                            _lookedAtObject.name != "Purple Substance Beaker" &&
+                            _lookedAtObject.name != "Green Substance Beaker" &&
+                            _lookedAtObject.name != "Empty Beaker")
+                        {
+                            _currentlyHoldingObject.GetComponent<MeshRenderer>().material = DefaultItemMaterial;
+                            CurrentlyHoldingObjectForBeakers = _currentlyHoldingObject;
+                        }
+                        else
+                        {
+                            _currentlyHoldingObject.GetComponent<MeshRenderer>().material = DefaultBeakerMaterial;
+                            CurrentlyHoldingObjectForBeakers = _currentlyHoldingObject;
+                            _currentlyHoldingObject.tag = "Beaker";
+                        }
                         _currentlyHoldingObject.layer = 22;
-                        CurrentlyHoldingObjectForBeakers = _currentlyHoldingObject;
                 
-                        _meshRenderer.material = DefaultReturnItemMaterial;
+                        //_meshRenderer.material = DefaultReturnItemMaterial;
                         _lookedAtObject.layer = 21;
                         _lookedAtObject.tag = "Return Item";
 
@@ -121,9 +155,24 @@ public class PointerController : MonoBehaviour
             }
             else
             {
-                if (_meshRenderer != null && IsHoldingItem == false)
+                if (_meshRenderer != null && IsHoldingItem == false )
                 {
-                    _meshRenderer.material = DefaultItemMaterial;
+                    if (_lookedAtObject.name != "Yellow Substance Beaker" &&
+                        _lookedAtObject.name != "Red Substance Beaker" &&
+                        _lookedAtObject.name != "Blue Substance Beaker" &&
+                        _lookedAtObject.name != "Water Beaker" &&
+                        _lookedAtObject.name != "Orange Substance Beaker" &&
+                        _lookedAtObject.name != "Purple Substance Beaker" &&
+                        _lookedAtObject.name != "Green Substance Beaker" &&
+                        _lookedAtObject.name != "Empty Beaker")
+                    {
+                        _meshRenderer.material = DefaultItemMaterial;
+                    }
+                    else
+                    {
+                        
+                        _meshRenderer.material = DefaultBeakerMaterial;
+                    }
                 }
             }
         }

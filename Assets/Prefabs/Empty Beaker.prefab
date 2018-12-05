@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 136253932385637026}
   - component: {fileID: 54806148141796482}
   - component: {fileID: 114853413065019854}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Empty Beaker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,8 +38,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1824134107025594}
   m_LocalRotation: {x: -0, y: -0, z: -0.016902758, w: 0.9998572}
-  m_LocalPosition: {x: -5.324, y: -0.793, z: -2.075}
-  m_LocalScale: {x: 0.19999996, y: 0.09999998, z: 0.19999999}
+  m_LocalPosition: {x: -5.316, y: -0.564, z: -1.462}
+  m_LocalScale: {x: 0.1999999, y: 0.09999995, z: 0.19999999}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
