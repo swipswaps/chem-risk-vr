@@ -17,6 +17,10 @@ public class ObjectivesSelector : MonoBehaviour
 	public GameObject[] TaskFields;
 	
 	public static string CurrentObjective;
+	private static int _currentPage = 1;
+	private static bool _isNextPageAvailable = false;
+	public GameObject GoNextPageButton;
+	public GameObject GoPrevPageButton;
 	
 	// ******
 	// Objective variables: Use Water Bottle
@@ -26,6 +30,15 @@ public class ObjectivesSelector : MonoBehaviour
 	// ******
 	// Objective variables: Use Teleporter
 	public static bool UsedTeleporter = false;
+	
+	// ******
+	// Objective variables: Mix Colors
+	public static bool PourRedIntoTube = false;
+	public static bool PourBlueIntoTube = false;
+	public static bool PourYellowIntoTube = false;
+	public static bool MixRedAndYellow = false;
+	public static bool MixRedAndBlue = false;
+	public static bool MixBlueAndYellow = false;
 
 	private void Start()
 	{
@@ -35,17 +48,19 @@ public class ObjectivesSelector : MonoBehaviour
 				"Pick up water bottle", // Objective task number one
 				"Place back water bottle" // Objective task number two...
 			});
-		_objectives.Add("Use Teleporter",
+		/*_objectives.Add("Use Teleporter",
 			new[]
 			{
 				"Index click on a teleporter"
-			});
-		_objectives.Add("Buy Salmon Sandwich",
+			});*/
+		_objectives.Add("Mix Colors",
 			new[] {
-				"Take the sandwich",
-				"Eat the sandwich",
-				"YYYYYYYYYYYYYYYYYYY",
-				"EEEEEEEEEESSSSSSSSSS"
+				"Pour color red into a test tube",
+				"Pour color blue into a test tube",
+				"Pour color yellow into a test tube",
+				"Mix colors red and yellow in a beaker to make orange",
+				"Mix colors red and blue in a beaker to make purple",
+				"Mix colors blue and yellow in a beaker to make green"
 			});
 		
 		// After we initialize the _objectives, we pick the
@@ -54,6 +69,11 @@ public class ObjectivesSelector : MonoBehaviour
 		CurrentObjective = _objectives.ElementAt(0).Key;
 		CurrentObjectiveTitle.GetComponent<Text>().text = "Objective: " + CurrentObjective;
 		GoNextObjective();
+		
+		for (int i = 2; i < 12; i++)
+		{
+			TaskFields[i].SetActive(false);
+		}
 	}
 
 	void Update () {
@@ -99,13 +119,23 @@ public class ObjectivesSelector : MonoBehaviour
 			TaskFields[1].GetComponentInChildren<Image>().color = Color.green;
 		}
 
-		if (UsedTeleporter && CurrentObjective == "Use Teleporter"
+		if (UsedTeleporter && CurrentObjective == "Mix Colors"
 		                   && HandinController._isObjectiveHandedIn)
 		{
 			TaskFields[0].GetComponentInChildren<Image>().color = Color.green;
 			CurrentObjective = null;
 			//_currentObjectiveNumber++;
 			//GoNextObjective();
+		}
+
+		if (CurrentObjective == "Mix Colors")
+		{
+			if (PourRedIntoTube) { TaskFields[0].GetComponentInChildren<Image>().color = Color.green; }
+			if (PourBlueIntoTube) { TaskFields[1].GetComponentInChildren<Image>().color = Color.green; }
+			if (PourYellowIntoTube) { TaskFields[2].GetComponentInChildren<Image>().color = Color.green; }
+			if (MixRedAndYellow) { TaskFields[3].GetComponentInChildren<Image>().color = Color.green; }
+			if (MixRedAndBlue) { TaskFields[4].GetComponentInChildren<Image>().color = Color.green; }
+			if (MixBlueAndYellow) { TaskFields[5].GetComponentInChildren<Image>().color = Color.green; }
 		}
 		
 		Ray ray = new Ray(Pointer.transform.position, Pointer.transform.forward);
@@ -131,12 +161,24 @@ public class ObjectivesSelector : MonoBehaviour
 					if (lookedAtButton.name == "Use Water Bottle")
 					{
                         SelectObjectiveUseWaterBottle();
+						// We dont want the player to think he should click any of these
+						// buttons before he actually can be able to.
+						DisableButtonsInteractivity();
 					} else if (lookedAtButton.name == "Use Teleporter")
 					{
 						SelectObjectiveUseTeleporter();
-					} else if (lookedAtButton.name == "Buy Salmon Sandwich")
+						DisableButtonsInteractivity();
+					} else if (lookedAtButton.name == "Mix Colors")
 					{
-						SelectObjectiveForceHim();
+						for (int i = 0; i < 4; i++)
+						{
+							TaskFields[i].SetActive(true);
+						}
+						
+						SelectObjectiveMixColors();
+						// We want to be able to go through the different pages of
+						// this objective because it contains more than 4 tasks.
+						_isNextPageAvailable = true;
 					}
 				}
 			}
@@ -151,6 +193,16 @@ public class ObjectivesSelector : MonoBehaviour
 				_image.color = Color.white;
 			}
 		}
+
+		if (Input.GetKeyDown(KeyCode.F) && CurrentObjective == "Mix Colors" && _isNextPageAvailable)
+		{
+			GoForwardAPage();
+		}
+
+		if (Input.GetKeyDown(KeyCode.G) && CurrentObjective == "Mix Colors")
+		{
+			GoBackAPage();
+		}
 	}
 
 	public void SelectObjectiveUseWaterBottle()
@@ -161,6 +213,12 @@ public class ObjectivesSelector : MonoBehaviour
 		// Resetting the hand-in boolean once a new objective starts.
 		HandinController._isObjectiveHandedIn = false;
 		GoNextObjective();
+		DisableButtonsInteractivity();
+
+		for (int i = 2; i < TaskFields.Length; i++)
+		{
+			TaskFields[i].SetActive(false);
+		}
 	}
 
 	public void SelectObjectiveUseTeleporter()
@@ -169,13 +227,34 @@ public class ObjectivesSelector : MonoBehaviour
 		UsedTeleporter = false;
 		HandinController._isObjectiveHandedIn = false;
 		GoNextObjective();
+		DisableButtonsInteractivity();
+		
+		for (int i = 1; i < TaskFields.Length; i++)
+		{
+			TaskFields[i].SetActive(false);
+		}
 	}
 
-	public void SelectObjectiveForceHim()
+	public void SelectObjectiveMixColors()
 	{
-		CurrentObjective = "Buy Salmon Sandwich";
+		CurrentObjective = "Mix Colors";
 		HandinController._isObjectiveHandedIn = false;
 		GoNextObjective();
+		
+		PourRedIntoTube = false;
+		PourBlueIntoTube = false;
+		PourYellowIntoTube = false;
+		MixRedAndYellow = false;
+		MixRedAndBlue = false;
+		MixBlueAndYellow = false;
+		
+		for (int i = 4; i < TaskFields.Length; i++)
+		{
+			TaskFields[i].SetActive(false);
+		}
+		
+		GoNextPageButton.GetComponent<Button>().interactable = true;
+		GoPrevPageButton.GetComponent<Button>().interactable = false;
 	}
 	
     public void GoNextObjective()
@@ -232,4 +311,69 @@ public class ObjectivesSelector : MonoBehaviour
             }
         }
     }
+
+	public void GoBackAPage()
+	{
+		if (_currentPage > 1)
+		{
+			GoForwardAPage();
+		}
+	}
+
+	public void GoForwardAPage()
+	{
+		int lastTaskInObjective = 0;
+		if (_isNextPageAvailable == false)
+		{
+			lastTaskInObjective = _currentPage * 4 - 8;
+			_currentPage--;
+		}
+		else
+		{
+			lastTaskInObjective = _currentPage * 4;
+			_currentPage++;
+		}
+		int newTaskInObjective = _currentPage * 4;
+		
+		// Disable the existing enabled task fields so we start from a clean slate.
+		foreach (var task in TaskFields)
+		{
+			task.SetActive(false);
+		}
+		
+		// One page contains 3 elements so we multiply the page number
+		// with the total elements it contains.
+		for (int i = lastTaskInObjective; i < newTaskInObjective; i++)
+		{
+			TaskFields[i].SetActive(true);
+			if (i >= TaskFields.Length - 1)
+			{
+				_isNextPageAvailable = false;
+				// If there is no new pages available in the current objective
+				// then we dont want to see the buton available to click to go to the next one.
+				GoNextPageButton.GetComponent<Button>().interactable = false;
+				GoPrevPageButton.GetComponent<Button>().interactable = true;
+			}
+			else
+			{
+				_isNextPageAvailable = true;
+				GoNextPageButton.GetComponent<Button>().interactable = true;
+
+				if (i <= 4)
+				{
+					GoPrevPageButton.GetComponent<Button>().interactable = false;
+				}
+				else
+				{
+					GoPrevPageButton.GetComponent<Button>().interactable = true;
+				}
+			}
+		}
+	}
+
+	private void DisableButtonsInteractivity()
+	{
+		GoNextPageButton.GetComponent<Button>().interactable = false;
+		GoPrevPageButton.GetComponent<Button>().interactable = false;
+	}
 }

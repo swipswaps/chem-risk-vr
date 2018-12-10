@@ -488,6 +488,9 @@
           <e p="BeakerController.cs" t="Include" />
           <e p="CenterEyePointer.cs" t="Include" />
           <e p="CrosshairManager.cs" t="Include" />
+          <e p="FaucetRadiusController.cs" t="Include" />
+          <e p="FaucetWaterController.cs" t="Include" />
+          <e p="HandinController.cs" t="Include" />
           <e p="ObjectivesController.cs" t="Include" />
           <e p="ObjectivesSelector.cs" t="Include" />
           <e p="PointerController.cs" t="Include" />

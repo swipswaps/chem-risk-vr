@@ -16,6 +16,7 @@ TagManager:
   - Direction
   - Teleporter
   - Objective Title
+  - Beaker
   layers:
   - Default
   - TransparentFX

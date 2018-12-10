@@ -116,5 +116,33 @@ public class HandinController : MonoBehaviour
 
             TextObject.GetComponent<Text>().text = _objectiveReport;
         }
+        
+        if (ObjectivesSelector.CurrentObjective == "Mix Colors")
+        {
+            if (ObjectivesSelector.PourRedIntoTube == false) { _objectiveReport += "Did not pour red into tube!\n"; }
+            if (ObjectivesSelector.PourBlueIntoTube == false) { _objectiveReport += "Did not pour blue into tube!!\n"; }
+            if (ObjectivesSelector.PourYellowIntoTube == false) { _objectiveReport += "Did not pour yellow into tube!\n"; }
+            if (ObjectivesSelector.MixRedAndYellow == false) { _objectiveReport += "Did not mix red and yellow!\n"; }
+            if (ObjectivesSelector.MixRedAndBlue == false) { _objectiveReport += "Did not mix red and blue!\n"; }
+            if (ObjectivesSelector.MixBlueAndYellow == false) { _objectiveReport += "Did not mix blue and yellow!\n";}
+
+            // Calculating the pass or fail of an objective and giving the result of it.
+            if (ObjectivesSelector.PourRedIntoTube &&
+                ObjectivesSelector.PourBlueIntoTube &&
+                ObjectivesSelector.PourYellowIntoTube &&
+                ObjectivesSelector.MixBlueAndYellow &&
+                ObjectivesSelector.MixRedAndBlue &&
+                ObjectivesSelector.MixRedAndYellow)
+            {
+                _objectiveReport += "< Success >";
+                _isObjectiveHandedIn = true;
+            }
+            else
+            {
+                _objectiveReport += "< Failed >";
+            }
+
+            TextObject.GetComponent<Text>().text = _objectiveReport;
+        }
     }
 }
