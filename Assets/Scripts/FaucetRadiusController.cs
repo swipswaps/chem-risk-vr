@@ -13,7 +13,7 @@ public class FaucetRadiusController : MonoBehaviour
 
 	private void OnTriggerEnter(Collider other)
 	{
-		if (other.CompareTag("Beaker"))
+		if (other.CompareTag("Beaker") || other.CompareTag("Dropper"))
 		{
 			Faucet.SetActive(true);
 		}
@@ -21,7 +21,7 @@ public class FaucetRadiusController : MonoBehaviour
 
 	private void OnTriggerExit(Collider other)
 	{
-		if (other.CompareTag("Beaker"))
+		if (other.CompareTag("Beaker") || other.CompareTag("Dropper"))
 		{
 			Faucet.SetActive(false);
 		}

@@ -17,6 +17,7 @@ TagManager:
   - Teleporter
   - Objective Title
   - Beaker
+  - Dropper
   layers:
   - Default
   - TransparentFX

@@ -68,7 +68,8 @@ public class PointerController : MonoBehaviour
                         _lookedAtObject.name != "Purple Substance Beaker" &&
                         _lookedAtObject.name != "Green Substance Beaker" &&
                         _lookedAtObject.name != "Water Beaker" &&
-                        _lookedAtObject.name != "Empty Beaker")
+                        _lookedAtObject.name != "Empty Beaker" &&
+                        _lookedAtObject.name != "Dropper")
                     {
                         _meshRenderer.material = DefaultItemMaterial;
                     }
@@ -79,6 +80,30 @@ public class PointerController : MonoBehaviour
                             Destroy(_lookedAtObject.transform.GetChild(0).gameObject);
                             _lookedAtObject.name = "Empty Beaker";
                         }
+
+                        // If we are returning a dropper and it contains liquids inside it, then
+                        // we return the dropper AND transfer the liquids to the original dropper.
+                        if (_currentlyHoldingObject.name == "Dropper(Clone)" && _currentlyHoldingObject.transform.childCount > 0)
+                        {
+                            // Destroy the exusting liquid in the dropper because you dont want to
+                            // keep placing liquid in the dropper, we only have one liquid substance in a dropper.
+                            if (_lookedAtObject.transform.childCount > 0)
+                            {
+                                Destroy(_lookedAtObject.transform.GetChild(0).gameObject);
+                            }
+                            
+                            Instantiate(_currentlyHoldingObject.transform.GetChild(0).gameObject,
+                                _lookedAtObject.transform.position,
+                                Quaternion.identity,
+                                _lookedAtObject.transform);
+                        } else if (_currentlyHoldingObject.name == "Empty Dropper")
+                        {
+                            // If we are returning an empty dropper, then we have to
+                            // destroy the existing liquids in the original dropper.
+                            Destroy(_lookedAtObject.transform.GetChild(0).gameObject);
+                            _lookedAtObject.name = "Dropper";
+                        }
+                        
                         _meshRenderer.material = DefaultBeakerMaterial;
                         _currentlyHoldingObject.tag = "Untagged";
                     }
@@ -132,7 +157,8 @@ public class PointerController : MonoBehaviour
                             _lookedAtObject.name != "Orange Substance Beaker" &&
                             _lookedAtObject.name != "Purple Substance Beaker" &&
                             _lookedAtObject.name != "Green Substance Beaker" &&
-                            _lookedAtObject.name != "Empty Beaker")
+                            _lookedAtObject.name != "Empty Beaker" &&
+                            _lookedAtObject.name != "Dropper")
                         {
                             _currentlyHoldingObject.GetComponent<MeshRenderer>().material = DefaultItemMaterial;
                             CurrentlyHoldingObjectForBeakers = _currentlyHoldingObject;
@@ -140,8 +166,15 @@ public class PointerController : MonoBehaviour
                         else
                         {
                             _currentlyHoldingObject.GetComponent<MeshRenderer>().material = DefaultBeakerMaterial;
+                            if (_lookedAtObject.name == "Dropper")
+                            {
+                                _currentlyHoldingObject.tag = "Dropper";
+                            }
+                            else
+                            {
+                                _currentlyHoldingObject.tag = "Beaker";
+                            }
                             CurrentlyHoldingObjectForBeakers = _currentlyHoldingObject;
-                            _currentlyHoldingObject.tag = "Beaker";
                         }
                         _currentlyHoldingObject.layer = 22;
                 
@@ -164,7 +197,8 @@ public class PointerController : MonoBehaviour
                         _lookedAtObject.name != "Orange Substance Beaker" &&
                         _lookedAtObject.name != "Purple Substance Beaker" &&
                         _lookedAtObject.name != "Green Substance Beaker" &&
-                        _lookedAtObject.name != "Empty Beaker")
+                        _lookedAtObject.name != "Empty Beaker" &&
+                        _lookedAtObject.name != "Dropper")
                     {
                         _meshRenderer.material = DefaultItemMaterial;
                     }

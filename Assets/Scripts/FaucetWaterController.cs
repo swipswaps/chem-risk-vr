@@ -5,10 +5,14 @@ using UnityEngine;
 public class FaucetWaterController : MonoBehaviour {
 	private void OnTriggerEnter(Collider other)
 	{
-		if (other.tag == "Beaker")
+		if (other.CompareTag("Beaker"))
 		{
 			Destroy(other.transform.GetChild(0).gameObject);
 			other.name = "Empty Beaker";
+		}
+		if (other.CompareTag("Dropper"))
+		{
+			Destroy(other.transform.GetChild(0).gameObject);
 		}
 	}
 }

@@ -40,6 +40,24 @@ public class BeakerController : MonoBehaviour
 				if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) ||
 				    Input.GetKeyDown(KeyCode.L))
 				{
+					// If we are holding a dropper above a used beaker and the dropper is empty, then
+					// we can transfer liquid from the beaker to the dropper being held.
+					if ((gameObject.name == "Yellow Substance Beaker" ||
+					    gameObject.name == "Red Substance Beaker" ||
+					    gameObject.name == "Blue Substance Beaker" ||
+					    gameObject.name == "Water Beaker" ||
+					    gameObject.name == "Orange Substance Beaker" ||
+					    gameObject.name == "Purple Substance Beaker" ||
+					    gameObject.name == "Green Substance Beaker") &&
+					    (heldObject.name == "Dropper(Clone)" &&
+					    heldObject.transform.childCount <= 0))
+					{
+						// We instantiate the new liquid in the dropper instead of the beaker this time
+						// since we are *extracting*, not pouring liquids.
+						Instantiate(gameObject.transform.GetChild(0).gameObject,
+							heldObject.transform.position, Quaternion.identity, heldObject.transform);
+					}
+					
 					// We instantiate the substance that the player is holding and we place it
 					// in the empty beaker.
 					if (gameObject.name == "Empty Beaker" && heldObject.name == "Water(Clone)")
