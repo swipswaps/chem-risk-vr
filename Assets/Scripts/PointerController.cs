@@ -21,7 +21,7 @@ public class PointerController : MonoBehaviour
     private Transform _tempPosition = null;
     private static bool _canReturnObject = false;
     
-    private bool _isWearingCoat = false;
+    public static bool IsWearingCoat = false;
     private GameObject _coat;
 
     public static bool IsHoldingItem = false;
@@ -120,7 +120,7 @@ public class PointerController : MonoBehaviour
                     {
                         _coat = _lookedAtObject;
                         _coat.GetComponent<MeshRenderer>().material = DefaultItemMaterial;
-                        _isWearingCoat = true;
+                        IsWearingCoat = true;
                     }
                     else
                     {
@@ -199,7 +199,7 @@ public class PointerController : MonoBehaviour
             _currentlyHoldingObject.transform.rotation = newItemRotation;
         }
 
-        if (_isWearingCoat)
+        if (IsWearingCoat)
         {
             var newCoatPosition = _coat.transform.position;
             newCoatPosition = PlayerBody.transform.position;

@@ -40,8 +40,20 @@ public class ObjectivesSelector : MonoBehaviour
 	public static bool MixRedAndBlue = false;
 	public static bool MixBlueAndYellow = false;
 
+	// Fields responsible for the indicator mechanic on the tablet.
+	[SerializeField] private GameObject _labCoatIndicator;
+	private MeshRenderer _labCoatRenderer;
+	[SerializeField] private GameObject _labGlassesIndicator;
+	private MeshRenderer _labGlassesRenderer;
+	[SerializeField] private Material _normalIndicator;
+	[SerializeField] private Material _redFlashIndicator;
+	[SerializeField] private Material _greenFlashIndicator;
+
 	private void Start()
 	{
+		_labCoatRenderer = _labCoatIndicator.GetComponent<MeshRenderer>();
+		_labGlassesRenderer = _labGlassesIndicator.GetComponent<MeshRenderer>();
+		
 		// First Objective and its task.
 		_objectives.Add("Use Water Bottle", // Objective's title
 			new[] {
@@ -137,6 +149,13 @@ public class ObjectivesSelector : MonoBehaviour
 			if (MixRedAndBlue) { TaskFields[4].GetComponentInChildren<Image>().color = Color.green; }
 			if (MixBlueAndYellow) { TaskFields[5].GetComponentInChildren<Image>().color = Color.green; }
 		}
+
+		// Once the player is wearing a coat, his indicator will turn green
+		// so that he is aware that he is wearing a coat.
+		if (PointerController.IsWearingCoat == true)
+		{
+			_labCoatRenderer.material = _greenFlashIndicator;
+		}
 		
 		Ray ray = new Ray(Pointer.transform.position, Pointer.transform.forward);
 		RaycastHit hit;
@@ -160,10 +179,23 @@ public class ObjectivesSelector : MonoBehaviour
 					// Button functionality/behaviour on click events
 					if (lookedAtButton.name == "Use Water Bottle")
 					{
-                        SelectObjectiveUseWaterBottle();
-						// We dont want the player to think he should click any of these
-						// buttons before he actually can be able to.
-						DisableButtonsInteractivity();
+						if (PointerController.IsWearingCoat == true)
+						{
+							SelectObjectiveUseWaterBottle();
+							// We dont want the player to think he should click any of these
+							// buttons before he actually can be able to.
+							DisableButtonsInteractivity();
+							
+							// If the player is in fact wearing a coat, then flash the indicator as
+							// green once he takes the new objective.
+							//StartCoroutine(FlashIndicator(_labCoatIndicator, _greenFlashIndicator));
+						}
+						else
+						{
+							// Otherwise flash a red indicator so that the player will immediately
+							// know if he needs to have equipment beforehand.
+							StartCoroutine(FlashIndicator(_labCoatIndicator, _redFlashIndicator));
+						}
 					} else if (lookedAtButton.name == "Use Teleporter")
 					{
 						SelectObjectiveUseTeleporter();
@@ -208,6 +240,21 @@ public class ObjectivesSelector : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.G) && CurrentObjective == "Mix Colors")
 		{
 			GoBackAPage();
+		}
+	}
+
+	public IEnumerator FlashIndicator(GameObject indicatorObject, Material indicatorFlash)
+	{
+		MeshRenderer indicatorMesh = indicatorObject.GetComponent<MeshRenderer>();
+		
+		for (int i = 0; i < 6; i++)
+		{
+			// Indicator flash is either the green or red indicator, depending
+			// on the one we placed as a parameter when calling the coroutine.
+			indicatorMesh.material = indicatorFlash;
+			yield return new WaitForSeconds(0.4f);
+			indicatorMesh.material = _normalIndicator;
+			yield return new WaitForSeconds(0.4f);
 		}
 	}
 
