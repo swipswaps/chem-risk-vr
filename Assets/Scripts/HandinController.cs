@@ -12,7 +12,7 @@ public class HandinController : MonoBehaviour
     public LayerMask CatchButtonLayer;
     private Image _image;
 
-    public static bool _isObjectiveHandedIn = false;
+    public static bool IsObjectiveHandedIn = false;
     
     private void Update()
     {
@@ -79,14 +79,27 @@ public class HandinController : MonoBehaviour
                 _objectiveReport += "DONE: Place back a water bottle!\n";
             }
 
+            if (PointerController.IsWearingCoat == false)
+            {
+                _objectiveReport += "You are not wearing a lab coat!\n";
+            }
+            else
+            {
+                _objectiveReport += "DONE: Wore a lab coat\n";
+            }
+
             // Calculating the pass or fail of an objective and giving the result of it.
             if (ObjectivesSelector.PickedUpWaterBottle &&
-                ObjectivesSelector.PlacedBackWaterBottle)
+                ObjectivesSelector.PlacedBackWaterBottle &&
+                PointerController.IsWearingCoat)
             {
                 _objectiveReport += "< Success >";
                 // The objective has to be only successfully handed in before
                 // you are allowed to pick a new one!
-                _isObjectiveHandedIn = true;
+                IsObjectiveHandedIn = true;
+
+                PointerController.IsWearingCoat = true;
+                PointerController.IsWearingGlasses = true;
             }
             else
             {
@@ -107,7 +120,10 @@ public class HandinController : MonoBehaviour
             if (ObjectivesSelector.UsedTeleporter)
             {
                 _objectiveReport += "< Success >";
-                _isObjectiveHandedIn = true;
+                IsObjectiveHandedIn = true;
+
+                PointerController.IsWearingCoat = true;
+                PointerController.IsWearingGlasses = true;
             }
             else
             {
@@ -135,7 +151,10 @@ public class HandinController : MonoBehaviour
                 ObjectivesSelector.MixRedAndYellow)
             {
                 _objectiveReport += "< Success >";
-                _isObjectiveHandedIn = true;
+                IsObjectiveHandedIn = true;
+
+                PointerController.IsWearingCoat = true;
+                PointerController.IsWearingGlasses = true;
             }
             else
             {

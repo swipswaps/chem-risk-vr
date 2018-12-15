@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class ObjectivesSelector : MonoBehaviour
 {
+	public GameObject Player;
 	public GameObject Pointer;
 	public GameObject Title;
 	public GameObject[] ObjectiveButtons;
@@ -48,9 +49,14 @@ public class ObjectivesSelector : MonoBehaviour
 	[SerializeField] private Material _normalIndicator;
 	[SerializeField] private Material _redFlashIndicator;
 	[SerializeField] private Material _greenFlashIndicator;
+	
+	public GameObject FadeTransitioner;
+	public static bool CanOpenDoor = false;
 
 	private void Start()
 	{
+		FadeTransitioner.SetActive(false);
+		
 		_labCoatRenderer = _labCoatIndicator.GetComponent<MeshRenderer>();
 		_labGlassesRenderer = _labGlassesIndicator.GetComponent<MeshRenderer>();
 		
@@ -74,18 +80,21 @@ public class ObjectivesSelector : MonoBehaviour
 				"Mix colors red and blue in a beaker to make purple",
 				"Mix colors blue and yellow in a beaker to make green"
 			});
-		
+
+		PointerController.IsWearingCoat = true;
+		PointerController.IsWearingGlasses = true;
+
 		// After we initialize the _objectives, we pick the
 		// first one and assign the title of the new objective to it
 		// and update the fields in the tablet for each of its tasks.
-		CurrentObjective = _objectives.ElementAt(0).Key;
+		/*CurrentObjective = _objectives.ElementAt(0).Key;
 		CurrentObjectiveTitle.GetComponent<Text>().text = "Objective: " + CurrentObjective;
 		GoNextObjective();
 		
 		for (int i = 2; i < 12; i++)
 		{
 			TaskFields[i].SetActive(false);
-		}
+		}*/
 	}
 
 	void Update () {
@@ -98,7 +107,7 @@ public class ObjectivesSelector : MonoBehaviour
 			{
 				button.GetComponent<Button>().interactable = false;
 			}
-		} else if (CurrentObjective == null && HandinController._isObjectiveHandedIn)
+		} else if (CurrentObjective == null && HandinController.IsObjectiveHandedIn)
 		{
 			foreach (var button in ObjectiveButtons)
 			{
@@ -110,7 +119,7 @@ public class ObjectivesSelector : MonoBehaviour
 		// his current objective and that objective's number is not different from any other
 		// only then can we go to the next mission.
 		if (PickedUpWaterBottle && PlacedBackWaterBottle &&
-		    CurrentObjective == "Use Water Bottle" && HandinController._isObjectiveHandedIn)
+		    CurrentObjective == "Use Water Bottle" && HandinController.IsObjectiveHandedIn)
 		{
 			TaskFields[1].GetComponentInChildren<Image>().color = Color.green;
 			// We update the current objective index so that
@@ -132,7 +141,7 @@ public class ObjectivesSelector : MonoBehaviour
 		}
 
 		if (UsedTeleporter && CurrentObjective == "Mix Colors"
-		                   && HandinController._isObjectiveHandedIn)
+		                   && HandinController.IsObjectiveHandedIn)
 		{
 			TaskFields[0].GetComponentInChildren<Image>().color = Color.green;
 			CurrentObjective = null;
@@ -155,6 +164,19 @@ public class ObjectivesSelector : MonoBehaviour
 		if (PointerController.IsWearingCoat == true)
 		{
 			_labCoatRenderer.material = _greenFlashIndicator;
+		}
+		else
+		{
+			_labCoatRenderer.material = _redFlashIndicator;
+		}
+		
+		if (PointerController.IsWearingGlasses == true)
+		{
+			_labGlassesRenderer.material = _greenFlashIndicator;
+		}
+		else
+		{
+			_labGlassesRenderer.material = _redFlashIndicator;
 		}
 		
 		Ray ray = new Ray(Pointer.transform.position, Pointer.transform.forward);
@@ -182,6 +204,9 @@ public class ObjectivesSelector : MonoBehaviour
 						if (PointerController.IsWearingCoat == true)
 						{
 							SelectObjectiveUseWaterBottle();
+							
+							CanOpenDoor = true;
+							
 							// We dont want the player to think he should click any of these
 							// buttons before he actually can be able to.
 							DisableButtonsInteractivity();
@@ -264,7 +289,7 @@ public class ObjectivesSelector : MonoBehaviour
 		PickedUpWaterBottle = false;
 		PlacedBackWaterBottle = false;
 		// Resetting the hand-in boolean once a new objective starts.
-		HandinController._isObjectiveHandedIn = false;
+		HandinController.IsObjectiveHandedIn = false;
 		GoNextObjective();
 		DisableButtonsInteractivity();
 
@@ -278,7 +303,7 @@ public class ObjectivesSelector : MonoBehaviour
 	{
 		CurrentObjective = "Use Teleporter";
 		UsedTeleporter = false;
-		HandinController._isObjectiveHandedIn = false;
+		HandinController.IsObjectiveHandedIn = false;
 		GoNextObjective();
 		DisableButtonsInteractivity();
 		
@@ -291,7 +316,7 @@ public class ObjectivesSelector : MonoBehaviour
 	public void SelectObjectiveMixColors()
 	{
 		CurrentObjective = "Mix Colors";
-		HandinController._isObjectiveHandedIn = false;
+		HandinController.IsObjectiveHandedIn = false;
 		GoNextObjective();
 		
 		PourRedIntoTube = false;
@@ -312,6 +337,9 @@ public class ObjectivesSelector : MonoBehaviour
 	
     public void GoNextObjective()
     {
+	    CenterEyePointer.IsTeleporterReset = false;
+	    ResetEquipment();
+	    
         for (int j = 0; j < TaskFields.Length; j++)
         {
             TaskFields[j].GetComponentInChildren<Image>().color = Color.white;
@@ -428,5 +456,14 @@ public class ObjectivesSelector : MonoBehaviour
 	{
 		GoNextPageButton.GetComponent<Button>().interactable = false;
 		GoPrevPageButton.GetComponent<Button>().interactable = false;
+	}
+
+	private void ResetEquipment()
+	{
+		// Once the new objective in the lab has been selected, we
+		// reset the player's safety equipment, so that he has to
+		// put it on in the level in order to practice it.
+		PointerController.IsWearingCoat = false;
+		PointerController.IsWearingGlasses = false;
 	}
 }

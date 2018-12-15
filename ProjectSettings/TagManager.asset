@@ -18,6 +18,7 @@ TagManager:
   - Objective Title
   - Beaker
   - Dropper
+  - DoorDirection
   layers:
   - Default
   - TransparentFX
@@ -42,7 +43,7 @@ TagManager:
   - Teleporter
   - Return Item
   - Holding Item
-  - 
+  - Door
   - 
   - 
   - 

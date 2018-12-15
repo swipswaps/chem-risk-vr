@@ -1,9 +1,11 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class CenterEyePointer : MonoBehaviour
 {
     public GameObject Player;
     public LayerMask PlayerLayerMask;
+    public LayerMask DoorLayerMask;
     public GameObject PlayerDirection;
     public LayerMask TeleporterLayerMask;
     private GameObject _currentTeleporter;
@@ -15,9 +17,20 @@ public class CenterEyePointer : MonoBehaviour
     private Transform _directionInTeleporter;
 
     public GameObject FadeTransitioner;
+    // This is where the player will be teleporter to in the
+    // world to start playing on the new objective's level
+    public GameObject UseWaterBottleObjectiveTeleporter;
+    private MeshRenderer _useWaterBottleTeleporterRenderer;
+
+    public Material TeleporterAvailableMaterial;
+    public Material TeleporterDisabledMaterial;
+    public static bool IsTeleporterReset = false;
 
     private void Start()
     {
+        _useWaterBottleTeleporterRenderer = 
+            UseWaterBottleObjectiveTeleporter.GetComponentInChildren<MeshRenderer>();
+        
         var teleporters = GameObject.FindGameObjectsWithTag("Teleporter");
         FadeTransitioner.SetActive(false);
 
@@ -35,16 +48,60 @@ public class CenterEyePointer : MonoBehaviour
                 }
             }
         }
+        
+        var teleporterDirections = GameObject.FindGameObjectsWithTag("DoorDirection");
+        
+        foreach (var teleporter in teleporterDirections)
+        {
+            var objectsInTelerpoter = teleporter.GetComponentsInChildren<Transform>();
+
+            // We dont want the pointers for the angle of the teleporters to
+            // be visible once the game starts. Theyre only for the designers to configure.
+            foreach (var obj in objectsInTelerpoter)
+            {
+                obj.GetComponentInChildren<MeshRenderer>().enabled = false;
+            }
+        }
     }
 
-    // Update is called once per frame
     void Update () {
+
+        if (HandinController.IsObjectiveHandedIn && IsTeleporterReset == false)
+        {
+            _useWaterBottleTeleporterRenderer.material = TeleporterAvailableMaterial;
+            IsTeleporterReset = true;
+            UseWaterBottleObjectiveTeleporter.GetComponent<BoxCollider>().enabled = true;
+        }
+        else if (HandinController.IsObjectiveHandedIn == false &&
+                 ObjectivesSelector.CurrentObjective == "Use Water Bottle")
+        {
+            _useWaterBottleTeleporterRenderer.material = TeleporterDisabledMaterial;
+            UseWaterBottleObjectiveTeleporter.GetComponent<BoxCollider>().enabled = false;
+        }
+
         Ray ray = new Ray(transform.position, transform.forward);
         RaycastHit hit;
+        
+        Ray rayDoor = new Ray(transform.position, transform.forward);
+        RaycastHit hitDoor;
                 
         _newPlayerPosition = Player.transform.position;
         _newPlayerRotation = Player.transform.rotation;
         _newEyeRotation = PlayerDirection.transform.rotation;
+
+        // If the player is allowed to open the door and click on it while
+        // looking at it, then we transport him to the new objective level.
+        if ((OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) ||
+             Input.GetKeyDown(KeyCode.T)) && ObjectivesSelector.CanOpenDoor)
+        {
+            if (Physics.Raycast(rayDoor, out hitDoor, 100, DoorLayerMask))
+            {
+                if (ObjectivesSelector.CurrentObjective == "Use Water Bottle")
+                {
+                    StartCoroutine(TeleportPlayerTo(UseWaterBottleObjectiveTeleporter));
+                }
+            } 
+        }
 		
         // Checking if the player is hovering over an item with the controller
         if (Physics.Raycast(ray, out hit, 100, TeleporterLayerMask))
@@ -63,7 +120,7 @@ public class CenterEyePointer : MonoBehaviour
             // The second input is specifically for testing for the PC instead of
             // wearing the oculus itself.
             if ((OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger)) ||
-                _isAlphaIncreased && Input.GetKeyDown(KeyCode.T))
+                _isAlphaIncreased && Input.GetKeyDown(KeyCode.T) && HandinController.IsObjectiveHandedIn == false)
             {
                 ObjectivesSelector.UsedTeleporter = true;
 				
@@ -81,6 +138,22 @@ public class CenterEyePointer : MonoBehaviour
                         Invoke("UpdatePlayerPosition", 0.3f);
                     }
                 }
+            }
+            // If we use a teleporter while we are still working on completing the
+            // objective, then we use the stardard teleporter mechanic instead of
+            // going to the lobby door.
+            else if ((OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger)) ||
+                     _isAlphaIncreased && Input.GetKeyDown(KeyCode.T) && HandinController.IsObjectiveHandedIn &&
+                     _currentTeleporter.name == "Teleporter: Use Water Bottle") // Or another objective Or and so on...
+            {
+                ObjectivesSelector.UsedTeleporter = true;
+
+                var doorDirection = GameObject.FindGameObjectWithTag("DoorDirection");
+
+                _directionInTeleporter = doorDirection.transform;
+                FadeTransitioner.SetActive(true);
+                FadeTransitioner.GetComponent<Animator>().SetBool("toggleTransitioner", true);
+                Invoke("UpdatePlayerPosition", 0.3f);
             }
         }
         else
@@ -130,5 +203,46 @@ public class CenterEyePointer : MonoBehaviour
     private void FadeOutTeleporter()
     {
         FadeTransitioner.SetActive(false);   
+    }
+
+    public IEnumerator TeleportPlayerTo(GameObject levelTeleporter)
+    {
+        FadeTransitioner.SetActive(true);
+        FadeTransitioner.GetComponent<Animator>().SetBool("toggleTransitioner", true);
+        
+        Transform directionInTeleporter = null;
+        var objectsInTelerpoter = levelTeleporter.GetComponentsInChildren<Transform>();
+
+        // This makes sure we target that child in the teleporter object
+        // that contains the angle we want for the player to be transported with.
+        foreach (var obj in objectsInTelerpoter)
+        {
+            if (obj.CompareTag("Direction"))
+            {
+                directionInTeleporter = obj;
+            }
+        }
+        
+        yield return new WaitForSeconds(0.3f);
+		
+        Invoke("FadeOutTeleporter", 0.3f);
+        FadeTransitioner.GetComponent<Animator>().SetBool("toggleTransitioner", false);
+		
+        Vector3 newPlayerPos = Player.transform.position;
+        Quaternion newPlayerRot = Player.transform.rotation;
+        Quaternion newEyesRot = PlayerDirection.transform.rotation;
+		
+        newPlayerPos = directionInTeleporter.transform.position;
+        newPlayerRot = directionInTeleporter.transform.rotation;
+        newEyesRot = directionInTeleporter.transform.rotation;
+
+        // This makes sure he doesnt teleport in the ground itself
+        // and turn him using the child object of the teleporter's angle of rotation
+        newPlayerPos.y += 1.3f;
+        Player.transform.position = newPlayerPos;
+        Player.transform.rotation = newPlayerRot;
+        PlayerDirection.transform.rotation = newEyesRot;
+        
+        OVRManager.display.RecenterPose();
     }
 }

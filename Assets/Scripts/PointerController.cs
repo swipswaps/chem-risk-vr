@@ -22,7 +22,9 @@ public class PointerController : MonoBehaviour
     private static bool _canReturnObject = false;
     
     public static bool IsWearingCoat = false;
+    public static bool IsWearingGlasses = false;
     private GameObject _coat;
+    private GameObject _glasses;
 
     public static bool IsHoldingItem = false;
 
@@ -146,6 +148,11 @@ public class PointerController : MonoBehaviour
                         _coat = _lookedAtObject;
                         _coat.GetComponent<MeshRenderer>().material = DefaultItemMaterial;
                         IsWearingCoat = true;
+                    } else if (_lookedAtObject.name == "Lab Glasses")
+                    {
+                        _glasses = _lookedAtObject;
+                        _glasses.GetComponent<MeshRenderer>().material = DefaultItemMaterial;
+                        IsWearingGlasses = true;
                     }
                     else
                     {
@@ -242,6 +249,18 @@ public class PointerController : MonoBehaviour
             var newCoatRotation = _coat.transform.rotation;
             newCoatRotation = PlayerBody.transform.rotation;
             _coat.transform.rotation = newCoatRotation;
+        }
+
+        if (IsWearingGlasses)
+        {
+            var newGlassesPosition = _glasses.transform.position;
+            newGlassesPosition = PlayerBody.transform.position;
+            newGlassesPosition.y += 1;
+            _glasses.transform.position = newGlassesPosition;
+				
+            var newCoatRotation = _glasses.transform.rotation;
+            newCoatRotation = PlayerBody.transform.rotation;
+            _glasses.transform.rotation = newCoatRotation;
         }
     }
 
