@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class HandinController : MonoBehaviour
 {
+    public GameObject Player;
     private string _objectiveReport = "";
     public GameObject TextObject;
 	
@@ -93,13 +94,7 @@ public class HandinController : MonoBehaviour
                 ObjectivesSelector.PlacedBackWaterBottle &&
                 PointerController.IsWearingCoat)
             {
-                _objectiveReport += "< Success >";
-                // The objective has to be only successfully handed in before
-                // you are allowed to pick a new one!
-                IsObjectiveHandedIn = true;
-
-                PointerController.IsWearingCoat = true;
-                PointerController.IsWearingGlasses = true;
+                CompleteHandIn();
             }
             else
             {
@@ -119,11 +114,7 @@ public class HandinController : MonoBehaviour
             // Calculating the pass or fail of an objective and giving the result of it.
             if (ObjectivesSelector.UsedTeleporter)
             {
-                _objectiveReport += "< Success >";
-                IsObjectiveHandedIn = true;
-
-                PointerController.IsWearingCoat = true;
-                PointerController.IsWearingGlasses = true;
+                CompleteHandIn();
             }
             else
             {
@@ -150,11 +141,7 @@ public class HandinController : MonoBehaviour
                 ObjectivesSelector.MixRedAndBlue &&
                 ObjectivesSelector.MixRedAndYellow)
             {
-                _objectiveReport += "< Success >";
-                IsObjectiveHandedIn = true;
-
-                PointerController.IsWearingCoat = true;
-                PointerController.IsWearingGlasses = true;
+                CompleteHandIn();
             }
             else
             {
@@ -163,5 +150,20 @@ public class HandinController : MonoBehaviour
 
             TextObject.GetComponent<Text>().text = _objectiveReport;
         }
+    }
+
+    private void CompleteHandIn()
+    {
+        _objectiveReport += "< Success >";
+        // The objective has to be only successfully handed in before
+        // you are allowed to pick a new one!
+        IsObjectiveHandedIn = true;
+
+        ObjectivesSelector.CanWearEquipment = false;
+        PointerController.IsWearingCoat = false;
+        PointerController.IsWearingGlasses = false;
+        PointerController.IsWearingGloves = false;
+        
+        Player.GetComponentInChildren<PointerController>().ReturnEquipment();
     }
 }

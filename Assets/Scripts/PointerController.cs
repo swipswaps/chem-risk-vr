@@ -13,6 +13,7 @@ public class PointerController : MonoBehaviour
     public Material DefaultBeakerMaterial;
     public Material HoverableObjectMaterial;
     private MeshRenderer _meshRenderer;
+    private MeshRenderer[] _meshRendererGloves;
     public LayerMask CatchItemLayer;
     public LayerMask ReturnObjectLayer;
     public GameObject Point;
@@ -23,10 +24,26 @@ public class PointerController : MonoBehaviour
     
     public static bool IsWearingCoat = false;
     public static bool IsWearingGlasses = false;
+    public static bool IsWearingGloves = false;
     private GameObject _coat;
+    private Transform _coatReturnSpot;
     private GameObject _glasses;
+    private Transform _glassesReturnSpot;
+    private GameObject _gloves;
+    private Transform _glovesReturnSpot;
 
     public static bool IsHoldingItem = false;
+
+    private void Start()
+    {
+        _coat = GameObject.Find("Lab Coat");
+        _glasses = GameObject.Find("Lab Glasses");
+        _gloves = GameObject.Find("Lab Gloves");
+        
+        _coatReturnSpot = GameObject.Find("Lab Coat Return Spot").transform;
+        _glassesReturnSpot = GameObject.Find("Lab Glasses Return Spot").transform;
+        _glovesReturnSpot = GameObject.Find("Lab Gloves Return Spot").transform;
+    }
 
     // Update is called once per frame
     void Update () {
@@ -131,8 +148,20 @@ public class PointerController : MonoBehaviour
             
                 // Once it is found we change it to look as if it is hovered
                 // so that it appears interact-able
-                _meshRenderer = _lookedAtObject.GetComponent<MeshRenderer>();
-                _meshRenderer.material = HoverableObjectMaterial;
+                if (_lookedAtObject.name == "Lab Gloves")
+                {
+                    _meshRendererGloves = _lookedAtObject.GetComponentsInChildren<MeshRenderer>();
+
+                    foreach (MeshRenderer renderer in _meshRendererGloves)
+                    {
+                       renderer.material = HoverableObjectMaterial;
+                    }
+                }
+                else
+                {
+                    _meshRenderer = _lookedAtObject.GetComponent<MeshRenderer>();
+                    _meshRenderer.material = HoverableObjectMaterial;
+                }
                 
                 // If the player is not holding an interactable item and presses
                 // the controller button, we append the item onto his hand and
@@ -153,6 +182,16 @@ public class PointerController : MonoBehaviour
                         _glasses = _lookedAtObject;
                         _glasses.GetComponent<MeshRenderer>().material = DefaultItemMaterial;
                         IsWearingGlasses = true;
+                    } else if (_lookedAtObject.name == "Lab Gloves")
+                    {
+                        _gloves = _lookedAtObject;
+                        MeshRenderer[] glovesRenderers = _gloves.GetComponentsInChildren<MeshRenderer>();
+
+                        foreach (MeshRenderer renderer in glovesRenderers)
+                        {
+                            renderer.material = DefaultItemMaterial;
+                        }
+                        IsWearingGloves = true;
                     }
                     else
                     {
@@ -195,7 +234,7 @@ public class PointerController : MonoBehaviour
             }
             else
             {
-                if (_meshRenderer != null && IsHoldingItem == false )
+                if ((_meshRenderer != null || _meshRendererGloves != null) && IsHoldingItem == false)
                 {
                     if (_lookedAtObject.name != "Yellow Substance Beaker" &&
                         _lookedAtObject.name != "Red Substance Beaker" &&
@@ -208,10 +247,13 @@ public class PointerController : MonoBehaviour
                         _lookedAtObject.name != "Dropper")
                     {
                         _meshRenderer.material = DefaultItemMaterial;
+                        foreach (MeshRenderer renderer in _meshRendererGloves)
+                        {
+                            renderer.material = DefaultItemMaterial;
+                        }
                     }
                     else
                     {
-                        
                         _meshRenderer.material = DefaultBeakerMaterial;
                     }
                 }
@@ -229,43 +271,77 @@ public class PointerController : MonoBehaviour
         
         // This makes sure the item the player is holding is being placed
         // at the spot where the controller hand is.
-        if (IsHoldingItem && _currentlyHoldingObject != null)
+        if (ObjectivesSelector.CanWearEquipment)
         {
-            var newItemPosition = _currentlyHoldingObject.transform.position;
-            newItemPosition = transform.position;
-            _currentlyHoldingObject.transform.position = newItemPosition;
+            if (IsHoldingItem && _currentlyHoldingObject != null)
+            {
+                var newItemPosition = _currentlyHoldingObject.transform.position;
+                newItemPosition = transform.position;
+                _currentlyHoldingObject.transform.position = newItemPosition;
 				
-            var newItemRotation = _currentlyHoldingObject.transform.rotation;
-            newItemRotation = transform.rotation;
-            _currentlyHoldingObject.transform.rotation = newItemRotation;
-        }
+                var newItemRotation = _currentlyHoldingObject.transform.rotation;
+                newItemRotation = transform.rotation;
+                _currentlyHoldingObject.transform.rotation = newItemRotation;
+            }
 
-        if (IsWearingCoat)
-        {
-            var newCoatPosition = _coat.transform.position;
-            newCoatPosition = PlayerBody.transform.position;
-            _coat.transform.position = newCoatPosition;
-				
-            var newCoatRotation = _coat.transform.rotation;
-            newCoatRotation = PlayerBody.transform.rotation;
-            _coat.transform.rotation = newCoatRotation;
-        }
+            if (IsWearingCoat && _coat != null)
+            {
+                UpdatePosition(_coat, null);
+            }
 
-        if (IsWearingGlasses)
-        {
-            var newGlassesPosition = _glasses.transform.position;
-            newGlassesPosition = PlayerBody.transform.position;
-            newGlassesPosition.y += 1;
-            _glasses.transform.position = newGlassesPosition;
-				
-            var newCoatRotation = _glasses.transform.rotation;
-            newCoatRotation = PlayerBody.transform.rotation;
-            _glasses.transform.rotation = newCoatRotation;
+            if (IsWearingGlasses && _glasses != null)
+            {
+                UpdatePosition(_glasses, null);
+            }
+
+            if (IsWearingGloves && _gloves != null)
+            {
+                UpdatePosition(_gloves, null);
+            }
         }
     }
 
     private void EnableReturningObject()
     {
         IsHoldingItem = !IsHoldingItem;
+    }
+
+    public void ReturnEquipment()
+    {
+        UpdatePosition(_coat, _coatReturnSpot);
+        UpdatePosition(_glasses, _glassesReturnSpot);
+        UpdatePosition(_gloves, _glovesReturnSpot);
+    }
+
+    private void UpdatePosition(GameObject equipment, Transform ReturnTransform)
+    {
+        // This places the desired equipment to its original location before
+        // the player took it for wearing.
+        if (ReturnTransform != null)
+        {
+            var newEquipmentPosition = equipment.transform.position;
+            newEquipmentPosition = ReturnTransform.position;
+            equipment.transform.position = newEquipmentPosition;
+				
+            var newEquipmentRotation = equipment.transform.rotation;
+            newEquipmentRotation = ReturnTransform.rotation;
+            equipment.transform.rotation = newEquipmentRotation;   
+        }
+        else
+        {
+            var newEquipmentPosition = equipment.transform.position;
+            newEquipmentPosition = PlayerBody.transform.position;
+            if (equipment.name == "Lab Glasses")
+            {
+                newEquipmentPosition.y += 1;
+            }
+            equipment.transform.position = newEquipmentPosition;
+				
+            var newEquipmentRotation = equipment.transform.rotation;
+            newEquipmentRotation = PlayerBody.transform.rotation;
+            equipment.transform.rotation = newEquipmentRotation;
+        }
+
+        ObjectivesSelector.CanWearEquipment = true;
     }
 }

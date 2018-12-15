@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class ObjectivesSelector : MonoBehaviour
 {
 	public GameObject Player;
+	private AudioSource _playerAudioSource;
 	public GameObject Pointer;
 	public GameObject Title;
 	public GameObject[] ObjectiveButtons;
@@ -16,7 +17,8 @@ public class ObjectivesSelector : MonoBehaviour
 	public GameObject CurrentObjectiveTitle;
 	private Dictionary<string, string[]> _objectives = new Dictionary<string, string[]>();
 	public GameObject[] TaskFields;
-	
+
+	public GameObject CurrentObjectiveText;
 	public static string CurrentObjective;
 	private static int _currentPage = 1;
 	private static bool _isNextPageAvailable = false;
@@ -46,12 +48,15 @@ public class ObjectivesSelector : MonoBehaviour
 	private MeshRenderer _labCoatRenderer;
 	[SerializeField] private GameObject _labGlassesIndicator;
 	private MeshRenderer _labGlassesRenderer;
+	[SerializeField] private GameObject _labGlovesIndicator;
+	private MeshRenderer _labGlovesRenderer;
 	[SerializeField] private Material _normalIndicator;
 	[SerializeField] private Material _redFlashIndicator;
 	[SerializeField] private Material _greenFlashIndicator;
 	
 	public GameObject FadeTransitioner;
 	public static bool CanOpenDoor = false;
+	public static bool  CanWearEquipment = false;
 
 	private void Start()
 	{
@@ -59,6 +64,8 @@ public class ObjectivesSelector : MonoBehaviour
 		
 		_labCoatRenderer = _labCoatIndicator.GetComponent<MeshRenderer>();
 		_labGlassesRenderer = _labGlassesIndicator.GetComponent<MeshRenderer>();
+		_labGlovesRenderer = _labGlovesIndicator.GetComponent<MeshRenderer>();
+		_playerAudioSource = Player.GetComponent<AudioSource>();
 		
 		// First Objective and its task.
 		_objectives.Add("Use Water Bottle", // Objective's title
@@ -81,8 +88,10 @@ public class ObjectivesSelector : MonoBehaviour
 				"Mix colors blue and yellow in a beaker to make green"
 			});
 
-		PointerController.IsWearingCoat = true;
+		/*PointerController.IsWearingCoat = true;
 		PointerController.IsWearingGlasses = true;
+		PointerController.IsWearingGloves = true;
+		*/
 
 		// After we initialize the _objectives, we pick the
 		// first one and assign the title of the new objective to it
@@ -129,6 +138,7 @@ public class ObjectivesSelector : MonoBehaviour
 			// string to null, so that the player will have the option to select
 			// the next objective in the selector screen.
 			CurrentObjective = null;
+			CurrentObjectiveText.GetComponent<Text>().text = "Select Objective...";
 			//GoNextObjective();
 		}
 		if (PickedUpWaterBottle && CurrentObjective == "Use Water Bottle")
@@ -145,6 +155,7 @@ public class ObjectivesSelector : MonoBehaviour
 		{
 			TaskFields[0].GetComponentInChildren<Image>().color = Color.green;
 			CurrentObjective = null;
+			CurrentObjectiveText.GetComponent<Text>().text = "Select Objective...";
 			//_currentObjectiveNumber++;
 			//GoNextObjective();
 		}
@@ -179,6 +190,15 @@ public class ObjectivesSelector : MonoBehaviour
 			_labGlassesRenderer.material = _redFlashIndicator;
 		}
 		
+		if (PointerController.IsWearingGloves == true)
+		{
+			_labGlovesRenderer.material = _greenFlashIndicator;
+		}
+		else
+		{
+			_labGlovesRenderer.material = _redFlashIndicator;
+		}
+		
 		Ray ray = new Ray(Pointer.transform.position, Pointer.transform.forward);
 		RaycastHit hit;
 		
@@ -201,8 +221,8 @@ public class ObjectivesSelector : MonoBehaviour
 					// Button functionality/behaviour on click events
 					if (lookedAtButton.name == "Use Water Bottle")
 					{
-						if (PointerController.IsWearingCoat == true)
-						{
+						//if (PointerController.IsWearingCoat == true)
+						//{
 							SelectObjectiveUseWaterBottle();
 							
 							CanOpenDoor = true;
@@ -214,13 +234,13 @@ public class ObjectivesSelector : MonoBehaviour
 							// If the player is in fact wearing a coat, then flash the indicator as
 							// green once he takes the new objective.
 							//StartCoroutine(FlashIndicator(_labCoatIndicator, _greenFlashIndicator));
-						}
-						else
-						{
+						//}
+						//else
+						//{
 							// Otherwise flash a red indicator so that the player will immediately
 							// know if he needs to have equipment beforehand.
-							StartCoroutine(FlashIndicator(_labCoatIndicator, _redFlashIndicator));
-						}
+							//StartCoroutine(FlashIndicator(_labCoatIndicator, _redFlashIndicator));
+						//}
 					} else if (lookedAtButton.name == "Use Teleporter")
 					{
 						SelectObjectiveUseTeleporter();
@@ -242,6 +262,16 @@ public class ObjectivesSelector : MonoBehaviour
 					} else if (lookedAtButton.name == "Prev Page Button" && CurrentObjective == "Mix Colors")
 					{
 						GoBackAPage();
+					} else if (lookedAtButton.name == "Volume Down")
+					{
+						_playerAudioSource.volume -= 0.05f;
+						// This plays the click sound once a button has been pressed
+						// so that the player can see how his sound setting was updated.
+						_playerAudioSource.PlayOneShot(_playerAudioSource.clip);
+					} else if (lookedAtButton.name == "Volume Up")
+					{
+						_playerAudioSource.volume += 0.05f;
+						_playerAudioSource.PlayOneShot(_playerAudioSource.clip);
 					}
 				}
 			}
@@ -348,6 +378,8 @@ public class ObjectivesSelector : MonoBehaviour
 		
         CurrentObjectiveTitle.GetComponent<Text>().text = "Objective: " + CurrentObjective;
 	    Title.GetComponent<Text>().text = "Currently: " + CurrentObjective;
+	    // This changes the objective text title on top of the door to the new objective.
+	    CurrentObjectiveText.GetComponent<Text>().text = CurrentObjective;
 	    
 	    // *********************************************************************
 	    // This will be useful if we want to give the player one objective
@@ -460,10 +492,16 @@ public class ObjectivesSelector : MonoBehaviour
 
 	private void ResetEquipment()
 	{
+		// Now we have to return the equipment back to its place.
+		CanWearEquipment = false;
+		
 		// Once the new objective in the lab has been selected, we
 		// reset the player's safety equipment, so that he has to
 		// put it on in the level in order to practice it.
 		PointerController.IsWearingCoat = false;
 		PointerController.IsWearingGlasses = false;
+		PointerController.IsWearingGloves = false;
+		
+		Player.GetComponentInChildren<PointerController>().ReturnEquipment();
 	}
 }
