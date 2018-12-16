@@ -32,6 +32,9 @@ public class PointerController : MonoBehaviour
     private GameObject _gloves;
     private Transform _glovesReturnSpot;
 
+    public GameObject LeftController;
+    public GameObject RightController;
+
     public static bool IsHoldingItem = false;
 
     private void Start()
@@ -329,17 +332,40 @@ public class PointerController : MonoBehaviour
         }
         else
         {
-            var newEquipmentPosition = equipment.transform.position;
-            newEquipmentPosition = PlayerBody.transform.position;
-            if (equipment.name == "Lab Glasses")
+            if (equipment.name == "Lab Gloves")
             {
-                newEquipmentPosition.y += 1;
-            }
-            equipment.transform.position = newEquipmentPosition;
+                // Moving the LEFT glove to the player's left controller hand
+                var leftGlovePosition = equipment.transform.GetChild(0).transform.position;
+                leftGlovePosition = LeftController.transform.position;
+                equipment.transform.GetChild(0).transform.position = leftGlovePosition;
 				
-            var newEquipmentRotation = equipment.transform.rotation;
-            newEquipmentRotation = PlayerBody.transform.rotation;
-            equipment.transform.rotation = newEquipmentRotation;
+                var leftGloveRotation = equipment.transform.GetChild(0).transform.rotation;
+                leftGloveRotation = LeftController.transform.rotation;
+                equipment.transform.GetChild(0).transform.rotation = leftGloveRotation;
+                
+                // Moving the RIGHT glove to the player's left controller hand
+                var rightGlovePosition = equipment.transform.GetChild(1).transform.position;
+                rightGlovePosition = RightController.transform.position;
+                equipment.transform.GetChild(1).transform.position = rightGlovePosition;
+				
+                var rightGloveRotation = equipment.transform.GetChild(1).transform.rotation;
+                rightGloveRotation = RightController.transform.rotation;
+                equipment.transform.GetChild(1).transform.rotation = rightGloveRotation;
+            }
+            else
+            {
+                var newEquipmentPosition = equipment.transform.position;
+                newEquipmentPosition = PlayerBody.transform.position;
+                if (equipment.name == "Lab Glasses")
+                {
+                    newEquipmentPosition.y += 1;
+                }
+                equipment.transform.position = newEquipmentPosition;
+				
+                var newEquipmentRotation = equipment.transform.rotation;
+                newEquipmentRotation = PlayerBody.transform.rotation;
+                equipment.transform.rotation = newEquipmentRotation;
+            }
         }
 
         ObjectivesSelector.CanWearEquipment = true;

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.23577556, g: 0.23577556, b: 0.23577556, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -544,7 +544,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 42486518}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 645ec2b06edd0e54299370ff9ba4b1a9, type: 3}
   m_Name: 
@@ -564,6 +564,8 @@ MonoBehaviour:
     m_Bits: 2097152
   Point: {fileID: 281272326}
   PlayerBody: {fileID: 913896592}
+  LeftController: {fileID: 1886528246}
+  RightController: {fileID: 42486518}
 --- !u!4 &42713859 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4455948306799664, guid: a5563836a9b3c18449ca4f733a3f581b,
@@ -1443,8 +1445,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 1
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1.35
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -2586,6 +2588,8 @@ MonoBehaviour:
     m_Bits: 2097152
   Point: {fileID: 281272326}
   PlayerBody: {fileID: 913896592}
+  LeftController: {fileID: 1886528246}
+  RightController: {fileID: 42486518}
 --- !u!1 &248594185
 GameObject:
   m_ObjectHideFlags: 0
@@ -2702,7 +2706,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.4245283, g: 0.4245283, b: 0.4245283, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -5248,7 +5252,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: f8bfa74500235fe49ad3246fc4e6994b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -15768,7 +15772,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.4245283, g: 0.4245283, b: 0.4245283, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -16693,7 +16697,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: f8bfa74500235fe49ad3246fc4e6994b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -21042,14 +21046,14 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2108238994}
-  m_LocalRotation: {x: 0, y: -0.058435287, z: 0, w: 0.99829125}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -0.537, y: 0, z: 3.479}
   m_LocalScale: {x: 1.1966047, y: 1, z: 1.196605}
   m_Children:
   - {fileID: 1355441642}
   m_Father: {fileID: 1165769818}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: -6.7, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &2122996712
 GameObject:
   m_ObjectHideFlags: 0
