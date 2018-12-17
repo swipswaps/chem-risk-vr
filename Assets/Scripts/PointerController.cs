@@ -124,6 +124,8 @@ public class PointerController : MonoBehaviour
                             // destroy the existing liquids in the original dropper.
                             Destroy(_lookedAtObject.transform.GetChild(0).gameObject);
                             _lookedAtObject.name = "Dropper";
+                            
+                            Debug.Log("mmm");
                         }
                         
                         _meshRenderer.material = DefaultBeakerMaterial;

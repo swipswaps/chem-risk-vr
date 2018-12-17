@@ -9,10 +9,12 @@ public class FaucetWaterController : MonoBehaviour {
 		{
 			Destroy(other.transform.GetChild(0).gameObject);
 			other.name = "Empty Beaker";
+			gameObject.tag = "Untagged";
 		}
 		if (other.CompareTag("Dropper"))
 		{
 			Destroy(other.transform.GetChild(0).gameObject);
+			other.name = "Empty Dropper";
 		}
 	}
 }

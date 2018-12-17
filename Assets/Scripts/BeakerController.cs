@@ -66,6 +66,7 @@ public class BeakerController : MonoBehaviour
 						// We also have to rename the current game object from empty because
 						// the beaker is no longer empty and instead has water.
 						gameObject.name = "Water Beaker";
+						gameObject.tag = "Dirty Beaker";
 					}
 
 					if (gameObject.name == "Water Beaker" && heldObject.name == "Red Substance(Clone)")

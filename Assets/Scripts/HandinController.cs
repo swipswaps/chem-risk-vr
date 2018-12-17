@@ -59,6 +59,8 @@ public class HandinController : MonoBehaviour
         // on its outcome, we update the final mission report string and then
         // set it as the text parameter in the canvas text object.
         _objectiveReport += "Objective report:\n";
+
+        GameObject[] existingDirtyBeakers = GameObject.FindGameObjectsWithTag("Dirty Beaker");
 		
         if (ObjectivesSelector.CurrentObjective == "Use Water Bottle")
         {
@@ -89,10 +91,21 @@ public class HandinController : MonoBehaviour
                 _objectiveReport += "DONE: Wore a lab coat\n";
             }
 
+            if (existingDirtyBeakers.Length > 0)
+            {
+                _objectiveReport += "You've left dirty beakers in the lab!\n";
+            }
+            else
+            {
+                _objectiveReport += "You've cleaned the beakers in the lab!\n";
+            }
+            
+
             // Calculating the pass or fail of an objective and giving the result of it.
             if (ObjectivesSelector.PickedUpWaterBottle &&
                 ObjectivesSelector.PlacedBackWaterBottle &&
-                PointerController.IsWearingCoat)
+                PointerController.IsWearingCoat &&
+                existingDirtyBeakers.Length <= 0)
             {
                 CompleteHandIn();
             }
@@ -111,8 +124,18 @@ public class HandinController : MonoBehaviour
                 _objectiveReport += "Did not use a teleporter!\n";
             }
 
+            if (existingDirtyBeakers.Length > 0)
+            {
+                _objectiveReport += "You've left dirty beakers in the lab!\n";
+            }
+            else
+            {
+                _objectiveReport += "You've cleaned the beakers in the lab!\n";
+            }
+
             // Calculating the pass or fail of an objective and giving the result of it.
-            if (ObjectivesSelector.UsedTeleporter)
+            if (ObjectivesSelector.UsedTeleporter &&
+                existingDirtyBeakers.Length <= 0)
             {
                 CompleteHandIn();
             }
@@ -133,13 +156,23 @@ public class HandinController : MonoBehaviour
             if (ObjectivesSelector.MixRedAndBlue == false) { _objectiveReport += "Did not mix red and blue!\n"; }
             if (ObjectivesSelector.MixBlueAndYellow == false) { _objectiveReport += "Did not mix blue and yellow!\n";}
 
+            if (existingDirtyBeakers.Length > 0)
+            {
+                _objectiveReport += "You've left dirty beakers in the lab!\n";
+            }
+            else
+            {
+                _objectiveReport += "You've cleaned the beakers in the lab!\n";
+            }
+
             // Calculating the pass or fail of an objective and giving the result of it.
             if (ObjectivesSelector.PourRedIntoTube &&
                 ObjectivesSelector.PourBlueIntoTube &&
                 ObjectivesSelector.PourYellowIntoTube &&
                 ObjectivesSelector.MixBlueAndYellow &&
                 ObjectivesSelector.MixRedAndBlue &&
-                ObjectivesSelector.MixRedAndYellow)
+                ObjectivesSelector.MixRedAndYellow &&
+                existingDirtyBeakers.Length <= 0)
             {
                 CompleteHandIn();
             }
