@@ -116,10 +116,26 @@ public class CenterEyePointer : MonoBehaviour
                 _isAlphaIncreased = true;
             }
 			
+            // If we use a teleporter while we are still working on completing the
+            // objective, then we use the stardard teleporter mechanic instead of
+            // going to the lobby door.
+            if ((OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger)) ||
+                     _isAlphaIncreased && Input.GetKeyDown(KeyCode.T) && HandinController.IsObjectiveHandedIn &&
+                     _currentTeleporter.name == "Teleporter: Use Water Bottle") // Or another objective Or and so on...
+            {
+                ObjectivesSelector.UsedTeleporter = true;
+
+                var doorDirection = GameObject.FindGameObjectWithTag("DoorDirection");
+
+                _directionInTeleporter = doorDirection.transform;
+                FadeTransitioner.SetActive(true);
+                FadeTransitioner.GetComponent<Animator>().SetBool("toggleTransitioner", true);
+                Invoke("UpdatePlayerPosition", 0.3f);
+            }
             // This teleports the player to the teleporter's position.
             // The second input is specifically for testing for the PC instead of
             // wearing the oculus itself.
-            if ((OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger)) ||
+            else if ((OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger)) ||
                 _isAlphaIncreased && Input.GetKeyDown(KeyCode.T) && HandinController.IsObjectiveHandedIn == false)
             {
                 ObjectivesSelector.UsedTeleporter = true;
@@ -138,22 +154,6 @@ public class CenterEyePointer : MonoBehaviour
                         Invoke("UpdatePlayerPosition", 0.3f);
                     }
                 }
-            }
-            // If we use a teleporter while we are still working on completing the
-            // objective, then we use the stardard teleporter mechanic instead of
-            // going to the lobby door.
-            else if ((OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger)) ||
-                     _isAlphaIncreased && Input.GetKeyDown(KeyCode.T) && HandinController.IsObjectiveHandedIn &&
-                     _currentTeleporter.name == "Teleporter: Use Water Bottle") // Or another objective Or and so on...
-            {
-                ObjectivesSelector.UsedTeleporter = true;
-
-                var doorDirection = GameObject.FindGameObjectWithTag("DoorDirection");
-
-                _directionInTeleporter = doorDirection.transform;
-                FadeTransitioner.SetActive(true);
-                FadeTransitioner.GetComponent<Animator>().SetBool("toggleTransitioner", true);
-                Invoke("UpdatePlayerPosition", 0.3f);
             }
         }
         else

@@ -593,7 +593,9 @@
       <e p="Oculus.VR.Scripts.Editor.csproj" t="IncludeRecursive" />
       <e p="OVRHarness.Editor.csproj" t="IncludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />
-      <e p="Temp\bin" t="ExcludeRecursive" />
+      <e p="Temp" t="ExcludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+      </e>
       <e p="y2g3-project.sln" t="IncludeFlat" />
     </e>
     <e p="C:\Users\Acer\.Rider2018.1\system\resharper-host\Local\Transient\ReSharperHost\v12\SolutionCaches\_y2g3-project.1772442860.00" t="ExcludeRecursive" />
