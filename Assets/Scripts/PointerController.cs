@@ -325,6 +325,17 @@ public class PointerController : MonoBehaviour
             var newEquipmentPosition = equipment.transform.position;
             newEquipmentPosition = ReturnTransform.position;
             equipment.transform.position = newEquipmentPosition;
+
+            if (equipment.transform.childCount > 0)
+            {
+                var rightGlovePosition = equipment.transform.GetChild(0).transform.position;
+                rightGlovePosition = ReturnTransform.transform.position;
+                equipment.transform.GetChild(0).transform.position = rightGlovePosition;
+				
+                var rightGloveRotation = equipment.transform.GetChild(0).transform.rotation;
+                rightGloveRotation = ReturnTransform.transform.rotation;
+                equipment.transform.GetChild(0).transform.rotation = rightGloveRotation;
+            }
 				
             var newEquipmentRotation = equipment.transform.rotation;
             newEquipmentRotation = ReturnTransform.rotation;
@@ -334,23 +345,14 @@ public class PointerController : MonoBehaviour
         {
             if (equipment.name == "Lab Gloves")
             {
-                // Moving the LEFT glove to the player's left controller hand
-                var leftGlovePosition = equipment.transform.GetChild(0).transform.position;
-                leftGlovePosition = LeftController.transform.position;
-                equipment.transform.GetChild(0).transform.position = leftGlovePosition;
-				
-                var leftGloveRotation = equipment.transform.GetChild(0).transform.rotation;
-                leftGloveRotation = LeftController.transform.rotation;
-                equipment.transform.GetChild(0).transform.rotation = leftGloveRotation;
-                
                 // Moving the RIGHT glove to the player's left controller hand
-                var rightGlovePosition = equipment.transform.GetChild(1).transform.position;
+                var rightGlovePosition = equipment.transform.GetChild(0).transform.position;
                 rightGlovePosition = RightController.transform.position;
-                equipment.transform.GetChild(1).transform.position = rightGlovePosition;
+                equipment.transform.GetChild(0).transform.position = rightGlovePosition;
 				
-                var rightGloveRotation = equipment.transform.GetChild(1).transform.rotation;
+                var rightGloveRotation = equipment.transform.GetChild(0).transform.rotation;
                 rightGloveRotation = RightController.transform.rotation;
-                equipment.transform.GetChild(1).transform.rotation = rightGloveRotation;
+                equipment.transform.GetChild(0).transform.rotation = rightGloveRotation;
             }
             else
             {

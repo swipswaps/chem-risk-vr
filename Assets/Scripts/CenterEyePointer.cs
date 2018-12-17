@@ -134,10 +134,10 @@ public class CenterEyePointer : MonoBehaviour
             // If we use a teleporter while we are still working on completing the
             // objective, then we use the stardard teleporter mechanic instead of
             // going to the lobby door.
-            if ((OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger)) ||
-                _isAlphaIncreased && Input.GetKeyDown(KeyCode.T) && HandinController.IsObjectiveHandedIn &&
-                _currentTeleporter.name == "Teleporter: Use Water Bottle" || 
-                _currentTeleporter.name == "Teleporter: Mix Colors") // Or another objective Or and so on...
+            if ((OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) ||
+                 Input.GetKeyDown(KeyCode.T)) && _isAlphaIncreased && HandinController.IsObjectiveHandedIn &&
+                (_currentTeleporter.name == "Teleporter: Use Water Bottle" || 
+                _currentTeleporter.name == "Teleporter: Mix Colors")) // Or another objective Or and so on...
             {
                 ObjectivesSelector.UsedTeleporter = true;
 
@@ -151,8 +151,8 @@ public class CenterEyePointer : MonoBehaviour
             // This teleports the player to the teleporter's position.
             // The second input is specifically for testing for the PC instead of
             // wearing the oculus itself.
-            else if ((OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger)) ||
-                     _isAlphaIncreased && Input.GetKeyDown(KeyCode.T) && HandinController.IsObjectiveHandedIn == false)
+            else if ((OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) ||
+                      Input.GetKeyDown(KeyCode.T)) && _isAlphaIncreased && HandinController.IsObjectiveHandedIn == false)
             {
                 ObjectivesSelector.UsedTeleporter = true;
 				

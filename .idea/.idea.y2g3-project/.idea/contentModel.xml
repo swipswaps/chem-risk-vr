@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="A:\VR Project\y2g3-project" t="IncludeRecursive">
+    <e p="C:\Users\Acer\.Rider2018.1\system\resharper-host\Local\Transient\ReSharperHost\v12\SolutionCaches\_y2g3-project.-1024818325.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Acer\Downloads\y2g3-project" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
@@ -598,6 +599,5 @@
       </e>
       <e p="y2g3-project.sln" t="IncludeFlat" />
     </e>
-    <e p="C:\Users\Acer\.Rider2018.1\system\resharper-host\Local\Transient\ReSharperHost\v12\SolutionCaches\_y2g3-project.1772442860.00" t="ExcludeRecursive" />
   </component>
 </project>
