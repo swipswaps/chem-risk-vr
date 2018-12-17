@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="83d7650d-0c48-4245-a8f0-a9ff168eb770" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.y2g3-project/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.y2g3-project/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.y2g3-project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.y2g3-project/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CenterEyePointer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CenterEyePointer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ObjectivesSelector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ObjectivesSelector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Skybox.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/Skybox.mat" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,98 +34,98 @@
       <file leaf-file-name="ObjectivesSelector.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/ObjectivesSelector.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1335">
-              <caret line="93" column="10" selection-start-line="93" selection-start-column="10" selection-end-line="93" selection-end-column="10" />
+            <state relative-caret-position="2002">
+              <caret line="234" column="46" selection-start-line="234" selection-start-column="46" selection-end-line="234" selection-end-column="46" />
               <folding>
-                <marker date="1544908717981" expanded="false" signature="6:119" ph="..." />
-                <marker date="1544908717981" expanded="true" signature="168:16471" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="804:855" ph="/* Objective variables: Use Water Bottle ... */" />
-                <marker date="1544908717981" expanded="true" signature="959:1008" ph="/* Objective variables: Use Teleporter ... */" />
-                <marker date="1544908717981" expanded="true" signature="1056:1101" ph="/* Objective variables: Mix Colors ... */" />
-                <marker date="1544908717981" expanded="true" signature="2053:3612" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="2479:2604" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="2609:2701" ph="/* _objectives.Add(&quot;Use Teleporter&quot;, ... */" />
-                <marker date="1544908717981" expanded="true" signature="2743:3047" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="3053:3188" ph="/* PointerController.IsWearingCoat = true; ... */" />
-                <marker date="1544908717981" expanded="true" signature="3192:3370" ph="/* After we initialize the _objectives, we pick the ... */" />
-                <marker date="1544908717981" expanded="true" signature="3373:3609" ph="/* CurrentObjective = _objectives.ElementAt(0).Key; ... */" />
-                <marker date="1544908717981" expanded="true" signature="3630:10307" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="3634:3792" ph="/* We want the player to select a new mission on if the ... */" />
-                <marker date="1544908717981" expanded="true" signature="3824:3942" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="3872:3938" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="4017:4134" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="4065:4130" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="4140:4330" ph="/* If the player has completed the requirements to finish ... */" />
-                <marker date="1544908717981" expanded="true" signature="4470:5004" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="4548:4873" ph="/* We update the current objective index so that ... */" />
-                <marker date="1544908717981" expanded="true" signature="5073:5151" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="5222:5300" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="5420:5657" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="5601:5653" ph="/* _currentObjectiveNumber++; ... */" />
-                <marker date="1544908717981" expanded="true" signature="5698:6279" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="6283:6402" ph="/* Once the player is wearing a coat, his indicator will turn green ... */" />
-                <marker date="1544908717981" expanded="true" signature="6449:6510" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="6517:6576" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="6629:6693" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="6700:6762" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="6814:6877" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="6884:6945" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="7048:7172" ph="/* If the player happens to hover over UI elements such as ... */" />
-                <marker date="1544908717981" expanded="true" signature="7232:10001" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="7397:9780" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="7586:9775" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="7738:8537" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="7752:7808" ph="/* if (PointerController.IsWearingCoat == true) ... */" />
-                <marker date="1544908717981" expanded="true" signature="7899:8016" ph="/* We dont want the player to think he should click any of these ... */" />
-                <marker date="1544908717981" expanded="true" signature="8070:8530" ph="/* If the player is in fact wearing a coat, then flash the indicator as ... */" />
-                <marker date="1544908717981" expanded="true" signature="8587:8676" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="8722:9028" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="8763:8817" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="8865:8986" ph="/* We want to be able to go through the different pages of ... */" />
-                <marker date="1544908717981" expanded="true" signature="9140:9178" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="9266:9301" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="9348:9605" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="9404:9535" ph="/* This plays the click sound once a button has been pressed ... */" />
-                <marker date="1544908717981" expanded="true" signature="9650:9769" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="9784:9997" ph="/* If the player is holding an item and needs to return it, he must ... */" />
-                <marker date="1544908717981" expanded="true" signature="10008:10081" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="10035:10077" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="10177:10206" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="10278:10304" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="10396:10834" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="10509:10831" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="10517:10653" ph="/* Indicator flash is either the green or red indicator, depending ... */" />
-                <marker date="1544908717981" expanded="true" signature="10880:11247" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="11201:11244" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="11292:11557" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="11511:11554" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="11598:12098" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="11922:11965" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="12134:14363" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="12270:12437" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="12776:13054" ph="/* This will be useful if we want to give the player one objective ... */" />
-                <marker date="1544908717981" expanded="true" signature="13060:13808" ph="/* Initialize the first objective without incrementing ... */" />
-                <marker date="1544908717981" expanded="true" signature="13861:14357" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="13922:14347" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="14001:14333" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="14083:14315" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="14141:14293" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="14391:14450" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="14418:14447" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="14481:15778" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="14552:14626" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="14633:14703" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="14864:14898" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="14904:15008" ph="/* One page contains 3 elements so we multiply the page number ... */" />
-                <marker date="1544908717981" expanded="true" signature="15073:15775" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="15146:15472" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="15190:15336" ph="/* If there is no new pages available in the current objective ... */" />
-                <marker date="1544908717981" expanded="true" signature="15480:15771" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="15600:15679" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="15688:15766" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="15823:15957" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="15989:16469" ph="{...}" />
-                <marker date="1544908717981" expanded="true" signature="16086:16257" ph="/* Once the new objective in the lab has been selected, we ... */" />
+                <marker date="1545046909001" expanded="false" signature="6:119" ph="..." />
+                <marker date="1545046909001" expanded="true" signature="168:21068" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="898:952" ph="/* Objective variables: Use Water Bottle ... */" />
+                <marker date="1545046909001" expanded="true" signature="1065:1117" ph="/* Objective variables: Use Teleporter ... */" />
+                <marker date="1545046909001" expanded="true" signature="1171:1219" ph="/* Objective variables: Mix Colors ... */" />
+                <marker date="1545046909001" expanded="true" signature="2231:4114" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="2711:2869" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="2880:3011" ph="/* _objectives.Add(&quot;Use Teleporter&quot;, ... */" />
+                <marker date="1545046909001" expanded="true" signature="3068:3453" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="3465:3618" ph="/* PointerController.IsWearingCoat = true; ... */" />
+                <marker date="1545046909001" expanded="true" signature="3628:3818" ph="/* After we initialize the _objectives, we pick the ... */" />
+                <marker date="1545046909001" expanded="true" signature="3827:4108" ph="/* CurrentObjective = _objectives.ElementAt(0).Key; ... */" />
+                <marker date="1545046909001" expanded="true" signature="4135:13956" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="4145:4315" ph="/* We want the player to select a new mission on if the ... */" />
+                <marker date="1545046909001" expanded="true" signature="4353:4522" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="4416:4512" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="4597:4765" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="4660:4755" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="4777:4979" ph="/* If the player has completed the requirements to finish ... */" />
+                <marker date="1545046909001" expanded="true" signature="5131:5767" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="5233:5603" ph="/* We update the current objective index so that ... */" />
+                <marker date="1545046909001" expanded="true" signature="5842:5941" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="6018:6117" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="6249:6543" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="6472:6533" ph="/* _currentObjectiveNumber++; ... */" />
+                <marker date="1545046909001" expanded="true" signature="6590:7237" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="7247:7372" ph="/* Once the player is wearing a coat, his indicator will turn green ... */" />
+                <marker date="1545046909001" expanded="true" signature="7425:7507" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="7520:7600" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="7659:7744" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="7757:7840" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="7898:7982" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="7995:8077" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="8198:8328" ph="/* If the player happens to hover over UI elements such as ... */" />
+                <marker date="1545046909001" expanded="true" signature="8394:13536" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="8592:13282" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="8838:13268" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="9047:10831" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="9094:9328" ph="/* if (PointerController.IsWearingCoat == true) ... */" />
+                <marker date="1545046909001" expanded="true" signature="9970:10104" ph="/* We dont want the player to think he should click any of these ... */" />
+                <marker date="1545046909001" expanded="true" signature="10192:10809" ph="/* If the player is in fact wearing a coat, then flash the indicator as ... */" />
+                <marker date="1545046909001" expanded="true" signature="10881:11130" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="11176:12245" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="11250:11361" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="12031:12170" ph="/* We want to be able to go through the different pages of ... */" />
+                <marker date="1545046909001" expanded="true" signature="12357:12443" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="12531:12614" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="12661:13020" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="12768:12917" ph="/* This plays the click sound once a button has been pressed ... */" />
+                <marker date="1545046909001" expanded="true" signature="13065:13250" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="13295:13526" ph="/* If the player is holding an item and needs to return it, he must ... */" />
+                <marker date="1545046909001" expanded="true" signature="13549:13673" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="13591:13663" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="13775:13825" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="13903:13950" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="14048:14570" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="14176:14564" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="14199:14344" ph="/* Indicator flash is either the green or red indicator, depending ... */" />
+                <marker date="1545046909001" expanded="true" signature="14619:15061" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="14991:15055" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="15109:15437" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="15367:15431" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="15481:16080" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="15868:15932" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="16116:18435" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="16258:16425" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="16776:17063" ph="/* This will be useful if we want to give the player one objective ... */" />
+                <marker date="1545046909001" expanded="true" signature="17072:17880" ph="/* Initialize the first objective without incrementing ... */" />
+                <marker date="1545046909001" expanded="true" signature="17933:18429" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="17994:18419" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="18073:18405" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="18155:18387" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="18213:18365" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="18466:18558" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="18502:18552" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="18592:20291" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="18678:18782" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="18795:18895" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="19074:19129" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="19141:19251" ph="/* One page contains 3 elements so we multiply the page number ... */" />
+                <marker date="1545046909001" expanded="true" signature="19322:20285" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="19419:19823" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="19496:19654" ph="/* If there is no new pages available in the current objective ... */" />
+                <marker date="1545046909001" expanded="true" signature="19840:20275" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="20005:20123" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="20144:20261" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="20339:20491" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="20526:21066" ph="{...}" />
+                <marker date="1545046909001" expanded="true" signature="20644:20827" ph="/* Once the new objective in the lab has been selected, we ... */" />
               </folding>
             </state>
           </provider>
@@ -132,51 +134,53 @@
       <file leaf-file-name="CenterEyePointer.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/CenterEyePointer.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
-              <caret line="126" column="48" selection-start-line="126" selection-start-column="48" selection-end-line="126" selection-end-column="48" />
+            <state relative-caret-position="340">
+              <caret line="90" column="14" selection-start-line="90" selection-start-column="10" selection-end-line="90" selection-end-column="14" />
               <folding>
-                <marker date="1545040566621" expanded="true" signature="6:44" ph="..." />
-                <marker date="1545040566621" expanded="true" signature="91:10467" ph="{...}" />
-                <marker date="1545040566621" expanded="true" signature="581:696" ph="/* This is where the player will be teleporter to in the ... */" />
-                <marker date="1545040566621" expanded="true" signature="987:2425" ph="{...}" />
-                <marker date="1545040566621" expanded="true" signature="1300:1823" ph="{...}" />
-                <marker date="1545040566621" expanded="true" signature="1411:1567" ph="/* We dont want the pointers for the angle of the teleporters to ... */" />
-                <marker date="1545040566621" expanded="true" signature="1620:1813" ph="{...}" />
-                <marker date="1545040566621" expanded="true" signature="1683:1799" ph="{...}" />
-                <marker date="1545040566621" expanded="true" signature="1985:2419" ph="{...}" />
-                <marker date="1545040566621" expanded="true" signature="2096:2252" ph="/* We dont want the pointers for the angle of the teleporters to ... */" />
-                <marker date="1545040566621" expanded="true" signature="2305:2409" ph="{...}" />
-                <marker date="1545040566621" expanded="true" signature="2446:7111" ph="{...}" />
-                <marker date="1545040566621" expanded="true" signature="2528:2762" ph="{...}" />
-                <marker date="1545040566621" expanded="true" signature="2904:3100" ph="{...}" />
-                <marker date="1545040566621" expanded="true" signature="3499:3641" ph="/* If the player is allowed to open the door and click on it while ... */" />
-                <marker date="1545040566621" expanded="true" signature="3788:4116" ph="{...}" />
-                <marker date="1545040566621" expanded="true" signature="3873:4105" ph="{...}" />
-                <marker date="1545040566621" expanded="true" signature="3966:4091" ph="{...}" />
-                <marker date="1545040566621" expanded="true" signature="4267:6915" ph="{...}" />
-                <marker date="1545040566621" expanded="true" signature="4290:4507" ph="/* We dont put it in the function because the else statement ... */" />
-                <marker date="1545040566621" expanded="true" signature="4609:4729" ph="{...}" />
-                <marker date="1545040566621" expanded="true" signature="4746:4928" ph="/* This teleports the player to the teleporter's position. ... */" />
-                <marker date="1545040566621" expanded="true" signature="5118:5947" ph="{...}" />
-                <marker date="1545040566621" expanded="true" signature="5312:5466" ph="/* This makes sure we target that child in the teleporter object ... */" />
-                <marker date="1545040566621" expanded="true" signature="5523:5933" ph="{...}" />
-                <marker date="1545040566621" expanded="true" signature="5594:5915" ph="{...}" />
-                <marker date="1545040566621" expanded="true" signature="5960:6152" ph="/* If we use a teleporter while we are still working on completing the ... */" />
-                <marker date="1545040566621" expanded="true" signature="6465:6905" ph="{...}" />
-                <marker date="1545040566621" expanded="true" signature="6928:7105" ph="{...}" />
-                <marker date="1545040566621" expanded="true" signature="6973:7095" ph="{...}" />
-                <marker date="1545040566621" expanded="true" signature="7117:7297" ph="/* This function makes sure we update the teleporter's visibility ... */" />
-                <marker date="1545040566621" expanded="true" signature="7373:7729" ph="{...}" />
-                <marker date="1545040566621" expanded="true" signature="7522:7723" ph="{...}" />
-                <marker date="1545040566621" expanded="true" signature="7770:8701" ph="{...}" />
-                <marker date="1545040566621" expanded="true" signature="8130:8273" ph="/* This makes sure he doesnt teleport in the ground itself ... */" />
-                <marker date="1545040566621" expanded="true" signature="8494:8607" ph="/* I'm rotating the pose too because it stays the same ... */" />
-                <marker date="1545040566621" expanded="true" signature="8739:8797" ph="{...}" />
-                <marker date="1545040566621" expanded="true" signature="8866:10465" ph="{...}" />
-                <marker date="1545040566621" expanded="true" signature="9156:9302" ph="/* This makes sure we target that child in the teleporter object ... */" />
-                <marker date="1545040566621" expanded="true" signature="9351:9489" ph="{...}" />
-                <marker date="1545040566621" expanded="true" signature="9406:9479" ph="{...}" />
-                <marker date="1545040566621" expanded="true" signature="10075:10218" ph="/* This makes sure he doesnt teleport in the ground itself ... */" />
+                <marker date="1545047267931" expanded="false" signature="6:44" ph="..." />
+                <marker date="1545047267931" expanded="true" signature="91:11810" ph="{...}" />
+                <marker date="1545047267931" expanded="true" signature="581:696" ph="/* This is where the player will be teleporter to in the ... */" />
+                <marker date="1545047267931" expanded="true" signature="1101:2669" ph="{...}" />
+                <marker date="1545047267931" expanded="true" signature="1544:2067" ph="{...}" />
+                <marker date="1545047267931" expanded="true" signature="1655:1811" ph="/* We dont want the pointers for the angle of the teleporters to ... */" />
+                <marker date="1545047267931" expanded="true" signature="1864:2057" ph="{...}" />
+                <marker date="1545047267931" expanded="true" signature="1927:2043" ph="{...}" />
+                <marker date="1545047267931" expanded="true" signature="2229:2663" ph="{...}" />
+                <marker date="1545047267931" expanded="true" signature="2340:2496" ph="/* We dont want the pointers for the angle of the teleporters to ... */" />
+                <marker date="1545047267931" expanded="true" signature="2549:2653" ph="{...}" />
+                <marker date="1545047267931" expanded="true" signature="2690:8454" ph="{...}" />
+                <marker date="1545047267931" expanded="true" signature="2772:3172" ph="{...}" />
+                <marker date="1545047267931" expanded="true" signature="3314:3689" ph="{...}" />
+                <marker date="1545047267931" expanded="true" signature="3819:4194" ph="{...}" />
+                <marker date="1545047267931" expanded="true" signature="4593:4735" ph="/* If the player is allowed to open the door and click on it while ... */" />
+                <marker date="1545047267931" expanded="true" signature="4882:5392" ph="{...}" />
+                <marker date="1545047267931" expanded="true" signature="4967:5381" ph="{...}" />
+                <marker date="1545047267931" expanded="true" signature="5060:5185" ph="{...}" />
+                <marker date="1545047267931" expanded="true" signature="5247:5367" ph="{...}" />
+                <marker date="1545047267931" expanded="true" signature="5543:8258" ph="{...}" />
+                <marker date="1545047267931" expanded="true" signature="5566:5783" ph="/* We dont put it in the function because the else statement ... */" />
+                <marker date="1545047267931" expanded="true" signature="5885:6005" ph="{...}" />
+                <marker date="1545047267931" expanded="true" signature="6022:6214" ph="/* If we use a teleporter while we are still working on completing the ... */" />
+                <marker date="1545047267931" expanded="true" signature="6584:7024" ph="{...}" />
+                <marker date="1545047267931" expanded="true" signature="7037:7219" ph="/* This teleports the player to the teleporter's position. ... */" />
+                <marker date="1545047267931" expanded="true" signature="7419:8248" ph="{...}" />
+                <marker date="1545047267931" expanded="true" signature="7613:7767" ph="/* This makes sure we target that child in the teleporter object ... */" />
+                <marker date="1545047267931" expanded="true" signature="7824:8234" ph="{...}" />
+                <marker date="1545047267931" expanded="true" signature="7895:8216" ph="{...}" />
+                <marker date="1545047267931" expanded="true" signature="8271:8448" ph="{...}" />
+                <marker date="1545047267931" expanded="true" signature="8316:8438" ph="{...}" />
+                <marker date="1545047267931" expanded="true" signature="8460:8640" ph="/* This function makes sure we update the teleporter's visibility ... */" />
+                <marker date="1545047267931" expanded="true" signature="8716:9072" ph="{...}" />
+                <marker date="1545047267931" expanded="true" signature="8865:9066" ph="{...}" />
+                <marker date="1545047267931" expanded="true" signature="9113:10044" ph="{...}" />
+                <marker date="1545047267931" expanded="true" signature="9473:9616" ph="/* This makes sure he doesnt teleport in the ground itself ... */" />
+                <marker date="1545047267931" expanded="true" signature="9837:9950" ph="/* I'm rotating the pose too because it stays the same ... */" />
+                <marker date="1545047267931" expanded="true" signature="10082:10140" ph="{...}" />
+                <marker date="1545047267931" expanded="true" signature="10209:11808" ph="{...}" />
+                <marker date="1545047267931" expanded="true" signature="10499:10645" ph="/* This makes sure we target that child in the teleporter object ... */" />
+                <marker date="1545047267931" expanded="true" signature="10694:10832" ph="{...}" />
+                <marker date="1545047267931" expanded="true" signature="10749:10822" ph="{...}" />
+                <marker date="1545047267931" expanded="true" signature="11418:11561" ph="/* This makes sure he doesnt teleport in the ground itself ... */" />
               </folding>
             </state>
           </provider>
@@ -185,8 +189,37 @@
       <file leaf-file-name="BeakerController.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/BeakerController.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1650">
+            <state relative-caret-position="810">
               <caret line="110" selection-start-line="110" selection-end-line="110" />
+              <folding>
+                <marker date="1544522606865" expanded="false" signature="6:78" ph="..." />
+                <marker date="1544522606865" expanded="true" signature="125:5327" ph="{...}" />
+                <marker date="1544522606865" expanded="true" signature="513:4788" ph="{...}" />
+                <marker date="1544522606865" expanded="true" signature="553:4785" ph="{...}" />
+                <marker date="1544522606865" expanded="true" signature="695:963" ph="/* &amp;&amp; ... */" />
+                <marker date="1544522606865" expanded="true" signature="972:4577" ph="{...}" />
+                <marker date="1544522606865" expanded="true" signature="982:1093" ph="/* This helps signal the player that he can now spill the ... */" />
+                <marker date="1544522606865" expanded="true" signature="1303:4572" ph="{...}" />
+                <marker date="1544522606865" expanded="true" signature="1315:1470" ph="/* If we are holding a dropper above a used beaker and the dropper is empty, then ... */" />
+                <marker date="1544522606865" expanded="true" signature="1951:2253" ph="{...}" />
+                <marker date="1544522606865" expanded="true" signature="1965:2101" ph="/* We instantiate the new liquid in the dropper instead of the beaker this time ... */" />
+                <marker date="1544522606865" expanded="true" signature="2265:2368" ph="/* We instantiate the substance that the player is holding and we place it ... */" />
+                <marker date="1544522606865" expanded="true" signature="2449:2727" ph="{...}" />
+                <marker date="1544522606865" expanded="true" signature="2550:2680" ph="/* We also have to rename the current game object from empty because ... */" />
+                <marker date="1544522606865" expanded="true" signature="2817:3043" ph="{...}" />
+                <marker date="1544522606865" expanded="true" signature="2831:2935" ph="/* We destroy the existing water and replace it with the ... */" />
+                <marker date="1544522606865" expanded="true" signature="3135:3259" ph="{...}" />
+                <marker date="1544522606865" expanded="true" signature="3349:3467" ph="{...}" />
+                <marker date="1544522606865" expanded="true" signature="3714:3835" ph="{...}" />
+                <marker date="1544522606865" expanded="true" signature="4078:4197" ph="{...}" />
+                <marker date="1544522606865" expanded="true" signature="4446:4566" ph="{...}" />
+                <marker date="1544522606865" expanded="true" signature="4585:4700" ph="{...}" />
+                <marker date="1544522606865" expanded="true" signature="4833:4914" ph="{...}" />
+                <marker date="1544522606865" expanded="true" signature="4872:4911" ph="{...}" />
+                <marker date="1544522606865" expanded="true" signature="4959:5041" ph="{...}" />
+                <marker date="1544522606865" expanded="true" signature="4998:5038" ph="{...}" />
+                <marker date="1544522606865" expanded="true" signature="5126:5325" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -198,6 +231,11 @@
               <caret line="118" column="16" selection-start-line="118" selection-start-column="16" selection-end-line="118" selection-end-column="16" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FaucetRadiusController.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/FaucetRadiusController.cs">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file leaf-file-name="PointerController.cs" pinned="false" current-in-tab="false">
@@ -272,59 +310,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FaucetRadiusController.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/FaucetRadiusController.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <marker date="1544522780404" expanded="false" signature="6:78" ph="..." />
-                <marker date="1544522780404" expanded="true" signature="131:522" ph="{...}" />
-                <marker date="1544522780404" expanded="true" signature="183:216" ph="{...}" />
-                <marker date="1544522780404" expanded="true" signature="262:368" ph="{...}" />
-                <marker date="1544522780404" expanded="true" signature="330:365" ph="{...}" />
-                <marker date="1544522780404" expanded="true" signature="413:520" ph="{...}" />
-                <marker date="1544522780404" expanded="true" signature="481:517" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OVRTrackedRemote.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Oculus/VR/Scripts/Util/OVRTrackedRemote.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="810">
-              <caret line="55" selection-start-line="55" selection-end-line="55" />
-              <folding>
-                <marker date="1542715045903" expanded="true" signature="0:971" ph="/* Copyright : Copyright (c) Facebook Technologies, LLC and its affiliates. All rights reserved. ... */" />
-                <marker date="1542715045903" expanded="false" signature="979:1017" ph="..." />
-                <marker date="1542715045903" expanded="true" signature="1019:1145" ph="/// Simple helper script that conditionally enables rendering of a controller if it is connected. ... " />
-                <marker date="1542715045903" expanded="true" signature="1191:2369" ph="{...}" />
-                <marker date="1542715045903" expanded="true" signature="1195:1294" ph="/// The root GameObject that represents the GearVr Controller model. ... " />
-                <marker date="1542715045903" expanded="true" signature="1341:1443" ph="/// The root GameObject that represents the Oculus Go Controller model. ... " />
-                <marker date="1542715045903" expanded="true" signature="1492:1617" ph="/// The controller that determines whether or not to enable rendering of the controller model. ... " />
-                <marker date="1542715045903" expanded="true" signature="1807:1870" ph="{...}" />
-                <marker date="1542715045903" expanded="true" signature="1886:2367" ph="{...}" />
-                <marker date="1542715045903" expanded="true" signature="2059:2316" ph="{...}" />
-                <marker date="1542715045903" expanded="true" signature="2345:2364" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ObjectivesController.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/ObjectivesController.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>_isWearingCoat</find>
       <find>FlashInd</find>
       <find>Water</find>
       <find>Instantia</find>
@@ -354,6 +343,7 @@
       <find>IsWeating</find>
       <find>Player</find>
       <find>ResetE</find>
+      <find>door</find>
     </findStrings>
     <replaceStrings>
       <replace>_objectives</replace>
@@ -395,8 +385,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/FaucetWaterController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FaucetRadiusController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/HandinController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ObjectivesSelector.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PointerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ObjectivesSelector.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CenterEyePointer.cs" />
       </list>
     </option>
@@ -489,12 +479,12 @@
       <workItem from="1544511584228" duration="12627000" />
       <workItem from="1544794401674" duration="423000" />
       <workItem from="1544888195041" duration="21589000" />
-      <workItem from="1545034849061" duration="1779000" />
+      <workItem from="1545034849061" duration="5438000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="142205000" />
+    <option name="totallyTimeSpent" value="145864000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -510,7 +500,7 @@
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="7" />
-      <window_info anchor="right" id="Errors In Solution" order="3" visible="true" weight="0.21002132" />
+      <window_info active="true" anchor="right" id="Errors In Solution" order="3" visible="true" weight="0.21002132" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Unit Tests" order="10" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
@@ -1321,13 +1311,6 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Shaders/NewImageEffectShader.shader" />
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/ObjectivesController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Oculus/Avatar/Scripts/OvrAvatarSDKManager.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1065">
@@ -1355,111 +1338,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/ObjectivesSelector.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1335">
-          <caret line="93" column="10" selection-start-line="93" selection-start-column="10" selection-end-line="93" selection-end-column="10" />
-          <folding>
-            <marker date="1544908717981" expanded="false" signature="6:119" ph="..." />
-            <marker date="1544908717981" expanded="true" signature="168:16471" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="804:855" ph="/* Objective variables: Use Water Bottle ... */" />
-            <marker date="1544908717981" expanded="true" signature="959:1008" ph="/* Objective variables: Use Teleporter ... */" />
-            <marker date="1544908717981" expanded="true" signature="1056:1101" ph="/* Objective variables: Mix Colors ... */" />
-            <marker date="1544908717981" expanded="true" signature="2053:3612" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="2479:2604" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="2609:2701" ph="/* _objectives.Add(&quot;Use Teleporter&quot;, ... */" />
-            <marker date="1544908717981" expanded="true" signature="2743:3047" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="3053:3188" ph="/* PointerController.IsWearingCoat = true; ... */" />
-            <marker date="1544908717981" expanded="true" signature="3192:3370" ph="/* After we initialize the _objectives, we pick the ... */" />
-            <marker date="1544908717981" expanded="true" signature="3373:3609" ph="/* CurrentObjective = _objectives.ElementAt(0).Key; ... */" />
-            <marker date="1544908717981" expanded="true" signature="3630:10307" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="3634:3792" ph="/* We want the player to select a new mission on if the ... */" />
-            <marker date="1544908717981" expanded="true" signature="3824:3942" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="3872:3938" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="4017:4134" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="4065:4130" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="4140:4330" ph="/* If the player has completed the requirements to finish ... */" />
-            <marker date="1544908717981" expanded="true" signature="4470:5004" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="4548:4873" ph="/* We update the current objective index so that ... */" />
-            <marker date="1544908717981" expanded="true" signature="5073:5151" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="5222:5300" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="5420:5657" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="5601:5653" ph="/* _currentObjectiveNumber++; ... */" />
-            <marker date="1544908717981" expanded="true" signature="5698:6279" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="6283:6402" ph="/* Once the player is wearing a coat, his indicator will turn green ... */" />
-            <marker date="1544908717981" expanded="true" signature="6449:6510" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="6517:6576" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="6629:6693" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="6700:6762" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="6814:6877" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="6884:6945" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="7048:7172" ph="/* If the player happens to hover over UI elements such as ... */" />
-            <marker date="1544908717981" expanded="true" signature="7232:10001" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="7397:9780" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="7586:9775" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="7738:8537" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="7752:7808" ph="/* if (PointerController.IsWearingCoat == true) ... */" />
-            <marker date="1544908717981" expanded="true" signature="7899:8016" ph="/* We dont want the player to think he should click any of these ... */" />
-            <marker date="1544908717981" expanded="true" signature="8070:8530" ph="/* If the player is in fact wearing a coat, then flash the indicator as ... */" />
-            <marker date="1544908717981" expanded="true" signature="8587:8676" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="8722:9028" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="8763:8817" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="8865:8986" ph="/* We want to be able to go through the different pages of ... */" />
-            <marker date="1544908717981" expanded="true" signature="9140:9178" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="9266:9301" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="9348:9605" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="9404:9535" ph="/* This plays the click sound once a button has been pressed ... */" />
-            <marker date="1544908717981" expanded="true" signature="9650:9769" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="9784:9997" ph="/* If the player is holding an item and needs to return it, he must ... */" />
-            <marker date="1544908717981" expanded="true" signature="10008:10081" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="10035:10077" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="10177:10206" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="10278:10304" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="10396:10834" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="10509:10831" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="10517:10653" ph="/* Indicator flash is either the green or red indicator, depending ... */" />
-            <marker date="1544908717981" expanded="true" signature="10880:11247" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="11201:11244" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="11292:11557" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="11511:11554" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="11598:12098" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="11922:11965" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="12134:14363" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="12270:12437" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="12776:13054" ph="/* This will be useful if we want to give the player one objective ... */" />
-            <marker date="1544908717981" expanded="true" signature="13060:13808" ph="/* Initialize the first objective without incrementing ... */" />
-            <marker date="1544908717981" expanded="true" signature="13861:14357" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="13922:14347" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="14001:14333" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="14083:14315" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="14141:14293" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="14391:14450" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="14418:14447" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="14481:15778" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="14552:14626" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="14633:14703" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="14864:14898" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="14904:15008" ph="/* One page contains 3 elements so we multiply the page number ... */" />
-            <marker date="1544908717981" expanded="true" signature="15073:15775" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="15146:15472" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="15190:15336" ph="/* If there is no new pages available in the current objective ... */" />
-            <marker date="1544908717981" expanded="true" signature="15480:15771" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="15600:15679" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="15688:15766" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="15823:15957" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="15989:16469" ph="{...}" />
-            <marker date="1544908717981" expanded="true" signature="16086:16257" ph="/* Once the new objective in the lab has been selected, we ... */" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/BeakerController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1650">
-          <caret line="110" selection-start-line="110" selection-end-line="110" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/HandinController.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1770">
@@ -1467,17 +1345,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/FaucetRadiusController.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/ObjectivesController.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="90">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
           <folding>
-            <marker date="1544522780404" expanded="false" signature="6:78" ph="..." />
-            <marker date="1544522780404" expanded="true" signature="131:522" ph="{...}" />
-            <marker date="1544522780404" expanded="true" signature="183:216" ph="{...}" />
-            <marker date="1544522780404" expanded="true" signature="262:368" ph="{...}" />
-            <marker date="1544522780404" expanded="true" signature="330:365" ph="{...}" />
-            <marker date="1544522780404" expanded="true" signature="413:520" ph="{...}" />
-            <marker date="1544522780404" expanded="true" signature="481:517" ph="{...}" />
+            <marker date="1543765663027" expanded="false" signature="6:119" ph="..." />
+            <marker date="1543765663027" expanded="true" signature="170:1998" ph="{...}" />
+            <marker date="1543765663027" expanded="true" signature="410:422" ph="{...}" />
+            <marker date="1543765663027" expanded="true" signature="444:451" ph="{...}" />
+            <marker date="1543765663027" expanded="true" signature="486:1996" ph="{...}" />
+            <marker date="1543765663027" expanded="true" signature="501:1990" ph="/* Reset the field values in the tablet's tasks so that ... */" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/FaucetRadiusController.cs">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/BeakerController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="810">
+          <caret line="110" selection-start-line="110" selection-end-line="110" />
+          <folding>
+            <marker date="1544522606865" expanded="false" signature="6:78" ph="..." />
+            <marker date="1544522606865" expanded="true" signature="125:5327" ph="{...}" />
+            <marker date="1544522606865" expanded="true" signature="513:4788" ph="{...}" />
+            <marker date="1544522606865" expanded="true" signature="553:4785" ph="{...}" />
+            <marker date="1544522606865" expanded="true" signature="695:963" ph="/* &amp;&amp; ... */" />
+            <marker date="1544522606865" expanded="true" signature="972:4577" ph="{...}" />
+            <marker date="1544522606865" expanded="true" signature="982:1093" ph="/* This helps signal the player that he can now spill the ... */" />
+            <marker date="1544522606865" expanded="true" signature="1303:4572" ph="{...}" />
+            <marker date="1544522606865" expanded="true" signature="1315:1470" ph="/* If we are holding a dropper above a used beaker and the dropper is empty, then ... */" />
+            <marker date="1544522606865" expanded="true" signature="1951:2253" ph="{...}" />
+            <marker date="1544522606865" expanded="true" signature="1965:2101" ph="/* We instantiate the new liquid in the dropper instead of the beaker this time ... */" />
+            <marker date="1544522606865" expanded="true" signature="2265:2368" ph="/* We instantiate the substance that the player is holding and we place it ... */" />
+            <marker date="1544522606865" expanded="true" signature="2449:2727" ph="{...}" />
+            <marker date="1544522606865" expanded="true" signature="2550:2680" ph="/* We also have to rename the current game object from empty because ... */" />
+            <marker date="1544522606865" expanded="true" signature="2817:3043" ph="{...}" />
+            <marker date="1544522606865" expanded="true" signature="2831:2935" ph="/* We destroy the existing water and replace it with the ... */" />
+            <marker date="1544522606865" expanded="true" signature="3135:3259" ph="{...}" />
+            <marker date="1544522606865" expanded="true" signature="3349:3467" ph="{...}" />
+            <marker date="1544522606865" expanded="true" signature="3714:3835" ph="{...}" />
+            <marker date="1544522606865" expanded="true" signature="4078:4197" ph="{...}" />
+            <marker date="1544522606865" expanded="true" signature="4446:4566" ph="{...}" />
+            <marker date="1544522606865" expanded="true" signature="4585:4700" ph="{...}" />
+            <marker date="1544522606865" expanded="true" signature="4833:4914" ph="{...}" />
+            <marker date="1544522606865" expanded="true" signature="4872:4911" ph="{...}" />
+            <marker date="1544522606865" expanded="true" signature="4959:5041" ph="{...}" />
+            <marker date="1544522606865" expanded="true" signature="4998:5038" ph="{...}" />
+            <marker date="1544522606865" expanded="true" signature="5126:5325" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1552,53 +1469,153 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/ObjectivesSelector.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2002">
+          <caret line="234" column="46" selection-start-line="234" selection-start-column="46" selection-end-line="234" selection-end-column="46" />
+          <folding>
+            <marker date="1545046909001" expanded="false" signature="6:119" ph="..." />
+            <marker date="1545046909001" expanded="true" signature="168:21068" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="898:952" ph="/* Objective variables: Use Water Bottle ... */" />
+            <marker date="1545046909001" expanded="true" signature="1065:1117" ph="/* Objective variables: Use Teleporter ... */" />
+            <marker date="1545046909001" expanded="true" signature="1171:1219" ph="/* Objective variables: Mix Colors ... */" />
+            <marker date="1545046909001" expanded="true" signature="2231:4114" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="2711:2869" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="2880:3011" ph="/* _objectives.Add(&quot;Use Teleporter&quot;, ... */" />
+            <marker date="1545046909001" expanded="true" signature="3068:3453" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="3465:3618" ph="/* PointerController.IsWearingCoat = true; ... */" />
+            <marker date="1545046909001" expanded="true" signature="3628:3818" ph="/* After we initialize the _objectives, we pick the ... */" />
+            <marker date="1545046909001" expanded="true" signature="3827:4108" ph="/* CurrentObjective = _objectives.ElementAt(0).Key; ... */" />
+            <marker date="1545046909001" expanded="true" signature="4135:13956" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="4145:4315" ph="/* We want the player to select a new mission on if the ... */" />
+            <marker date="1545046909001" expanded="true" signature="4353:4522" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="4416:4512" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="4597:4765" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="4660:4755" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="4777:4979" ph="/* If the player has completed the requirements to finish ... */" />
+            <marker date="1545046909001" expanded="true" signature="5131:5767" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="5233:5603" ph="/* We update the current objective index so that ... */" />
+            <marker date="1545046909001" expanded="true" signature="5842:5941" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="6018:6117" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="6249:6543" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="6472:6533" ph="/* _currentObjectiveNumber++; ... */" />
+            <marker date="1545046909001" expanded="true" signature="6590:7237" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="7247:7372" ph="/* Once the player is wearing a coat, his indicator will turn green ... */" />
+            <marker date="1545046909001" expanded="true" signature="7425:7507" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="7520:7600" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="7659:7744" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="7757:7840" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="7898:7982" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="7995:8077" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="8198:8328" ph="/* If the player happens to hover over UI elements such as ... */" />
+            <marker date="1545046909001" expanded="true" signature="8394:13536" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="8592:13282" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="8838:13268" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="9047:10831" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="9094:9328" ph="/* if (PointerController.IsWearingCoat == true) ... */" />
+            <marker date="1545046909001" expanded="true" signature="9970:10104" ph="/* We dont want the player to think he should click any of these ... */" />
+            <marker date="1545046909001" expanded="true" signature="10192:10809" ph="/* If the player is in fact wearing a coat, then flash the indicator as ... */" />
+            <marker date="1545046909001" expanded="true" signature="10881:11130" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="11176:12245" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="11250:11361" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="12031:12170" ph="/* We want to be able to go through the different pages of ... */" />
+            <marker date="1545046909001" expanded="true" signature="12357:12443" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="12531:12614" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="12661:13020" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="12768:12917" ph="/* This plays the click sound once a button has been pressed ... */" />
+            <marker date="1545046909001" expanded="true" signature="13065:13250" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="13295:13526" ph="/* If the player is holding an item and needs to return it, he must ... */" />
+            <marker date="1545046909001" expanded="true" signature="13549:13673" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="13591:13663" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="13775:13825" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="13903:13950" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="14048:14570" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="14176:14564" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="14199:14344" ph="/* Indicator flash is either the green or red indicator, depending ... */" />
+            <marker date="1545046909001" expanded="true" signature="14619:15061" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="14991:15055" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="15109:15437" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="15367:15431" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="15481:16080" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="15868:15932" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="16116:18435" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="16258:16425" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="16776:17063" ph="/* This will be useful if we want to give the player one objective ... */" />
+            <marker date="1545046909001" expanded="true" signature="17072:17880" ph="/* Initialize the first objective without incrementing ... */" />
+            <marker date="1545046909001" expanded="true" signature="17933:18429" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="17994:18419" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="18073:18405" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="18155:18387" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="18213:18365" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="18466:18558" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="18502:18552" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="18592:20291" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="18678:18782" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="18795:18895" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="19074:19129" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="19141:19251" ph="/* One page contains 3 elements so we multiply the page number ... */" />
+            <marker date="1545046909001" expanded="true" signature="19322:20285" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="19419:19823" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="19496:19654" ph="/* If there is no new pages available in the current objective ... */" />
+            <marker date="1545046909001" expanded="true" signature="19840:20275" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="20005:20123" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="20144:20261" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="20339:20491" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="20526:21066" ph="{...}" />
+            <marker date="1545046909001" expanded="true" signature="20644:20827" ph="/* Once the new objective in the lab has been selected, we ... */" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/CenterEyePointer.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="126" column="48" selection-start-line="126" selection-start-column="48" selection-end-line="126" selection-end-column="48" />
+        <state relative-caret-position="340">
+          <caret line="90" column="14" selection-start-line="90" selection-start-column="10" selection-end-line="90" selection-end-column="14" />
           <folding>
-            <marker date="1545040566621" expanded="true" signature="6:44" ph="..." />
-            <marker date="1545040566621" expanded="true" signature="91:10467" ph="{...}" />
-            <marker date="1545040566621" expanded="true" signature="581:696" ph="/* This is where the player will be teleporter to in the ... */" />
-            <marker date="1545040566621" expanded="true" signature="987:2425" ph="{...}" />
-            <marker date="1545040566621" expanded="true" signature="1300:1823" ph="{...}" />
-            <marker date="1545040566621" expanded="true" signature="1411:1567" ph="/* We dont want the pointers for the angle of the teleporters to ... */" />
-            <marker date="1545040566621" expanded="true" signature="1620:1813" ph="{...}" />
-            <marker date="1545040566621" expanded="true" signature="1683:1799" ph="{...}" />
-            <marker date="1545040566621" expanded="true" signature="1985:2419" ph="{...}" />
-            <marker date="1545040566621" expanded="true" signature="2096:2252" ph="/* We dont want the pointers for the angle of the teleporters to ... */" />
-            <marker date="1545040566621" expanded="true" signature="2305:2409" ph="{...}" />
-            <marker date="1545040566621" expanded="true" signature="2446:7111" ph="{...}" />
-            <marker date="1545040566621" expanded="true" signature="2528:2762" ph="{...}" />
-            <marker date="1545040566621" expanded="true" signature="2904:3100" ph="{...}" />
-            <marker date="1545040566621" expanded="true" signature="3499:3641" ph="/* If the player is allowed to open the door and click on it while ... */" />
-            <marker date="1545040566621" expanded="true" signature="3788:4116" ph="{...}" />
-            <marker date="1545040566621" expanded="true" signature="3873:4105" ph="{...}" />
-            <marker date="1545040566621" expanded="true" signature="3966:4091" ph="{...}" />
-            <marker date="1545040566621" expanded="true" signature="4267:6915" ph="{...}" />
-            <marker date="1545040566621" expanded="true" signature="4290:4507" ph="/* We dont put it in the function because the else statement ... */" />
-            <marker date="1545040566621" expanded="true" signature="4609:4729" ph="{...}" />
-            <marker date="1545040566621" expanded="true" signature="4746:4928" ph="/* This teleports the player to the teleporter's position. ... */" />
-            <marker date="1545040566621" expanded="true" signature="5118:5947" ph="{...}" />
-            <marker date="1545040566621" expanded="true" signature="5312:5466" ph="/* This makes sure we target that child in the teleporter object ... */" />
-            <marker date="1545040566621" expanded="true" signature="5523:5933" ph="{...}" />
-            <marker date="1545040566621" expanded="true" signature="5594:5915" ph="{...}" />
-            <marker date="1545040566621" expanded="true" signature="5960:6152" ph="/* If we use a teleporter while we are still working on completing the ... */" />
-            <marker date="1545040566621" expanded="true" signature="6465:6905" ph="{...}" />
-            <marker date="1545040566621" expanded="true" signature="6928:7105" ph="{...}" />
-            <marker date="1545040566621" expanded="true" signature="6973:7095" ph="{...}" />
-            <marker date="1545040566621" expanded="true" signature="7117:7297" ph="/* This function makes sure we update the teleporter's visibility ... */" />
-            <marker date="1545040566621" expanded="true" signature="7373:7729" ph="{...}" />
-            <marker date="1545040566621" expanded="true" signature="7522:7723" ph="{...}" />
-            <marker date="1545040566621" expanded="true" signature="7770:8701" ph="{...}" />
-            <marker date="1545040566621" expanded="true" signature="8130:8273" ph="/* This makes sure he doesnt teleport in the ground itself ... */" />
-            <marker date="1545040566621" expanded="true" signature="8494:8607" ph="/* I'm rotating the pose too because it stays the same ... */" />
-            <marker date="1545040566621" expanded="true" signature="8739:8797" ph="{...}" />
-            <marker date="1545040566621" expanded="true" signature="8866:10465" ph="{...}" />
-            <marker date="1545040566621" expanded="true" signature="9156:9302" ph="/* This makes sure we target that child in the teleporter object ... */" />
-            <marker date="1545040566621" expanded="true" signature="9351:9489" ph="{...}" />
-            <marker date="1545040566621" expanded="true" signature="9406:9479" ph="{...}" />
-            <marker date="1545040566621" expanded="true" signature="10075:10218" ph="/* This makes sure he doesnt teleport in the ground itself ... */" />
+            <marker date="1545047267931" expanded="false" signature="6:44" ph="..." />
+            <marker date="1545047267931" expanded="true" signature="91:11810" ph="{...}" />
+            <marker date="1545047267931" expanded="true" signature="581:696" ph="/* This is where the player will be teleporter to in the ... */" />
+            <marker date="1545047267931" expanded="true" signature="1101:2669" ph="{...}" />
+            <marker date="1545047267931" expanded="true" signature="1544:2067" ph="{...}" />
+            <marker date="1545047267931" expanded="true" signature="1655:1811" ph="/* We dont want the pointers for the angle of the teleporters to ... */" />
+            <marker date="1545047267931" expanded="true" signature="1864:2057" ph="{...}" />
+            <marker date="1545047267931" expanded="true" signature="1927:2043" ph="{...}" />
+            <marker date="1545047267931" expanded="true" signature="2229:2663" ph="{...}" />
+            <marker date="1545047267931" expanded="true" signature="2340:2496" ph="/* We dont want the pointers for the angle of the teleporters to ... */" />
+            <marker date="1545047267931" expanded="true" signature="2549:2653" ph="{...}" />
+            <marker date="1545047267931" expanded="true" signature="2690:8454" ph="{...}" />
+            <marker date="1545047267931" expanded="true" signature="2772:3172" ph="{...}" />
+            <marker date="1545047267931" expanded="true" signature="3314:3689" ph="{...}" />
+            <marker date="1545047267931" expanded="true" signature="3819:4194" ph="{...}" />
+            <marker date="1545047267931" expanded="true" signature="4593:4735" ph="/* If the player is allowed to open the door and click on it while ... */" />
+            <marker date="1545047267931" expanded="true" signature="4882:5392" ph="{...}" />
+            <marker date="1545047267931" expanded="true" signature="4967:5381" ph="{...}" />
+            <marker date="1545047267931" expanded="true" signature="5060:5185" ph="{...}" />
+            <marker date="1545047267931" expanded="true" signature="5247:5367" ph="{...}" />
+            <marker date="1545047267931" expanded="true" signature="5543:8258" ph="{...}" />
+            <marker date="1545047267931" expanded="true" signature="5566:5783" ph="/* We dont put it in the function because the else statement ... */" />
+            <marker date="1545047267931" expanded="true" signature="5885:6005" ph="{...}" />
+            <marker date="1545047267931" expanded="true" signature="6022:6214" ph="/* If we use a teleporter while we are still working on completing the ... */" />
+            <marker date="1545047267931" expanded="true" signature="6584:7024" ph="{...}" />
+            <marker date="1545047267931" expanded="true" signature="7037:7219" ph="/* This teleports the player to the teleporter's position. ... */" />
+            <marker date="1545047267931" expanded="true" signature="7419:8248" ph="{...}" />
+            <marker date="1545047267931" expanded="true" signature="7613:7767" ph="/* This makes sure we target that child in the teleporter object ... */" />
+            <marker date="1545047267931" expanded="true" signature="7824:8234" ph="{...}" />
+            <marker date="1545047267931" expanded="true" signature="7895:8216" ph="{...}" />
+            <marker date="1545047267931" expanded="true" signature="8271:8448" ph="{...}" />
+            <marker date="1545047267931" expanded="true" signature="8316:8438" ph="{...}" />
+            <marker date="1545047267931" expanded="true" signature="8460:8640" ph="/* This function makes sure we update the teleporter's visibility ... */" />
+            <marker date="1545047267931" expanded="true" signature="8716:9072" ph="{...}" />
+            <marker date="1545047267931" expanded="true" signature="8865:9066" ph="{...}" />
+            <marker date="1545047267931" expanded="true" signature="9113:10044" ph="{...}" />
+            <marker date="1545047267931" expanded="true" signature="9473:9616" ph="/* This makes sure he doesnt teleport in the ground itself ... */" />
+            <marker date="1545047267931" expanded="true" signature="9837:9950" ph="/* I'm rotating the pose too because it stays the same ... */" />
+            <marker date="1545047267931" expanded="true" signature="10082:10140" ph="{...}" />
+            <marker date="1545047267931" expanded="true" signature="10209:11808" ph="{...}" />
+            <marker date="1545047267931" expanded="true" signature="10499:10645" ph="/* This makes sure we target that child in the teleporter object ... */" />
+            <marker date="1545047267931" expanded="true" signature="10694:10832" ph="{...}" />
+            <marker date="1545047267931" expanded="true" signature="10749:10822" ph="{...}" />
+            <marker date="1545047267931" expanded="true" signature="11418:11561" ph="/* This makes sure he doesnt teleport in the ground itself ... */" />
           </folding>
         </state>
       </provider>

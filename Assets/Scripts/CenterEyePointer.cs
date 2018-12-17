@@ -21,6 +21,9 @@ public class CenterEyePointer : MonoBehaviour
     // world to start playing on the new objective's level
     public GameObject UseWaterBottleObjectiveTeleporter;
     private MeshRenderer _useWaterBottleTeleporterRenderer;
+    //
+    public GameObject MixColorsObjectiveTeleporter;
+    private MeshRenderer _mixColorsTeleporterRenderer;
 
     public Material TeleporterAvailableMaterial;
     public Material TeleporterDisabledMaterial;
@@ -30,6 +33,9 @@ public class CenterEyePointer : MonoBehaviour
     {
         _useWaterBottleTeleporterRenderer = 
             UseWaterBottleObjectiveTeleporter.GetComponentInChildren<MeshRenderer>();
+        
+        _mixColorsTeleporterRenderer = 
+            MixColorsObjectiveTeleporter.GetComponentInChildren<MeshRenderer>();
         
         var teleporters = GameObject.FindGameObjectsWithTag("Teleporter");
         FadeTransitioner.SetActive(false);
@@ -69,14 +75,20 @@ public class CenterEyePointer : MonoBehaviour
         if (HandinController.IsObjectiveHandedIn && IsTeleporterReset == false)
         {
             _useWaterBottleTeleporterRenderer.material = TeleporterAvailableMaterial;
+            _mixColorsTeleporterRenderer.material = TeleporterAvailableMaterial;
             IsTeleporterReset = true;
             UseWaterBottleObjectiveTeleporter.GetComponent<BoxCollider>().enabled = true;
+            MixColorsObjectiveTeleporter.GetComponent<BoxCollider>().enabled = true;
         }
         else if (HandinController.IsObjectiveHandedIn == false &&
-                 ObjectivesSelector.CurrentObjective == "Use Water Bottle")
+                 ObjectivesSelector.CurrentObjective == "Use Water Bottle" ||
+                 ObjectivesSelector.CurrentObjective == "Mix Colors")
         {
             _useWaterBottleTeleporterRenderer.material = TeleporterDisabledMaterial;
             UseWaterBottleObjectiveTeleporter.GetComponent<BoxCollider>().enabled = false;
+            
+            _mixColorsTeleporterRenderer.material = TeleporterDisabledMaterial;
+            MixColorsObjectiveTeleporter.GetComponent<BoxCollider>().enabled = false;
         }
 
         Ray ray = new Ray(transform.position, transform.forward);
@@ -99,6 +111,9 @@ public class CenterEyePointer : MonoBehaviour
                 if (ObjectivesSelector.CurrentObjective == "Use Water Bottle")
                 {
                     StartCoroutine(TeleportPlayerTo(UseWaterBottleObjectiveTeleporter));
+                } else if (ObjectivesSelector.CurrentObjective == "Mix Colors")
+                {
+                    StartCoroutine(TeleportPlayerTo(MixColorsObjectiveTeleporter));
                 }
             } 
         }
@@ -120,8 +135,9 @@ public class CenterEyePointer : MonoBehaviour
             // objective, then we use the stardard teleporter mechanic instead of
             // going to the lobby door.
             if ((OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger)) ||
-                     _isAlphaIncreased && Input.GetKeyDown(KeyCode.T) && HandinController.IsObjectiveHandedIn &&
-                     _currentTeleporter.name == "Teleporter: Use Water Bottle") // Or another objective Or and so on...
+                _isAlphaIncreased && Input.GetKeyDown(KeyCode.T) && HandinController.IsObjectiveHandedIn &&
+                _currentTeleporter.name == "Teleporter: Use Water Bottle" || 
+                _currentTeleporter.name == "Teleporter: Mix Colors") // Or another objective Or and so on...
             {
                 ObjectivesSelector.UsedTeleporter = true;
 
@@ -136,7 +152,7 @@ public class CenterEyePointer : MonoBehaviour
             // The second input is specifically for testing for the PC instead of
             // wearing the oculus itself.
             else if ((OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger)) ||
-                _isAlphaIncreased && Input.GetKeyDown(KeyCode.T) && HandinController.IsObjectiveHandedIn == false)
+                     _isAlphaIncreased && Input.GetKeyDown(KeyCode.T) && HandinController.IsObjectiveHandedIn == false)
             {
                 ObjectivesSelector.UsedTeleporter = true;
 				
