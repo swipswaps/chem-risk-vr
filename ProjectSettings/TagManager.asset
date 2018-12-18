@@ -19,6 +19,7 @@ TagManager:
   - Beaker
   - Dropper
   - DoorDirection
+  - Dirty Beaker
   layers:
   - Default
   - TransparentFX

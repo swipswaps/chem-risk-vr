@@ -227,11 +227,14 @@ public class ObjectivesSelector : MonoBehaviour
                         // Resetting the safety guidelines board's text current value
                         // so we can replace it with the new objectives'.
                         SafetyGuidelinesBoardText.text = "";
-                        SafetyGuidelinesBoardText.text += "* Im a genie in a bottle baby!\n";
-                        SafetyGuidelinesBoardText.text += "* you gotta love me the right way <3\n";
-                        SafetyGuidelinesBoardText.text += "* if u wanna be with me i can make your";
-                        SafetyGuidelinesBoardText.text += " wish come true <3 just come and set me free baby <3 and ill be with you <3";
-						
+                        SafetyGuidelinesBoardText.text += "* It is mandatory that the player wears a lab coat.\n";
+                        SafetyGuidelinesBoardText.text += "* It is mandatory that the player wears proper eye protection.\n";
+                        SafetyGuidelinesBoardText.text += "* It is mandatory that the player wears proper hand protection.\n";
+                        SafetyGuidelinesBoardText.text += "* It is important that the player mixes the correct chemicals and disposes of any mistakes in their proper containers.\n";
+                        SafetyGuidelinesBoardText.text += "* It is important that the player does not pour mixed solutions into their original containers.\n";
+                        SafetyGuidelinesBoardText.text += "* It is mandatory that the player washes any used glassware after they are done using them.\n";
+                        
+                        
                         SelectObjectiveUseWaterBottle();
 							
                         CanOpenDoor = true;
@@ -265,10 +268,12 @@ public class ObjectivesSelector : MonoBehaviour
                         }
                         
                         SafetyGuidelinesBoardText.text = "";
-                        SafetyGuidelinesBoardText.text += "* I TURN TO YOUUUUU LIKE A FLOWER LEANING\n";
-                        SafetyGuidelinesBoardText.text += "* TOWARDS THE SUN, I TURN TO YOU <3 <3\n";
-                        SafetyGuidelinesBoardText.text += "* CUZ YOURE THE ONLY ONE, WHO CAN TURN ME AROUND <3";
-                        SafetyGuidelinesBoardText.text += " WHENN IM UPSIDE DOWN <3";
+                        SafetyGuidelinesBoardText.text += "* It is mandatory that the player wears a lab coat.\n";
+                        SafetyGuidelinesBoardText.text += "* It is mandatory that the player wears proper eye protection.\n";
+                        SafetyGuidelinesBoardText.text += "* It is mandatory that the player wears proper hand protection.\n";
+                        SafetyGuidelinesBoardText.text += "* It is important that the player mixes the correct chemicals and disposes of any mistakes in their proper containers.\n";
+                        SafetyGuidelinesBoardText.text += "* It is important that the player does not pour mixed solutions into their original containers.\n";
+                        SafetyGuidelinesBoardText.text += "* It is mandatory that the player washes any used glassware after they are done using them.\n";
 						
                         SelectObjectiveMixColors();
                         
