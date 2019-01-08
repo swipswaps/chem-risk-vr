@@ -49,7 +49,8 @@ public class BeakerController : MonoBehaviour
 					    gameObject.name == "Orange Substance Beaker" ||
 					    gameObject.name == "Purple Substance Beaker" ||
 					    gameObject.name == "Green Substance Beaker") &&
-					    (heldObject.name == "Dropper(Clone)" &&
+					    (heldObject.name == "Dropper(Clone)" ||
+                        heldObject.name == "Empty Dropper" &&
 					    heldObject.transform.childCount <= 0))
 					{
 						// We instantiate the new liquid in the dropper instead of the beaker this time

@@ -91,7 +91,8 @@ public class PointerController : MonoBehaviour
                         _lookedAtObject.name != "Green Substance Beaker" &&
                         _lookedAtObject.name != "Water Beaker" &&
                         _lookedAtObject.name != "Empty Beaker" &&
-                        _lookedAtObject.name != "Dropper")
+                        _lookedAtObject.name != "Dropper" &&
+                        _lookedAtObject.name != "Empty Dropper")
                     {
                         _meshRenderer.material = DefaultItemMaterial;
                     }
@@ -105,7 +106,8 @@ public class PointerController : MonoBehaviour
 
                         // If we are returning a dropper and it contains liquids inside it, then
                         // we return the dropper AND transfer the liquids to the original dropper.
-                        if (_currentlyHoldingObject.name == "Dropper(Clone)" && _currentlyHoldingObject.transform.childCount > 0)
+                        if ((_currentlyHoldingObject.name == "Empty Dropper" ||
+                            _currentlyHoldingObject.name == "Dropper(Clone)") && _currentlyHoldingObject.transform.childCount > 0)
                         {
                             // Destroy the exusting liquid in the dropper because you dont want to
                             // keep placing liquid in the dropper, we only have one liquid substance in a dropper.
@@ -118,14 +120,14 @@ public class PointerController : MonoBehaviour
                                 _lookedAtObject.transform.position,
                                 Quaternion.identity,
                                 _lookedAtObject.transform);
-                        } else if (_currentlyHoldingObject.name == "Empty Dropper")
+                        } else if ((_currentlyHoldingObject.name == "Empty Dropper" ||
+                            _currentlyHoldingObject.name == "Dropper(Clone)") &&
+                            _lookedAtObject.transform.childCount > 0)
                         {
                             // If we are returning an empty dropper, then we have to
                             // destroy the existing liquids in the original dropper.
                             Destroy(_lookedAtObject.transform.GetChild(0).gameObject);
                             _lookedAtObject.name = "Dropper";
-                            
-                            Debug.Log("mmm");
                         }
                         
                         _meshRenderer.material = DefaultBeakerMaterial;

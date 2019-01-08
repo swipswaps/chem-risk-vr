@@ -2,78 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="83d7650d-0c48-4245-a8f0-a9ff168eb770" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Materials.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Materials/mat_black_desaturated 1.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Materials/mat_black_desaturated 1.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Materials/mat_decal_biohazard.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Materials/mat_decal_biohazard.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Materials/mat_grey_matte.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Materials/mat_grey_matte.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Materials/mat_metal_dark.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Materials/mat_metal_dark.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Materials/mat_metal_fullGloss.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Materials/mat_metal_fullGloss.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Materials/mat_metal_light.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Materials/mat_metal_light.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Materials/mat_orange_gloss.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Materials/mat_orange_gloss.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Materials/mat_smokePuff.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Materials/mat_smokePuff.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Materials/mat_yellow_desaturated.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Materials/mat_yellow_desaturated.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Models.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Models/hanzeLabs.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Models/hanzeLabs.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Models/laboratory_Lever.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Models/laboratory_Lever.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Models/laboratory_desk_var01.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Models/laboratory_desk_var01.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Models/laboratory_desk_var02.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Models/laboratory_desk_var02.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Models/laboratory_desk_var03.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Models/laboratory_desk_var03.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Models/laboratory_fume_closet.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Models/laboratory_fume_closet.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Models/laboratory_laundryChute.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Models/laboratory_laundryChute.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Models/laboratory_room.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Models/laboratory_room.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Models/laboratory_wasteBin.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Models/laboratory_wasteBin.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Prefabs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Prefabs/Marcel's Laboratory.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Prefabs/Marcel's Laboratory.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Prefabs/laboratory_fume_closet.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Prefabs/laboratory_fume_closet.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Prefabs/pref_laboratory_desk_var01.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Prefabs/pref_laboratory_desk_var01.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Prefabs/pref_laboratory_desk_var02.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Prefabs/pref_laboratory_desk_var02.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Prefabs/pref_laboratory_desk_var03.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Prefabs/pref_laboratory_desk_var03.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Prefabs/pref_laboratory_wasteBin.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Prefabs/pref_laboratory_wasteBin.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Textures.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Textures/txt_decal_biohazard.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Textures/txt_decal_biohazard.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Textures/txt_flatColour_blackLightLight.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Textures/txt_flatColour_blackLightLight.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Textures/txt_flatColour_grey.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Textures/txt_flatColour_grey.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Textures/txt_flatColour_greyDark.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Textures/txt_flatColour_greyDark.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Textures/txt_flatColour_hanzeOrange.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Textures/txt_flatColour_hanzeOrange.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Textures/txt_flatColour_yellowBright.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Textures/txt_flatColour_yellowBright.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Textures/txt_smokePuff.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Marcel Package/Textures/txt_smokePuff.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.y2g3-project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.y2g3-project/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/WhiteboxScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/WhiteboxScene.unity.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ObjectivesSelector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ObjectivesSelector.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Yellow Substance.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Yellow Substance.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/WhiteboxScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/WhiteboxScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -98,11 +29,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ObjectivesSelector.cs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ObjectivesSelector.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/ObjectivesSelector.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-827">
-              <caret line="148" column="42" lean-forward="true" selection-start-line="148" selection-start-column="42" selection-end-line="148" selection-end-column="42" />
+              <caret line="148" column="42" selection-start-line="148" selection-start-column="42" selection-end-line="148" selection-end-column="42" />
               <folding>
                 <marker date="1545173378689" expanded="false" signature="6:119" ph="..." />
                 <marker date="1545173378689" expanded="true" signature="168:22001" ph="{...}" />
@@ -198,11 +129,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CenterEyePointer.cs" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CenterEyePointer.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/CenterEyePointer.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="601">
-              <caret line="87" column="90" selection-start-line="87" selection-start-column="90" selection-end-line="87" selection-end-column="90" />
+            <state relative-caret-position="960">
+              <caret line="65" column="52" selection-start-line="65" selection-start-column="52" selection-end-line="65" selection-end-column="52" />
               <folding>
                 <marker date="1545055262380" expanded="false" signature="6:44" ph="..." />
                 <marker date="1545055262380" expanded="true" signature="91:11381" ph="{...}" />
@@ -555,7 +486,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="22" />
     <option name="width" value="1936" />
@@ -640,12 +571,12 @@
       <workItem from="1544794401674" duration="423000" />
       <workItem from="1544888195041" duration="21589000" />
       <workItem from="1545034849061" duration="5438000" />
-      <workItem from="1545054374253" duration="9555000" />
+      <workItem from="1545054374253" duration="11342000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="155419000" />
+    <option name="totallyTimeSpent" value="157206000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -657,7 +588,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="22" width="1936" height="1066" extended-state="6" />
+    <frame x="-8" y="22" width="1936" height="1066" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="7" />
@@ -1567,58 +1498,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/CenterEyePointer.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="601">
-          <caret line="87" column="90" selection-start-line="87" selection-start-column="90" selection-end-line="87" selection-end-column="90" />
-          <folding>
-            <marker date="1545055262380" expanded="false" signature="6:44" ph="..." />
-            <marker date="1545055262380" expanded="true" signature="91:11381" ph="{...}" />
-            <marker date="1545055262380" expanded="true" signature="581:696" ph="/* This is where the player will be teleporter to in the ... */" />
-            <marker date="1545055262380" expanded="true" signature="1101:2669" ph="{...}" />
-            <marker date="1545055262380" expanded="true" signature="1544:2067" ph="{...}" />
-            <marker date="1545055262380" expanded="true" signature="1655:1811" ph="/* We dont want the pointers for the angle of the teleporters to ... */" />
-            <marker date="1545055262380" expanded="true" signature="1864:2057" ph="{...}" />
-            <marker date="1545055262380" expanded="true" signature="1927:2043" ph="{...}" />
-            <marker date="1545055262380" expanded="true" signature="2229:2663" ph="{...}" />
-            <marker date="1545055262380" expanded="true" signature="2340:2496" ph="/* We dont want the pointers for the angle of the teleporters to ... */" />
-            <marker date="1545055262380" expanded="true" signature="2549:2653" ph="{...}" />
-            <marker date="1545055262380" expanded="true" signature="2690:8025" ph="{...}" />
-            <marker date="1545055262380" expanded="true" signature="2772:3172" ph="{...}" />
-            <marker date="1545055262380" expanded="true" signature="3386:3761" ph="{...}" />
-            <marker date="1545055262380" expanded="true" signature="4160:4302" ph="/* If the player is allowed to open the door and click on it while ... */" />
-            <marker date="1545055262380" expanded="true" signature="4449:4959" ph="{...}" />
-            <marker date="1545055262380" expanded="true" signature="4534:4948" ph="{...}" />
-            <marker date="1545055262380" expanded="true" signature="4627:4752" ph="{...}" />
-            <marker date="1545055262380" expanded="true" signature="4814:4934" ph="{...}" />
-            <marker date="1545055262380" expanded="true" signature="5110:7829" ph="{...}" />
-            <marker date="1545055262380" expanded="true" signature="5133:5350" ph="/* We dont put it in the function because the else statement ... */" />
-            <marker date="1545055262380" expanded="true" signature="5452:5572" ph="{...}" />
-            <marker date="1545055262380" expanded="true" signature="5589:5781" ph="/* If we use a teleporter while we are still working on completing the ... */" />
-            <marker date="1545055262380" expanded="true" signature="6154:6594" ph="{...}" />
-            <marker date="1545055262380" expanded="true" signature="6607:6789" ph="/* This teleports the player to the teleporter's position. ... */" />
-            <marker date="1545055262380" expanded="true" signature="6990:7819" ph="{...}" />
-            <marker date="1545055262380" expanded="true" signature="7184:7338" ph="/* This makes sure we target that child in the teleporter object ... */" />
-            <marker date="1545055262380" expanded="true" signature="7395:7805" ph="{...}" />
-            <marker date="1545055262380" expanded="true" signature="7466:7787" ph="{...}" />
-            <marker date="1545055262380" expanded="true" signature="7842:8019" ph="{...}" />
-            <marker date="1545055262380" expanded="true" signature="7887:8009" ph="{...}" />
-            <marker date="1545055262380" expanded="true" signature="8031:8211" ph="/* This function makes sure we update the teleporter's visibility ... */" />
-            <marker date="1545055262380" expanded="true" signature="8287:8643" ph="{...}" />
-            <marker date="1545055262380" expanded="true" signature="8436:8637" ph="{...}" />
-            <marker date="1545055262380" expanded="true" signature="8684:9615" ph="{...}" />
-            <marker date="1545055262380" expanded="true" signature="9044:9187" ph="/* This makes sure he doesnt teleport in the ground itself ... */" />
-            <marker date="1545055262380" expanded="true" signature="9408:9521" ph="/* I'm rotating the pose too because it stays the same ... */" />
-            <marker date="1545055262380" expanded="true" signature="9653:9711" ph="{...}" />
-            <marker date="1545055262380" expanded="true" signature="9780:11379" ph="{...}" />
-            <marker date="1545055262380" expanded="true" signature="10070:10216" ph="/* This makes sure we target that child in the teleporter object ... */" />
-            <marker date="1545055262380" expanded="true" signature="10265:10403" ph="{...}" />
-            <marker date="1545055262380" expanded="true" signature="10320:10393" ph="{...}" />
-            <marker date="1545055262380" expanded="true" signature="10989:11132" ph="/* This makes sure he doesnt teleport in the ground itself ... */" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Oculus/VR/Scripts/Util/OVRTrackedRemote.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="810">
@@ -1743,7 +1622,7 @@
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/ObjectivesSelector.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-827">
-          <caret line="148" column="42" lean-forward="true" selection-start-line="148" selection-start-column="42" selection-end-line="148" selection-end-column="42" />
+          <caret line="148" column="42" selection-start-line="148" selection-start-column="42" selection-end-line="148" selection-end-column="42" />
           <folding>
             <marker date="1545173378689" expanded="false" signature="6:119" ph="..." />
             <marker date="1545173378689" expanded="true" signature="168:22001" ph="{...}" />
@@ -1834,6 +1713,58 @@
             <marker date="1545173378689" expanded="true" signature="21272:21424" ph="{...}" />
             <marker date="1545173378689" expanded="true" signature="21459:21999" ph="{...}" />
             <marker date="1545173378689" expanded="true" signature="21577:21760" ph="/* Once the new objective in the lab has been selected, we ... */" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/CenterEyePointer.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="960">
+          <caret line="65" column="52" selection-start-line="65" selection-start-column="52" selection-end-line="65" selection-end-column="52" />
+          <folding>
+            <marker date="1545055262380" expanded="false" signature="6:44" ph="..." />
+            <marker date="1545055262380" expanded="true" signature="91:11381" ph="{...}" />
+            <marker date="1545055262380" expanded="true" signature="581:696" ph="/* This is where the player will be teleporter to in the ... */" />
+            <marker date="1545055262380" expanded="true" signature="1101:2669" ph="{...}" />
+            <marker date="1545055262380" expanded="true" signature="1544:2067" ph="{...}" />
+            <marker date="1545055262380" expanded="true" signature="1655:1811" ph="/* We dont want the pointers for the angle of the teleporters to ... */" />
+            <marker date="1545055262380" expanded="true" signature="1864:2057" ph="{...}" />
+            <marker date="1545055262380" expanded="true" signature="1927:2043" ph="{...}" />
+            <marker date="1545055262380" expanded="true" signature="2229:2663" ph="{...}" />
+            <marker date="1545055262380" expanded="true" signature="2340:2496" ph="/* We dont want the pointers for the angle of the teleporters to ... */" />
+            <marker date="1545055262380" expanded="true" signature="2549:2653" ph="{...}" />
+            <marker date="1545055262380" expanded="true" signature="2690:8025" ph="{...}" />
+            <marker date="1545055262380" expanded="true" signature="2772:3172" ph="{...}" />
+            <marker date="1545055262380" expanded="true" signature="3386:3761" ph="{...}" />
+            <marker date="1545055262380" expanded="true" signature="4160:4302" ph="/* If the player is allowed to open the door and click on it while ... */" />
+            <marker date="1545055262380" expanded="true" signature="4449:4959" ph="{...}" />
+            <marker date="1545055262380" expanded="true" signature="4534:4948" ph="{...}" />
+            <marker date="1545055262380" expanded="true" signature="4627:4752" ph="{...}" />
+            <marker date="1545055262380" expanded="true" signature="4814:4934" ph="{...}" />
+            <marker date="1545055262380" expanded="true" signature="5110:7829" ph="{...}" />
+            <marker date="1545055262380" expanded="true" signature="5133:5350" ph="/* We dont put it in the function because the else statement ... */" />
+            <marker date="1545055262380" expanded="true" signature="5452:5572" ph="{...}" />
+            <marker date="1545055262380" expanded="true" signature="5589:5781" ph="/* If we use a teleporter while we are still working on completing the ... */" />
+            <marker date="1545055262380" expanded="true" signature="6154:6594" ph="{...}" />
+            <marker date="1545055262380" expanded="true" signature="6607:6789" ph="/* This teleports the player to the teleporter's position. ... */" />
+            <marker date="1545055262380" expanded="true" signature="6990:7819" ph="{...}" />
+            <marker date="1545055262380" expanded="true" signature="7184:7338" ph="/* This makes sure we target that child in the teleporter object ... */" />
+            <marker date="1545055262380" expanded="true" signature="7395:7805" ph="{...}" />
+            <marker date="1545055262380" expanded="true" signature="7466:7787" ph="{...}" />
+            <marker date="1545055262380" expanded="true" signature="7842:8019" ph="{...}" />
+            <marker date="1545055262380" expanded="true" signature="7887:8009" ph="{...}" />
+            <marker date="1545055262380" expanded="true" signature="8031:8211" ph="/* This function makes sure we update the teleporter's visibility ... */" />
+            <marker date="1545055262380" expanded="true" signature="8287:8643" ph="{...}" />
+            <marker date="1545055262380" expanded="true" signature="8436:8637" ph="{...}" />
+            <marker date="1545055262380" expanded="true" signature="8684:9615" ph="{...}" />
+            <marker date="1545055262380" expanded="true" signature="9044:9187" ph="/* This makes sure he doesnt teleport in the ground itself ... */" />
+            <marker date="1545055262380" expanded="true" signature="9408:9521" ph="/* I'm rotating the pose too because it stays the same ... */" />
+            <marker date="1545055262380" expanded="true" signature="9653:9711" ph="{...}" />
+            <marker date="1545055262380" expanded="true" signature="9780:11379" ph="{...}" />
+            <marker date="1545055262380" expanded="true" signature="10070:10216" ph="/* This makes sure we target that child in the teleporter object ... */" />
+            <marker date="1545055262380" expanded="true" signature="10265:10403" ph="{...}" />
+            <marker date="1545055262380" expanded="true" signature="10320:10393" ph="{...}" />
+            <marker date="1545055262380" expanded="true" signature="10989:11132" ph="/* This makes sure he doesnt teleport in the ground itself ... */" />
           </folding>
         </state>
       </provider>
