@@ -91,6 +91,9 @@ public class PointerController : MonoBehaviour
                         _lookedAtObject.name != "Green Substance Beaker" &&
                         _lookedAtObject.name != "Water Beaker" &&
                         _lookedAtObject.name != "Empty Beaker" &&
+                        _lookedAtObject.name != "Round Empty Beaker" &&
+                        _lookedAtObject.name != "Big Empty Beaker" &&
+                        _lookedAtObject.name != "Small Empty Beaker" &&
                         _lookedAtObject.name != "Dropper" &&
                         _lookedAtObject.name != "Empty Dropper")
                     {
@@ -102,11 +105,28 @@ public class PointerController : MonoBehaviour
                         {
                             Destroy(_lookedAtObject.transform.GetChild(0).gameObject);
                             _lookedAtObject.name = "Empty Beaker";
+                        } else if (_currentlyHoldingObject.name == "Big Empty Beaker")
+                        {
+                            Destroy(_lookedAtObject.transform.GetChild(0).gameObject);
+                            _lookedAtObject.name = "Big Empty Beaker";
+                        }
+                        else if (_currentlyHoldingObject.name == "Round Empty Beaker")
+                        {
+                            Destroy(_lookedAtObject.transform.GetChild(0).gameObject);
+                            _lookedAtObject.name = "Round Empty Beaker";
+                        }
+                        else if (_currentlyHoldingObject.name == "Small Empty Beaker")
+                        {
+                            Destroy(_lookedAtObject.transform.GetChild(0).gameObject);
+                            _lookedAtObject.name = "Small Empty Beaker";
                         }
 
                         // If we are returning a dropper and it contains liquids inside it, then
                         // we return the dropper AND transfer the liquids to the original dropper.
-                        if ((_currentlyHoldingObject.name == "Empty Dropper" ||
+                        if (((_currentlyHoldingObject.name == "Empty Dropper" ||
+                            _currentlyHoldingObject.name == "Big Empty Beaker" ||
+                            _currentlyHoldingObject.name == "Round Empty Beaker" ||
+                            _currentlyHoldingObject.name == "Small Empty Beaker") ||
                             _currentlyHoldingObject.name == "Dropper(Clone)") && _currentlyHoldingObject.transform.childCount > 0)
                         {
                             // Destroy the exusting liquid in the dropper because you dont want to
@@ -146,7 +166,7 @@ public class PointerController : MonoBehaviour
         }
         else
         {
-            // We are looking with the controllerfor an object
+            // We are looking with the controller for an object
             // that is of layer item
             if (Physics.Raycast(ray, out hit, 100, CatchItemLayer))
             {
@@ -211,6 +231,9 @@ public class PointerController : MonoBehaviour
                             _lookedAtObject.name != "Purple Substance Beaker" &&
                             _lookedAtObject.name != "Green Substance Beaker" &&
                             _lookedAtObject.name != "Empty Beaker" &&
+                            _lookedAtObject.name != "Big Empty Beaker" &&
+                            _lookedAtObject.name != "Round Empty Beaker" &&
+                            _lookedAtObject.name != "Small Empty Beaker" &&
                             _lookedAtObject.name != "Dropper")
                         {
                             _currentlyHoldingObject.GetComponent<MeshRenderer>().material = DefaultItemMaterial;
@@ -251,6 +274,9 @@ public class PointerController : MonoBehaviour
                         _lookedAtObject.name != "Purple Substance Beaker" &&
                         _lookedAtObject.name != "Green Substance Beaker" &&
                         _lookedAtObject.name != "Empty Beaker" &&
+                        _lookedAtObject.name != "Big Empty Beaker" &&
+                        _lookedAtObject.name != "Round Empty Beaker" &&
+                        _lookedAtObject.name != "Small Empty Beaker" &&
                         _lookedAtObject.name != "Dropper")
                     {
                         _meshRenderer.material = DefaultItemMaterial;
