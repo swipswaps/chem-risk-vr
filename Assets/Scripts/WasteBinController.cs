@@ -21,11 +21,11 @@ public class WasteBinController : MonoBehaviour {
             if (other.GetComponent<BeakerController>().BeakerType !=
                 BinType)
             {
-                Debug.Log("Wrong type!");
+                //Debug.Log("Wrong type!");
             }
             else
             {
-                Debug.Log("Correct type!");
+                //Debug.Log("Correct type!");
             }
             //Debug.Log(other.GetComponent<BeakerController>().BeakerType + " | " + BinType);
         }

@@ -125,7 +125,8 @@ public class BeakerController : MonoBehaviour
 
 	private void OnTriggerStay(Collider other)
 	{
-		if (other.gameObject.layer == 22)
+		if (other.gameObject.layer == 22 &&
+            other.GetComponent<BeakerController>() == null)
 		{
 			_isObjectOverBeaker = true;
             _heldObjectColor.g = 255;
@@ -135,7 +136,8 @@ public class BeakerController : MonoBehaviour
 
 	private void OnTriggerExit(Collider other)
 	{
-		if (other.gameObject.layer == 22)
+		if (other.gameObject.layer == 22 &&
+            other.GetComponent<BeakerController>() == null)
 		{
 			_isObjectOverBeaker = false;
             _heldObjectColor.g = 1;
