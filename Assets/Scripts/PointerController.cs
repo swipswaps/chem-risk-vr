@@ -76,7 +76,8 @@ public class PointerController : MonoBehaviour
             // If the player is holding an item and needs to return it, he must
             // be hovering over the original indicator for that item and press the
             // controller button to return the item and remove it from his hand.
-            if (Physics.Raycast(ray, out hit, 100, ReturnObjectLayer))
+            if (Physics.Raycast(ray, out hit, 100, ReturnObjectLayer)
+                )
             {
                 if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) ||
                     Input.GetKeyDown(KeyCode.K))
@@ -119,6 +120,14 @@ public class PointerController : MonoBehaviour
                         {
                             Destroy(_lookedAtObject.transform.GetChild(0).gameObject);
                             _lookedAtObject.name = "Small Empty Beaker";
+                        } else if (_currentlyHoldingObject.transform.GetChild(0).name == "Smelly Waste(Clone)")
+                        {
+                            Destroy(_lookedAtObject.transform.GetChild(0).gameObject);
+
+                            Instantiate(_currentlyHoldingObject.transform.GetChild(0).gameObject,
+                                _lookedAtObject.transform.position,
+                                Quaternion.identity,
+                                _lookedAtObject.transform);
                         }
 
                         // If we are returning a dropper and it contains liquids inside it, then
@@ -127,9 +136,9 @@ public class PointerController : MonoBehaviour
                             _currentlyHoldingObject.name == "Big Empty Beaker" ||
                             _currentlyHoldingObject.name == "Round Empty Beaker" ||
                             _currentlyHoldingObject.name == "Small Empty Beaker") ||
-                            _currentlyHoldingObject.name == "Dropper(Clone)") && _currentlyHoldingObject.transform.childCount > 0)
+                            _currentlyHoldingObject.name == "Dropper(Clone)"))
                         {
-                            // Destroy the exusting liquid in the dropper because you dont want to
+                            // Destroy the existing liquid in the dropper because you dont want to
                             // keep placing liquid in the dropper, we only have one liquid substance in a dropper.
                             if (_lookedAtObject.transform.childCount > 0)
                             {

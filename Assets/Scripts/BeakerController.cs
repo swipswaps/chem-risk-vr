@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class BeakerController : MonoBehaviour
 {
+    //[System.NonSerialized]
+    public string BeakerType;
+    //[System.NonSerialized]
+    public bool CleanedStatus;
 	public LayerMask HeldLayerMask;
 
 	public GameObject WaterSubstance;
@@ -67,6 +71,7 @@ public class BeakerController : MonoBehaviour
                         gameObject.name == "Small Empty Beaker") && _heldObject.name == "Water(Clone)")
 					{
 						Instantiate(WaterSubstance, transform.position, new Quaternion(0, 0, 0, 0), transform);
+                        BeakerType = "Water";
 						// We also have to rename the current game object from empty because
 						// the beaker is no longer empty and instead has water.
 						gameObject.name = "Water Beaker";
