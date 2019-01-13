@@ -211,8 +211,11 @@ public class ObjectivesSelector : MonoBehaviour
             bool isButtonInteractable = lookedAtButton.GetComponent<Button>().interactable;
             if (isButtonInteractable)
             {
-                _image = lookedAtButton.GetComponent<Image>();
-                _image.color = Color.red;
+                if (lookedAtButton.GetComponent<Image>() != null)
+                {
+                    _image = lookedAtButton.GetComponent<Image>();
+                    _image.color = Color.red;
+                }
 
                 if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) ||
                     Input.GetKeyDown(KeyCode.K))

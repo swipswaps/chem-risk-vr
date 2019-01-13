@@ -27,8 +27,11 @@ public class HandinController : MonoBehaviour
         if (Physics.Raycast(ray, out hit, 100, CatchButtonLayer))
         {
             var lookedAtButton = hit.collider.gameObject;
-            _image = lookedAtButton.GetComponent<Image>();
-            _image.color = Color.red;
+            if (lookedAtButton.GetComponent<Image>() != null)
+            {
+                _image = lookedAtButton.GetComponent<Image>();
+                _image.color = Color.red;
+            }
 
             if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) ||
                 Input.GetKeyDown(KeyCode.K))

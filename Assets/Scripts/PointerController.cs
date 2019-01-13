@@ -68,6 +68,7 @@ public class PointerController : MonoBehaviour
         else
         {
             // When nothing is being pointed at, disable the point of the pointer.
+
             Point.SetActive(false);
         }
 
