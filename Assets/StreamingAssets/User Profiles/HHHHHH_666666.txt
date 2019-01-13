@@ -1,0 +1,2 @@
+Username=HHHHHH
+StudentID=666666

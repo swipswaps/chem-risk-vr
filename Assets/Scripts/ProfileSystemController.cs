@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +11,7 @@ public class ProfileSystemController : MonoBehaviour {
     public GameObject UsernameField;
     public GameObject StudentIDField;
     public GameObject CredentialsErrorText;
+    public GameObject ProfileButtonTemplate;
 
     private bool _isNewProfileTabActive = false;
     private string _newUsername = string.Empty;
@@ -23,7 +25,9 @@ public class ProfileSystemController : MonoBehaviour {
     public LayerMask CatchButtonLayer;
     private Image _image;
 
-    void Start () {
+    void Start ()
+    {
+        ReadProfiles();
 	}
 	
 	void Update () {
@@ -64,20 +68,23 @@ public class ProfileSystemController : MonoBehaviour {
                     UsernameField.GetComponent<Text>().color = new Color(255, 255, 255, 1);
                 } else if (lookedAtButton.name == "Create New Profile Button")
                 {
-                    CreateNewProfile();
+                    ToggleWindows();
                 } else if (lookedAtButton.name == "Key")
                 {
                     PushKey(lookedAtButton.GetComponentInChildren<Text>().text);
                 }
             }
         }
+        else
+        {
             if (_image != null)
             {
                 _image.color = Color.white;
             }
+        }
     }
 
-    public void CreateNewProfile()
+    public void ToggleWindows()
     {
         // If we click the button to create the new profile,
         // then we want every window related to that action to
@@ -90,9 +97,114 @@ public class ProfileSystemController : MonoBehaviour {
         if (_isNewProfileTabActive)
         {
             ProfilesTab.SetActive(false);
+
+            // We have to reset the fields every time we 
+            // enter the profile creation tab
+            _newUsername = string.Empty;
+            _newStudentID = string.Empty;
+
+            UsernameField.GetComponent<Text>().text = "Username: " + _newUsername;
+            StudentIDField.GetComponent<Text>().text = "Student ID: " + _newStudentID;
+
+            UsernameField.GetComponent<Text>().color = new Color(255, 255, 255, 1);
+            StudentIDField.GetComponent<Text>().color = new Color(255, 255, 255, 1);
         } else
         {
             ProfilesTab.SetActive(true);
+        }
+    }
+
+    public void CreateNewProfile()
+    {
+        // The new file for the profile should use the
+        // following name structure: Nikolay_376469 (Name_ID).
+        string path = Application.dataPath +
+            "/StreamingAssets/User Profiles/" +
+            _newUsername + "_" + _newStudentID + ".txt";
+        StreamWriter newProfile = new StreamWriter(path);
+
+        // Using must always be used in case you forget
+        // to close the input stream to the file you're writing to.
+        using (newProfile)
+        {
+            newProfile.WriteLine("Username=" + _newUsername);
+            newProfile.WriteLine("StudentID=" + _newStudentID);
+            // Just in case XD
+            newProfile.Close();
+        }
+    }
+
+    private void ReadProfiles()
+    {
+        int topYOffset = 100;
+        int profilesInTab = ProfilesTab.transform.GetChild(1).childCount;
+
+        for (int j = profilesInTab - 1; j >= 0; j--)
+        {
+            Destroy(ProfilesTab.transform.GetChild(1).transform.GetChild(j).gameObject);
+        }
+
+        string path = Application.dataPath +
+            "/StreamingAssets/User Profiles/";
+        DirectoryInfo profilesDir = new DirectoryInfo(path);
+        FileInfo[] profileFiles = profilesDir.GetFiles();
+
+        foreach (FileInfo profile in profileFiles)
+        {
+            string username = string.Empty;
+            string studentID = string.Empty;
+
+            // Unity creates meta files so we need to distinguish
+            // between our txt profile files and the meta unity ones.
+            int fileTypeString = profile.Name.Length - 3;
+            if (profile.Name[profile.Name.Length - 1] == 't' &&
+                profile.Name[profile.Name.Length - 2] == 'x' &&
+                profile.Name[profile.Name.Length - 3] == 't')
+            {
+                // OpenRead returns a streamReader object
+                StreamReader reader = new StreamReader(profile.OpenRead());
+
+                using (reader)
+                {
+                    string line = reader.ReadLine();
+                    while (line != null)
+                    {
+                        // We want to get the specific substring from the
+                        // data of the current file's line being read.
+                        for (int i = 0; i < line.Length; i++)
+                        {
+                            if (line[i] == '=')
+                            {
+                                string temporaryLine = line;
+
+                                if (line.Substring(0, i) == "Username")
+                                {
+                                    // I'm using Remove because of an error I cannot understand when attemping to use the Substring methodto return the string after the equals sign.
+                                    username = temporaryLine.Remove(0, i + 1);
+                                }
+                                else if (line.Substring(0, i) == "StudentID")
+                                {
+                                    studentID = temporaryLine.Remove(0, i + 1);
+                                }
+                            }
+                        }
+
+                        line = reader.ReadLine();
+                    }
+
+                    // Now that all lines and data has been read and stored, we can safely instantiate the profile selector for the player to pick from.
+                    GameObject newProfileSelectionButton = Instantiate(ProfileButtonTemplate, ProfilesTab.transform.GetChild(1).transform);
+
+                    // Applying the offset in the menu so that the buttons are not
+                    // all on top of each other when instantiated
+                    Vector3 rectPosition = newProfileSelectionButton.GetComponent<RectTransform>().position;
+                    rectPosition.y -= topYOffset; newProfileSelectionButton.GetComponent<RectTransform>().position = rectPosition;
+
+                    topYOffset += 100;
+
+                    newProfileSelectionButton.GetComponentInChildren<Text>().text = username + " (" + studentID + ")";
+                }
+            }
         }
     }
 
@@ -110,7 +222,9 @@ public class ProfileSystemController : MonoBehaviour {
             {
                 // After that we generate a txt file that will contain
                 // all the new profile data created by the player.
+                ToggleWindows();
                 CreateNewProfile();
+                ReadProfiles();
             } else
             {
                 CredentialsErrorText.SetActive(true);
