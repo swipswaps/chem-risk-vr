@@ -25,6 +25,8 @@ public class ProfileSystemController : MonoBehaviour {
     public LayerMask CatchButtonLayer;
     private Image _image;
 
+    public static bool _isGameStarted = false;
+
     void Start ()
     {
         ReadProfiles();
@@ -72,6 +74,9 @@ public class ProfileSystemController : MonoBehaviour {
                 } else if (lookedAtButton.name == "Key")
                 {
                     PushKey(lookedAtButton.GetComponentInChildren<Text>().text);
+                } else if (lookedAtButton.name == "Profile(Clone)")
+                {
+                    _isGameStarted = true;
                 }
             }
         }

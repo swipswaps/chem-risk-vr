@@ -28,6 +28,7 @@ public class CenterEyePointer : MonoBehaviour
     public Material TeleporterAvailableMaterial;
     public Material TeleporterDisabledMaterial;
     public static bool IsTeleporterReset = false;
+    public GameObject StartPlayerPosition;
 
     private void Start()
     {
@@ -70,7 +71,25 @@ public class CenterEyePointer : MonoBehaviour
         }
     }
 
+    private void StartGamePosition()
+    {
+        Invoke("FadeOutTeleporter", 0.3f);
+        FadeTransitioner.GetComponent<Animator>().SetBool("toggleTransitioner", false);
+
+        Vector3 newPlayerPosition = Player.transform.position;
+        newPlayerPosition = StartPlayerPosition.transform.position;
+        Player.transform.position = newPlayerPosition;
+    }
+
     void Update () {
+        if (ProfileSystemController._isGameStarted)
+        {
+            FadeTransitioner.SetActive(true);
+            FadeTransitioner.GetComponent<Animator>().SetBool("toggleTransitioner", true);
+            Invoke("StartGamePosition", 0.3f);
+
+            ProfileSystemController._isGameStarted = false;
+        }
 
         if (HandinController.IsObjectiveHandedIn && IsTeleporterReset == false)
         {

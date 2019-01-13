@@ -19182,6 +19182,7 @@ MonoBehaviour:
     type: 2}
   TeleporterDisabledMaterial: {fileID: 2100000, guid: 9c9cd37e1304fcb488ab30bf1bcb8928,
     type: 2}
+  StartPlayerPosition: {fileID: 2108238994}
 --- !u!1 &1329588482
 GameObject:
   m_ObjectHideFlags: 0
