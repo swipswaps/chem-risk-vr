@@ -123,8 +123,7 @@ public class ProfileSystemController : MonoBehaviour {
     {
         // The new file for the profile should use the
         // following name structure: Nikolay_376469 (Name_ID).
-        string path = Application.dataPath +
-            "/StreamingAssets/User Profiles/" +
+        string path = Application.persistentDataPath + "/" +
             _newUsername + "_" + _newStudentID + ".txt";
         StreamWriter newProfile = new StreamWriter(path);
 
@@ -149,8 +148,7 @@ public class ProfileSystemController : MonoBehaviour {
             Destroy(ProfilesTab.transform.GetChild(1).transform.GetChild(j).gameObject);
         }
 
-        string path = Application.dataPath +
-            "/StreamingAssets/User Profiles/";
+        string path = Application.persistentDataPath;
         DirectoryInfo profilesDir = new DirectoryInfo(path);
         FileInfo[] profileFiles = profilesDir.GetFiles();
 
