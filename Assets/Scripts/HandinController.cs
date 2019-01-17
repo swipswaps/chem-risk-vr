@@ -110,6 +110,9 @@ public class HandinController : MonoBehaviour
                 PointerController.IsWearingCoat &&
                 existingDirtyBeakers.Length <= 0)
             {
+                ProfileSystemController.TimesForLevelMixColors.Add(ProfileSystemController.CurrentLevelSeconds);
+                Debug.Log(ProfileSystemController.CurrentLevelSeconds);
+                ProfileSystemController.CurrentLevelSeconds = 0;
                 CompleteHandIn();
             }
             else
@@ -148,6 +151,7 @@ public class HandinController : MonoBehaviour
             else
             {
                 ProfileSystemController.TimesAGuidelineIsMissed++;
+                ProfileSystemController.PlayingALevel = false;
                 ProfileSystemController.UpdateProfileData();
 
                 _objectiveReport += "< Failed >";

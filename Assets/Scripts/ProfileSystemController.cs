@@ -41,6 +41,9 @@ public class ProfileSystemController : MonoBehaviour {
     private int _totalSecondsPlayed = 0;
     private static int TotalMinutesPlayed = 0;
     private static int TotalHoursPlayed = 0;
+    public static int CurrentLevelSeconds = 0;
+    public static bool PlayingALevel = false;
+    public static List<long> TimesForLevelMixColors = new List<long>(); 
     #endregion
 
     void Start ()
@@ -140,6 +143,12 @@ public class ProfileSystemController : MonoBehaviour {
 
     private void UpdateTimers()
     {
+        if (PlayingALevel)
+        {
+            CurrentLevelSeconds++;
+            Debug.Log(CurrentLevelSeconds);
+        }
+
         _totalSecondsPlayed++;
 
         if (_totalSecondsPlayed >= 60)
@@ -179,6 +188,7 @@ public class ProfileSystemController : MonoBehaviour {
             newProfile.WriteLine("TimesAnIncidentWasCaused=" + 0);
             newProfile.WriteLine("TotalHoursPlayed=" + 0);
             newProfile.WriteLine("TotalMinutesPlayed=" + 0);
+            newProfile.WriteLine("TimesForLevelMixColors=", string.Empty);
             // Just in case using doesnt close the stream.
             newProfile.Close();
         }
@@ -188,20 +198,36 @@ public class ProfileSystemController : MonoBehaviour {
     {
         string path = Application.persistentDataPath + "/" +
             Username + "_" + StudentID + ".txt";
-        
-            File.WriteAllLines(path, new string[] {
-                "Username=" + Username,
-                "StudentID=" + StudentID,
-                "BeakersFilledWithWater=" + BeakersFilledWithWater,
-                "BeakersMixedToOrange=" + BeakersMixedToOrange,
-                "BeakersMixedToPurple=" + BeakersMixedToPurple,
-                "BeakersMixedToGreen=" + BeakersMixedToGreen,
-                "TriesOnLevelMixColors=" + TriesOnLevelMixColors,
-                "TimesAGuidelineIsMissed=" + TimesAGuidelineIsMissed,
-                "TimesAnIncidentWasCaused=" + TimesAnIncidentWasCaused,
-                "TotalHoursPlayed=" + TotalHoursPlayed,
-                "TotalMinutesPlayed=" + TotalMinutesPlayed
-            });
+
+        string finalTimesString = "{";
+
+        for (int i = 0; i <= TimesForLevelMixColors.Count - 1; i++)
+        {
+            if (i == TimesForLevelMixColors.Count - 1)
+            {
+                finalTimesString += TimesForLevelMixColors[i] + "}";
+            } else
+            {
+                finalTimesString += TimesForLevelMixColors[i] + ",";
+            }
+        }
+
+        Debug.Log(finalTimesString);
+
+        File.WriteAllLines(path, new string[] {
+            "Username=" + Username,
+            "StudentID=" + StudentID,
+            "BeakersFilledWithWater=" + BeakersFilledWithWater,
+            "BeakersMixedToOrange=" + BeakersMixedToOrange,
+            "BeakersMixedToPurple=" + BeakersMixedToPurple,
+            "BeakersMixedToGreen=" + BeakersMixedToGreen,
+            "TriesOnLevelMixColors=" + TriesOnLevelMixColors,
+            "TimesAGuidelineIsMissed=" + TimesAGuidelineIsMissed,
+            "TimesAnIncidentWasCaused=" + TimesAnIncidentWasCaused,
+            "TotalHoursPlayed=" + TotalHoursPlayed,
+            "TotalMinutesPlayed=" + TotalMinutesPlayed,
+            "TimesForLevelMixColors=" + finalTimesString
+        });
     }
 
     private void ReadProfiles()
@@ -278,6 +304,22 @@ public class ProfileSystemController : MonoBehaviour {
                                         break;
                                     case "TotalMinutesPlayed":
                                         TotalMinutesPlayed = int.Parse(temporaryLine.Remove(0, i + 1));
+                                        break;
+                                    case "TimesForLevelMixColors":
+                                        string times = temporaryLine.Remove(0, i + 1);
+                                        for (int j = 1; j < times.Length - 1; j++)
+                                        {
+                                            string time = string.Empty;
+                                            if (times[j] == ',')
+                                            {
+                                                TimesForLevelMixColors.Add(int.Parse(time));
+                                                Debug.Log(time);
+                                                time = string.Empty;
+                                            } else
+                                            {
+                                                time += times[j];
+                                            }
+                                        }
                                         break;
                                 }
                             }

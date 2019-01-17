@@ -225,6 +225,10 @@ public class ObjectivesSelector : MonoBehaviour
                     // Button functionality/behaviour on click events
                     if (lookedAtButton.name == "Use Water Bottle")
                     {
+                        ProfileSystemController.TriesOnLevelMixColors++;
+                        ProfileSystemController.PlayingALevel = true;
+                        ProfileSystemController.UpdateProfileData();
+
                         //if (PointerController.IsWearingCoat == true)
                         //{
                         // Resetting the safety guidelines board's text current value
@@ -266,6 +270,7 @@ public class ObjectivesSelector : MonoBehaviour
                     } else if (lookedAtButton.name == "Mix Colors")
                     {
                         ProfileSystemController.TriesOnLevelMixColors++;
+                        ProfileSystemController.PlayingALevel = true;
                         ProfileSystemController.UpdateProfileData();
 
                         for (int i = 0; i < 4; i++)
