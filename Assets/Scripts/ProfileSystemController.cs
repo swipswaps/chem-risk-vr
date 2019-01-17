@@ -25,7 +25,6 @@ public class ProfileSystemController : MonoBehaviour {
 
     public GameObject Pointer;
     public LayerMask CatchButtonLayer;
-    private Image _image;
 
     public static bool _isGameStarted = false;
 
@@ -55,6 +54,9 @@ public class ProfileSystemController : MonoBehaviour {
     public GameObject TotalMinutesPlayedObj;
     #endregion
 
+    private GameObject _lastLookedAtObject;
+    private Image _imageOfButton;
+
     void Start ()
     {
         ReadProfiles();
@@ -73,43 +75,47 @@ public class ProfileSystemController : MonoBehaviour {
         // buttons, then they will be updated here on different events.
         if (Physics.Raycast(ray, out hit, 100, CatchButtonLayer))
         {
-            var lookedAtButton = hit.collider.gameObject;
-            if (lookedAtButton.GetComponent<Image>() != null)
+            if (_imageOfButton != null)
             {
-                _image = lookedAtButton.GetComponent<Image>();
-                _image.color = Color.red;
+                _imageOfButton.color = Color.white;
+            }
+            _lastLookedAtObject = hit.collider.gameObject;
+            if (_lastLookedAtObject.GetComponent<Image>() != null)
+            {
+                _imageOfButton = _lastLookedAtObject.GetComponent<Image>();
+                _imageOfButton.color = Color.red;
             }
 
             if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) ||
                 Input.GetKeyDown(KeyCode.K))
             {
-                if (lookedAtButton.GetComponent<Image>() != null)
+                if (_lastLookedAtObject.GetComponent<Image>() != null)
                 {
-                    _image.color = Color.green;
+                    _imageOfButton.color = Color.green;
                 }
 
                 // Button functionality/behaviour on click events
-                if (lookedAtButton.name == "Username Field")
+                if (_lastLookedAtObject.name == "Username Field")
                 {
                     currentField = "Username";
                     UsernameField.GetComponent<Text>().color = new Color(0, 255, 0, 1);
                     StudentIDField.GetComponent<Text>().color = new Color(255, 255, 255, 1);
-                } else if (lookedAtButton.name == "Student ID Field")
+                } else if (_lastLookedAtObject.name == "Student ID Field")
                 {
                     currentField = "StudentID";
                     StudentIDField.GetComponent<Text>().color = new Color(0, 255, 0, 1);
                     UsernameField.GetComponent<Text>().color = new Color(255, 255, 255, 1);
-                } else if (lookedAtButton.name == "Create New Profile Button")
+                } else if (_lastLookedAtObject.name == "Create New Profile Button")
                 {
                     ToggleWindows();
-                } else if (lookedAtButton.name == "Key")
+                } else if (_lastLookedAtObject.name == "Key")
                 {
-                    PushKey(lookedAtButton.GetComponentInChildren<Text>().text);
-                } else if (lookedAtButton.name == "Profile(Clone)")
+                    PushKey(_lastLookedAtObject.GetComponentInChildren<Text>().text);
+                } else if (_lastLookedAtObject.name == "Profile(Clone)")
                 {
                     ReadProfiles();
 
-                    string profileNameAndID = lookedAtButton.GetComponentInChildren<Text>().text;
+                    string profileNameAndID = _lastLookedAtObject.GetComponentInChildren<Text>().text;
 
                     for (int i = 0; i < profileNameAndID.Length; i++)
                     {
@@ -131,7 +137,7 @@ public class ProfileSystemController : MonoBehaviour {
                     TotalMinutesPlayedObj.GetComponentInChildren<Text>().text = "Total Minutes Played: " + TotalMinutesPlayed.ToString();
 
                 }
-                else if (lookedAtButton.name == "Logout Button")
+                else if (_lastLookedAtObject.name == "Logout Button")
                 {
                     Vector3 newPlayerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
                     newPlayerPosition = GameObject.FindGameObjectWithTag("Start Position").transform.position;
@@ -141,9 +147,9 @@ public class ProfileSystemController : MonoBehaviour {
         }
         else
         {
-            if (_image != null)
+            if (_imageOfButton.color == Color.red || _imageOfButton.color == Color.green)
             {
-                _image.color = Color.white;
+                _imageOfButton.color = Color.white;
             }
         }
     }
@@ -183,7 +189,7 @@ public class ProfileSystemController : MonoBehaviour {
         if (PlayingALevel)
         {
             CurrentLevelSeconds++;
-            Debug.Log(CurrentLevelSeconds);
+            //Debug.Log(CurrentLevelSeconds);
         }
 
         _totalSecondsPlayed++;

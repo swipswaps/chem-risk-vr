@@ -213,14 +213,14 @@ public class ObjectivesSelector : MonoBehaviour
             {
                 if (lookedAtButton.GetComponent<Image>() != null)
                 {
-                    _image = lookedAtButton.GetComponent<Image>();
-                    _image.color = Color.red;
+                   // _image = lookedAtButton.GetComponent<Image>();
+                    //_image.color = Color.red;
                 }
 
                 if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) ||
                     Input.GetKeyDown(KeyCode.K))
                 {
-                    _image.color = Color.green;
+                    //_image.color = Color.green;
 					
                     // Button functionality/behaviour on click events
                     if (lookedAtButton.name == "Use Water Bottle")
@@ -318,10 +318,12 @@ public class ObjectivesSelector : MonoBehaviour
         }
         else
         {
+            /*
             if (_image != null)
             {
                 _image.color = Color.white;
             }
+            */
         }
 
         if (Input.GetKeyDown(KeyCode.F) && CurrentObjective == "Mix Colors" && _isNextPageAvailable)

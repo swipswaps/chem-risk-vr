@@ -9,6 +9,7 @@ public class PointerController : MonoBehaviour
     public static GameObject CurrentlyHoldingObjectForBeakers;
     private Transform _parentOfTemporaryObject = null;
     public Material DefaultReturnItemMaterial;
+    public Material OriginalItemMaterial;
     public Material DefaultItemMaterial;
     public Material DefaultBeakerMaterial;
     public Material HoverableObjectMaterial;
@@ -36,6 +37,7 @@ public class PointerController : MonoBehaviour
     public GameObject RightController;
 
     public static bool IsHoldingItem = false;
+    private bool _isMaterialTaken = false;
 
     private void Start()
     {
@@ -80,6 +82,8 @@ public class PointerController : MonoBehaviour
             if (Physics.Raycast(ray, out hit, 100, ReturnObjectLayer)
                 )
             {
+                //_meshRenderer = _lookedAtObject.GetComponent<MeshRenderer>();
+                //OriginalItemMaterial = _meshRenderer.material;
                 if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) ||
                     Input.GetKeyDown(KeyCode.K))
                 {
@@ -99,7 +103,7 @@ public class PointerController : MonoBehaviour
                         _lookedAtObject.name != "Dropper" &&
                         _lookedAtObject.name != "Empty Dropper")
                     {
-                        _meshRenderer.material = DefaultItemMaterial;
+                        //_meshRenderer.material = OriginalItemMaterial;
                     }
                     else
                     {
@@ -160,7 +164,7 @@ public class PointerController : MonoBehaviour
                             _lookedAtObject.name = "Dropper";
                         }
                         
-                        _meshRenderer.material = DefaultBeakerMaterial;
+                        //_meshRenderer.material = OriginalItemMaterial;
                         _currentlyHoldingObject.tag = "Untagged";
                     }
 
@@ -182,7 +186,13 @@ public class PointerController : MonoBehaviour
             {
                 _lookedAtObject = hit.collider.gameObject;
                 _parentOfTemporaryObject = _lookedAtObject.transform.parent;
-            
+
+                if (_meshRenderer != null)
+                {
+                    _meshRenderer.material = OriginalItemMaterial;
+                    _isMaterialTaken = false;
+                }
+                _meshRenderer = _lookedAtObject.GetComponent<MeshRenderer>();
                 // Once it is found we change it to look as if it is hovered
                 // so that it appears interact-able
                 if (_lookedAtObject.name == "Lab Gloves")
@@ -196,8 +206,18 @@ public class PointerController : MonoBehaviour
                 }
                 else
                 {
-                    _meshRenderer = _lookedAtObject.GetComponent<MeshRenderer>();
+                    if (_isMaterialTaken == false)
+                    {
+                        Debug.Log("taken material");
+                        OriginalItemMaterial = _meshRenderer.material;
+                        _isMaterialTaken = true;
+                    }
+                    if (_meshRenderer != null)
+                    {
+                        _meshRenderer.material = HoverableObjectMaterial;
+                    }
                     _meshRenderer.material = HoverableObjectMaterial;
+                    Debug.Log("entered");
                 }
                 
                 // If the player is not holding an interactable item and presses
@@ -289,7 +309,6 @@ public class PointerController : MonoBehaviour
                         _lookedAtObject.name != "Small Empty Beaker" &&
                         _lookedAtObject.name != "Dropper")
                     {
-                        _meshRenderer.material = DefaultItemMaterial;
                         foreach (MeshRenderer renderer in _meshRendererGloves)
                         {
                             renderer.material = DefaultItemMaterial;
@@ -297,12 +316,14 @@ public class PointerController : MonoBehaviour
                     }
                     else
                     {
-                        _meshRenderer.material = DefaultBeakerMaterial;
+                        Debug.Log("exited");
+                        _meshRenderer.material = OriginalItemMaterial;
+                        _isMaterialTaken = false;
                     }
                 }
             }
         }
-        
+
         // If an item is to be returned, then it will be tracked and
         // highlighted in the world, because the rays were having trouble
         // updating its material.
