@@ -20,6 +20,7 @@ TagManager:
   - Dropper
   - DoorDirection
   - Dirty Beaker
+  - Start Position
   layers:
   - Default
   - TransparentFX

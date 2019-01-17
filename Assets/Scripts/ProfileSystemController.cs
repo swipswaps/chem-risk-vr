@@ -18,6 +18,8 @@ public class ProfileSystemController : MonoBehaviour {
     private string _newStudentID = string.Empty;
     public static string currentField = string.Empty;
 
+    private string _currentUsername = string.Empty;
+    private string _currentStudentID = string.Empty;
     private int currentLengthOfUsername = 0;
     private int currentLengthOfStudentID = 0;
 
@@ -43,7 +45,14 @@ public class ProfileSystemController : MonoBehaviour {
     private static int TotalHoursPlayed = 0;
     public static int CurrentLevelSeconds = 0;
     public static bool PlayingALevel = false;
-    public static List<long> TimesForLevelMixColors = new List<long>(); 
+    public static List<long> TimesForLevelMixColors = new List<long>();
+    #endregion
+
+    #region Player preview statistics in the lobby
+    public GameObject UsernameObj;
+    //public Sprite Portrait;
+    public GameObject TotalHoursPlayedObj;
+    public GameObject TotalMinutesPlayedObj;
     #endregion
 
     void Start ()
@@ -98,7 +107,35 @@ public class ProfileSystemController : MonoBehaviour {
                     PushKey(lookedAtButton.GetComponentInChildren<Text>().text);
                 } else if (lookedAtButton.name == "Profile(Clone)")
                 {
+                    ReadProfiles();
+
+                    string profileNameAndID = lookedAtButton.GetComponentInChildren<Text>().text;
+
+                    for (int i = 0; i < profileNameAndID.Length; i++)
+                    {
+                        if (profileNameAndID[i] == '_')
+                        {
+                            _currentUsername = profileNameAndID.Substring(0, i);
+                            _currentStudentID = profileNameAndID.Substring(i + 1, 6);
+                            break;
+                        }
+                    }
                     _isGameStarted = true;
+
+                    SelectProflie();
+
+                    //Debug.Log(_currentUsername + "_" + _currentStudentID);
+
+                    UsernameObj.GetComponentInChildren<Text>().text = "Username: " + Username;
+                    TotalHoursPlayedObj.GetComponentInChildren<Text>().text = "Total Hours Played: " + TotalHoursPlayed.ToString();
+                    TotalMinutesPlayedObj.GetComponentInChildren<Text>().text = "Total Minutes Played: " + TotalMinutesPlayed.ToString();
+
+                }
+                else if (lookedAtButton.name == "Logout Button")
+                {
+                    Vector3 newPlayerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
+                    newPlayerPosition = GameObject.FindGameObjectWithTag("Start Position").transform.position;
+                    GameObject.FindGameObjectWithTag("Player").transform.position = newPlayerPosition;
                 }
             }
         }
@@ -161,6 +198,9 @@ public class ProfileSystemController : MonoBehaviour {
                 TotalMinutesPlayed = 0;
             }
         }
+        
+        TotalHoursPlayedObj.GetComponentInChildren<Text>().text = "Total Hours Played: " + TotalHoursPlayed.ToString();
+        TotalMinutesPlayedObj.GetComponentInChildren<Text>().text = "Total Minutes Played: " + TotalMinutesPlayed.ToString();
 
         UpdateProfileData();
     }
@@ -211,8 +251,6 @@ public class ProfileSystemController : MonoBehaviour {
                 finalTimesString += TimesForLevelMixColors[i] + ",";
             }
         }
-
-        Debug.Log(finalTimesString);
 
         File.WriteAllLines(path, new string[] {
             "Username=" + Username,
@@ -312,9 +350,7 @@ public class ProfileSystemController : MonoBehaviour {
                                         {
                                             if (times[j] == ',')
                                             {
-                                                Debug.Log(time);
                                                 TimesForLevelMixColors.Add(int.Parse(time));
-                                                Debug.Log(time);
                                                 time = string.Empty;
                                             } else
                                             {
@@ -339,8 +375,107 @@ public class ProfileSystemController : MonoBehaviour {
 
                     topYOffset += 100;
 
-                    newProfileSelectionButton.GetComponentInChildren<Text>().text = Username + " (" + StudentID + ")";
+                    newProfileSelectionButton.GetComponentInChildren<Text>().text = Username + "_" + StudentID;
 
+                    reader.Close();
+                }
+            }
+        }
+    }
+
+    private void SelectProflie() {
+
+        int lengthOfProfile = 0;
+        if (_isGameStarted)
+        {
+            lengthOfProfile = (_currentUsername.Length) + 1 + (_currentStudentID.Length);
+        }
+        string path = Application.persistentDataPath;
+        DirectoryInfo profilesDir = new DirectoryInfo(path);
+        FileInfo[] profileFiles = profilesDir.GetFiles();
+
+        foreach (FileInfo profile in profileFiles)
+        {
+            if (_isGameStarted &&
+            profile.Name.Substring(0, profile.Name.Length - 4) == _currentUsername + "_" + _currentStudentID &&
+            profile.Name[profile.Name.Length - 1] == 't' &&
+            profile.Name[profile.Name.Length - 2] == 'x' &&
+            profile.Name[profile.Name.Length - 3] == 't')
+            {
+                // OpenRead returns a streamReader object
+                StreamReader reader = new StreamReader(profile.OpenRead());
+
+                using (reader)
+                {
+                    string line = reader.ReadLine();
+                    while (line != null)
+                    {
+                        // We want to get the specific substring from the
+                        // data of the current file's line being read.
+                        for (int i = 0; i < line.Length; i++)
+                        {
+                            if (line[i] == '=')
+                            {
+                                string temporaryLine = line;
+
+                                switch (line.Substring(0, i))
+                                {
+                                    case "Username":
+                                        // I'm using Remove because of an error I cannot understand when attemping to use the Substring methodto return the string after the equals sign.
+                                        Username = temporaryLine.Remove(0, i + 1);
+                                        break;
+                                    case "StudentID":
+                                        StudentID = temporaryLine.Remove(0, i + 1);
+                                        break;
+                                    case "BeakersFilledWithWater":
+                                        BeakersFilledWithWater = int.Parse(temporaryLine.Remove(0, i + 1));
+                                        break;
+                                    case "BeakersMixedToOrange":
+                                        BeakersMixedToOrange = int.Parse(temporaryLine.Remove(0, i + 1));
+                                        break;
+                                    case "BeakersMixedToPurple":
+                                        BeakersMixedToPurple = int.Parse(temporaryLine.Remove(0, i + 1));
+                                        break;
+                                    case "BeakersMixedToGreen":
+                                        BeakersMixedToGreen = int.Parse(temporaryLine.Remove(0, i + 1));
+                                        break;
+                                    case "TriesOnLevelMixColors":
+                                        TriesOnLevelMixColors = int.Parse(temporaryLine.Remove(0, i + 1));
+                                        break;
+                                    case "TimesAGuidelineIsMissed":
+                                        TimesAGuidelineIsMissed = int.Parse(temporaryLine.Remove(0, i + 1));
+                                        break;
+                                    case "TimesAnIncidentIsCaused":
+                                        TimesAnIncidentWasCaused = int.Parse(temporaryLine.Remove(0, i + 1));
+                                        break;
+                                    case "TotalHoursPlayed":
+                                        TotalHoursPlayed = int.Parse(temporaryLine.Remove(0, i + 1));
+                                        break;
+                                    case "TotalMinutesPlayed":
+                                        TotalMinutesPlayed = int.Parse(temporaryLine.Remove(0, i + 1));
+                                        break;
+                                    case "TimesForLevelMixColors":
+                                        string times = temporaryLine.Remove(0, i + 1);
+                                        string time = string.Empty;
+                                        for (int j = 1; j < times.Length - 1; j++)
+                                        {
+                                            if (times[j] == ',')
+                                            {
+                                                TimesForLevelMixColors.Add(int.Parse(time));
+                                                time = string.Empty;
+                                            }
+                                            else
+                                            {
+                                                time += times[j];
+                                            }
+                                        }
+                                        break;
+                                }
+                            }
+                        }
+
+                        line = reader.ReadLine();
+                    }
                     reader.Close();
                 }
             }
