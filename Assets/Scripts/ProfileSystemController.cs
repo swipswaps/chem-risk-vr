@@ -307,11 +307,12 @@ public class ProfileSystemController : MonoBehaviour {
                                         break;
                                     case "TimesForLevelMixColors":
                                         string times = temporaryLine.Remove(0, i + 1);
+                                        string time = string.Empty;
                                         for (int j = 1; j < times.Length - 1; j++)
                                         {
-                                            string time = string.Empty;
                                             if (times[j] == ',')
                                             {
+                                                Debug.Log(time);
                                                 TimesForLevelMixColors.Add(int.Parse(time));
                                                 Debug.Log(time);
                                                 time = string.Empty;
