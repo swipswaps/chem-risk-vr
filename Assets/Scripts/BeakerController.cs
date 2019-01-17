@@ -70,6 +70,10 @@ public class BeakerController : MonoBehaviour
                         gameObject.name == "Round Empty Beaker" ||
                         gameObject.name == "Small Empty Beaker") && _heldObject.name == "Water(Clone)")
 					{
+                        // This stores the new player data to his profile after a certain action changes a certain data value and needs to be updated.
+                        ProfileSystemController.BeakersFilledWithWater++;
+                        ProfileSystemController.UpdateProfileData();
+
 						Instantiate(WaterSubstance, transform.position, new Quaternion(0, 0, 0, 0), transform);
                         BeakerType = "Water";
 						// We also have to rename the current game object from empty because

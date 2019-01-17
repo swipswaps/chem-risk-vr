@@ -27,6 +27,12 @@ public class ProfileSystemController : MonoBehaviour {
 
     public static bool _isGameStarted = false;
 
+    // ****************************
+    // Player variables
+    public static string Username = string.Empty;
+    public static string StudentID = string.Empty;
+    public static int BeakersFilledWithWater = 0;
+
     void Start ()
     {
         ReadProfiles();
@@ -133,9 +139,22 @@ public class ProfileSystemController : MonoBehaviour {
         {
             newProfile.WriteLine("Username=" + _newUsername);
             newProfile.WriteLine("StudentID=" + _newStudentID);
-            // Just in case XD
+            newProfile.WriteLine("BeakersFilledWithWater=" + 0);
+            // Just in case using doesnt close the stream.
             newProfile.Close();
         }
+    }
+
+    public static void UpdateProfileData()
+    {
+        string path = Application.persistentDataPath + "/" +
+            Username + "_" + StudentID + ".txt";
+        
+            File.WriteAllLines(path, new string[] {
+                "Username=" + Username,
+                "StudentID=" + StudentID,
+                "BeakersFilledWithWater=" + BeakersFilledWithWater
+            });
     }
 
     private void ReadProfiles()
@@ -154,9 +173,6 @@ public class ProfileSystemController : MonoBehaviour {
 
         foreach (FileInfo profile in profileFiles)
         {
-            string username = string.Empty;
-            string studentID = string.Empty;
-
             // Unity creates meta files so we need to distinguish
             // between our txt profile files and the meta unity ones.
             int fileTypeString = profile.Name.Length - 3;
@@ -183,11 +199,15 @@ public class ProfileSystemController : MonoBehaviour {
                                 if (line.Substring(0, i) == "Username")
                                 {
                                     // I'm using Remove because of an error I cannot understand when attemping to use the Substring methodto return the string after the equals sign.
-                                    username = temporaryLine.Remove(0, i + 1);
+                                    Username = temporaryLine.Remove(0, i + 1);
                                 }
                                 else if (line.Substring(0, i) == "StudentID")
                                 {
-                                    studentID = temporaryLine.Remove(0, i + 1);
+                                    StudentID = temporaryLine.Remove(0, i + 1);
+                                }
+                                else if (line.Substring(0, i) == "BeakersFilledWithWater")
+                                {
+                                    BeakersFilledWithWater = int.Parse(temporaryLine.Remove(0, i + 1));
                                 }
                             }
                         }
@@ -205,7 +225,9 @@ public class ProfileSystemController : MonoBehaviour {
 
                     topYOffset += 100;
 
-                    newProfileSelectionButton.GetComponentInChildren<Text>().text = username + " (" + studentID + ")";
+                    newProfileSelectionButton.GetComponentInChildren<Text>().text = Username + " (" + StudentID + ")";
+
+                    reader.Close();
                 }
             }
         }
