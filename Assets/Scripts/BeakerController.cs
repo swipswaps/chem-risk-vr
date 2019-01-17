@@ -74,7 +74,7 @@ public class BeakerController : MonoBehaviour
                         ProfileSystemController.BeakersFilledWithWater++;
                         ProfileSystemController.UpdateProfileData();
 
-						Instantiate(WaterSubstance, transform.position, new Quaternion(0, 0, 0, 0), transform);
+                        Instantiate(WaterSubstance, transform.position, new Quaternion(0, 0, 0, 0), transform);
                         BeakerType = "Water";
 						// We also have to rename the current game object from empty because
 						// the beaker is no longer empty and instead has water.
@@ -100,25 +100,31 @@ public class BeakerController : MonoBehaviour
                                 _heldObject.name == "Red Substance(Clone)") ||
 					           (gameObject.name == "Red Substance Beaker" &&
                                 _heldObject.name == "Yellow Substance(Clone)"))
-					{
-						CreateSubstanceInBeaker(OrangeSubstance, "Orange");
+                    {
+                        ProfileSystemController.BeakersMixedToOrange++;
+                        ProfileSystemController.UpdateProfileData();
+                        CreateSubstanceInBeaker(OrangeSubstance, "Orange");
 						ObjectivesSelector.MixRedAndYellow = true;
 					} else if ((gameObject.name == "Red Substance Beaker" &&
                                 _heldObject.name == "Blue Substance(Clone)") ||
 					           (gameObject.name == "Blue Substance Beaker" &&
                                 _heldObject.name == "Red Substance(Clone)"))
 					{
-						CreateSubstanceInBeaker(PurpleSubstance, "Purple");
+                        ProfileSystemController.BeakersMixedToPurple++;
+                        ProfileSystemController.UpdateProfileData();
+                        CreateSubstanceInBeaker(PurpleSubstance, "Purple");
 						ObjectivesSelector.MixRedAndBlue = true;
 					} else if ((gameObject.name == "Blue Substance Beaker" &&
                                 _heldObject.name == "Yellow Substance(Clone)") ||
 					           (gameObject.name == "Yellow Substance Beaker" &&
                                 _heldObject.name == "Blue Substance(Clone)"))
-					{
-						CreateSubstanceInBeaker(GreenSubstance, "Green");
+                    {
+                        ProfileSystemController.BeakersMixedToGreen++;
+                        ProfileSystemController.UpdateProfileData();
+                        CreateSubstanceInBeaker(GreenSubstance, "Green");
 						ObjectivesSelector.MixBlueAndYellow = true;
-					}
-				}
+                    }
+                }
 			}
 			else
 			{

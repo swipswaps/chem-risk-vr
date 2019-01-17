@@ -265,6 +265,9 @@ public class ObjectivesSelector : MonoBehaviour
                         DisableButtonsInteractivity();
                     } else if (lookedAtButton.name == "Mix Colors")
                     {
+                        ProfileSystemController.TriesOnLevelMixColors++;
+                        ProfileSystemController.UpdateProfileData();
+
                         for (int i = 0; i < 4; i++)
                         {
                             TaskFields[i].SetActive(true);

@@ -27,15 +27,28 @@ public class ProfileSystemController : MonoBehaviour {
 
     public static bool _isGameStarted = false;
 
-    // ****************************
-    // Player variables
+    #region Player Variables
     public static string Username = string.Empty;
     public static string StudentID = string.Empty;
     public static int BeakersFilledWithWater = 0;
+    public static int BeakersMixedToOrange = 0;
+    public static int BeakersMixedToPurple = 0;
+    public static int BeakersMixedToGreen = 0;
+    public static int TriesOnLevelMixColors = 0;
+    public static int TimesAGuidelineIsMissed = 0;
+    public static int TimesAnIncidentWasCaused = 0;
+
+    private int _totalSecondsPlayed = 0;
+    private static int TotalMinutesPlayed = 0;
+    private static int TotalHoursPlayed = 0;
+    #endregion
 
     void Start ()
     {
         ReadProfiles();
+
+        // This starts the countdown of the timers for total hours and minutes played.
+        InvokeRepeating("UpdateTimers", 0f, 1f);
 	}
 	
 	void Update () {
@@ -125,6 +138,24 @@ public class ProfileSystemController : MonoBehaviour {
         }
     }
 
+    private void UpdateTimers()
+    {
+        _totalSecondsPlayed++;
+
+        if (_totalSecondsPlayed >= 60)
+        {
+            TotalMinutesPlayed++;
+            _totalSecondsPlayed = 0;
+            if (TotalMinutesPlayed >= 60)
+            {
+                TotalHoursPlayed++;
+                TotalMinutesPlayed = 0;
+            }
+        }
+
+        UpdateProfileData();
+    }
+
     public void CreateNewProfile()
     {
         // The new file for the profile should use the
@@ -140,6 +171,14 @@ public class ProfileSystemController : MonoBehaviour {
             newProfile.WriteLine("Username=" + _newUsername);
             newProfile.WriteLine("StudentID=" + _newStudentID);
             newProfile.WriteLine("BeakersFilledWithWater=" + 0);
+            newProfile.WriteLine("BeakersMixedToOrange=" + 0);
+            newProfile.WriteLine("BeakersMixedToPurple=" + 0);
+            newProfile.WriteLine("BeakersMixedToGreen=" + 0);
+            newProfile.WriteLine("TriesOnLevelMixColors=" + 0);
+            newProfile.WriteLine("TimesAGuidelineIsMissed=" + 0);
+            newProfile.WriteLine("TimesAnIncidentWasCaused=" + 0);
+            newProfile.WriteLine("TotalHoursPlayed=" + 0);
+            newProfile.WriteLine("TotalMinutesPlayed=" + 0);
             // Just in case using doesnt close the stream.
             newProfile.Close();
         }
@@ -153,7 +192,15 @@ public class ProfileSystemController : MonoBehaviour {
             File.WriteAllLines(path, new string[] {
                 "Username=" + Username,
                 "StudentID=" + StudentID,
-                "BeakersFilledWithWater=" + BeakersFilledWithWater
+                "BeakersFilledWithWater=" + BeakersFilledWithWater,
+                "BeakersMixedToOrange=" + BeakersMixedToOrange,
+                "BeakersMixedToPurple=" + BeakersMixedToPurple,
+                "BeakersMixedToGreen=" + BeakersMixedToGreen,
+                "TriesOnLevelMixColors=" + TriesOnLevelMixColors,
+                "TimesAGuidelineIsMissed=" + TimesAGuidelineIsMissed,
+                "TimesAnIncidentWasCaused=" + TimesAnIncidentWasCaused,
+                "TotalHoursPlayed=" + TotalHoursPlayed,
+                "TotalMinutesPlayed=" + TotalMinutesPlayed
             });
     }
 
@@ -196,18 +243,42 @@ public class ProfileSystemController : MonoBehaviour {
                             {
                                 string temporaryLine = line;
 
-                                if (line.Substring(0, i) == "Username")
+                                switch (line.Substring(0, i))
                                 {
-                                    // I'm using Remove because of an error I cannot understand when attemping to use the Substring methodto return the string after the equals sign.
-                                    Username = temporaryLine.Remove(0, i + 1);
-                                }
-                                else if (line.Substring(0, i) == "StudentID")
-                                {
-                                    StudentID = temporaryLine.Remove(0, i + 1);
-                                }
-                                else if (line.Substring(0, i) == "BeakersFilledWithWater")
-                                {
-                                    BeakersFilledWithWater = int.Parse(temporaryLine.Remove(0, i + 1));
+                                    case "Username":
+                                        // I'm using Remove because of an error I cannot understand when attemping to use the Substring methodto return the string after the equals sign.
+                                        Username = temporaryLine.Remove(0, i + 1);
+                                        break;
+                                    case "StudentID":
+                                        StudentID = temporaryLine.Remove(0, i + 1);
+                                        break;
+                                    case "BeakersFilledWithWater":
+                                        BeakersFilledWithWater = int.Parse(temporaryLine.Remove(0, i + 1));
+                                        break;
+                                    case "BeakersMixedToOrange":
+                                        BeakersMixedToOrange = int.Parse(temporaryLine.Remove(0, i + 1));
+                                        break;
+                                    case "BeakersMixedToPurple":
+                                        BeakersMixedToPurple = int.Parse(temporaryLine.Remove(0, i + 1));
+                                        break;
+                                    case "BeakersMixedToGreen":
+                                        BeakersMixedToGreen = int.Parse(temporaryLine.Remove(0, i + 1));
+                                        break;
+                                    case "TriesOnLevelMixColors":
+                                        TriesOnLevelMixColors = int.Parse(temporaryLine.Remove(0, i + 1));
+                                        break;
+                                    case "TimesAGuidelineIsMissed":
+                                        TimesAGuidelineIsMissed = int.Parse(temporaryLine.Remove(0, i + 1));
+                                        break;
+                                    case "TimesAnIncidentIsCaused":
+                                        TimesAnIncidentWasCaused = int.Parse(temporaryLine.Remove(0, i + 1));
+                                        break;
+                                    case "TotalHoursPlayed":
+                                        TotalHoursPlayed = int.Parse(temporaryLine.Remove(0, i + 1));
+                                        break;
+                                    case "TotalMinutesPlayed":
+                                        TotalMinutesPlayed = int.Parse(temporaryLine.Remove(0, i + 1));
+                                        break;
                                 }
                             }
                         }

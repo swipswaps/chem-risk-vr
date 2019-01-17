@@ -114,6 +114,9 @@ public class HandinController : MonoBehaviour
             }
             else
             {
+                ProfileSystemController.TimesAGuidelineIsMissed++;
+                ProfileSystemController.UpdateProfileData();
+
                 _objectiveReport += "< Failed >";
             }
 
@@ -144,6 +147,9 @@ public class HandinController : MonoBehaviour
             }
             else
             {
+                ProfileSystemController.TimesAGuidelineIsMissed++;
+                ProfileSystemController.UpdateProfileData();
+
                 _objectiveReport += "< Failed >";
             }
 
@@ -181,6 +187,9 @@ public class HandinController : MonoBehaviour
             }
             else
             {
+                ProfileSystemController.TimesAGuidelineIsMissed++;
+                ProfileSystemController.UpdateProfileData();
+
                 _objectiveReport += "< Failed >";
             }
 

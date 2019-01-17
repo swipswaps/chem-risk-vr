@@ -8,6 +8,13 @@ public class FaucetWaterController : MonoBehaviour {
 		if (other.CompareTag("Beaker"))
 		{
 			Destroy(other.transform.GetChild(0).gameObject);
+
+            if (other.transform.gameObject.transform.GetChild(0).name != "Smelly Waste(Clone)")
+            {
+                ProfileSystemController.TimesAnIncidentWasCaused++;
+                ProfileSystemController.UpdateProfileData();
+            }
+
 			if (other.GetComponent<MeshFilter>().mesh.name == "mod_laboratorium_flask_T2 Instance")
             {
                 other.name = "Round Empty Beaker";
