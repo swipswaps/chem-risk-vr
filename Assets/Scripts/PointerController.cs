@@ -38,6 +38,7 @@ public class PointerController : MonoBehaviour
 
     public static bool IsHoldingItem = false;
     private bool _isMaterialTaken = false;
+    private bool _isColliderSizeUpdated = false;
 
     private void Start()
     {
@@ -74,6 +75,16 @@ public class PointerController : MonoBehaviour
             Point.SetActive(false);
         }
 
+        /*
+        if (IsHoldingItem && _isColliderSizeUpdated == false)
+        {
+            Vector3 sizeOfCollider = GameObject.Find("Empty Beaker(Clone)").GetComponent<BoxCollider>().size;
+            sizeOfCollider.y *= 10;
+            GameObject.Find("Empty Beaker(Clone)").GetComponent<BoxCollider>().size = sizeOfCollider;
+            _isColliderSizeUpdated = true;
+        }
+        */
+
         if (IsHoldingItem)
         {
             // If the player is holding an item and needs to return it, he must
@@ -107,27 +118,46 @@ public class PointerController : MonoBehaviour
                     }
                     else
                     {
-                        if (_currentlyHoldingObject.name == "Empty Beaker")
+                        if (_currentlyHoldingObject.name == "Empty Beaker(Clone)" ||
+                            _currentlyHoldingObject.name == "Empty Beaker")
                         {
-                            Destroy(_lookedAtObject.transform.GetChild(0).gameObject);
+                            if (_lookedAtObject.transform.childCount > 0)
+                            {
+                                Destroy(_lookedAtObject.transform.GetChild(0).gameObject);
+                            }
                             _lookedAtObject.name = "Empty Beaker";
-                        } else if (_currentlyHoldingObject.name == "Big Empty Beaker")
+                        } else if (_currentlyHoldingObject.name == "Big Empty Beaker(Clone)" ||
+                            _currentlyHoldingObject.name == "Big Empty Beaker")
                         {
-                            Destroy(_lookedAtObject.transform.GetChild(0).gameObject);
-                            _lookedAtObject.name = "Big Empty Beaker";
+                            if (_lookedAtObject.transform.childCount > 0)
+                            {
+                                Destroy(_lookedAtObject.transform.GetChild(0).gameObject);
+                                _lookedAtObject.name = "Big Empty Beaker";
+                            }
                         }
-                        else if (_currentlyHoldingObject.name == "Round Empty Beaker")
+                        else if (_currentlyHoldingObject.name == "Round Empty Beaker(Clone)" ||
+                            _currentlyHoldingObject.name == "Round Empty Beaker")
                         {
-                            Destroy(_lookedAtObject.transform.GetChild(0).gameObject);
-                            _lookedAtObject.name = "Round Empty Beaker";
+                            if (_lookedAtObject.transform.childCount > 0)
+                            {
+                                Destroy(_lookedAtObject.transform.GetChild(0).gameObject);
+                                _lookedAtObject.name = "Round Empty Beaker";
+                            }
                         }
-                        else if (_currentlyHoldingObject.name == "Small Empty Beaker")
+                        else if (_currentlyHoldingObject.name == "Small Empty Beaker(Clone)" ||
+                            _currentlyHoldingObject.name == "Small Empty Beaker")
                         {
-                            Destroy(_lookedAtObject.transform.GetChild(0).gameObject);
+                            if (_lookedAtObject.transform.childCount > 0)
+                            {
+                                Destroy(_lookedAtObject.transform.GetChild(0).gameObject);
+                            }
                             _lookedAtObject.name = "Small Empty Beaker";
                         } else if (_currentlyHoldingObject.transform.GetChild(0).name == "Smelly Waste(Clone)")
                         {
-                            Destroy(_lookedAtObject.transform.GetChild(0).gameObject);
+                            if (_lookedAtObject.transform.childCount > 0)
+                            {
+                                Destroy(_lookedAtObject.transform.GetChild(0).gameObject);
+                            }
 
                             Instantiate(_currentlyHoldingObject.transform.GetChild(0).gameObject,
                                 _lookedAtObject.transform.position,
@@ -155,7 +185,7 @@ public class PointerController : MonoBehaviour
                                 Quaternion.identity,
                                 _lookedAtObject.transform);
                         } else if ((_currentlyHoldingObject.name == "Empty Dropper" ||
-                            _currentlyHoldingObject.name == "Dropper(Clone)") &&
+                            _currentlyHoldingObject.name == "Empty Dropper(Clone)") &&
                             _lookedAtObject.transform.childCount > 0)
                         {
                             // If we are returning an empty dropper, then we have to
@@ -208,7 +238,6 @@ public class PointerController : MonoBehaviour
                 {
                     if (_isMaterialTaken == false)
                     {
-                        Debug.Log("taken material");
                         OriginalItemMaterial = _meshRenderer.material;
                         _isMaterialTaken = true;
                     }
@@ -217,7 +246,6 @@ public class PointerController : MonoBehaviour
                         _meshRenderer.material = HoverableObjectMaterial;
                     }
                     _meshRenderer.material = HoverableObjectMaterial;
-                    Debug.Log("entered");
                 }
                 
                 // If the player is not holding an interactable item and presses
@@ -316,7 +344,6 @@ public class PointerController : MonoBehaviour
                     }
                     else
                     {
-                        Debug.Log("exited");
                         _meshRenderer.material = OriginalItemMaterial;
                         _isMaterialTaken = false;
                     }
