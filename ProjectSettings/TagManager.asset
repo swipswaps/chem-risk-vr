@@ -23,6 +23,7 @@ TagManager:
   - Start Position
   - Restart Position
   - Lab Equipment
+  - Smelly Waste
   layers:
   - Default
   - TransparentFX

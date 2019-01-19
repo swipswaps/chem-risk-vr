@@ -39,7 +39,10 @@ public class BeakerController : MonoBehaviour
 			{
                 // This helps signal the player that he can now spill the
                 // substance he is holding into the empty beaker.
-                _heldObjectColor = _heldObject.GetComponent<MeshRenderer>().material.color;
+                if (_heldObject != null)
+                {
+                    _heldObjectColor = _heldObject.GetComponent<MeshRenderer>().material.color;
+                }
 
 				if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) ||
 				    Input.GetKeyDown(KeyCode.L))

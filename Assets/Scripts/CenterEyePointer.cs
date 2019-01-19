@@ -66,7 +66,9 @@ public class CenterEyePointer : MonoBehaviour
             // be visible once the game starts. Theyre only for the designers to configure.
             foreach (var obj in objectsInTelerpoter)
             {
-                obj.GetComponentInChildren<MeshRenderer>().enabled = false;
+                if (obj != null) {
+                    obj.GetComponentInChildren<MeshRenderer>().enabled = false;
+                }
             }
         }
     }

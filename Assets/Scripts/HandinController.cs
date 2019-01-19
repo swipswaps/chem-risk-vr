@@ -65,7 +65,8 @@ public class HandinController : MonoBehaviour
         _objectiveReport += "Objective report:\n";
 
         GameObject[] existingDirtyBeakers = GameObject.FindGameObjectsWithTag("Dirty Beaker");
-		
+        GameObject[] existingSmellyWaste = GameObject.FindGameObjectsWithTag("Smelly Waste");
+
         if (ObjectivesSelector.CurrentObjective == "Use Water Bottle")
         {
             if (ObjectivesSelector.PickedUpWaterBottle == false)
@@ -103,13 +104,22 @@ public class HandinController : MonoBehaviour
             {
                 _objectiveReport += "You've cleaned the beakers in the lab!\n";
             }
+
+            if (existingSmellyWaste.Length > 0)
+            {
+                _objectiveReport += "You've left smelly waste in the lab!\n";
+            } else
+            {
+                _objectiveReport += "You've cleaned the smelly waste in the lab!\n";
+            }
             
 
             // Calculating the pass or fail of an objective and giving the result of it.
             if (ObjectivesSelector.PickedUpWaterBottle &&
                 ObjectivesSelector.PlacedBackWaterBottle &&
                 PointerController.IsWearingCoat &&
-                existingDirtyBeakers.Length <= 0)
+                existingDirtyBeakers.Length <= 0 &&
+                existingSmellyWaste.Length <= 0)
             {
                 ProfileSystemController.TimesForLevelMixColors.Add(ProfileSystemController.CurrentLevelSeconds);
                 Debug.Log(ProfileSystemController.CurrentLevelSeconds);
@@ -143,9 +153,19 @@ public class HandinController : MonoBehaviour
                 _objectiveReport += "You've cleaned the beakers in the lab!\n";
             }
 
+            if (existingDirtyBeakers.Length > 0)
+            {
+                _objectiveReport += "You've left dirty beakers in the lab!\n";
+            }
+            else
+            {
+                _objectiveReport += "You've cleaned the smelly waste in the lab!\n";
+            }
+
             // Calculating the pass or fail of an objective and giving the result of it.
             if (ObjectivesSelector.UsedTeleporter &&
-                existingDirtyBeakers.Length <= 0)
+                existingDirtyBeakers.Length <= 0 &&
+                existingSmellyWaste.Length <= 0)
             {
                 CompleteHandIn();
             }
@@ -175,6 +195,15 @@ public class HandinController : MonoBehaviour
                 _objectiveReport += "You've cleaned the beakers in the lab!\n";
             }
 
+            if (existingDirtyBeakers.Length > 0)
+            {
+                _objectiveReport += "You've left dirty beakers in the lab!\n";
+            }
+            else
+            {
+                _objectiveReport += "You've cleaned the smelly waste in the lab!\n";
+            }
+
             // Calculating the pass or fail of an objective and giving the result of it.
             if (ObjectivesSelector.PourRedIntoTube &&
                 ObjectivesSelector.PourBlueIntoTube &&
@@ -182,7 +211,8 @@ public class HandinController : MonoBehaviour
                 ObjectivesSelector.MixBlueAndYellow &&
                 ObjectivesSelector.MixRedAndBlue &&
                 ObjectivesSelector.MixRedAndYellow &&
-                existingDirtyBeakers.Length <= 0)
+                existingDirtyBeakers.Length <= 0 &&
+                existingSmellyWaste.Length <= 0)
             {
                 CompleteHandIn();
             }

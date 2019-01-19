@@ -15,6 +15,7 @@ public class WasteBinController : MonoBehaviour {
     private GameObject _lobbyPoint;
 
     private GameObject _currentParticles;
+    private bool _isBeakerDirty = false;
 
     private void Start()
     {
@@ -35,10 +36,13 @@ public class WasteBinController : MonoBehaviour {
                 // We check if the right beaker's liquid is being thrown away
                 Destroy(other.transform.GetChild(0).gameObject);
 
-                Instantiate(Leftovers,
+                GameObject leftOvers = Instantiate(Leftovers,
                     other.transform.position,
                     Quaternion.identity,
                     other.transform);
+                Leftovers.tag = "Smelly Waste";
+
+                _isBeakerDirty = true;
 
                 _areParticlesInitiated = true;
             }
@@ -59,10 +63,13 @@ public class WasteBinController : MonoBehaviour {
                 
                 Destroy(other.transform.GetChild(0).gameObject);
 
-                Instantiate(Leftovers,
+                GameObject leftOvers = Instantiate(Leftovers,
                     other.transform.position,
                     Quaternion.identity,
                     other.transform);
+                Leftovers.tag = "Smelly Waste";
+
+                _isBeakerDirty = true;
                 //Instantiate(SmokeParticles, gameObject.transform);
                 //_areParticlesInitiated = true;
             }
@@ -91,12 +98,16 @@ public class WasteBinController : MonoBehaviour {
                 {
                     other.name = "Small Empty Beaker";
                 }
-                gameObject.tag = "Untagged";
             }
             if (other.CompareTag("Dropper"))
             {
                 Destroy(other.transform.GetChild(0).gameObject);
                 other.name = "Empty Dropper";
+            }
+
+            if (_isBeakerDirty)
+            {
+                other.gameObject.tag = "Dirty Beaker";
             }
         }
     }

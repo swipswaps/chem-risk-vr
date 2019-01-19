@@ -147,7 +147,7 @@ public class ProfileSystemController : MonoBehaviour {
         }
         else
         {
-            if (_imageOfButton.color == Color.red || _imageOfButton.color == Color.green)
+            if (_imageOfButton != null && (_imageOfButton.color == Color.red || _imageOfButton.color == Color.green))
             {
                 _imageOfButton.color = Color.white;
             }

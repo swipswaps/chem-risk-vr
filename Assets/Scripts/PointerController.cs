@@ -342,9 +342,12 @@ public class PointerController : MonoBehaviour
                         _lookedAtObject.name != "Small Empty Beaker" &&
                         _lookedAtObject.name != "Dropper")
                     {
-                        foreach (MeshRenderer renderer in _meshRendererGloves)
+                        if (_meshRendererGloves != null)
                         {
-                            renderer.material = DefaultItemMaterial;
+                            foreach (MeshRenderer renderer in _meshRendererGloves)
+                            {
+                                renderer.material = DefaultItemMaterial;
+                            }
                         }
                     }
                     else
