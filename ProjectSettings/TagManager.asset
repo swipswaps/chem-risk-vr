@@ -21,6 +21,8 @@ TagManager:
   - DoorDirection
   - Dirty Beaker
   - Start Position
+  - Restart Position
+  - Lab Equipment
   layers:
   - Default
   - TransparentFX

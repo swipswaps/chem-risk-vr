@@ -4,26 +4,35 @@ using UnityEngine;
 
 public class FaucetRadiusController : MonoBehaviour
 {
-	public GameObject Faucet;
+    public GameObject[] FaucetWater = new GameObject[4];
 
 	private void Start()
-	{
-		Faucet.SetActive(false);
-	}
+    {
+        foreach (GameObject water in FaucetWater)
+        {
+            water.SetActive(false);
+        }
+    }
 
 	private void OnTriggerEnter(Collider other)
 	{
 		if (other.CompareTag("Beaker") || other.CompareTag("Dropper"))
 		{
-			Faucet.SetActive(true);
+            foreach (GameObject water in FaucetWater)
+            {
+                water.SetActive(true);
+            }
 		}
 	}
 
 	private void OnTriggerExit(Collider other)
 	{
 		if (other.CompareTag("Beaker") || other.CompareTag("Dropper"))
-		{
-			Faucet.SetActive(false);
+        {
+            foreach (GameObject water in FaucetWater)
+            {
+                water.SetActive(false);
+            }
 		}
 	}
 }

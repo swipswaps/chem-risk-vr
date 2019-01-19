@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class HandinController : MonoBehaviour
 {
-    public GameObject Player;
     private string _objectiveReport = "";
     public GameObject TextObject;
 	
@@ -14,7 +13,7 @@ public class HandinController : MonoBehaviour
     //private Image _image;
 
     public static bool IsObjectiveHandedIn = false;
-    
+
     private void Update()
     {
         Ray ray = new Ray(Pointer.transform.position, Pointer.transform.forward);
@@ -120,6 +119,7 @@ public class HandinController : MonoBehaviour
             else
             {
                 ProfileSystemController.TimesAGuidelineIsMissed++;
+                ProfileSystemController.PlayingALevel = false;
                 ProfileSystemController.UpdateProfileData();
 
                 _objectiveReport += "< Failed >";
@@ -194,6 +194,7 @@ public class HandinController : MonoBehaviour
             else
             {
                 ProfileSystemController.TimesAGuidelineIsMissed++;
+                ProfileSystemController.PlayingALevel = false;
                 ProfileSystemController.UpdateProfileData();
 
                 _objectiveReport += "< Failed >";
@@ -206,6 +207,15 @@ public class HandinController : MonoBehaviour
     private void CompleteHandIn()
     {
         _objectiveReport += "< Success >";
+
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        GameObject labEquipment = GameObject.FindGameObjectWithTag("Lab Equipment");
+        GameObject lobbyPoint = GameObject.FindGameObjectWithTag("Restart Position");
+
+        Vector3 newPlayerPos = player.transform.position;
+        newPlayerPos = lobbyPoint.transform.position;
+        player.transform.position = newPlayerPos;
+
         // The objective has to be only successfully handed in before
         // you are allowed to pick a new one!
         IsObjectiveHandedIn = true;
@@ -214,7 +224,12 @@ public class HandinController : MonoBehaviour
         PointerController.IsWearingCoat = false;
         PointerController.IsWearingGlasses = false;
         PointerController.IsWearingGloves = false;
-        
-        Player.GetComponentInChildren<PointerController>().ReturnEquipment();
+
+
+        PointerController.IsHoldingItem = false;
+        PointerController.CurrentlyHoldingObjectForBeakers = null;
+
+        player.GetComponentInChildren<PointerController>().ReturnEquipment();
+        Destroy(labEquipment);
     }
 }

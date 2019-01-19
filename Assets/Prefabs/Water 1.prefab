@@ -9,46 +9,46 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1635141116415854}
+  m_RootGameObject: {fileID: 1436428140347254}
   m_IsPrefabAsset: 1
---- !u!1 &1635141116415854
+--- !u!1 &1436428140347254
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4969660253191176}
-  - component: {fileID: 33141652515448186}
-  - component: {fileID: 23912915800512830}
-  - component: {fileID: 65957790666594380}
-  - component: {fileID: 114445336465586746}
+  - component: {fileID: 4142304133676192}
+  - component: {fileID: 33957172877239034}
+  - component: {fileID: 23166958521574426}
+  - component: {fileID: 65300951288732298}
+  - component: {fileID: 114244083747403880}
   m_Layer: 0
-  m_Name: Waste Bin A
+  m_Name: Water 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4969660253191176
+--- !u!4 &4142304133676192
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1635141116415854}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -22.948, y: -0.39019012, z: -23.716}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_GameObject: {fileID: 1436428140347254}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 7.64, z: 0.977}
+  m_LocalScale: {x: 0.52, y: 7.71, z: -0.03}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!23 &23912915800512830
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &23166958521574426
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1635141116415854}
+  m_GameObject: {fileID: 1436428140347254}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -58,8 +58,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 7fbe5c189d5496c499c8e6835149fc66, type: 2}
-  - {fileID: 2100002, guid: 5ba9d75a9e8751c44b42d964b8a5cdb5, type: 3}
+  - {fileID: 2100000, guid: 79bd4cb013a74bc418c5139963fc993d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -79,41 +78,33 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33141652515448186
+--- !u!33 &33957172877239034
 MeshFilter:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1635141116415854}
-  m_Mesh: {fileID: 4300000, guid: 5ba9d75a9e8751c44b42d964b8a5cdb5, type: 3}
---- !u!65 &65957790666594380
+  m_GameObject: {fileID: 1436428140347254}
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &65300951288732298
 BoxCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1635141116415854}
+  m_GameObject: {fileID: 1436428140347254}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.1191158, y: 13.6, z: 1.3184667}
-  m_Center: {x: 0, y: 1.03, z: 0}
---- !u!114 &114445336465586746
+  m_Size: {x: 1, y: 1.97, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114244083747403880
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1635141116415854}
+  m_GameObject: {fileID: 1436428140347254}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83ecf003ec35d4d49a7e3649f4f84bfe, type: 3}
+  m_Script: {fileID: 11500000, guid: f40314c858414e24fa687476b6b8a5f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BinType: Warm
-  Leftovers: {fileID: 1755214102984822, guid: 5bea68e5425fb7e47aa795bd5c8fc25f, type: 2}
-  FireParticles: {fileID: 1442248082685542, guid: 361425546d66b5249b3c221fe10e4428,
-    type: 2}
-  SmokeParticles: {fileID: 1886618947098630, guid: 2889437020a902b48b4a563ed49d55f7,
-    type: 2}
-  ExplosionParticles: {fileID: 1763404221620218, guid: 4402be1db2d72f1478a020b30c678dd3,
-    type: 2}

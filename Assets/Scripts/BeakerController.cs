@@ -128,7 +128,10 @@ public class BeakerController : MonoBehaviour
 			}
 			else
 			{
-                _heldObjectColor = _heldObject.GetComponent<MeshRenderer>().material.color;
+                if (_heldObject != null)
+                {
+                    _heldObjectColor = _heldObject.GetComponent<MeshRenderer>().material.color;
+                }
 			}
 		}
 	}

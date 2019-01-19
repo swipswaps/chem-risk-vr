@@ -175,16 +175,21 @@ public class PointerController : MonoBehaviour
                         {
                             // Destroy the existing liquid in the dropper because you dont want to
                             // keep placing liquid in the dropper, we only have one liquid substance in a dropper.
+                            if (_currentlyHoldingObject.transform.childCount > 0)
+                            {
+                                Instantiate(_currentlyHoldingObject.transform.GetChild(0).gameObject,
+                                _lookedAtObject.transform.position,
+                                Quaternion.identity,
+                                _lookedAtObject.transform);
+                            }
+
                             if (_lookedAtObject.transform.childCount > 0)
                             {
                                 Destroy(_lookedAtObject.transform.GetChild(0).gameObject);
                             }
-                            
-                            Instantiate(_currentlyHoldingObject.transform.GetChild(0).gameObject,
-                                _lookedAtObject.transform.position,
-                                Quaternion.identity,
-                                _lookedAtObject.transform);
-                        } else if ((_currentlyHoldingObject.name == "Empty Dropper" ||
+
+                        }
+                        else if ((_currentlyHoldingObject.name == "Empty Dropper" ||
                             _currentlyHoldingObject.name == "Empty Dropper(Clone)") &&
                             _lookedAtObject.transform.childCount > 0)
                         {

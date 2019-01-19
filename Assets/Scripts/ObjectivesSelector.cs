@@ -6,7 +6,8 @@ using UnityEngine.UI;
 
 public class ObjectivesSelector : MonoBehaviour
 {
-    public GameObject Player;
+    private GameObject _player;
+    public GameObject LabEquipment;
     private AudioSource _playerAudioSource;
     public GameObject Pointer;
     public GameObject Title;
@@ -62,11 +63,14 @@ public class ObjectivesSelector : MonoBehaviour
     private void Start()
     {
         FadeTransitioner.SetActive(false);
-		
+
+
+        _player = GameObject.FindGameObjectWithTag("Player");
+
         _labCoatRenderer = _labCoatIndicator.GetComponent<MeshRenderer>();
         _labGlassesRenderer = _labGlassesIndicator.GetComponent<MeshRenderer>();
         _labGlovesRenderer = _labGlovesIndicator.GetComponent<MeshRenderer>();
-        _playerAudioSource = Player.GetComponent<AudioSource>();
+        _playerAudioSource = _player.GetComponent<AudioSource>();
 		
         // First Objective and its task.
         _objectives.Add("Use Water Bottle", // Objective's title
@@ -225,6 +229,7 @@ public class ObjectivesSelector : MonoBehaviour
                     // Button functionality/behaviour on click events
                     if (lookedAtButton.name == "Use Water Bottle")
                     {
+                        Instantiate(LabEquipment, GameObject.Find("Lab Desks").transform);
                         ProfileSystemController.TriesOnLevelMixColors++;
                         ProfileSystemController.PlayingALevel = true;
                         ProfileSystemController.UpdateProfileData();
@@ -262,6 +267,7 @@ public class ObjectivesSelector : MonoBehaviour
                         //}
                     } else if (lookedAtButton.name == "Use Teleporter")
                     {
+                        Instantiate(LabEquipment, GameObject.Find("Lab Desks").transform);
                         SelectObjectiveUseTeleporter();
                         
                         CanOpenDoor = true;
@@ -269,6 +275,7 @@ public class ObjectivesSelector : MonoBehaviour
                         DisableButtonsInteractivity();
                     } else if (lookedAtButton.name == "Mix Colors")
                     {
+                        Instantiate(LabEquipment, GameObject.Find("Lab Desks").transform);
                         ProfileSystemController.TriesOnLevelMixColors++;
                         ProfileSystemController.PlayingALevel = true;
                         ProfileSystemController.UpdateProfileData();
@@ -541,6 +548,6 @@ public class ObjectivesSelector : MonoBehaviour
         PointerController.IsWearingGlasses = false;
         PointerController.IsWearingGloves = false;
 		
-        Player.GetComponentInChildren<PointerController>().ReturnEquipment();
+        _player.GetComponentInChildren<PointerController>().ReturnEquipment();
     }
 }
