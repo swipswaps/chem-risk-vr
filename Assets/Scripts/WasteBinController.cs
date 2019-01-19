@@ -31,6 +31,15 @@ public class WasteBinController : MonoBehaviour {
             if (_areParticlesInitiated == false && (BinType == "Warm" &&  other.gameObject.name == "Blue Substance Beaker(Clone)" || other.gameObject.name == "Purple Substance Beaker(Clone)"))
             {
                 _currentParticles = Instantiate(FireParticles, gameObject.transform);
+
+                // We check if the right beaker's liquid is being thrown away
+                Destroy(other.transform.GetChild(0).gameObject);
+
+                Instantiate(Leftovers,
+                    other.transform.position,
+                    Quaternion.identity,
+                    other.transform);
+
                 _areParticlesInitiated = true;
             }
             // End-game statement
@@ -47,28 +56,48 @@ public class WasteBinController : MonoBehaviour {
             if (_areParticlesInitiated == false && (BinType == "Cold" &&  other.gameObject.name == "Red Substance Beaker(Clone)" || other.gameObject.name == "Orange Substance Beaker(Clone)" || other.gameObject.name == "Yellow Substance Beaker(Clone)"))
             {
                 Invoke("MeltBin", 0.5f);
+                
+                Destroy(other.transform.GetChild(0).gameObject);
+
+                Instantiate(Leftovers,
+                    other.transform.position,
+                    Quaternion.identity,
+                    other.transform);
                 //Instantiate(SmokeParticles, gameObject.transform);
                 //_areParticlesInitiated = true;
             }
 
-            // We check if the right beaker's liquid is being thrown away
-            Destroy(other.transform.GetChild(0).gameObject);
-
-            Instantiate(Leftovers,
-                other.transform.position,
-                Quaternion.identity,
-                other.transform);
-
-            if (other.GetComponent<BeakerController>().BeakerType !=
-                BinType)
+            if (other.CompareTag("Beaker"))
             {
-                //Debug.Log("Wrong type!");
+                if (other.transform.gameObject.transform.GetChild(0).name != "Smelly Waste(Clone)")
+                {
+                    ProfileSystemController.TimesAnIncidentWasCaused++;
+                    ProfileSystemController.UpdateProfileData();
+                }
+
+                if (other.GetComponent<MeshFilter>().mesh.name == "mod_laboratorium_flask_T2 Instance")
+                {
+                    other.name = "Round Empty Beaker";
+                }
+                else if (other.GetComponent<MeshFilter>().mesh.name == "mod_laboratorium_flask Instance")
+                {
+                    other.name = "Empty Beaker";
+                }
+                else if (other.GetComponent<MeshFilter>().mesh.name == "mod_laboratory_beaker Instance")
+                {
+                    other.name = "Big Empty Beaker";
+                }
+                else if (other.GetComponent<MeshFilter>().mesh.name == "laboratory_testTube_tube Instance")
+                {
+                    other.name = "Small Empty Beaker";
+                }
+                gameObject.tag = "Untagged";
             }
-            else
+            if (other.CompareTag("Dropper"))
             {
-                //Debug.Log("Correct type!");
+                Destroy(other.transform.GetChild(0).gameObject);
+                other.name = "Empty Dropper";
             }
-            //Debug.Log(other.GetComponent<BeakerController>().BeakerType + " | " + BinType);
         }
     }
 

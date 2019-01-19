@@ -5017,6 +5017,7 @@ MonoBehaviour:
   _greenFlashIndicator: {fileID: 2100000, guid: d26139f3660659b4a81189acd166dae1,
     type: 2}
   FadeTransitioner: {fileID: 1963750458}
+  TextObject: {fileID: 1383289847}
 --- !u!65 &375615199
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -119,7 +119,6 @@ public class HandinController : MonoBehaviour
             else
             {
                 ProfileSystemController.TimesAGuidelineIsMissed++;
-                ProfileSystemController.PlayingALevel = false;
                 ProfileSystemController.UpdateProfileData();
 
                 _objectiveReport += "< Failed >";
@@ -152,10 +151,6 @@ public class HandinController : MonoBehaviour
             }
             else
             {
-                ProfileSystemController.TimesAGuidelineIsMissed++;
-                ProfileSystemController.PlayingALevel = false;
-                ProfileSystemController.UpdateProfileData();
-
                 _objectiveReport += "< Failed >";
             }
 
@@ -194,8 +189,8 @@ public class HandinController : MonoBehaviour
             else
             {
                 ProfileSystemController.TimesAGuidelineIsMissed++;
-                ProfileSystemController.PlayingALevel = false;
                 ProfileSystemController.UpdateProfileData();
+                TextObject.GetComponent<Text>().text = string.Empty;
 
                 _objectiveReport += "< Failed >";
             }
@@ -206,6 +201,8 @@ public class HandinController : MonoBehaviour
 
     private void CompleteHandIn()
     {
+        ProfileSystemController.PlayingALevel = false;
+
         _objectiveReport += "< Success >";
 
         GameObject player = GameObject.FindGameObjectWithTag("Player");

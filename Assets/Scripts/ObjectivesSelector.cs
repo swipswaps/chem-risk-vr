@@ -59,6 +59,7 @@ public class ObjectivesSelector : MonoBehaviour
     public GameObject FadeTransitioner;
     public static bool CanOpenDoor = false;
     public static bool  CanWearEquipment = false;
+    public GameObject TextObject;
 
     private void Start()
     {
@@ -229,6 +230,7 @@ public class ObjectivesSelector : MonoBehaviour
                     // Button functionality/behaviour on click events
                     if (lookedAtButton.name == "Use Water Bottle")
                     {
+                        TextObject.GetComponent<Text>().text = string.Empty;
                         Instantiate(LabEquipment, GameObject.Find("Lab Desks").transform);
                         ProfileSystemController.TriesOnLevelMixColors++;
                         ProfileSystemController.PlayingALevel = true;
@@ -267,6 +269,7 @@ public class ObjectivesSelector : MonoBehaviour
                         //}
                     } else if (lookedAtButton.name == "Use Teleporter")
                     {
+                        TextObject.GetComponent<Text>().text = string.Empty;
                         Instantiate(LabEquipment, GameObject.Find("Lab Desks").transform);
                         SelectObjectiveUseTeleporter();
                         
