@@ -266,6 +266,8 @@ public class PointerController : MonoBehaviour
                     {
                         _coat = _lookedAtObject;
                         _coat.GetComponent<MeshRenderer>().material = DefaultItemMaterial;
+                        _coat.GetComponent<MeshRenderer>().enabled = false;
+                        _coat.GetComponent<BoxCollider>().isTrigger = true;
                         IsWearingCoat = true;
                     } else if (_lookedAtObject.name == "Lab Glasses")
                     {
@@ -407,6 +409,8 @@ public class PointerController : MonoBehaviour
 
     public void ReturnEquipment()
     {
+        _coat.GetComponent<BoxCollider>().isTrigger = false;
+        _coat.GetComponent<MeshRenderer>().enabled = true;
         UpdatePosition(_coat, _coatReturnSpot);
         UpdatePosition(_glasses, _glassesReturnSpot);
         UpdatePosition(_gloves, _glovesReturnSpot);
