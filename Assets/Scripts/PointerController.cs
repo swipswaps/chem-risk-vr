@@ -88,6 +88,251 @@ public class PointerController : MonoBehaviour
 
         if (IsHoldingItem)
         {
+            if (Physics.Raycast(ray, out hit, 100)
+                )
+            {
+                if (hit.transform.tag == "Return Item" && (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) ||
+                    Input.GetKeyDown(KeyCode.K)))
+                {
+                    if (_lookedAtObject != null)
+                    {
+                        _meshRenderer.material = OriginalItemMaterial;
+                        _lookedAtObject = null;
+                        _parentOfTemporaryObject = null;
+                    }
+
+                    _lookedAtObject = hit.collider.gameObject;
+                    _parentOfTemporaryObject = _lookedAtObject.transform.parent;
+
+                    _lookedAtObject.tag = "Untagged";
+                    _lookedAtObject.GetComponent<MeshRenderer>().material = OriginalItemMaterial;
+                    //_lookedAtObject.layer = 18;
+                    if (_lookedAtObject.name != "Yellow Substance Beaker" &&
+                        _lookedAtObject.name != "Red Substance Beaker" &&
+                        _lookedAtObject.name != "Blue Substance Beaker" &&
+                        _lookedAtObject.name != "Orange Substance Beaker" &&
+                        _lookedAtObject.name != "Purple Substance Beaker" &&
+                        _lookedAtObject.name != "Green Substance Beaker" &&
+                        _lookedAtObject.name != "Water Beaker" &&
+                        _lookedAtObject.name != "Empty Beaker" &&
+                        _lookedAtObject.name != "Round Empty Beaker" &&
+                        _lookedAtObject.name != "Big Empty Beaker" &&
+                        _lookedAtObject.name != "Small Empty Beaker" &&
+                        _lookedAtObject.name != "Dropper" &&
+                        _lookedAtObject.name != "Empty Dropper")
+                    {
+                        //_meshRenderer.material = OriginalItemMaterial;
+                    }
+                    else
+                    {
+                        if (_currentlyHoldingObject.name == "Empty Beaker(Clone)" ||
+                            _currentlyHoldingObject.name == "Empty Beaker")
+                        {
+                            if (_lookedAtObject.transform.childCount > 0)
+                            {
+                                Destroy(_lookedAtObject.transform.GetChild(0).gameObject);
+                            }
+                            _lookedAtObject.name = "Empty Beaker";
+                        }
+                        else if (_currentlyHoldingObject.name == "Big Empty Beaker(Clone)" ||
+                          _currentlyHoldingObject.name == "Big Empty Beaker")
+                        {
+                            if (_lookedAtObject.transform.childCount > 0)
+                            {
+                                Destroy(_lookedAtObject.transform.GetChild(0).gameObject);
+                                _lookedAtObject.name = "Big Empty Beaker";
+                            }
+                        }
+                        else if (_currentlyHoldingObject.name == "Round Empty Beaker(Clone)" ||
+                            _currentlyHoldingObject.name == "Round Empty Beaker")
+                        {
+                            if (_lookedAtObject.transform.childCount > 0)
+                            {
+                                Destroy(_lookedAtObject.transform.GetChild(0).gameObject);
+                                _lookedAtObject.name = "Round Empty Beaker";
+                            }
+                        }
+                        else if (_currentlyHoldingObject.name == "Small Empty Beaker(Clone)" ||
+                            _currentlyHoldingObject.name == "Small Empty Beaker")
+                        {
+                            if (_lookedAtObject.transform.childCount > 0)
+                            {
+                                Destroy(_lookedAtObject.transform.GetChild(0).gameObject);
+                            }
+                            _lookedAtObject.name = "Small Empty Beaker";
+                        }
+                        else if (_currentlyHoldingObject.transform.GetChild(0).name == "Smelly Waste(Clone)")
+                        {
+                            if (_lookedAtObject.transform.childCount > 0)
+                            {
+                                Destroy(_lookedAtObject.transform.GetChild(0).gameObject);
+                            }
+
+                            Instantiate(_currentlyHoldingObject.transform.GetChild(0).gameObject,
+                                _lookedAtObject.transform.position,
+                                Quaternion.identity,
+                                _lookedAtObject.transform);
+                        }
+
+                        // If we are returning a dropper and it contains liquids inside it, then
+                        // we return the dropper AND transfer the liquids to the original dropper.
+                        if (((_currentlyHoldingObject.name == "Empty Dropper" ||
+                            _currentlyHoldingObject.name == "Big Empty Beaker" ||
+                            _currentlyHoldingObject.name == "Round Empty Beaker" ||
+                            _currentlyHoldingObject.name == "Small Empty Beaker") ||
+                            _currentlyHoldingObject.name == "Dropper(Clone)"))
+                        {
+                            // Destroy the existing liquid in the dropper because you dont want to
+                            // keep placing liquid in the dropper, we only have one liquid substance in a dropper.
+                            if (_currentlyHoldingObject.transform.childCount > 0)
+                            {
+                                Instantiate(_currentlyHoldingObject.transform.GetChild(0).gameObject,
+                                _lookedAtObject.transform.position,
+                                Quaternion.identity,
+                                _lookedAtObject.transform);
+                            }
+
+                            if (_lookedAtObject.transform.childCount > 0)
+                            {
+                                Destroy(_lookedAtObject.transform.GetChild(0).gameObject);
+                            }
+
+                        }
+                        else if ((_currentlyHoldingObject.name == "Empty Dropper" ||
+                            _currentlyHoldingObject.name == "Empty Dropper(Clone)") &&
+                            _lookedAtObject.transform.childCount > 0)
+                        {
+                            // If we are returning an empty dropper, then we have to
+                            // destroy the existing liquids in the original dropper.
+                            Destroy(_lookedAtObject.transform.GetChild(0).gameObject);
+                            _lookedAtObject.name = "Dropper";
+                        }
+
+                        //_meshRenderer.material = OriginalItemMaterial;
+                        _currentlyHoldingObject.tag = "Untagged";
+                    }
+
+                    if (_lookedAtObject.name == "Water") { ObjectivesSelector.PlacedBackWaterBottle = true; }
+                    Destroy(_currentlyHoldingObject);
+
+                    // This gives a small delay before the player can return
+                    // the object back to its place, because for some reason oculus
+                    // had a glitch and returned it immediately and it was very buggy.
+                    Invoke("EnableReturningObject", 0.1f);
+                }
+            }
+        }
+        else
+        {
+            if (Physics.Raycast(ray, out hit, 100, CatchItemLayer))
+            {
+                if (_lookedAtObject != null)
+                {
+                    if (_meshRenderer != null)
+                    {
+                        _meshRenderer.material = OriginalItemMaterial;
+                    }
+                    _lookedAtObject = null;
+                    _parentOfTemporaryObject = null;
+                }
+
+                _lookedAtObject = hit.collider.gameObject;
+                _parentOfTemporaryObject = _lookedAtObject.transform.parent;
+                if (_lookedAtObject.GetComponent<MeshRenderer>() == null)
+                {
+                    _meshRenderer = _lookedAtObject.GetComponentInChildren<MeshRenderer>();
+                }
+                else
+                {
+                    _meshRenderer = _lookedAtObject.GetComponent<MeshRenderer>();
+                }
+                OriginalItemMaterial = _meshRenderer.material;
+
+                _meshRenderer.material = HoverableObjectMaterial;
+
+                if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) ||
+                    Input.GetKeyDown(KeyCode.K))
+                {
+                    if (_lookedAtObject.name == "Water") { ObjectivesSelector.PickedUpWaterBottle = true; }
+
+                    if (_lookedAtObject.name == "Lab Coat")
+                    {
+                        _coat = _lookedAtObject;
+                        _coat.GetComponent<MeshRenderer>().material = DefaultItemMaterial;
+                        _coat.GetComponent<BoxCollider>().isTrigger = true;
+                        _coat.GetComponent<Rigidbody>().isKinematic = true;
+                        _coat.GetComponent<MeshRenderer>().enabled = false;
+                        IsWearingCoat = true;
+                    }
+                    else if (_lookedAtObject.name == "Lab Glasses")
+                    {
+                        _glasses = _lookedAtObject;
+                        _glasses.GetComponentInChildren<MeshRenderer>().material = DefaultItemMaterial;
+                        IsWearingGlasses = true;
+                    }
+                    else if (_lookedAtObject.name == "Lab Gloves")
+                    {
+                        _gloves = _lookedAtObject;
+                        MeshRenderer[] glovesRenderers = _gloves.GetComponentsInChildren<MeshRenderer>();
+
+                        IsWearingGloves = true;
+                    }
+                    else
+                    {
+                        _meshRenderer.material = OriginalItemMaterial;
+
+                        _currentlyHoldingObject = Instantiate(_lookedAtObject, _parentOfTemporaryObject.transform);
+
+                        if (_lookedAtObject.name != "Yellow Substance Beaker" &&
+                            _lookedAtObject.name != "Red Substance Beaker" &&
+                            _lookedAtObject.name != "Blue Substance Beaker" &&
+                            _lookedAtObject.name != "Water Beaker" &&
+                            _lookedAtObject.name != "Orange Substance Beaker" &&
+                            _lookedAtObject.name != "Purple Substance Beaker" &&
+                            _lookedAtObject.name != "Green Substance Beaker" &&
+                            _lookedAtObject.name != "Empty Beaker" &&
+                            _lookedAtObject.name != "Big Empty Beaker" &&
+                            _lookedAtObject.name != "Round Empty Beaker" &&
+                            _lookedAtObject.name != "Small Empty Beaker" &&
+                            _lookedAtObject.name != "Dropper")
+                        {
+                            _currentlyHoldingObject.GetComponent<MeshRenderer>().material = DefaultItemMaterial;
+                        }
+                        else
+                        {
+                            _currentlyHoldingObject.GetComponent<MeshRenderer>().material = DefaultBeakerMaterial;
+                            if (_lookedAtObject.name == "Dropper")
+                            {
+                                _currentlyHoldingObject.tag = "Dropper";
+                            }
+                            else
+                            {
+                                _currentlyHoldingObject.tag = "Beaker";
+                            }
+                        }
+
+                        //_currentlyHoldingObject.layer = 22;
+                        //_lookedAtObject.layer = 21;
+                        CurrentlyHoldingObjectForBeakers = _currentlyHoldingObject;
+                        _lookedAtObject.tag = "Return Item";
+                        Invoke("EnableReturningObject", 0.1f);
+                    }
+                }
+            }
+            else
+            {
+                if (_meshRenderer != null)
+                {
+                    _meshRenderer.material = OriginalItemMaterial;
+                }
+                _lookedAtObject = null;
+                _parentOfTemporaryObject = null;
+            }
+        }
+
+        /*
+        if (IsHoldingItem)
+        {
             // If the player is holding an item and needs to return it, he must
             // be hovering over the original indicator for that item and press the
             // controller button to return the item and remove it from his hand.
@@ -238,6 +483,9 @@ public class PointerController : MonoBehaviour
                     {
                         _meshRenderer = _lookedAtObject.GetComponent<MeshRenderer>();
                     }
+                } else
+                {
+                    _gloves.GetComponent<MeshRenderer>().material = HoverableObjectMaterial;
                 }
                 // Once it is found we change it to look as if it is hovered
                 // so that it appears interact-able
@@ -336,6 +584,10 @@ public class PointerController : MonoBehaviour
                 {
                     _meshRenderer.material = OriginalItemMaterial;
                 }
+                if (_gloves != null)
+                {
+                    _gloves.GetComponent<MeshRenderer>().material = GlovesMaterial;
+                }
                 /*
                 if ((_meshRenderer != null || _meshRendererGloves != null) && IsHoldingItem == false)
                 {
@@ -366,10 +618,10 @@ public class PointerController : MonoBehaviour
                         _isMaterialTaken = false;
                     }
                 }
-                */
             }
         }
-
+        
+        */
         // If an item is to be returned, then it will be tracked and
         // highlighted in the world, because the rays were having trouble
         // updating its material.
@@ -378,7 +630,7 @@ public class PointerController : MonoBehaviour
         {
             itemToReturn.GetComponent<MeshRenderer>().material = DefaultReturnItemMaterial;
         }
-        
+
         // This makes sure the item the player is holding is being placed
         // at the spot where the controller hand is.
         if (ObjectivesSelector.CanWearEquipment)

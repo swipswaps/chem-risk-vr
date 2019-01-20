@@ -141,8 +141,13 @@ public class BeakerController : MonoBehaviour
 
 	private void OnTriggerStay(Collider other)
 	{
-		if (other.gameObject.layer == 22 &&
-            other.GetComponent<BeakerController>() == null)
+		if (other.name == "Yellow Substance(Clone)" ||
+            other.name == "Red Substance(Clone)" ||
+            other.name == "Blue Substance(Clone)" ||
+            other.name == "Orange Substance(Clone)" ||
+            other.name == "Purple Substance(Clone)" ||
+            other.name == "Green Substance(Clone)" ||
+            other.name == "Water(Clone)")
 		{
 			_isObjectOverBeaker = true;
             _heldObjectColor.g = 255;
@@ -152,8 +157,13 @@ public class BeakerController : MonoBehaviour
 
 	private void OnTriggerExit(Collider other)
 	{
-		if (other.gameObject.layer == 22 &&
-            other.GetComponent<BeakerController>() == null)
+		if (other.name == "Yellow Substance(Clone)" ||
+            other.name == "Red Substance(Clone)" ||
+            other.name == "Blue Substance(Clone)" ||
+            other.name == "Orange Substance(Clone)" ||
+            other.name == "Purple Substance(Clone)" ||
+            other.name == "Green Substance(Clone)" ||
+            other.name == "Water(Clone)")
 		{
 			_isObjectOverBeaker = false;
             _heldObjectColor.g = 1;

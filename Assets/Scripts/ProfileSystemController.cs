@@ -27,6 +27,7 @@ public class ProfileSystemController : MonoBehaviour {
     public LayerMask CatchButtonLayer;
 
     public static bool _isGameStarted = false;
+    public static bool _isPlayerLoggedOut = true;
 
     #region Player Variables
     public static string Username = string.Empty;
@@ -126,6 +127,8 @@ public class ProfileSystemController : MonoBehaviour {
                             break;
                         }
                     }
+
+                    _isPlayerLoggedOut = false;
                     _isGameStarted = true;
 
                     SelectProflie();
@@ -142,6 +145,8 @@ public class ProfileSystemController : MonoBehaviour {
                     Vector3 newPlayerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
                     newPlayerPosition = GameObject.FindGameObjectWithTag("Start Position").transform.position;
                     GameObject.FindGameObjectWithTag("Player").transform.position = newPlayerPosition;
+
+                    _isPlayerLoggedOut = true;
                 }
             }
         }

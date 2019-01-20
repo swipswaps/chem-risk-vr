@@ -37,9 +37,13 @@ public class CenterEyePointer : MonoBehaviour
         
         _mixColorsTeleporterRenderer = 
             MixColorsObjectiveTeleporter.GetComponentInChildren<MeshRenderer>();
-        
-        var teleporters = GameObject.FindGameObjectsWithTag("Teleporter");
+
         FadeTransitioner.SetActive(false);
+    }
+
+    public static void ConcealTeleportersDirections()
+    {
+        var teleporters = GameObject.FindGameObjectsWithTag("Teleporter");
 
         foreach (var teleporter in teleporters)
         {
@@ -49,15 +53,15 @@ public class CenterEyePointer : MonoBehaviour
             // be visible once the game starts. Theyre only for the designers to configure.
             foreach (var obj in objectsInTelerpoter)
             {
-                if (obj.CompareTag("Direction"))
+                if (obj.transform.tag == "Direction")
                 {
                     obj.GetComponentInChildren<MeshRenderer>().enabled = false;
                 }
             }
         }
-        
+
         var teleporterDirections = GameObject.FindGameObjectsWithTag("DoorDirection");
-        
+
         foreach (var teleporter in teleporterDirections)
         {
             var objectsInTelerpoter = teleporter.GetComponentsInChildren<Transform>();
@@ -66,8 +70,12 @@ public class CenterEyePointer : MonoBehaviour
             // be visible once the game starts. Theyre only for the designers to configure.
             foreach (var obj in objectsInTelerpoter)
             {
-                if (obj != null) {
-                    obj.GetComponentInChildren<MeshRenderer>().enabled = false;
+                if (obj != null)
+                {
+                    if (obj.GetComponentInChildren<MeshRenderer>() != null)
+                    {
+                        obj.GetComponentInChildren<MeshRenderer>().enabled = false;
+                    }
                 }
             }
         }

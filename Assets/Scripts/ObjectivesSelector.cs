@@ -232,6 +232,7 @@ public class ObjectivesSelector : MonoBehaviour
                     {
                         TextObject.GetComponent<Text>().text = string.Empty;
                         Instantiate(LabEquipment, GameObject.Find("Lab Desks").transform);
+
                         ProfileSystemController.TriesOnLevelMixColors++;
                         ProfileSystemController.PlayingALevel = true;
                         ProfileSystemController.UpdateProfileData();
@@ -560,10 +561,14 @@ public class ObjectivesSelector : MonoBehaviour
         // return to its original position.
         GameObject lever = GameObject.FindGameObjectWithTag("Lever");
         LeverController leverScript = lever.GetComponent<LeverController>();
-        leverScript.CanPushLever = true;
+        LeverController.CanPushLever = true;
         if (leverScript.IsLeverDown)
         {
             leverScript.StartCoroutine(leverScript.PushLever(leverScript.IsLeverDown ? -leverScript.RotationMargin : leverScript.RotationMargin));
         }
+
+        // This hides all the teleporters' direction pointers whenever
+        // a new level begins.
+        CenterEyePointer.ConcealTeleportersDirections();
     }
 }

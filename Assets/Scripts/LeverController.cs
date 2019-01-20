@@ -13,7 +13,7 @@ public class LeverController : MonoBehaviour {
     public int RotationMargin;
     private GameObject _lever;
     public static bool IsLabcoatDropped = false;
-    public bool CanPushLever = true;
+    public static bool CanPushLever = true;
 
     private void Start()
     {
@@ -24,26 +24,30 @@ public class LeverController : MonoBehaviour {
     {
         Ray pointRay = new Ray(Pointer.transform.position, Pointer.transform.forward);
         RaycastHit pointHit;
-        Debug.DrawRay(Pointer.transform.position, Pointer.transform.forward);
+
         if (Physics.Raycast(pointRay, out pointHit, 100, leverLayer))
         {
-            if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) ||
-                    Input.GetKeyDown(KeyCode.K) && CanPushLever)
+            if (CanPushLever)
             {
-                // Depending on the direction of the last time the lever
-                // was pulled, we will pull it to the opposite direction
-                // the next time.
-                StartCoroutine(PushLever(IsLeverDown ? -RotationMargin : RotationMargin));
+                if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) ||
+                        Input.GetKeyDown(KeyCode.K))
+                {
+                    // Depending on the direction of the last time the lever
+                    // was pulled, we will pull it to the opposite direction
+                    // the next time.
+                    StartCoroutine(PushLever(IsLeverDown ? -RotationMargin : RotationMargin));
 
-                if (IsLabcoatDropped == false)
-                {
-                    GameObject.Find("Lab Coat").GetComponent<Rigidbody>().isKinematic = false;
-                } else
-                {
-                    GameObject.Find("Lab Coat").GetComponent<Rigidbody>().isKinematic = true;
+                    if (IsLabcoatDropped == false)
+                    {
+                        GameObject.Find("Lab Coat").GetComponent<Rigidbody>().isKinematic = false;
+                    }
+                    else
+                    {
+                        GameObject.Find("Lab Coat").GetComponent<Rigidbody>().isKinematic = true;
+                    }
+
+                    CanPushLever = false;
                 }
-
-                CanPushLever = false;
             }
         }
     }

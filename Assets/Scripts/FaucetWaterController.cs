@@ -29,7 +29,7 @@ public class FaucetWaterController : MonoBehaviour
         Invoke("RemoveParticles", 2f);
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
 	{
         if (_areParticlesInitiated == false &&
             (other.gameObject.name == "Red Substance Beaker(Clone)" || other.gameObject.name == "Orange Substance Beaker(Clone)" || other.gameObject.name == "Yellow Substance Beaker(Clone)"))
