@@ -24,6 +24,7 @@ TagManager:
   - Restart Position
   - Lab Equipment
   - Smelly Waste
+  - Lever
   layers:
   - Default
   - TransparentFX

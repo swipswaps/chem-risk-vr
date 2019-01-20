@@ -223,30 +223,25 @@ public class PointerController : MonoBehaviour
                 _lookedAtObject = hit.collider.gameObject;
                 _parentOfTemporaryObject = _lookedAtObject.transform.parent;
 
-                if (_meshRenderer != null)
+                if (_lookedAtObject.name != "Lab Gloves")
                 {
-                    _meshRenderer.material = OriginalItemMaterial;
-                    _isMaterialTaken = false;
-                }
-                if (_lookedAtObject.GetComponent<MeshRenderer>() == null)
-                {
-                    _meshRenderer = _lookedAtObject.GetComponentInChildren<MeshRenderer>();
-                } else
-                {
-                    _meshRenderer = _lookedAtObject.GetComponent<MeshRenderer>();
+                    if (_meshRenderer != null)
+                    {
+                        _meshRenderer.material = OriginalItemMaterial;
+                        _isMaterialTaken = false;
+                    }
+                    if (_lookedAtObject.GetComponent<MeshRenderer>() == null)
+                    {
+                        _meshRenderer = _lookedAtObject.GetComponentInChildren<MeshRenderer>();
+                    }
+                    else
+                    {
+                        _meshRenderer = _lookedAtObject.GetComponent<MeshRenderer>();
+                    }
                 }
                 // Once it is found we change it to look as if it is hovered
                 // so that it appears interact-able
-                if (_lookedAtObject.name == "Lab Gloves")
-                {
-                    _meshRendererGloves = _lookedAtObject.GetComponentsInChildren<MeshRenderer>();
-
-                    foreach (MeshRenderer renderer in _meshRendererGloves)
-                    {
-                       renderer.material = HoverableObjectMaterial;
-                    }
-                }
-                else
+                if (_lookedAtObject.name != "Lab Gloves")
                 {
                     if (_isMaterialTaken == false)
                     {
@@ -272,22 +267,24 @@ public class PointerController : MonoBehaviour
                     {
                         _coat = _lookedAtObject;
                         _coat.GetComponent<MeshRenderer>().material = DefaultItemMaterial;
-                        _coat.GetComponent<MeshRenderer>().enabled = false;
                         _coat.GetComponent<BoxCollider>().isTrigger = true;
+                        _coat.GetComponent<Rigidbody>().isKinematic = true;
+                        _coat.GetComponent<MeshRenderer>().enabled = false;
                         IsWearingCoat = true;
                     } else if (_lookedAtObject.name == "Lab Glasses")
                     {
                         _glasses = _lookedAtObject;
                         _glasses.GetComponentInChildren<MeshRenderer>().material = DefaultItemMaterial;
                         IsWearingGlasses = true;
-                    } else if (_lookedAtObject.name == "Lab Gloves")
+                    }
+                    else if (_lookedAtObject.name == "Lab Gloves")
                     {
                         _gloves = _lookedAtObject;
                         MeshRenderer[] glovesRenderers = _gloves.GetComponentsInChildren<MeshRenderer>();
 
                         foreach (MeshRenderer renderer in glovesRenderers)
                         {
-                            renderer.material = DefaultItemMaterial;
+                            //renderer.material = DefaultItemMaterial;
                         }
                         IsWearingGloves = true;
                     }
@@ -335,6 +332,11 @@ public class PointerController : MonoBehaviour
             }
             else
             {
+                if (_meshRenderer != null)
+                {
+                    _meshRenderer.material = OriginalItemMaterial;
+                }
+                /*
                 if ((_meshRenderer != null || _meshRendererGloves != null) && IsHoldingItem == false)
                 {
                     if (_lookedAtObject.name != "Yellow Substance Beaker" &&
@@ -352,13 +354,9 @@ public class PointerController : MonoBehaviour
                     {
                         if (_meshRendererGloves != null)
                         {
-                            _meshRenderer.material = GlovesMaterial;
                             foreach (MeshRenderer renderer in _meshRendererGloves)
                             {
-                                if (renderer.gameObject.name != "Right Glove")
-                                {
-                                    renderer.material = GlovesMaterial;
-                                }
+                                renderer.material = DefaultItemMaterial;
                             }
                         }
                     }
@@ -368,6 +366,7 @@ public class PointerController : MonoBehaviour
                         _isMaterialTaken = false;
                     }
                 }
+                */
             }
         }
 
@@ -419,8 +418,8 @@ public class PointerController : MonoBehaviour
 
     public void ReturnEquipment()
     {
+        _coat.GetComponent<Rigidbody>().isKinematic = true;
         _coat.GetComponent<BoxCollider>().isTrigger = false;
-        _coat.GetComponent<MeshRenderer>().enabled = true;
         UpdatePosition(_coat, _coatReturnSpot);
         UpdatePosition(_glasses, _glassesReturnSpot);
         UpdatePosition(_gloves, _glovesReturnSpot);
@@ -441,12 +440,14 @@ public class PointerController : MonoBehaviour
                 var rightGlovePosition = equipment.transform.GetChild(0).transform.position;
                 rightGlovePosition = ReturnTransform.transform.position;
                 equipment.transform.GetChild(0).transform.position = rightGlovePosition;
-				
+
+                /*
                 var rightGloveRotation = equipment.transform.GetChild(0).transform.rotation;
                 rightGloveRotation = ReturnTransform.transform.rotation;
                 equipment.transform.GetChild(0).transform.rotation = rightGloveRotation;
+                */
             }
-				
+
             //var newEquipmentRotation = equipment.transform.rotation;
             //newEquipmentRotation = ReturnTransform.rotation;
             //equipment.transform.rotation = newEquipmentRotation;   
@@ -460,9 +461,10 @@ public class PointerController : MonoBehaviour
                 rightGlovePosition = RightController.transform.position;
                 equipment.transform.GetChild(0).transform.position = rightGlovePosition;
 				
-                var rightGloveRotation = equipment.transform.GetChild(0).transform.rotation;
+                /*var rightGloveRotation = equipment.transform.GetChild(0).transform.rotation;
                 rightGloveRotation = RightController.transform.rotation;
                 equipment.transform.GetChild(0).transform.rotation = rightGloveRotation;
+                */
             }
             else
             {

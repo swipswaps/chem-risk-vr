@@ -7,51 +7,50 @@ public class LeverController : MonoBehaviour {
     public GameObject LabCoat;
     public GameObject LaundryChute;
 
-    public GameObject Player;
-    private bool _isLeverDown = false;
+    public GameObject Pointer;
+    public bool IsLeverDown = false;
     [Range(0, 30)]
     public int RotationMargin;
     private GameObject _lever;
     public static bool IsLabcoatDropped = false;
+    public bool CanPushLever = true;
 
     private void Start()
     {
-        Player = GameObject.FindGameObjectWithTag("Player");
         _lever = gameObject.transform.GetChild(0).gameObject;
     }
 
     void Update()
     {
-        Ray pointRay = new Ray(Player.transform.position, Player.transform.forward);
+        Ray pointRay = new Ray(Pointer.transform.position, Pointer.transform.forward);
         RaycastHit pointHit;
-        Debug.DrawRay(Player.transform.position, Player.transform.forward);
+        Debug.DrawRay(Pointer.transform.position, Pointer.transform.forward);
         if (Physics.Raycast(pointRay, out pointHit, 100, leverLayer))
         {
             if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) ||
-                    Input.GetKeyDown(KeyCode.K))
+                    Input.GetKeyDown(KeyCode.K) && CanPushLever)
             {
                 // Depending on the direction of the last time the lever
                 // was pulled, we will pull it to the opposite direction
                 // the next time.
-                StartCoroutine(PushLever(_isLeverDown ? -RotationMargin : RotationMargin));
-                _isLeverDown = !_isLeverDown;
+                StartCoroutine(PushLever(IsLeverDown ? -RotationMargin : RotationMargin));
 
                 if (IsLabcoatDropped == false)
                 {
-                    GameObject.Find("Lab Coat").GetComponent<Rigidbody>().useGravity = true;
-                    GameObject.Find("Lab Coat").GetComponent<BoxCollider>().isTrigger = false;
+                    GameObject.Find("Lab Coat").GetComponent<Rigidbody>().isKinematic = false;
                 } else
                 {
-                    GameObject.Find("Lab Coat").GetComponent<Rigidbody>().useGravity = false;
-                    GameObject.Find("Lab Coat").GetComponent<BoxCollider>().isTrigger = true;
+                    GameObject.Find("Lab Coat").GetComponent<Rigidbody>().isKinematic = true;
                 }
+
+                CanPushLever = false;
             }
         }
     }
 
-    private IEnumerator PushLever(int rotation)
+    public IEnumerator PushLever(int rotation)
     {
-        if (_isLeverDown)
+        if (IsLeverDown)
         {
             for (int i = 0; i > rotation; i--)
             {
@@ -66,5 +65,7 @@ public class LeverController : MonoBehaviour {
                 yield return new WaitForSeconds(0.05f);
             }
         }
+
+        IsLeverDown = !IsLeverDown;
     }
 }

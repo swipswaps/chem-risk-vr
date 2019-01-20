@@ -550,7 +550,20 @@ public class ObjectivesSelector : MonoBehaviour
         PointerController.IsWearingCoat = false;
         PointerController.IsWearingGlasses = false;
         PointerController.IsWearingGloves = false;
-		
+
+        GameObject labCoat = GameObject.Find("Lab Coat");
+        labCoat.GetComponent<Rigidbody>().isKinematic = true;
+        labCoat.GetComponent<MeshRenderer>().enabled = true;
         _player.GetComponentInChildren<PointerController>().ReturnEquipment();
+
+        // We make sure that once the level is restarted, the lever will
+        // return to its original position.
+        GameObject lever = GameObject.FindGameObjectWithTag("Lever");
+        LeverController leverScript = lever.GetComponent<LeverController>();
+        leverScript.CanPushLever = true;
+        if (leverScript.IsLeverDown)
+        {
+            leverScript.StartCoroutine(leverScript.PushLever(leverScript.IsLeverDown ? -leverScript.RotationMargin : leverScript.RotationMargin));
+        }
     }
 }
