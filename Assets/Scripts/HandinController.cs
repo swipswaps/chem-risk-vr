@@ -122,7 +122,7 @@ public class HandinController : MonoBehaviour
                 existingSmellyWaste.Length <= 0)
             {
                 ProfileSystemController.TimesForLevelMixColors.Add(ProfileSystemController.CurrentLevelSeconds);
-                Debug.Log(ProfileSystemController.CurrentLevelSeconds);
+                //Debug.Log(ProfileSystemController.CurrentLevelSeconds);
                 ProfileSystemController.CurrentLevelSeconds = 0;
                 CompleteHandIn();
             }
