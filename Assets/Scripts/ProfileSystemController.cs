@@ -27,9 +27,9 @@ public class ProfileSystemController : MonoBehaviour {
     public LayerMask CatchButtonLayer;
 
     public static bool _isGameStarted = false;
-    public static bool _isPlayerLoggedOut = true;
 
     #region Player Variables
+    private GameObject _player;
     public static string Username = string.Empty;
     public static string StudentID = string.Empty;
     public static int BeakersFilledWithWater = 0;
@@ -60,6 +60,10 @@ public class ProfileSystemController : MonoBehaviour {
 
     void Start ()
     {
+        _player = GameObject.FindGameObjectWithTag("Player");
+        _player.GetComponent<CharacterController>().enabled = false;
+        _player.GetComponent<SamplePlayerController>().EnableLinearMovement = false;
+
         ReadProfiles();
 
         // This starts the countdown of the timers for total hours and minutes played.
@@ -128,7 +132,8 @@ public class ProfileSystemController : MonoBehaviour {
                         }
                     }
 
-                    _isPlayerLoggedOut = false;
+                    _player.GetComponent<CharacterController>().enabled = true;
+                    _player.GetComponent<SamplePlayerController>().EnableLinearMovement = true;
                     _isGameStarted = true;
 
                     SelectProflie();
@@ -146,7 +151,8 @@ public class ProfileSystemController : MonoBehaviour {
                     newPlayerPosition = GameObject.FindGameObjectWithTag("Start Position").transform.position;
                     GameObject.FindGameObjectWithTag("Player").transform.position = newPlayerPosition;
 
-                    _isPlayerLoggedOut = true;
+                    _player.GetComponent<SamplePlayerController>().EnableLinearMovement = false;
+                    _player.GetComponent<CharacterController>().enabled = false;
                 }
             }
         }

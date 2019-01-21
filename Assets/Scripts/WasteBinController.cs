@@ -8,7 +8,7 @@ public class WasteBinController : MonoBehaviour {
     public GameObject FireParticles;
     public GameObject SmokeParticles;
     public GameObject ExplosionParticles;
-    private bool _areParticlesInitiated = false;
+    public bool AreParticlesInitiated = false;
 
     private GameObject _labEquipment;
     private GameObject _player;
@@ -29,7 +29,7 @@ public class WasteBinController : MonoBehaviour {
         {
             // **************************************
             // Warm colors trash bin effects
-            if (_areParticlesInitiated == false && (BinType == "Warm" &&  other.gameObject.name == "Blue Substance Beaker(Clone)" || other.gameObject.name == "Purple Substance Beaker(Clone)"))
+            if (AreParticlesInitiated == false && (BinType == "Warm" &&  other.gameObject.name == "Blue Substance Beaker(Clone)" || other.gameObject.name == "Purple Substance Beaker(Clone)"))
             {
                 _currentParticles = Instantiate(FireParticles, gameObject.transform);
 
@@ -44,23 +44,21 @@ public class WasteBinController : MonoBehaviour {
 
                 _isBeakerDirty = true;
 
-                _areParticlesInitiated = true;
+                AreParticlesInitiated = true;
             }
             // End-game statement
-            if (_areParticlesInitiated == false && (BinType == "Warm" &&
+            if (AreParticlesInitiated == false && (BinType == "Warm" &&
                 other.gameObject.name == "Green Substance Beaker(Clone)"))
             {
                 _currentParticles = Instantiate(ExplosionParticles, gameObject.transform);
-                Invoke("GameOver", 0.5f);
-                _areParticlesInitiated = true;
+
+                GameOver();
             }
 
             // **************************************
             // Cold colors trash bin effects
-            if (_areParticlesInitiated == false && (BinType == "Cold" &&  other.gameObject.name == "Red Substance Beaker(Clone)" || other.gameObject.name == "Orange Substance Beaker(Clone)" || other.gameObject.name == "Yellow Substance Beaker(Clone)"))
+            if (AreParticlesInitiated == false && (BinType == "Cold" &&  other.gameObject.name == "Red Substance Beaker(Clone)" || other.gameObject.name == "Orange Substance Beaker(Clone)" || other.gameObject.name == "Yellow Substance Beaker(Clone)"))
             {
-                Invoke("MeltBin", 0.5f);
-                
                 Destroy(other.transform.GetChild(0).gameObject);
 
                 GameObject leftOvers = Instantiate(Leftovers,
@@ -70,6 +68,8 @@ public class WasteBinController : MonoBehaviour {
                 Leftovers.tag = "Smelly Waste";
 
                 _isBeakerDirty = true;
+
+                MeltBin();
                 //Instantiate(SmokeParticles, gameObject.transform);
                 //_areParticlesInitiated = true;
             }
