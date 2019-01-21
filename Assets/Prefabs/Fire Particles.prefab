@@ -19,7 +19,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4731381859834264}
-  m_Layer: 0
+  - component: {fileID: 65526379127468152}
+  - component: {fileID: 54145837436862384}
+  m_Layer: 25
   m_Name: Fire Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +38,7 @@ GameObject:
   - component: {fileID: 4571084686890296}
   - component: {fileID: 198493302659731794}
   - component: {fileID: 199542238334496094}
-  m_Layer: 0
+  m_Layer: 25
   m_Name: Particle System (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,7 +55,7 @@ GameObject:
   - component: {fileID: 4931567388703584}
   - component: {fileID: 198998791908758474}
   - component: {fileID: 199979095741915096}
-  m_Layer: 0
+  m_Layer: 25
   m_Name: Bottom Side
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,7 +72,7 @@ GameObject:
   - component: {fileID: 4933898114597018}
   - component: {fileID: 198276722272367638}
   - component: {fileID: 199756874501538500}
-  m_Layer: 0
+  m_Layer: 25
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +89,7 @@ GameObject:
   - component: {fileID: 4991981076990612}
   - component: {fileID: 198266130797114584}
   - component: {fileID: 199778849457923690}
-  m_Layer: 0
+  m_Layer: 25
   m_Name: Particle System (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,6 +165,33 @@ Transform:
   m_Father: {fileID: 4731381859834264}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!54 &54145837436862384
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1442248082685542}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &65526379127468152
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1442248082685542}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.49213883, y: 0.93744636, z: 0.57543254}
+  m_Center: {x: 0.0497693, y: 0.2687232, z: -0.039753832}
 --- !u!198 &198266130797114584
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -3565,7 +3594,7 @@ ParticleSystem:
   CollisionModule:
     enabled: 0
     serializedVersion: 3
-    type: 0
+    type: 1
     collisionMode: 0
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
@@ -3741,7 +3770,7 @@ ParticleSystem:
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
-      m_Bits: 4294967295
+      m_Bits: 67108864
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
@@ -8098,7 +8127,7 @@ ParticleSystem:
   CollisionModule:
     enabled: 0
     serializedVersion: 3
-    type: 0
+    type: 1
     collisionMode: 0
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
@@ -8274,7 +8303,7 @@ ParticleSystem:
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
-      m_Bits: 4294967295
+      m_Bits: 67108864
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
@@ -12631,7 +12660,7 @@ ParticleSystem:
   CollisionModule:
     enabled: 0
     serializedVersion: 3
-    type: 0
+    type: 1
     collisionMode: 0
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
@@ -12807,7 +12836,7 @@ ParticleSystem:
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
-      m_Bits: 4294967295
+      m_Bits: 67108864
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
@@ -16230,7 +16259,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
   NoiseModule:
-    enabled: 0
+    enabled: 1
     strength:
       serializedVersion: 2
       minMaxState: 0
@@ -17164,7 +17193,7 @@ ParticleSystem:
   CollisionModule:
     enabled: 0
     serializedVersion: 3
-    type: 0
+    type: 1
     collisionMode: 0
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
@@ -17340,7 +17369,7 @@ ParticleSystem:
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
-      m_Bits: 4294967295
+      m_Bits: 67108864
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5

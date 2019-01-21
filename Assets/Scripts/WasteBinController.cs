@@ -23,7 +23,7 @@ public class WasteBinController : MonoBehaviour {
         _lobbyPoint = GameObject.FindGameObjectWithTag("Restart Position");
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Beaker" || other.tag == "Dropper")
         {

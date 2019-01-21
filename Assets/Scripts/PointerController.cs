@@ -296,7 +296,12 @@ public class PointerController : MonoBehaviour
                             _lookedAtObject.name != "Small Empty Beaker" &&
                             _lookedAtObject.name != "Dropper")
                         {
-                            _currentlyHoldingObject.GetComponent<MeshRenderer>().material = DefaultItemMaterial;
+                            _currentlyHoldingObject.GetComponent<MeshRenderer>().material = OriginalItemMaterial;
+
+                            if (_currentlyHoldingObject.GetComponent<FireExtinguisher>() != null)
+                            {
+                                _currentlyHoldingObject.GetComponent<FireExtinguisher>().IsHoldingExtinguisher = true;
+                            }
                         }
                         else
                         {
