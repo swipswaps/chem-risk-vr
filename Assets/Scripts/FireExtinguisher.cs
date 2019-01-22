@@ -18,7 +18,7 @@ public class FireExtinguisher : MonoBehaviour {
     }
 	
 	void Update () {
-	    if (IsHoldingExtinguisher && (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) ||
+	    if (IsHoldingExtinguisher && (OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger) ||
                     Input.GetKey(KeyCode.K)))
         {
             foreach (ParticleSystem particleSystem in _particles)

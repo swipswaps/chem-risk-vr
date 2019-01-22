@@ -52,6 +52,11 @@ ModelImporter:
     2100004: lambert2
     2100006: blinn2
     2100008: lambert3
+    2100010: lab_floor
+    2100012: lab_ceiling
+    2100014: lab_walls
+    2100016: lab_glass
+    2100018: tilespace
     2300000: //RootNode
     2300002: pCube1
     2300004: placeholder_desk

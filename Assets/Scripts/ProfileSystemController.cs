@@ -27,6 +27,7 @@ public class ProfileSystemController : MonoBehaviour {
     public LayerMask CatchButtonLayer;
 
     public static bool _isGameStarted = false;
+    //public GameObject ProfileTablet;
 
     #region Player Variables
     private GameObject _player;
@@ -144,6 +145,7 @@ public class ProfileSystemController : MonoBehaviour {
                     TotalHoursPlayedObj.GetComponentInChildren<Text>().text = "Total Hours Played: " + TotalHoursPlayed.ToString();
                     TotalMinutesPlayedObj.GetComponentInChildren<Text>().text = "Total Minutes Played: " + TotalMinutesPlayed.ToString();
 
+                    //ProfileTablet.SetActive(false);
                 }
                 else if (_lastLookedAtObject.name == "Logout Button")
                 {
@@ -153,6 +155,8 @@ public class ProfileSystemController : MonoBehaviour {
 
                     _player.GetComponent<SamplePlayerController>().EnableLinearMovement = false;
                     _player.GetComponent<CharacterController>().enabled = false;
+
+                    //ProfileTablet.SetActive(true);
                 }
             }
         }

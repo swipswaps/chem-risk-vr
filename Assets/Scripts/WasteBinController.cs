@@ -45,6 +45,13 @@ public class WasteBinController : MonoBehaviour {
                 _isBeakerDirty = true;
 
                 AreParticlesInitiated = true;
+            } else if (other.gameObject.name == "Orange Substance Beaker(Clone)" ||
+                other.gameObject.name == "Yellow Substance Beaker(Clone)" ||
+                other.gameObject.name == "Red Substance Beaker(Clone)" ||
+                other.gameObject.name == "Green Substance Beaker(Clone)" ||
+                other.gameObject.name == "Water Beaker(Clone)")
+            {
+                Destroy(other.transform.GetChild(0).gameObject);
             }
             // End-game statement
             if (AreParticlesInitiated == false && (BinType == "Warm" &&
@@ -53,6 +60,15 @@ public class WasteBinController : MonoBehaviour {
                 _currentParticles = Instantiate(ExplosionParticles, gameObject.transform);
 
                 GameOver();
+            }
+            else if (other.gameObject.name == "Blue Substance Beaker(Clone)" ||
+              other.gameObject.name == "Purple Substance Beaker(Clone)" ||
+              other.gameObject.name == "Orange Substance Beaker(Clone)" ||
+              other.gameObject.name == "Yellow Substance Beaker(Clone)" ||
+              other.gameObject.name == "Red Substance Beaker(Clone)" ||
+              other.gameObject.name == "Water Beaker(Clone)")
+            {
+                Destroy(other.transform.GetChild(0).gameObject);
             }
 
             // **************************************
@@ -72,6 +88,13 @@ public class WasteBinController : MonoBehaviour {
                 MeltBin();
                 //Instantiate(SmokeParticles, gameObject.transform);
                 //_areParticlesInitiated = true;
+            } else if (
+                other.gameObject.name == "Blue Substance Beaker(Clone)" &&
+                other.gameObject.name == "Purple Substance Beaker(Clone)" &&
+                other.gameObject.name == "Green Substance Beaker(Clone)" &&
+                other.gameObject.name == "Water Beaker(Clone)")
+            {
+                Destroy(other.transform.GetChild(0).gameObject);
             }
 
             if (other.CompareTag("Beaker"))
