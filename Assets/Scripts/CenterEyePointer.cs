@@ -30,8 +30,17 @@ public class CenterEyePointer : MonoBehaviour
     public static bool IsTeleporterReset = false;
     public GameObject StartPlayerPosition;
 
+    private AudioSource _audioSource;
+    public AudioClip TeleportSound;
+    public AudioClip LabCoatPutOnSound;
+    public AudioClip WaterPourSound;
+    public AudioClip FireSound;
+    //public AudioClip ExtinguisherSound;
+
     private void Start()
     {
+        _audioSource = GetComponent<AudioSource>();
+
         _useWaterBottleTeleporterRenderer = 
             UseWaterBottleObjectiveTeleporter.GetComponentInChildren<MeshRenderer>();
         
@@ -137,6 +146,10 @@ public class CenterEyePointer : MonoBehaviour
         {
             if (Physics.Raycast(rayDoor, out hitDoor, 100, DoorLayerMask))
             {
+                // Plays the sound of the door being opened to start the level.
+                GameObject door = hitDoor.collider.gameObject;
+                door.GetComponent<AudioSource>().PlayOneShot(door.GetComponent<AudioSource>().clip);
+
                 if (ObjectivesSelector.CurrentObjective == "Use Water Bottle")
                 {
                     StartCoroutine(TeleportPlayerTo(UseWaterBottleObjectiveTeleporter));
@@ -168,6 +181,8 @@ public class CenterEyePointer : MonoBehaviour
                 (_currentTeleporter.name == "Teleporter: Use Water Bottle" || 
                 _currentTeleporter.name == "Teleporter: Mix Colors")) // Or another objective Or and so on...
             {
+                _audioSource.PlayOneShot(TeleportSound);
+
                 ObjectivesSelector.UsedTeleporter = true;
 
                 var doorDirection = GameObject.FindGameObjectWithTag("DoorDirection");
@@ -183,6 +198,8 @@ public class CenterEyePointer : MonoBehaviour
             else if ((OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) ||
                       Input.GetKeyDown(KeyCode.T)) && _isAlphaIncreased && HandinController.IsObjectiveHandedIn == false)
             {
+                _audioSource.PlayOneShot(TeleportSound);
+
                 ObjectivesSelector.UsedTeleporter = true;
 				
                 var objectsInTelerpoter = _currentTeleporter.GetComponentsInChildren<Transform>();

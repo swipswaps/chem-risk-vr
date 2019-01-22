@@ -41,8 +41,11 @@ public class PointerController : MonoBehaviour
     private bool _isMaterialTaken = false;
     private bool _isColliderSizeUpdated = false;
 
+    private AudioSource _centerEyeAudioSource;
+
     private void Start()
     {
+        _centerEyeAudioSource = GameObject.Find("CenterEyeAnchor").GetComponent<AudioSource>();
         _coat = GameObject.Find("Lab Coat");
         _glasses = GameObject.Find("Lab Glasses");
         _gloves = GameObject.Find("Lab Gloves");
@@ -257,6 +260,8 @@ public class PointerController : MonoBehaviour
 
                     if (_lookedAtObject.name == "Lab Coat")
                     {
+                        _centerEyeAudioSource.PlayOneShot(_centerEyeAudioSource.gameObject.GetComponent<CenterEyePointer>().LabCoatPutOnSound);
+
                         _coat = _lookedAtObject;
                         _coat.GetComponent<MeshRenderer>().material = DefaultItemMaterial;
                         _coat.GetComponent<BoxCollider>().isTrigger = true;

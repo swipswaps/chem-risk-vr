@@ -71,6 +71,11 @@ public class WasteBinController : MonoBehaviour {
                 Destroy(other.transform.GetChild(0).gameObject);
             }
 
+            if (_currentParticles != null)
+            {
+                _currentParticles.GetComponent<AudioSource>().volume = ObjectivesSelector.SoundsVolume;
+            }
+
             // **************************************
             // Cold colors trash bin effects
             if (AreParticlesInitiated == false && (BinType == "Cold" &&  other.gameObject.name == "Red Substance Beaker(Clone)" || other.gameObject.name == "Orange Substance Beaker(Clone)" || other.gameObject.name == "Yellow Substance Beaker(Clone)"))
@@ -99,7 +104,7 @@ public class WasteBinController : MonoBehaviour {
 
             if (other.CompareTag("Beaker"))
             {
-                if (other.transform.gameObject.transform.GetChild(0).name != "Smelly Waste(Clone)")
+                if (other.transform.gameObject.transform.childCount > 0 && other.transform.gameObject.transform.GetChild(0).name != "Smelly Waste(Clone)")
                 {
                     ProfileSystemController.TimesAnIncidentWasCaused++;
                     ProfileSystemController.UpdateProfileData();
@@ -124,8 +129,11 @@ public class WasteBinController : MonoBehaviour {
             }
             if (other.CompareTag("Dropper"))
             {
-                Destroy(other.transform.GetChild(0).gameObject);
-                other.name = "Empty Dropper";
+                if (other.transform.childCount > 0)
+                {
+                    Destroy(other.transform.GetChild(0).gameObject);
+                    other.name = "Empty Dropper";
+                }
             }
 
             if (_isBeakerDirty)

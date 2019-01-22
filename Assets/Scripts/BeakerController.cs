@@ -25,8 +25,15 @@ public class BeakerController : MonoBehaviour
 	private bool _isObjectOverBeaker = false;
     private GameObject _heldObject;
     private Color _heldObjectColor;
-	
-	void Update () {
+
+    private AudioSource _centerEyeAudioSource;
+
+    private void Start()
+    {
+        _centerEyeAudioSource = GameObject.Find("CenterEyeAnchor").GetComponent<AudioSource>();
+    }
+
+    void Update () {
 		if (PointerController.IsHoldingItem)
 		{
             _heldObject = PointerController.CurrentlyHoldingObjectForBeakers;
@@ -47,9 +54,11 @@ public class BeakerController : MonoBehaviour
 				if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) ||
 				    Input.GetKeyDown(KeyCode.L))
 				{
-					// If we are holding a dropper above a used beaker and the dropper is empty, then
-					// we can transfer liquid from the beaker to the dropper being held.
-					if ((gameObject.name == "Yellow Substance Beaker" ||
+                    _centerEyeAudioSource.PlayOneShot(_centerEyeAudioSource.gameObject.GetComponent<CenterEyePointer>().WaterPourSound);
+
+                    // If we are holding a dropper above a used beaker and the dropper is empty, then
+                    // we can transfer liquid from the beaker to the dropper being held.
+                    if ((gameObject.name == "Yellow Substance Beaker" ||
 					    gameObject.name == "Red Substance Beaker" ||
 					    gameObject.name == "Blue Substance Beaker" ||
 					    gameObject.name == "Water Beaker" ||

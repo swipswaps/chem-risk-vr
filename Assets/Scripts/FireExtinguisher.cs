@@ -7,8 +7,13 @@ public class FireExtinguisher : MonoBehaviour {
     public GameObject ExtinguisherParticles;
     private ParticleSystem[] _particles;
     public BoxCollider ParticlesCollider;
-    
-	void Start () {
+
+    private AudioSource _audioSource;
+    private bool _isAudioPlayed = false;
+
+    void Start ()
+    {
+        _audioSource = GetComponent<AudioSource>();
         _particles = ExtinguisherParticles.GetComponentsInChildren<ParticleSystem>();
 
         foreach (ParticleSystem particleSystem in _particles)
@@ -21,6 +26,14 @@ public class FireExtinguisher : MonoBehaviour {
 	    if (IsHoldingExtinguisher && (OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger) ||
                     Input.GetKey(KeyCode.K)))
         {
+            if (_isAudioPlayed == false)
+            {
+                _audioSource.volume = ObjectivesSelector.SoundsVolume;
+                _audioSource.Play();
+
+                _isAudioPlayed = true;
+            }
+
             foreach (ParticleSystem particleSystem in _particles)
             {
                 particleSystem.enableEmission = true;
@@ -33,6 +46,9 @@ public class FireExtinguisher : MonoBehaviour {
                 particleSystem.enableEmission = false;
                 ParticlesCollider.enabled = false;
             }
+
+            _audioSource.Stop();
+            _isAudioPlayed = false;
         }
 	}
 

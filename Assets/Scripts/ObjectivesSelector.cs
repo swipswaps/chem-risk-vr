@@ -61,12 +61,26 @@ public class ObjectivesSelector : MonoBehaviour
     public static bool  CanWearEquipment = false;
     public GameObject TextObject;
 
+    private AudioSource _musicAudioSource;
+    private AudioSource _soundsAudioSource;
+    private AudioSource _doorAudioSource;
+
+    [Range(0f, 1f)]
+    public float volumeUpdateValue = 0.05f;
+    public static float MusicVolume;
+    public static float SoundsVolume;
+
     private void Start()
     {
         FadeTransitioner.SetActive(false);
 
-
+        _musicAudioSource = GameObject.Find("OVRCameraRig").GetComponent<AudioSource>();
+        _soundsAudioSource = GameObject.Find("CenterEyeAnchor").GetComponent<AudioSource>();
         _player = GameObject.FindGameObjectWithTag("Player");
+        _doorAudioSource = GameObject.Find("Door").GetComponent<AudioSource>();
+
+        MusicVolume = _musicAudioSource.volume;
+        SoundsVolume = _soundsAudioSource.volume;
 
         _labCoatRenderer = _labCoatIndicator.GetComponent<MeshRenderer>();
         _labGlassesRenderer = _labGlassesIndicator.GetComponent<MeshRenderer>();
@@ -312,14 +326,49 @@ public class ObjectivesSelector : MonoBehaviour
                         GoBackAPage();
                     } else if (lookedAtButton.name == "Volume Down")
                     {
-                        _playerAudioSource.volume -= 0.05f;
+                        if (lookedAtButton.transform.parent.name == "Master Volume")
+                        {
+                            _musicAudioSource.volume -= volumeUpdateValue;
+                            _soundsAudioSource.volume -= volumeUpdateValue;
+                            _doorAudioSource.volume -= volumeUpdateValue;
+                        } else if (lookedAtButton.transform.parent.name == "Sounds Volume")
+                        {
+                            _soundsAudioSource.volume -= volumeUpdateValue;
+                            _doorAudioSource.volume -= volumeUpdateValue;
+                            _playerAudioSource.volume -= volumeUpdateValue;
+                        }
+                        else if (lookedAtButton.transform.parent.name == "Music Volume")
+                        {
+                            _musicAudioSource.volume -= volumeUpdateValue;
+                        }
+
+                        //MusicVolume = _musicAudioSource.volume;
+                        SoundsVolume = _soundsAudioSource.volume;
                         // This plays the click sound once a button has been pressed
                         // so that the player can see how his sound setting was updated.
                         _playerAudioSource.PlayOneShot(_playerAudioSource.clip);
                     } else if (lookedAtButton.name == "Volume Up")
                     {
-                        _playerAudioSource.volume += 0.05f;
+                        if (lookedAtButton.transform.parent.name == "Master Volume")
+                        {
+                            _musicAudioSource.volume += volumeUpdateValue;
+                            _soundsAudioSource.volume += volumeUpdateValue;
+                            _doorAudioSource.volume += volumeUpdateValue;
+                        }
+                        else if (lookedAtButton.transform.parent.name == "Sounds Volume")
+                        {
+                            _soundsAudioSource.volume += volumeUpdateValue;
+                            _doorAudioSource.volume += volumeUpdateValue;
+                            _playerAudioSource.volume += volumeUpdateValue;
+                        }
+                        else if (lookedAtButton.transform.parent.name == "Music Volume")
+                        {
+                            _musicAudioSource.volume += volumeUpdateValue;
+                        }
                         _playerAudioSource.PlayOneShot(_playerAudioSource.clip);
+
+                        //MusicVolume = _musicAudioSource.volume;
+                        SoundsVolume = _soundsAudioSource.volume;
                     }
                 }
             }
