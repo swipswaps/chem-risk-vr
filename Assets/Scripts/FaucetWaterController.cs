@@ -89,6 +89,8 @@ public class FaucetWaterController : MonoBehaviour
 
     private void GameOver()
     {
+        HandinController._enableTransitioner = true;
+
         Vector3 newPlayerPos = _player.transform.position;
         newPlayerPos = _lobbyPoint.transform.position;
         _player.transform.position = newPlayerPos;

@@ -4874,6 +4874,7 @@ MonoBehaviour:
   ExplosionParticles: {fileID: 1763404221620218, guid: 4402be1db2d72f1478a020b30c678dd3,
     type: 2}
   AreParticlesInitiated: 0
+  FadeTransitioner: {fileID: 0}
 --- !u!114 &114042492670783302
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5037,6 +5038,7 @@ MonoBehaviour:
   ExplosionParticles: {fileID: 1763404221620218, guid: 4402be1db2d72f1478a020b30c678dd3,
     type: 2}
   AreParticlesInitiated: 0
+  FadeTransitioner: {fileID: 0}
 --- !u!114 &114648488949514664
 MonoBehaviour:
   m_ObjectHideFlags: 1

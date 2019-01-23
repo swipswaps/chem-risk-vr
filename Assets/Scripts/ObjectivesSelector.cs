@@ -273,7 +273,7 @@ public class ObjectivesSelector : MonoBehaviour
                         TextObject.GetComponent<Text>().text = string.Empty;
                         Instantiate(LabEquipment, GameObject.Find("Lab Desks").transform);
 
-                        ProfileSystemController.TriesOnLevelMixColors++;
+                        //ProfileSystemController.TriesOnLevelMixColors++;
                         ProfileSystemController.PlayingALevel = true;
                         ProfileSystemController.UpdateProfileData();
 

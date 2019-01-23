@@ -17,6 +17,8 @@ public class WasteBinController : MonoBehaviour {
     private GameObject _currentParticles;
     private bool _isBeakerDirty = false;
 
+    public GameObject FadeTransitioner;
+
     private void Start()
     {
         _player = GameObject.FindGameObjectWithTag("Player");
@@ -58,8 +60,9 @@ public class WasteBinController : MonoBehaviour {
                 other.gameObject.name == "Green Substance Beaker(Clone)"))
             {
                 _currentParticles = Instantiate(ExplosionParticles, gameObject.transform);
+                _currentParticles.GetComponent<AudioSource>().volume = ObjectivesSelector.SoundsVolume;
 
-                GameOver();
+                Invoke("GameOver", 0.7f);
             }
             else if (other.gameObject.name == "Blue Substance Beaker(Clone)" ||
               other.gameObject.name == "Purple Substance Beaker(Clone)" ||
@@ -145,9 +148,7 @@ public class WasteBinController : MonoBehaviour {
 
     private void GameOver()
     {
-        Vector3 newPlayerPos = _player.transform.position;
-        newPlayerPos = _lobbyPoint.transform.position;
-        _player.transform.position = newPlayerPos;
+        HandinController._enableTransitioner = true;
 
         HandinController.IsObjectiveHandedIn = true;
         ProfileSystemController.TimesAGuidelineIsMissed++;

@@ -54,6 +54,8 @@ public class ProfileSystemController : MonoBehaviour {
     //public Sprite Portrait;
     public GameObject TotalHoursPlayedObj;
     public GameObject TotalMinutesPlayedObj;
+    public GameObject TriesOnLevelMixColorsObj;
+    public GameObject BeakersFilledWithWaterObj;
     #endregion
 
     private GameObject _lastLookedAtObject;
@@ -144,6 +146,8 @@ public class ProfileSystemController : MonoBehaviour {
                     UsernameObj.GetComponentInChildren<Text>().text = "Username: " + Username;
                     TotalHoursPlayedObj.GetComponentInChildren<Text>().text = "Total Hours Played: " + TotalHoursPlayed.ToString();
                     TotalMinutesPlayedObj.GetComponentInChildren<Text>().text = "Total Minutes Played: " + TotalMinutesPlayed.ToString();
+                    TriesOnLevelMixColorsObj.GetComponentInChildren<Text>().text = "Tries on level Mix Colors: " + TriesOnLevelMixColors.ToString();
+                    BeakersFilledWithWaterObj.GetComponentInChildren<Text>().text = "Beakers filled with water: " + BeakersFilledWithWater.ToString();
 
                     //ProfileTablet.SetActive(false);
                 }
@@ -222,6 +226,8 @@ public class ProfileSystemController : MonoBehaviour {
         
         TotalHoursPlayedObj.GetComponentInChildren<Text>().text = "Total Hours Played: " + TotalHoursPlayed.ToString();
         TotalMinutesPlayedObj.GetComponentInChildren<Text>().text = "Total Minutes Played: " + TotalMinutesPlayed.ToString();
+        TriesOnLevelMixColorsObj.GetComponentInChildren<Text>().text = "Tries on level Mix Colors: " + TriesOnLevelMixColors.ToString();
+        BeakersFilledWithWaterObj.GetComponentInChildren<Text>().text = "Beakers filled with water: " + BeakersFilledWithWater.ToString();
 
         UpdateProfileData();
     }

@@ -21,6 +21,8 @@ public class HandinController : MonoBehaviour
     public GameObject FadeTransitioner;
     private GameObject _objectivesSelector;
 
+    public static bool _enableTransitioner = false;
+
     private void Start()
     {
         _player = GameObject.FindGameObjectWithTag("Player");
@@ -32,6 +34,16 @@ public class HandinController : MonoBehaviour
 
     private void Update()
     {
+        if (_enableTransitioner)
+        {
+            _player.GetComponent<CharacterController>().enabled = false;
+            FadeTransitioner.SetActive(true);
+            FadeTransitioner.GetComponent<Animator>().SetBool("toggleTransitioner", true);
+            Invoke("FadeOutTransitioner", 0.3f);
+
+            _enableTransitioner = false;
+        }
+
         Ray ray = new Ray(Pointer.transform.position, Pointer.transform.forward);
         RaycastHit hit;
 		
@@ -289,7 +301,7 @@ public class HandinController : MonoBehaviour
         Destroy(labEquipment);
     }
 
-    private void FadeOutTransitioner()
+    public void FadeOutTransitioner()
     {
         Invoke("FadeOutTeleporter", 0.3f);
         FadeTransitioner.GetComponent<Animator>().SetBool("toggleTransitioner", false);
@@ -302,7 +314,7 @@ public class HandinController : MonoBehaviour
         _player.transform.rotation = _newPlayerRotation;
     }
 
-    private void FadeOutTeleporter()
+    public void FadeOutTeleporter()
     {
         FadeTransitioner.SetActive(false);
     }

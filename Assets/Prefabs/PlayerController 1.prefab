@@ -4055,6 +4055,7 @@ MonoBehaviour:
     type: 2}
   OriginalItemMaterial: {fileID: 0}
   DefaultItemMaterial: {fileID: 2100000, guid: c0ccdb20e6f13864da9f8039dc7bcc32, type: 2}
+  GlovesMaterial: {fileID: 0}
   DefaultBeakerMaterial: {fileID: 2100002, guid: 9c415ecfe4bc9c44ca5d190e8ec4ec75,
     type: 3}
   HoverableObjectMaterial: {fileID: 2100000, guid: d5175290c90b5224fa4e87fb6e97df8d,
@@ -5692,6 +5693,10 @@ MonoBehaviour:
   TeleporterDisabledMaterial: {fileID: 2100000, guid: 9c9cd37e1304fcb488ab30bf1bcb8928,
     type: 2}
   StartPlayerPosition: {fileID: 0}
+  TeleportSound: {fileID: 0}
+  LabCoatPutOnSound: {fileID: 0}
+  WaterPourSound: {fileID: 0}
+  FireSound: {fileID: 0}
 --- !u!114 &114513901129782608
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6002,6 +6007,7 @@ MonoBehaviour:
     type: 2}
   OriginalItemMaterial: {fileID: 0}
   DefaultItemMaterial: {fileID: 2100000, guid: c0ccdb20e6f13864da9f8039dc7bcc32, type: 2}
+  GlovesMaterial: {fileID: 0}
   DefaultBeakerMaterial: {fileID: 2100002, guid: 9c415ecfe4bc9c44ca5d190e8ec4ec75,
     type: 3}
   HoverableObjectMaterial: {fileID: 2100000, guid: d5175290c90b5224fa4e87fb6e97df8d,
