@@ -70,6 +70,9 @@ public class ObjectivesSelector : MonoBehaviour
     public static float MusicVolume;
     public static float SoundsVolume;
 
+    public GameObject NotificationBar;
+    public static bool IsNotificationBarFlashed = false;
+
     private void Start()
     {
         FadeTransitioner.SetActive(false);
@@ -161,13 +164,25 @@ public class ObjectivesSelector : MonoBehaviour
             CurrentObjectiveText.GetComponent<Text>().text = "Select Objective...";
             //GoNextObjective();
         }
-        if (PickedUpWaterBottle && CurrentObjective == "Use Water Bottle")
+
+        if (CurrentObjective == "Use Water Bottle")
         {
-            TaskFields[0].GetComponentInChildren<Image>().color = Color.green;
-        }
-        if (PlacedBackWaterBottle && CurrentObjective == "Use Water Bottle")
-        {
-            TaskFields[1].GetComponentInChildren<Image>().color = Color.green;
+            if (PickedUpWaterBottle)
+            {
+                TaskFields[0].GetComponentInChildren<Image>().color = Color.green;
+            }
+            if (PlacedBackWaterBottle)
+            {
+                TaskFields[1].GetComponentInChildren<Image>().color = Color.green;
+            }
+
+            if (IsNotificationBarFlashed == false &&
+                PickedUpWaterBottle &&
+                PlacedBackWaterBottle &&
+                PointerController.IsWearingCoat == true)
+            {
+                CheckIfPlayerCanHandIn();
+            }
         }
 
         if (UsedTeleporter && CurrentObjective == "Mix Colors"
@@ -188,6 +203,17 @@ public class ObjectivesSelector : MonoBehaviour
             if (MixRedAndYellow) { TaskFields[3].GetComponentInChildren<Image>().color = Color.green; }
             if (MixRedAndBlue) { TaskFields[4].GetComponentInChildren<Image>().color = Color.green; }
             if (MixBlueAndYellow) { TaskFields[5].GetComponentInChildren<Image>().color = Color.green; }
+
+            if (IsNotificationBarFlashed == false &&
+                PourRedIntoTube &&
+                PourBlueIntoTube &&
+                PourYellowIntoTube &&
+                MixRedAndYellow &&
+                MixRedAndBlue &&
+                MixBlueAndYellow)
+            {
+                CheckIfPlayerCanHandIn();
+            }
         }
 
         // Once the player is wearing a coat, his indicator will turn green
@@ -284,6 +310,9 @@ public class ObjectivesSelector : MonoBehaviour
                         //}
                     } else if (lookedAtButton.name == "Use Teleporter")
                     {
+                        _player.GetComponent<SamplePlayerController>().EnableLinearMovement = true;
+                        _player.GetComponent<CharacterController>().enabled = true;
+
                         TextObject.GetComponent<Text>().text = string.Empty;
                         Instantiate(LabEquipment, GameObject.Find("Lab Desks").transform);
                         SelectObjectiveUseTeleporter();
@@ -293,6 +322,9 @@ public class ObjectivesSelector : MonoBehaviour
                         DisableButtonsInteractivity();
                     } else if (lookedAtButton.name == "Mix Colors")
                     {
+                        _player.GetComponent<SamplePlayerController>().EnableLinearMovement = true;
+                        _player.GetComponent<CharacterController>().enabled = true;
+
                         Instantiate(LabEquipment, GameObject.Find("Lab Desks").transform);
                         ProfileSystemController.TriesOnLevelMixColors++;
                         ProfileSystemController.PlayingALevel = true;
@@ -409,6 +441,30 @@ public class ObjectivesSelector : MonoBehaviour
             yield return new WaitForSeconds(0.4f);
             indicatorMesh.material = _normalIndicator;
             yield return new WaitForSeconds(0.4f);
+        }
+    }
+
+    private void CheckIfPlayerCanHandIn()
+    {
+        GameObject[] existingDirtyBeakers = GameObject.FindGameObjectsWithTag("Dirty Beaker");
+        GameObject[] existingSmellyWaste = GameObject.FindGameObjectsWithTag("Smelly Waste");
+
+        if (existingDirtyBeakers.Length <= 0 &&
+            existingSmellyWaste.Length <= 0)
+        {
+            StartCoroutine(FlashNotificationBar());
+            IsNotificationBarFlashed = true;
+        }
+    }
+
+    private IEnumerator FlashNotificationBar()
+    {
+        for (int i = 0; i < 6; i++)
+        {
+            NotificationBar.SetActive(true);
+            yield return new WaitForSeconds(1f);
+            NotificationBar.SetActive(false);
+            yield return new WaitForSeconds(1f);
         }
     }
 

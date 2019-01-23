@@ -37,8 +37,13 @@ public class CenterEyePointer : MonoBehaviour
     public AudioClip FireSound;
     //public AudioClip ExtinguisherSound;
 
+    private Transform _playerCamera;
+    private float _mouseX = 0f;
+    private float _mouseY = 0f;
+
     private void Start()
     {
+        _playerCamera = GameObject.Find("LocalAvatar").GetComponent<Transform>();
         _audioSource = GetComponent<AudioSource>();
 
         _useWaterBottleTeleporterRenderer = 
@@ -100,7 +105,21 @@ public class CenterEyePointer : MonoBehaviour
         Player.transform.position = newPlayerPosition;
     }
 
-    void Update () {
+    void Update ()
+    {
+        if (OVRInput.IsControllerConnected(OVRInput.Controller.RTrackedRemote) == false)
+        {
+            /*
+            _mouseX += Input.GetAxis("Mouse X");
+            _mouseY -= Input.GetAxis("Mouse Y");
+
+            float clampedHorizontalRotation = Mathf.Clamp(_mouseX * 2f, -70, 70);
+            float clampedVerticalRotation = Mathf.Clamp(_mouseY * 2f, -50, 50);
+
+            _playerCamera.transform.localEulerAngles = new Vector3(clampedVerticalRotation, clampedHorizontalRotation, 0);
+            */
+        }
+
         if (ProfileSystemController._isGameStarted)
         {
             FadeTransitioner.SetActive(true);
@@ -146,6 +165,8 @@ public class CenterEyePointer : MonoBehaviour
         {
             if (Physics.Raycast(rayDoor, out hitDoor, 100, DoorLayerMask))
             {
+                Invoke("EnablePlayerMovement", 0.3f);
+
                 // Plays the sound of the door being opened to start the level.
                 GameObject door = hitDoor.collider.gameObject;
                 door.GetComponent<AudioSource>().PlayOneShot(door.GetComponent<AudioSource>().clip);
@@ -240,6 +261,12 @@ public class CenterEyePointer : MonoBehaviour
             childRendererColor.a += newAlphaValue;
             childRenderer.material.color = childRendererColor;
         }
+    }
+
+    private void EnablePlayerMovement()
+    {
+        Player.GetComponent<SamplePlayerController>().EnableLinearMovement = true;
+        Player.GetComponent<CharacterController>().enabled = true;
     }
 
     private void UpdatePlayerPosition()

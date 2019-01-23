@@ -14,6 +14,22 @@ public class HandinController : MonoBehaviour
 
     public static bool IsObjectiveHandedIn = false;
 
+    private GameObject _lookedAtButton;
+    private GameObject _player;
+    private GameObject _lobbyPoint;
+
+    public GameObject FadeTransitioner;
+    private GameObject _objectivesSelector;
+
+    private void Start()
+    {
+        _player = GameObject.FindGameObjectWithTag("Player");
+        _lobbyPoint = GameObject.FindGameObjectWithTag("Restart Position");
+        _objectivesSelector = GameObject.Find("Tablet For Selecting Objectives");
+
+        FadeTransitioner.SetActive(false);
+    }
+
     private void Update()
     {
         Ray ray = new Ray(Pointer.transform.position, Pointer.transform.forward);
@@ -25,8 +41,8 @@ public class HandinController : MonoBehaviour
         // buttons, then they will be updated here on different events.
         if (Physics.Raycast(ray, out hit, 100, CatchButtonLayer))
         {
-            var lookedAtButton = hit.collider.gameObject;
-            if (lookedAtButton.GetComponent<Image>() != null)
+            _lookedAtButton = hit.collider.gameObject;
+            if (_lookedAtButton.GetComponent<Image>() != null)
             {
                // _image = lookedAtButton.GetComponent<Image>();
                 //_image.color = Color.red;
@@ -38,8 +54,10 @@ public class HandinController : MonoBehaviour
                 //_image.color = Color.green;
 					
                 // Button functionality/behaviour on click events
-                if (lookedAtButton.name == "Hand-In Button")
+                if (_lookedAtButton.name == "Hand-In Button" && _lookedAtButton.GetComponent<Button>().interactable == true)
                 {
+                    _lookedAtButton.GetComponent<Button>().interactable = false;
+                    Invoke("MakeButtonInteractable", 4f);
                     HandInObjective();
                 }
             }
@@ -53,6 +71,11 @@ public class HandinController : MonoBehaviour
             }
             */
         }
+    }
+
+    private void MakeButtonInteractable()
+    {
+        _lookedAtButton.GetComponent<Button>().interactable = true;
     }
 
     public void HandInObjective()
@@ -124,7 +147,10 @@ public class HandinController : MonoBehaviour
                 ProfileSystemController.TimesForLevelMixColors.Add(ProfileSystemController.CurrentLevelSeconds);
                 //Debug.Log(ProfileSystemController.CurrentLevelSeconds);
                 ProfileSystemController.CurrentLevelSeconds = 0;
-                CompleteHandIn();
+
+                _objectiveReport = "Objective complete!\n";
+                _objectiveReport += "Returning to lobby in 3...";
+                Invoke("CompleteHandIn", 4f);
             }
             else
             {
@@ -167,7 +193,7 @@ public class HandinController : MonoBehaviour
                 existingDirtyBeakers.Length <= 0 &&
                 existingSmellyWaste.Length <= 0)
             {
-                CompleteHandIn();
+                Invoke("CompleteHandIn", 4f);
             }
             else
             {
@@ -214,7 +240,7 @@ public class HandinController : MonoBehaviour
                 existingDirtyBeakers.Length <= 0 &&
                 existingSmellyWaste.Length <= 0)
             {
-                CompleteHandIn();
+                Invoke("CompleteHandIn", 4f);
             }
             else
             {
@@ -231,17 +257,20 @@ public class HandinController : MonoBehaviour
 
     private void CompleteHandIn()
     {
+        ObjectivesSelector.IsNotificationBarFlashed = false;
+        _objectivesSelector.GetComponent<ObjectivesSelector>().NotificationBar.SetActive(false);
+
+        _player.GetComponent<SamplePlayerController>().EnableLinearMovement = false;
+        _player.GetComponent<CharacterController>().enabled = false;
+        FadeTransitioner.SetActive(true);
+        FadeTransitioner.GetComponent<Animator>().SetBool("toggleTransitioner", true);
+        Invoke("FadeOutTransitioner", 0.3f);
+
         ProfileSystemController.PlayingALevel = false;
 
         _objectiveReport += "< Success >";
-
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        
         GameObject labEquipment = GameObject.FindGameObjectWithTag("Lab Equipment");
-        GameObject lobbyPoint = GameObject.FindGameObjectWithTag("Restart Position");
-
-        Vector3 newPlayerPos = player.transform.position;
-        newPlayerPos = lobbyPoint.transform.position;
-        player.transform.position = newPlayerPos;
 
         // The objective has to be only successfully handed in before
         // you are allowed to pick a new one!
@@ -256,7 +285,25 @@ public class HandinController : MonoBehaviour
         PointerController.IsHoldingItem = false;
         PointerController.CurrentlyHoldingObjectForBeakers = null;
 
-        player.GetComponentInChildren<PointerController>().ReturnEquipment();
+        _player.GetComponentInChildren<PointerController>().ReturnEquipment();
         Destroy(labEquipment);
+    }
+
+    private void FadeOutTransitioner()
+    {
+        Invoke("FadeOutTeleporter", 0.3f);
+        FadeTransitioner.GetComponent<Animator>().SetBool("toggleTransitioner", false);
+
+        Vector3 newPlayerPos = _player.transform.position;
+        newPlayerPos = _lobbyPoint.transform.position;
+        _player.transform.position = newPlayerPos;
+
+        Quaternion _newPlayerRotation = _lobbyPoint.transform.rotation;
+        _player.transform.rotation = _newPlayerRotation;
+    }
+
+    private void FadeOutTeleporter()
+    {
+        FadeTransitioner.SetActive(false);
     }
 }
