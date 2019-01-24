@@ -43,6 +43,31 @@ public class WasteBinController : MonoBehaviour {
                     Quaternion.identity,
                     other.transform);
                 Leftovers.tag = "Smelly Waste";
+                
+                if (other.GetComponent<MeshFilter>().mesh.name == "laboratory_testTube_tube Instance")
+                {
+                    Vector3 leftOversScale = leftOvers.transform.localScale;
+                    leftOversScale.x = 0.2f;
+                    leftOversScale.y = 0.4f;
+                    leftOversScale.z = 0.2f;
+                    leftOvers.transform.localScale = leftOversScale;
+                }
+                else if (other.GetComponent<MeshFilter>().mesh.name == "mod_laboratory_beaker Instance")
+                {
+                    Vector3 leftOversScale = leftOvers.transform.localScale;
+                    leftOversScale.x = 70f;
+                    leftOversScale.y = 70f;
+                    leftOversScale.z = 70f;
+                    leftOvers.transform.localScale = leftOversScale;
+                }
+                else if (other.GetComponent<MeshFilter>().mesh.name == "mod_laboratorium_flask Instance")
+                {
+                    Vector3 leftOversScale = leftOvers.transform.localScale;
+                    leftOversScale.x = 50f;
+                    leftOversScale.y = 50f;
+                    leftOversScale.z = 50f;
+                    leftOvers.transform.localScale = leftOversScale;
+                }
 
                 _isBeakerDirty = true;
 
@@ -90,6 +115,28 @@ public class WasteBinController : MonoBehaviour {
                     Quaternion.identity,
                     other.transform);
                 Leftovers.tag = "Smelly Waste";
+
+                Vector3 leftOversScale = leftOvers.transform.localScale;
+                if (other.GetComponent<MeshFilter>().mesh.name == "laboratory_testTube_tube Instance")
+                {
+                    leftOversScale.x = 0.2f;
+                    leftOversScale.y = 0.4f;
+                    leftOversScale.z = 0.2f;
+                }
+                else if (other.GetComponent<MeshFilter>().mesh.name == "mod_laboratory_beaker Instance")
+                {
+                    leftOversScale.x = 70f;
+                    leftOversScale.y = 70f;
+                    leftOversScale.z = 70f;
+                }
+                else if (other.GetComponent<MeshFilter>().mesh.name == "mod_laboratorium_flask Instance")
+                {
+                    leftOversScale.x = 50f;
+                    leftOversScale.y = 50f;
+                    leftOversScale.z = 50f;
+                }
+
+                leftOvers.transform.localScale = leftOversScale;
 
                 _isBeakerDirty = true;
 

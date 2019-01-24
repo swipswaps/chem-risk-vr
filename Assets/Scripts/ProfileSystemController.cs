@@ -161,6 +161,9 @@ public class ProfileSystemController : MonoBehaviour {
                     _player.GetComponent<CharacterController>().enabled = false;
 
                     //ProfileTablet.SetActive(true);
+                } else if (_lastLookedAtObject.name == "Exit Button")
+                {
+                    Application.Quit();
                 }
             }
         }

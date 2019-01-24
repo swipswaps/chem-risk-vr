@@ -322,8 +322,10 @@ public class ObjectivesSelector : MonoBehaviour
                         DisableButtonsInteractivity();
                     } else if (lookedAtButton.name == "Mix Colors")
                     {
+                        /*
                         _player.GetComponent<SamplePlayerController>().EnableLinearMovement = true;
                         _player.GetComponent<CharacterController>().enabled = true;
+                        */
 
                         Instantiate(LabEquipment, GameObject.Find("Lab Desks").transform);
                         ProfileSystemController.TriesOnLevelMixColors++;
